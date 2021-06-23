@@ -1,42 +1,42 @@
     <ul class="metismenu" id="menu">
             
 				<li>
-					<a href="emailbox.html">
+					<a href="/admin">
 						<div class="parent-icon"><i class="bx bx-tachometer "></i>
 						</div>
 						<div class="menu-title">Dashboard</div>
 					</a>
 				</li>
 				<li>
-					<a href="emailbox.html">
+					<a href="/admin-blog">
 						<div class="parent-icon"><i class="bx bx-repeat"></i>
 						</div>
 						<div class="menu-title">Blog</div>
 					</a>
 				</li>
 				<li>
-					<a href="emailbox.html">
+					<a href="/admin-spanduk">
 						<div class="parent-icon"><i class="bx bx-map-alt"></i>
 						</div>
 						<div class="menu-title">Spanduk</div>
 					</a>
 				</li>
 				<li>
-					<a href="emailbox.html">
+					<a href="/admin-testimoni">
 						<div class="parent-icon"><i class="bx bx-conversation"></i>
 						</div>
 						<div class="menu-title">Testimoni</div>
 					</a>
 				</li>
 				<li>
-					<a href="emailbox.html">
+					<a href="/admin-produk">
 						<div class="parent-icon"><i class="bx bx-grid-alt"></i>
 						</div>
 						<div class="menu-title">Produk</div>
 					</a>
 				</li>
 				<li>
-					<a href="emailbox.html">
+					<a href="/admin-halaman">
 						<div class="parent-icon"><i class="bx bx-file"></i>
 						</div>
 						<div class="menu-title">Halaman</div>
@@ -51,11 +51,11 @@
 						<div class="menu-title">Pengaturan</div>
 					</a>
 					<ul>
-						<li> <a href="index.html"><i class="bx bx-menu"></i>Menu</a>
+						<li> <a href="/admin-pengaturan-menu"><i class="bx bx-menu"></i>Menu</a>
 						</li>
-						<li> <a href="index2.html"><i class="bx bx-border-bottom"></i>Footer</a>
+						<li> <a href="/admin-pengaturan-footer"><i class="bx bx-border-bottom"></i>Footer</a>
 						</li>
-						<li> <a href="index2.html"><i class="bx bx-user-circle"></i>User</a>
+						<li> <a href="/admin-pengaturan-user"><i class="bx bx-user-circle"></i>User</a>
 						</li>
 					</ul>
 				</li>
