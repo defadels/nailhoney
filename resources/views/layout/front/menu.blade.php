@@ -29,7 +29,7 @@
                 <li><a class="dropdown-item" href="/sistem-keagenan">Keagenan</a></li>
               </ul>
             </li> -->
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Social Media
               </a>
@@ -37,7 +37,7 @@
                 <li><a class="dropdown-item" target="_blank" href="https://www.instagram.com/madualhafizh.id/">Instagram</a></li>
                 <li><a class="dropdown-item" target="_blank" href="https://www.facebook.com/madualhafizh.id/">Facebook</a></li>
               </ul>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="/kontak">Kontak</a>
             </li>
