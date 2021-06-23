@@ -31,3 +31,7 @@ Route::get('/kontak', function () {
     return view('website.kontak');
 });
 
+Route::get('/admin', function () {
+    return view('admin.table');
+});
+
