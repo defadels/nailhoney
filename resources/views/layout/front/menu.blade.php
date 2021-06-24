@@ -1,3 +1,6 @@
+
+
+
 <!-- navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
@@ -10,13 +13,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/">Beranda</a>
+              <a class="nav-link active" aria-current="page" href="{{ route('website.home') }}">Beranda</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/produk">Produk</a>
+              <a class="nav-link" href="{{ route('website.produk') }}">Produk</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/blog">Blog</a>
+              <a class="nav-link" href="{{ route('website.blog') }}">Blog</a>
             </li>
           
             <!-- <li class="nav-item dropdown">
@@ -39,7 +42,7 @@
               </ul>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" href="/kontak">Kontak</a>
+              <a class="nav-link" href="{{ route('website.kontak') }}">Kontak</a>
             </li>
           </ul>
         </div>

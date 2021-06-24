@@ -1,6 +1,8 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Spanduk')
+@section('title', $title)
+
+@section('description', $description)
 
 
 @section('content')

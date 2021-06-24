@@ -15,57 +15,47 @@
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('website.home');
+// Route::get('/', function () {
+//     return view('website.home');
+// });
+
+// Route::get('/produk', function () {
+//     return view('website.produk');
+// });
+
+// Route::get('/blog', function () {
+//     return view('website.blog');
+// });
+
+// Route::get('/kontak', function () {
+//     return view('website.kontak');
+// });
+
+
+
+Route::name('website.')->namespace('Website')->group(function () {
+
+    Route::get('/','HomeController@index')->name('home');
+    Route::get('blog','BlogController@index')->name('blog');
+    Route::get('produk','ProdukController@index')->name('produk');
+    Route::get('kontak','KontakController@index')->name('kontak');
+
 });
 
-Route::get('/produk', function () {
-    return view('website.produk');
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+    Route::get('produk', 'ProdukController@index')->name('produk');
+    Route::get('spanduk', 'SpandukController@index')->name('spanduk');
+    Route::get('testimoni', 'TestimoniController@index')->name('testimoni');
+    Route::get('blog', 'BlogController@index')->name('blog');
+    Route::get('halaman', 'HalamanController@index')->name('halaman');
+
+    Route::prefix('pengaturan')->name('pengaturan.')->namespace('Pengaturan')->group(function () {
+        Route::get('/', 'MenuController@index')->name('menu');
+        Route::get('footer/edit', 'MenuController@index')->name('footer.edit');
+        Route::get('footer', 'FooterController@index')->name('footer');
+        Route::get('user', 'UserController@index')->name('user');
+    });
+
 });
-
-Route::get('/blog', function () {
-    return view('website.blog');
-});
-
-Route::get('/kontak', function () {
-    return view('website.kontak');
-});
-
-Route::get('/admin', function () {
-    return view('admin.table');
-});
-
-Route::get('/admin-blog', function () {
-    return view('admin.blog');
-});
-
-Route::get('/admin-spanduk', function () {
-    return view('admin.spanduk');
-});
-
-Route::get('/admin-halaman', function () {
-    return view('admin.halaman');
-});
-
-Route::get('/admin-produk', function () {
-    return view('admin.produk');
-});
-
-Route::get('/admin-testimoni', function () {
-    return view('admin.testimoni');
-});
-
-Route::get('/admin-pengaturan-menu', function () {
-    return view('admin.menu');
-});
-
-Route::get('/admin-pengaturan-footer', function () {
-    return view('admin.footer');
-});
-
-Route::get('/admin-pengaturan-user', function () {
-    return view('admin.user');
-});
-
-
 

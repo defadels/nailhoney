@@ -4,6 +4,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
+    <meta name="title" content="@yield('title','Madu Al-Hafizh')">
     <meta name="description" content="@yield('description','Supplier Madu Sumatera Terbesar')">
     <meta name="keywords" content="Madu, Hutan, Madu Ternak, Ganti Gula ke Madu">
     <meta name="author" content="Bag Kinantan">
