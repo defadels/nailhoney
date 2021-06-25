@@ -36,25 +36,55 @@
 Route::name('website.')->namespace('Website')->group(function () {
 
     Route::get('/','HomeController@index')->name('home');
+    
     Route::get('blog','BlogController@index')->name('blog');
+    Route::get('blog/detail','BlogController@detail')->name('blog.detail');
+    
     Route::get('produk','ProdukController@index')->name('produk');
+    Route::get('produk/detail','ProdukController@detail')->name('produk.detail');
+    
     Route::get('kontak','KontakController@index')->name('kontak');
 
 });
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
-    Route::get('produk', 'ProdukController@index')->name('produk');
-    Route::get('spanduk', 'SpandukController@index')->name('spanduk');
-    Route::get('testimoni', 'TestimoniController@index')->name('testimoni');
-    Route::get('blog', 'BlogController@index')->name('blog');
-    Route::get('halaman', 'HalamanController@index')->name('halaman');
 
+    Route::get('blog', 'BlogController@index')->name('blog.index');
+    Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
+    Route::get('blog/edit', 'BlogController@edit')->name('blog.edit');
+
+    
+    Route::get('produk', 'ProdukController@index')->name('produk.index');
+    Route::get('produk/tambah', 'ProdukController@create')->name('produk.create');
+    Route::get('produk/edit', 'ProdukController@edit')->name('produk.edit');
+
+    
+    Route::get('spanduk', 'SpandukController@index')->name('spanduk.index');
+    Route::get('spanduk/tambah', 'SpandukController@create')->name('spanduk.create');
+    Route::get('spanduk/edit', 'SpandukController@edit')->name('spanduk.edit');
+
+    
+    Route::get('testimoni', 'TestimoniController@index')->name('testimoni.index');
+    Route::get('testimoni/tambah', 'TestimoniController@create')->name('testimoni.create');
+    Route::get('testimoni/edit', 'TestimoniController@edit')->name('testimoni.edit');
+
+
+    Route::get('halaman', 'HalamanController@index')->name('halaman.index');
+    Route::get('halaman/tambah', 'HalamanController@create')->name('halaman.create');
+    Route::get('halaman/edit', 'HalamanController@edit')->name('halaman.edit');
+
+    
     Route::prefix('pengaturan')->name('pengaturan.')->namespace('Pengaturan')->group(function () {
         Route::get('/', 'MenuController@index')->name('menu');
-        Route::get('footer/edit', 'MenuController@index')->name('footer.edit');
+        Route::get('menu/tambah', 'MenuController@create')->name('menu.create');
+        Route::get('menu/edit', 'MenuController@edit')->name('menu.edit');
+
         Route::get('footer', 'FooterController@index')->name('footer');
+        
         Route::get('user', 'UserController@index')->name('user');
+        Route::get('user/tambah', 'UserController@create')->name('user.create');
+        Route::get('user/edit', 'UserController@edit')->name('user.edit');
     });
 
 });

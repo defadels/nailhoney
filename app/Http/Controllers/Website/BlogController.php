@@ -10,6 +10,11 @@ class BlogController extends Controller
     public function index() {
         $title = "Blog";
         $description = "Ini adalah halaman Blog Madu Al-Hafizh";
-        return view('website.blog',compact('title','description'));
+        return view('website.blog.index',compact('title','description'));
+    }
+    public function detail() {
+        $title = "Blog Detail";
+        $description = "Ini adalah halaman Blog Madu Al-Hafizh";
+        return view('website.blog.detail',compact('title','description'));
     }
 }

@@ -15,7 +15,7 @@
     <meta property="og:title"       content="@yield('title','Website Resmi Madu Al-Hafizh')" />
     <meta property="og:description" content="@yield('description','Supplier Madu Hutan Sumatera Terbesar')" />
     <meta property="og:image"       content="@yield('logo','/img/logo.png')" />
-    <link rel="icon" href="../img/logo.png" type="image/gif" sizes="16x16">    
+    <link rel="icon" href="{{ asset('/img/logo.png') }}" type="image/gif" sizes="16x16">    
 
     <!-- Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
