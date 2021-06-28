@@ -1,18 +1,18 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Produk')
+@section('title', 'Tambah Testimoni')
 
 
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
-						<div class="breadcrumb-title pr-3">Produk</div>
+						<div class="breadcrumb-title pr-3">User</div>
 						<div class="pl-3">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">Produk</li>
+									<li class="breadcrumb-item active" aria-current="page">User</li>
 								</ol>
 							</nav>
 						</div>
@@ -33,36 +33,41 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tabel Produk</h4>
+								<h4 class="mb-0">Tambah Testimoni</h4>
 							</div>
 							<hr/>
-							<div class="table-responsive">
-								<table class="table mb-0">
-									<thead>
-										<tr>
-											<th scope="col">Foto Produk</th>
-											<th scope="col">Nama Produk</th>
-											<th scope="col">Deskripsi</th>	
-											<th scope="col" colspan="2">Aksi</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>
-											<img src="{{ asset('img/1kg kotak.jpg') }}" style="width: 100px;" alt="">
-											</td>
-											<td>Madu Al-HAfizh 1kg</td>
-											<td>Ini adalah deskripsi dari madu alhfiazh 1kg</td>
-											<td>
-											<a href="{{ route('admin.produk.edit') }}" class="btn btn-primary">Edit</a>
-											<a href="" class="btn btn-danger">Hapus</a>
-											</td>
-											
-										</tr>
-					
-									</tbody>
-								</table>
+
+							<form action="" method="post">
+
+                            <div class="form-group">
+                            <label for=""><h5>Foto Tokoh</h5></label>
+                            <input type="file" name="" id="" class="form-control">
+                            </div>
+
+							<div class="form-group">
+							<label for=""><h5>Nama Tokoh</h5></label>
+								<input class="form-control" type="text" />
 							</div>
+
+							<div class="form-group">
+							<label for=""><h5>Isi Testimoni</h5></label>
+								<textarea class="form-control" name="" id="" rows="3"></textarea>
+							</div>
+							<hr>
+							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
+
 						</div>
+						</form>
 					</div>
     @endsection
+
+	@section('page_script')
+	<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+	<script src="{{asset('/assets-admin/plugins/input-tags/js/tagsinput.js') }}"></script>
+
+	<script>
+		tinymce.init({
+		  selector: '#mytextarea'
+		});
+	</script>
+	@endsection
