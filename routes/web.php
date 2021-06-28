@@ -11,9 +11,9 @@
 |
 */
 
-// Route::get('/laravel', function () {
-//     return view('welcome');
-// });
+Route::get('/laravel', function () {
+    return view('welcome');
+});
 
 // Route::get('/', function () {
 //     return view('website.home');
@@ -82,7 +82,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
         Route::get('footer', 'FooterController@index')->name('footer');
         
-        Route::get('user', 'UserController@index')->name('user');
+        Route::get('user', 'UserController@index')->name('user.index');
         Route::get('user/tambah', 'UserController@create')->name('user.create');
         Route::get('user/edit', 'UserController@edit')->name('user.edit');
     });

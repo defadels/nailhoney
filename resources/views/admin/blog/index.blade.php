@@ -17,16 +17,8 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<div class="btn-group">
-								<button type="button" class="btn btn-light">Settings</button>
-								<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
-									<a class="dropdown-item" href="javascript:;">Another action</a>
-									<a class="dropdown-item" href="javascript:;">Something else here</a>
-									<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-								</div>
-							</div>
+						<a class="btn btn-light" href="{{ route('admin.blog.create') }}">Tambah</a>
+						<a class="btn btn-light" href="">Kategori</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -40,31 +32,40 @@
 								<table class="table mb-0">
 									<thead>
 										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
+											<th scope="col">Tanggal</th>
+											<th scope="col">Judul</th>
+											<th scope="col">Kategori</th>
+											<th scope="col">Penulis</th>
+											<th scope="col">Publish</th>
+											<th scope="col">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
+											<th scope="row">dae=te</th>
+											<td>Ini adlah judul</td>
+											<td>kategori</td>
+											<td>Penuls</td>
+											<td>
+											<button type="button" class="btn btn-light m-1">
+												<i class="bx bx-cloud-upload mr-2">
+												</i>
+												Publish
+											</button>
+											</td>
+
+											<td>
+											<a class="btn btn-success" href="{{ route('admin.blog.edit') }}">
+												Edit
+											</a>
+											
+											<button class="btn btn-danger">
+												Hapus
+											</button>
+											
+											</td>
 										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
+									
 									</tbody>
 								</table>
 							</div>

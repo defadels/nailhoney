@@ -65,7 +65,7 @@
 						</li>
 						<li class="{{ rute('admin.pengaturan.footer') }}"> <a href="{{ route('admin.pengaturan.footer') }}"><i class="bx bx-border-bottom"></i>Footer</a>
 						</li>
-						<li class="{{ rute('admin.pengaturan.user') }}"> <a href="{{ route('admin.pengaturan.user') }}"><i class="bx bx-user-circle"></i>User</a>
+						<li class="{{ rute('admin.pengaturan.user') }}"> <a href="{{ route('admin.pengaturan.user.index') }}"><i class="bx bx-user-circle"></i>User</a>
 						</li>
 					</ul>
 				</li>

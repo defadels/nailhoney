@@ -33,41 +33,61 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tabel Blog</h4>
+								<h4 class="mb-0">Edit Blog</h4>
 							</div>
 							<hr/>
-							<div class="table-responsive">
-								<table class="table mb-0">
-									<thead>
-										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
-										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
-									</tbody>
-								</table>
+
+							<form action="" method="post">
+
+							<div class="form-group">
+							<label for=""><h5>Judul</h5></label>
+								<input class="form-control form-control-lg" type="text" />
 							</div>
+
+							
+							<div class="form-group">
+							<label for=""><h5>Abstrak</h5></label>
+								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							</div>
+
+							<div class="form-group">
+							<label for=""><h5>Isi Blog</h5></label>
+							<textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
+							</div>
+
+
+							
+							<div class="form-group">
+							<label for=""><h5>Penulis</h5></label>
+								<input type="text" class="form-control">
+							</div>
+
+							<div class="form-group">
+									<label for="formControlRange"><h5>Kategori</h5></label>
+									<br>
+									<input type="text" data-role="tagsinput" value="">
+							</div>
+
+							<div class="form-group">
+								<label for=""><h5>Thumbnail</h5></label>
+								<input type="file" class="form-control">
+							</div>	
+
+							<hr>
+							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
+
 						</div>
+						</form>
 					</div>
     @endsection
+
+	@section('page_script')
+	<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+	<script src="{{asset('/assets-admin/plugins/input-tags/js/tagsinput.js') }}"></script>
+
+	<script>
+		tinymce.init({
+		  selector: '#mytextarea'
+		});
+	</script>
+	@endsection

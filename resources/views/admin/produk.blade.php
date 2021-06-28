@@ -40,31 +40,26 @@
 								<table class="table mb-0">
 									<thead>
 										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
+											<th scope="col">Foto Produk</th>
+											<th scope="col">Nama Produk</th>
+											<th scope="col">Deskripsi</th>	
+											<th scope="col" colspan="2">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
+											<td>
+											<img src="{{ asset('img/1kg kotak.jpg') }}" style="width: 100px;" alt="">
+											</td>
+											<td>Madu Al-HAfizh 1kg</td>
+											<td>Ini adalah deskripsi dari madu alhfiazh 1kg</td>
+											<td>
+											<a href="{{ route('admin.produk.edit') }}" class="btn btn-primary">Edit</a>
+											<a href="" class="btn btn-danger">Hapus</a>
+											</td>
+											
 										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
+					
 									</tbody>
 								</table>
 							</div>

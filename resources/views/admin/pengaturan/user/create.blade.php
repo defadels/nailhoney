@@ -33,7 +33,7 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tambah Blog</h4>
+								<h4 class="mb-0">Tambah User</h4>
 							</div>
 							<hr/>
 

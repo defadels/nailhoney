@@ -15,6 +15,7 @@
 	<link href="{{asset('/assets-admin/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
 	<link href="{{asset('/assets-admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
 	<link href="{{asset('/assets-admin/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+	<link href="{{asset('/assets-admin/plugins/input-tags/css/tagsinput.css') }}" rel="stylesheet" />
 	<!-- loader-->
 	<link href="{{asset('/assets-admin/css/pace.min.css') }}" rel="stylesheet" />
 	<script src="{{asset('/assets-admin/js/pace.min.js') }}"></script>
@@ -91,9 +92,11 @@
 	<!--plugins-->
 	<script src="{{asset('/assets-admin/plugins/simplebar/js/simplebar.min.js') }}"></script>
 	<script src="{{asset('/assets-admin/plugins/metismenu/js/metisMenu.min.js') }}"></script>
+
 	<script src="{{asset('/assets-admin/plugins/perfect-scrollbar/js/perfect-scrollbar.js') }}"></script>
 	<!-- App JS -->
 	<script src="{{asset('/assets-admin/js/app.js')}}"></script>
+	
     @yield('page_script')
 </body>
 
