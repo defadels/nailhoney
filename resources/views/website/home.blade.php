@@ -140,39 +140,25 @@
   <!-- carousel testimoni -->
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner" style="padding: 65px;">
-      <div class="carousel-item active ">
-        <div class="row">
-        <div class="col-md-6 col-sm-4" >
-          <img src="img/300gr.jpg" style="width: 150px;" class="rounded-circle mx-auto d-block" alt="">
-        </div>
-        <div class="col-md-6 col-sm-8">
-          <h1>Testimoni dari ... </h1>
-          <p>Madu ini sangat enak dan menyehatkan.</p>
-        </div>
-        </div>
-      </div>
+     
+     
+     @foreach($daftar_testimoni as $testimoni)
+        @if($loop->first)
+        <div class="carousel-item active">
+        @else 
       <div class="carousel-item">
+        @endif
         <div class="row">
-          <div class="col-md-6 col-sm-4" >
-            <img src="img/300gr.jpg" style="width: 150px;" class="rounded-circle mx-auto d-block" alt="">
-          </div>
-          <div class="col-md-6 col-sm-8">
-            <h1>Testimoni dari ... </h1>
-            <p>Madu ini sangat enak dan menyehatkan.</p>
-          </div>
-          </div>
+            <div class="col-md-6 col-sm-4" >
+              <img src="img/300gr.jpg" style="width: 150px;" class="rounded-circle mx-auto d-block" alt="">
+            </div>
+            <div class="col-md-6 col-sm-8">
+              <h1>{{ $testimoni->nama_konsumen }}</h1>
+              <p>{{ $testimoni->isi_testimoni }}</p>
+            </div>
+        </div>
       </div>
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col-md-6 col-sm-4" >
-            <img src="img/300gr.jpg" style="width: 150px;" class="rounded-circle mx-auto d-block" alt="">
-          </div>
-          <div class="col-md-6 col-sm-8">
-            <h1>Testimoni dari ... </h1>
-            <p>Madu ini sangat enak dan menyehatkan.</p>
-          </div>
-          </div>
-      </div>
+      @endforeach
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" style="background-color: black;" aria-hidden="true"></span>

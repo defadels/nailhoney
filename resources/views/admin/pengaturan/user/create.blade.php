@@ -1,18 +1,18 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Blog')
+@section('title', 'Edit User')
 
 
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
-						<div class="breadcrumb-title pr-3">Blog</div>
+						<div class="breadcrumb-title pr-3">User</div>
 						<div class="pl-3">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">Blog</li>
+									<li class="breadcrumb-item active" aria-current="page">User</li>
 								</ol>
 							</nav>
 						</div>
@@ -36,46 +36,36 @@
 								<h4 class="mb-0">Tambah User</h4>
 							</div>
 							<hr/>
-
-							<form action="" method="post">
-
+							
+							<form action="{{ route('admin.pengaturan.user.store') }}" method="post">
+							@csrf
 							<div class="form-group">
-							<label for=""><h5>Judul</h5></label>
-								<input class="form-control form-control-lg" type="text" />
+							<label for="nama"><h5>Nama</h5></label>
+								<input name="nama" class="form-control" type="text" />
 							</div>
 
 							
 							<div class="form-group">
-							<label for=""><h5>Abstrak</h5></label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							<label for="email"><h5>Email</h5></label>
+								<input name="email" type="email" class="form-control">
 							</div>
-
-							<div class="form-group">
-							<label for=""><h5>Isi Blog</h5></label>
-							<textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
-							</div>
-
-
 							
-							<div class="form-group">
-							<label for=""><h5>Penulis</h5></label>
-								<input type="text" class="form-control">
+                            <div class="form-group">
+							<label for="password"><h5>Password</h5></label>
+								<input name="password" type="password" class="form-control">
 							</div>
 
-							<div class="form-group">
-									<label for="formControlRange"><h5>Kategori</h5></label>
-									<br>
-									<input type="text" data-role="tagsinput" value="">
-							</div>
-
-							<div class="form-group">
-								<label for=""><h5>Thumbnail</h5></label>
-								<input type="file" class="form-control">
-							</div>	
+                            <div class="form-group">
+                            <label for="hak_akses"><h5>Hak Akses</h5></label>
+                                <select name="hak_akses" class="form-control">
+                                    <option value="admin">Admin</option>
+                                    <option value="editor">Editor</option>
+                                    <option value="user">User</option>
+                                </select>
+                            </div>
 
 							<hr>
-							<input type="submit" class="btn btn-md btn-primary" value="Tambah"> ||
-							<input type="reset" class="btn btn-md btn-danger" value="Reset">
+							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 
 						</div>
 						</form>

@@ -39,15 +39,17 @@
 										</tr>
 									</thead>
 									<tbody>
+									@foreach($daftar_testimoni as $testimoni)
 										<tr>
 											<td></td>
-											<td>Otto</td>
-											<td>Madu ini sangat bermnafaat bagi kehidupan saya</td>
+											<td>{{ $testimoni->nama_konsumen }}</td>
+											<td>{{ $testimoni->isi_testimoni }}</td>
 											<td>
 											<a href="{{ route('admin.testimoni.edit') }}" class="btn btn-primary">Edit</a>
 											<a href="#" class="btn btn-danger">Hapus</a>
 											</td>
 										</tr>
+									@endforeach	
 									</tbody>
 								</table>
 							</div>

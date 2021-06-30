@@ -84,6 +84,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         
         Route::get('user', 'UserController@index')->name('user.index');
         Route::get('user/tambah', 'UserController@create')->name('user.create');
+        Route::post('user/tambah', 'UserController@store')->name('user.store');
         Route::get('user/edit', 'UserController@edit')->name('user.edit');
     });
 

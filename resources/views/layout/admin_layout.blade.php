@@ -61,6 +61,7 @@
 			<!--page-content-wrapper-->
 			<div class="page-content-wrapper">
 				<div class="page-content">
+				@include('layout.admin.error')
 				@yield('content')
 
 				</div>
