@@ -14,7 +14,7 @@ class UserController extends Controller
         $title = "Kelola User";
         $description = "Ini halaman untuk kelola user";
 
-        $daftar_user = User::whereIn('hak_akses', ['admin','editor'])
+        $daftar_user = User::whereIn('hak_akses', ['admin','editor','user'])
                             ->paginate(10);
         return view('admin.pengaturan.user.index',compact(
             'title',
@@ -28,10 +28,18 @@ class UserController extends Controller
         return view('admin.pengaturan.user.create',compact('title','description'));
     }
     
-    public function edit() {
+    public function edit($id) {
         $title = "Kelola User";
         $description = "Ini halaman untuk kelola user";
-        return view('admin.pengaturan.user.edit',compact('title','description'));
+
+        $user = User::findOrFail($id);
+        $daftar_hak_akses = [
+            'editor' => 'Editor',
+            'admin' => 'Admin'
+        ];
+
+        return view('admin.pengaturan.user.edit',compact('title',
+        'description','user','daftar_hak_akses'));
     }
 
     public function store(Request $req) {
@@ -59,5 +67,35 @@ class UserController extends Controller
         );
         return redirect()->route('admin.pengaturan.user.index')
             ->with('sukses',$user->nama.' berhasil di tambah');
+    }
+
+    public function update(Request $req, $id) {
+        $input = $req->all();
+        
+        $rules = [
+            'nama' => 'required|max:100',
+            'email' => 'required|email|unique:users,email,'.$id,
+            'password' => 'nullable|min:8',
+            'hak_akses' => 'required'
+        ];
+
+        $messages = [
+            'required' => ' :attribute wajib diisi.',
+        ];
+        
+        $validator = Validator::make($input, $rules, $messages)->validate();
+        $user = User::findOrFail($id);
+        $user->nama = $req->nama;
+        $user->email = $req->email;
+        if ($req->has('password') && $req->password != ''){
+            $user->password = Hash::make($req->password);
+        }
+        
+        $user->hak_akses = $req->hak_akses;
+
+        $user->save();
+
+        return redirect()->route('admin.pengaturan.user.index')
+            ->with('sukses',$user->nama.' berhasil di ubah');
     }
 }

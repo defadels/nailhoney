@@ -37,30 +37,41 @@
 							</div>
 							<hr/>
 
-							<form action="" method="post">
-
+							<form action="{{ route('admin.pengaturan.user.update',$user->id) }}" method="post">
+							@csrf
 							<div class="form-group">
-							<label for=""><h5>Nama</h5></label>
-								<input class="form-control" type="text" />
+							<label for="nama"><h5>Nama</h5></label>
+								<input name="nama" value="{{ $user->nama }}" class="form-control" type="text" />
 							</div>
 
 							
 							<div class="form-group">
-							<label for=""><h5>Email</h5></label>
-								<input type="email" class="form-control">
+							<label for="email"><h5>Email</h5></label>
+								<input name="email" value="{{ $user->email }}" type="email" class="form-control">
 							</div>
 							
                             <div class="form-group">
-							<label for=""><h5>Password</h5></label>
-								<input type="password" class="form-control">
+							<label for="password"><h5>Password</h5></label>
+								<input name="password" placeholder="Kosongkan jika tidak ingin diubah"  type="password" class="form-control">
 							</div>
 
                             <div class="form-group">
-                            <label for=""><h5>Hak Akses</h5></label>
-                                <select name="" class="form-control">
-                                    <option value="Admin">Admin</option>
-                                    <option value="Editor">Editor</option>
-                                </select>
+                            <label for="hak_akses"><h5>Hak Akses</h5></label>
+                                <select name="hak_akses"  name="email"  class="form-control">
+                                @foreach($daftar_hak_akses as $key=>$hak_akses)
+									@if($key == $user->hak_akses)
+			
+									<option selected value="{{ $key }}">
+									{{ $hak_akses }}</option>
+									
+									@else
+									
+									<option value="{{ $key }}">
+									{{ $hak_akses }}</option>
+									
+									@endif
+								@endforeach
+								</select>
                             </div>
 
 							<hr>

@@ -67,7 +67,9 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     
     Route::get('testimoni', 'TestimoniController@index')->name('testimoni.index');
     Route::get('testimoni/tambah', 'TestimoniController@create')->name('testimoni.create');
-    Route::get('testimoni/edit', 'TestimoniController@edit')->name('testimoni.edit');
+    Route::post('testimoni/tambah', 'TestimoniController@store')->name('testimoni.store');
+    Route::get('testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');
+    Route::post('testimoni/{id}/edit', 'TestimoniController@update')->name('testimoni.update');
 
 
     Route::get('halaman', 'HalamanController@index')->name('halaman.index');
@@ -85,7 +87,8 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::get('user', 'UserController@index')->name('user.index');
         Route::get('user/tambah', 'UserController@create')->name('user.create');
         Route::post('user/tambah', 'UserController@store')->name('user.store');
-        Route::get('user/edit', 'UserController@edit')->name('user.edit');
+        Route::get('user/{id}/edit', 'UserController@edit')->name('user.edit');
+        Route::post('user/{id}/edit', 'UserController@update')->name('user.update');
     });
 
 });

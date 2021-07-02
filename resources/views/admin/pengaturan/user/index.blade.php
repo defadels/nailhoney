@@ -49,7 +49,7 @@
 											</button>
 											</td>
 											<td>
-											<a href="{{ route('admin.pengaturan.user.edit') }}" class="btn btn-success">Edit</a>
+											<a href="{{ route('admin.pengaturan.user.edit',$user->id) }}" class="btn btn-success">Edit</a>
 											<a href="" class="btn btn-danger">Hapus</a>
 											</td>
 										</tr>

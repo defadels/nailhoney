@@ -315,7 +315,7 @@
 										class="bx bx-power-off"></i><span>Logout</span></a>
 							</div>
 						</li>
-						<li class="nav-item dropdown dropdown-language">
+						<!-- <li class="nav-item dropdown dropdown-language">
 							<a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="javascript:;" data-toggle="dropdown">
 								<div class="lang d-flex">
 									<div><i class="flag-icon flag-icon-um"></i>
@@ -337,7 +337,7 @@
 								<a class="dropdown-item" href="javascript:;"><i
 										class="flag-icon flag-icon-ae"></i><span>Arabic</span></a>
 							</div>
-						</li>
+						</li> -->
 					</ul>
 				</div>
 			</nav>

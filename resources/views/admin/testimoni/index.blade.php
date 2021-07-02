@@ -18,7 +18,6 @@
 						</div>
 						<div class="ml-auto">
 						<a class="btn btn-light" href="{{ route('admin.testimoni.create') }}">Tambah</a>
-						<a class="btn btn-light" href="">Kategori</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -45,7 +44,7 @@
 											<td>{{ $testimoni->nama_konsumen }}</td>
 											<td>{{ $testimoni->isi_testimoni }}</td>
 											<td>
-											<a href="{{ route('admin.testimoni.edit') }}" class="btn btn-primary">Edit</a>
+											<a href="{{ route('admin.testimoni.edit',$testimoni->id) }}" class="btn btn-primary">Edit</a>
 											<a href="#" class="btn btn-danger">Hapus</a>
 											</td>
 										</tr>

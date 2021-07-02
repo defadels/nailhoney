@@ -39,20 +39,20 @@
 										</tr>
 									</thead>
 									<tbody>
-									 @foreach($daftar_testimoni as $testimoni)
+
 										<tr>
 											<td>
 											<img src="{{ asset('img/1kg kotak.jpg') }}" style="width: 100px;" alt="">
 											</td>
-											<td>{{ $testimoni->nama_konsumen }}</td>
-											<td>{{ $testimoni->isi_testimoni }}</td>
+											<td>Madu Al-Hafizh</td>
+											<td>Madu ukuran 1kg kemasan kotak</td>
 											<td>
 											<a href="{{ route('admin.produk.edit') }}" class="btn btn-primary">Edit</a>
 											<a href="" class="btn btn-danger">Hapus</a>
 											</td>
 											
 										</tr>
-									@endforeach
+
 									</tbody>
 								</table>
 							</div>

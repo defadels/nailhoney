@@ -37,21 +37,21 @@
 							</div>
 							<hr/>
 
-							<form action="" method="post">
-
+							<form action="{{ route('admin.testimoni.update',$testimoni->id) }}" method="post">
+							@csrf
                             <div class="form-group">
-                            <label for=""><h5>Foto Tokoh</h5></label>
+                            <label for="foto"><h5>Foto Konsumen</h5></label>
                             <input type="file" name="" id="" class="form-control">
                             </div>
 
 							<div class="form-group">
-							<label for=""><h5>Nama Tokoh</h5></label>
-								<input class="form-control" type="text" />
+							<label for="nama_konsumen"><h5>Nama Konsumen</h5></label>
+								<input class="form-control" name="nama_konsumen" value="{{ $testimoni->nama_konsumen }}" type="text" />
 							</div>
 
 							<div class="form-group">
-							<label for=""><h5>Isi Testimoni</h5></label>
-								<textarea class="form-control" name="" id="" rows="3"></textarea>
+							<label for="isi_testimoni"><h5>Isi Testimoni</h5></label>
+								<textarea class="form-control" name="isi_testimoni" rows="3">{{ $testimoni->isi_testimoni }}</textarea>
 							</div>
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
