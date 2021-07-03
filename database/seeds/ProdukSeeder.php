@@ -11,12 +11,27 @@ class ProdukSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('blog')->insert([ 
+        DB::table('produk')->insert([
+            [ 
+            
+                'foto' => '',
+                'nama' => '',
+                'deskripsi' => '',
+                'asal_stok' => '',
+            ],
+
             [
-                'nama' => 'Zaid',
-                'email' => 'editor96@gmail.com',
-                'hak_akses' => 'editor',
-                'password' => Hash::make('editor123'),
+                'foto' => '',
+                'nama' => '',
+                'deskripsi' => '',
+                'asal_stok' => '',
+            ],
+
+            [
+                'foto' => '',
+                'nama' => '',
+                'deskripsi' => '',
+                'asal_stok' => '',
             ]
         ]);
     }

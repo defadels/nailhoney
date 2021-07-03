@@ -13,7 +13,7 @@ class BuatTabelBlog extends Migration
      */
     public function up()
     {
-        Schema::create('kategori', function (Blueprint $table) {
+        Schema::create('kategori_blog', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama')->nullable();
             $table->string('keterangan')->nullable();
@@ -25,11 +25,17 @@ class BuatTabelBlog extends Migration
             $table->bigIncrements('id');
             $table->string('judul')->nullable();
             $table->string('abstrak')->nullable();
-            $table->string('isi_blog')->nullable();
+            $table->text('konten')->nullable();
             $table->string('penulis')->nullable();
             $table->unsignedInteger('kategori_id')->nullable();
             $table->string('foto')->nullable();
+            $table->string('thumbnail')->nullable();
+            $table->string('keyword')->nullable();
+            $table->string('slug')->nullable();
+            $table->enum('status',['aktif','nonaktif'])
+            ->default('nonaktif');
             $table->timestamps();
+            $table->index(['status', 'created_at']);
         });
     }
 

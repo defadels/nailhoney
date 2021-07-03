@@ -38,7 +38,7 @@ Route::name('website.')->namespace('Website')->group(function () {
     Route::get('/','HomeController@index')->name('home');
     
     Route::get('blog','BlogController@index')->name('blog');
-    Route::get('blog/detail','BlogController@detail')->name('blog.detail');
+    Route::get('blog/{id}/{slug}','BlogController@detail')->name('blog.detail');
     
     Route::get('produk','ProdukController@index')->name('produk');
     Route::get('produk/detail','ProdukController@detail')->name('produk.detail');

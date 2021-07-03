@@ -11,14 +11,13 @@ class BlogSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('blog')->insert([ 
-            [
-                'nama' => 'Zaid',
-                'email' => 'editor96@gmail.com',
-                'hak_akses' => 'editor',
-                'password' => Hash::make('editor123'),
-            ]
-        ]);
-    
+        // Membuat 10 kategori blog
+        factory(App\KategoriBlog::class, 10)->create()->each(function ($kategori) {
+
+            // Setiap kategori punya 10 blog
+            $daftar_blog = factory(App\Blog::class, 10)->make();
+            $kategori->daftar_blog()->saveMany($daftar_blog);
+        });
+        // $daftar_blog = factory(App\Blog::class, 10)->create();
     }
 }
