@@ -12,14 +12,15 @@ class BlogController extends Controller
 {
     public function index() {
         $title = "Blog";
-        $daftar_blog = Blog::where('status','aktif')->simplePaginate(6);
+        $daftar_blog = Blog::where('status','aktif')
+        ->orderBy('id','desc')->simplePaginate(6);
 
         $description = "Ini adalah halaman Blog Madu Al-Hafizh";
         return view('website.blog.index',compact('title',
         'description',
         'daftar_blog'));
     }
-    public function detail($id, $slug) {
+    public function detail($id) {
         $blog = Blog::where('status','aktif')->where('id',$id)
         ->firstOrFail();
         $title = $blog->judul;

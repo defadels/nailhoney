@@ -38,7 +38,7 @@ Route::name('website.')->namespace('Website')->group(function () {
     Route::get('/','HomeController@index')->name('home');
     
     Route::get('blog','BlogController@index')->name('blog');
-    Route::get('blog/{id}/{slug}','BlogController@detail')->name('blog.detail');
+    Route::get('blog/{id}','BlogController@detail')->name('blog.detail');
     
     Route::get('produk','ProdukController@index')->name('produk');
     Route::get('produk/detail','ProdukController@detail')->name('produk.detail');
@@ -52,7 +52,15 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
     Route::get('blog', 'BlogController@index')->name('blog.index');
     Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
-    Route::get('blog/edit', 'BlogController@edit')->name('blog.edit');
+    Route::post('blog/tambah', 'BlogController@add')->name('blog.add');
+    Route::get('blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
+    Route::post('blog/{id}/edit', 'BlogController@update')->name('blog.update');
+    
+    Route::prefix('blog/kategori')->name('blog.')->group(function () {
+        Route::get('/', 'KategoriBlogController@index')->name('kategori.index');
+        Route::get('tambah', 'KategoriBlogController@create')->name('kategori.create');
+        Route::get('{id}/edit', 'KategoriBlogController@edit')->name('kategori.edit');
+     });
 
     
     Route::get('produk', 'ProdukController@index')->name('produk.index');

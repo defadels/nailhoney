@@ -37,41 +37,52 @@
 							</div>
 							<hr/>
 
-							<form action="" method="post">
-
+							<form action="{{ route('admin.blog.add') }}" method="post">
+							@csrf
 							<div class="form-group">
-							<label for=""><h5>Judul</h5></label>
-								<input class="form-control form-control-lg" type="text" />
+							<label for="judul"><h5>Judul</h5></label>
+								<input class="form-control form-control-lg" name="judul" type="text" />
 							</div>
 
 							
 							<div class="form-group">
-							<label for=""><h5>Abstrak</h5></label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							<label for="abstrak"><h5>Abstrak</h5></label>
+								<textarea class="form-control" name="abstrak" id="exampleFormControlTextarea1" rows="3"></textarea>
 							</div>
 
 							<div class="form-group">
-							<label for=""><h5>Isi Blog</h5></label>
-							<textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
+							<label for="konten"><h5>Isi Blog</h5></label>
+							<textarea id="mytextarea" name="konten"></textarea>
 							</div>
 
 
 							
 							<div class="form-group">
-							<label for=""><h5>Penulis</h5></label>
-								<input type="text" class="form-control">
+							<label for="penulis"><h5>Penulis</h5></label>
+								<input type="text" name="penulis" class="form-control">
 							</div>
 
 							<div class="form-group">
-									<label for="formControlRange"><h5>Kategori</h5></label>
-									<br>
-									<input type="text" data-role="tagsinput" value="">
-							</div>
+                            <label for="kategori_id"><h5>Kategori</h5></label>
+                                <select name="kategori_id" class="form-control">
+									<option selected value="1">Kategori 1</option>
+									<option value="2">Kategori 2</option>
+		\
+								</select>
+                            </div>
 
 							<div class="form-group">
 								<label for=""><h5>Thumbnail</h5></label>
 								<input type="file" class="form-control">
-							</div>	
+							</div>
+
+							<div class="form-group">
+                            <label for="status"><h5>Status Publish</h5></label>
+                                <select name="status" class="form-control">
+                                    <option value="nonaktif">Nonaktif</option>
+                                    <option value="aktif">Aktif</option>
+                                </select>
+                            </div>	
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Tambah"> ||

@@ -35,7 +35,7 @@
             </p>
             <hr>
             
-            {{ $blog->konten }}
+            {!!$blog->konten !!}
             
           </article>
         

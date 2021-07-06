@@ -37,41 +37,75 @@
 							</div>
 							<hr/>
 
-							<form action="" method="post">
-
+							<form action="{{ route('admin.blog.update',$blog->id) }}" method="post">
+							@csrf
 							<div class="form-group">
-							<label for=""><h5>Judul</h5></label>
-								<input class="form-control form-control-lg" type="text" />
+							<label for="judul"><h5>Judul</h5></label>
+								<input class="form-control form-control-lg" value="{{$blog->judul}}" name="judul" type="text" />
 							</div>
 
 							
 							<div class="form-group">
-							<label for=""><h5>Abstrak</h5></label>
-								<textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+							<label for="abstrak"><h5>Abstrak</h5></label>
+								<textarea class="form-control" name="abstrak" id="exampleFormControlTextarea1" rows="3">{{ $blog->abstrak }}</textarea>
 							</div>
 
 							<div class="form-group">
-							<label for=""><h5>Isi Blog</h5></label>
-							<textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
+							<label for="konten"><h5>Isi Blog</h5></label>
+							<textarea id="mytextarea" name="konten" rows="10">
+							{{$blog->konten}}
+							</textarea>
 							</div>
 
 
 							
 							<div class="form-group">
-							<label for=""><h5>Penulis</h5></label>
-								<input type="text" class="form-control">
+							<label for="penulis"><h5>Penulis</h5></label>
+								<input type="text" name="penulis" value="{{ $blog->penulis }}" class="form-control">
 							</div>
 
 							<div class="form-group">
-									<label for="formControlRange"><h5>Kategori</h5></label>
-									<br>
-									<input type="text" data-role="tagsinput" value="">
-							</div>
+                            <label for="kategori_id"><h5>Kategori</h5></label>
+                                <select name="kategori_id" class="form-control">
+                                @foreach($daftar_kategori as $key=>$nama)
+									@if($key == $blog->kategori->nama)
+			
+									<option selected value="{{ $key }}">
+									{{ $nama}}</option>
+									
+									@else
+									
+									<option value="{{ $key }}">
+									{{ $nama }}</option>
+									
+									@endif
+								@endforeach
+								</select>
+                            </div>
 
 							<div class="form-group">
-								<label for=""><h5>Thumbnail</h5></label>
+								<label for="thumbnail"><h5>Thumbnail</h5></label>
 								<input type="file" class="form-control">
 							</div>	
+
+							<div class="form-group">
+                            <label for="status"><h5>Status</h5></label>
+                                <select name="status" class="form-control">
+                                @foreach($daftar_status as $key=>$status)
+									@if($key == $blog->status)
+			
+									<option selected value="{{ $key }}">
+									{{ $status}}</option>
+									
+									@else
+									
+									<option value="{{ $key }}">
+									{{ $status }}</option>
+									
+									@endif
+								@endforeach
+								</select>
+                            </div>
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
