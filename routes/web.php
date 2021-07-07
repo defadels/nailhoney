@@ -59,7 +59,9 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::prefix('blog/kategori')->name('blog.')->group(function () {
         Route::get('/', 'KategoriBlogController@index')->name('kategori.index');
         Route::get('tambah', 'KategoriBlogController@create')->name('kategori.create');
+        Route::post('tambah', 'KategoriBlogController@add')->name('kategori.add');
         Route::get('{id}/edit', 'KategoriBlogController@edit')->name('kategori.edit');
+        Route::post('{id}/edit', 'KategoriBlogController@update')->name('kategori.update');
      });
 
     

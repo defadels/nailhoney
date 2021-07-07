@@ -17,7 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-						<a class="btn btn-light" href="#">Tambah</a>
+						<a class="btn btn-light" href="{{ route('admin.blog.kategori.create') }}">Tambah</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -44,7 +44,7 @@
 											<td>{{ $kategori->nama }}</td>
 											<td>{{ $kategori->keterangan}}</td>
 											<td>
-											<a class="btn btn-success" href="#">
+											<a class="btn btn-success" href="{{ route('admin.blog.kategori.edit', $kategori->id) }}">
 												Edit
 											</a>
 											

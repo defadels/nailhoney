@@ -45,7 +45,7 @@
 										<tr>
 											<th scope="row">{{ $blog->created_at->format('d F y') }}</th>
 											<td>{{ $blog->judul }}</td>
-											<td>{{ $blog->kategori->nama }}</td>
+											<td>{{ $blog->kategori }}</td>
 											<td>{{ $blog->penulis }}</td>
 											<td>
 											<button type="button" class="btn btn-light m-1">
