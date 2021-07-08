@@ -37,7 +37,7 @@
 							</div>
 							<hr/>
 
-							<form action="{{ route('admin.blog.add') }}" method="post">
+							<form action="{{ route('admin.blog.store') }}" method="post">
 							@csrf
 							<div class="form-group">
 							<label for="judul"><h5>Judul</h5></label>

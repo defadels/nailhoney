@@ -17,27 +17,7 @@
 						<div class="menu-title">Dashboard</div>
 					</a>
 				</li>
-				<li class="{{ rute('admin.blog') }}">
-					<a href="{{ route('admin.blog.index') }}">
-						<div class="parent-icon"><i class="bx bx-repeat"></i>
-						</div>
-						<div class="menu-title">Blog</div>
-					</a>
-				</li>
-				<li class="{{ rute('admin.spanduk') }}">
-					<a href="{{ route('admin.spanduk.index') }}">
-						<div class="parent-icon"><i class="bx bx-map-alt"></i>
-						</div>
-						<div class="menu-title">Spanduk</div>
-					</a>
-				</li>
-				<li class="{{ rute('admin.testimoni') }}">
-					<a href="{{ route('admin.testimoni.index') }}">
-						<div class="parent-icon"><i class="bx bx-conversation"></i>
-						</div>
-						<div class="menu-title">Testimoni</div>
-					</a>
-				</li>
+
 				<li class="{{ rute('admin.produk') }}">
 					<a href="{{ route('admin.produk.index') }}">
 						<div class="parent-icon"><i class="bx bx-grid-alt"></i>
@@ -45,6 +25,51 @@
 						<div class="menu-title">Produk</div>
 					</a>
 				</li>
+
+				<li>
+					<a href="javascript:void(0);" class="has-arrow">
+						<div class="parent-icon"><i class="bx bx-cart"></i>
+						</div>
+						<div class="menu-title">Penjualan</div>
+					</a>
+					<ul>
+						<li class="{{ rute('admin.penjualan.masuk') }}"> <a href=""><i class="bx bx-menu"></i>Masuk</a>
+						</li>
+						<li class="{{ rute('admin.penjualan.proses') }}"> <a href=""><i class="bx bx-border-bottom"></i>Diproses</a>
+						</li>
+						<li class="{{ rute('admin.penjualan.kirim') }}"> <a href=""><i class="bx bx-user-circle"></i>Dikirim</a>
+						</li>
+						<li class="{{ rute('admin.penjualan.selesai') }}"> <a href=""><i class="bx bx-user-circle"></i>Selesai</a>
+						</li>
+						<li class="{{ rute('admin.penjualan.batal') }}"> <a href=""><i class="bx bx-user-circle"></i>Batal</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="{{ rute('admin.blog') }}">
+					<a href="{{ route('admin.blog.index') }}">
+						<div class="parent-icon"><i class="bx bx-user"></i>
+						</div>
+						<div class="menu-title">Pelanggan</div>
+					</a>
+				</li>
+
+				<li class="{{ rute('admin.blog') }}">
+					<a href="{{ route('admin.blog.index') }}">
+						<div class="parent-icon"><i class="bx bx-money"></i>
+						</div>
+						<div class="menu-title">Pencairan Komisi</div>
+					</a>
+				</li>
+
+				<li class="{{ rute('admin.blog') }}">
+					<a href="{{ route('admin.blog.index') }}">
+						<div class="parent-icon"><i class="bx bx-repeat"></i>
+						</div>
+						<div class="menu-title">Blog</div>
+					</a>
+				</li>
+
 				<li class="{{ rute('admin.halaman') }}">
 					<a href="{{ route('admin.halaman.index') }}">
 						<div class="parent-icon"><i class="bx bx-file"></i>
@@ -53,11 +78,30 @@
 					</a>
 				</li>
 
+				<li class="{{ rute('admin.spanduk') }}">
+					<a href="{{ route('admin.spanduk.index') }}">
+						<div class="parent-icon"><i class="bx bx-map-alt"></i></div>
+						<div class="menu-title">Spanduk</div>
+					</a>
+				</li>
+
+				<li class="{{ rute('admin.testimoni') }}">
+					<a href="{{ route('admin.testimoni.index') }}">
+						<div class="parent-icon"><i class="bx bx-conversation"></i></div>
+						<div class="menu-title">Testimoni</div>
+					</a>
+				</li>
+
+				<li class="{{ rute('admin.laporan') }}">
+					<a href="{{ route('admin.laporan.index') }}">
+						<div class="parent-icon"><i class="bx bx-detail"></i></div>
+						<div class="menu-title">Laporan</div>
+					</a>
+				</li>
 
 				<li>
-					<a href="javascript:;" class="has-arrow">
-						<div class="parent-icon"><i class="bx bx-wrench"></i>
-						</div>
+					<a href="javascript:void(0);" class="has-arrow">
+						<div class="parent-icon"><i class="bx bx-wrench"></i></div>
 						<div class="menu-title">Pengaturan</div>
 					</a>
 					<ul>

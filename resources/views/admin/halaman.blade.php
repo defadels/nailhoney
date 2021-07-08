@@ -40,31 +40,27 @@
 								<table class="table mb-0">
 									<thead>
 										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
+											<th scope="col">Tanggal</th>
+											<th scope="col">Judul</th>
+											<th scope="col">Link</th>
+											<th scope="col">Status</th>
+											<th scope="col">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
+											<th>1 Jul 2021</th>
+											<td>Cara Bayar</td>
+											<td>alhafizh.id/carabayar</td>
+											<td>
+											<button class="btn btn-primary">Published</button>
+											</td>
+											<td>
+											<a href="" class="btn btn-success">Lihat</a>
+											<a href="" class="btn btn-warning">Edit</a>
+											</td>
 										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
+									
 									</tbody>
 								</table>
 							</div>

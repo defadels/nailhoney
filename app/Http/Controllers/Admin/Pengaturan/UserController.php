@@ -35,7 +35,8 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $daftar_hak_akses = [
             'editor' => 'Editor',
-            'admin' => 'Admin'
+            'admin' => 'Admin',
+            'user' => 'User'
         ];
 
         return view('admin.pengaturan.user.edit',compact('title',

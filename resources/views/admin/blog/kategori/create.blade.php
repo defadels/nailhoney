@@ -37,17 +37,22 @@
 							</div>
 							<hr/>
 
-							<form action="{{ route('admin.blog.kategori.add') }}" method="post">
-							@csrf
+							
+							{!! Form::open(['route' => 'admin.blog.kategori.add']) !!}
+
 							<div class="form-group">
-							<label for="nama"><h5>Nama Kategori</h5></label>
-								<input class="form-control form-control-lg" value="" name="nama" type="text" />
+							{!! Form::label('nama', 'Nama Kategori') !!}
+
+							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
+							
 							</div>
 
 							
 							<div class="form-group">
-							<label for="keterangan"><h5>Keterangan</h5></label>
-								<textarea class="form-control" name="keterangan" rows="3"></textarea>
+							{!! Form::label('keterangan', 'Keterangan') !!}
+
+							{!! Form::textarea('keterangan', old('keterangan'), ['class' => 'form-control', 'rows' => '3']) !!}
+
 							</div>
 
 
@@ -55,7 +60,7 @@
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 
 						</div>
-						</form>
+						{!! Form::close() !!}
 					</div>
     @endsection
 

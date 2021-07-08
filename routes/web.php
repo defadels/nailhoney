@@ -48,13 +48,27 @@ Route::name('website.')->namespace('Website')->group(function () {
 });
 
 Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+
+    //Routing halaman dashboard
+    
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
-    Route::get('blog', 'BlogController@index')->name('blog.index');
-    Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
-    Route::post('blog/tambah', 'BlogController@add')->name('blog.add');
-    Route::get('blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
-    Route::post('blog/{id}/edit', 'BlogController@update')->name('blog.update');
+    //Routing halaman produk
+
+    Route::get('produk', 'ProdukController@index')->name('produk.index');
+    Route::get('produk/tambah', 'ProdukController@create')->name('produk.create');
+    Route::get('produk/edit', 'ProdukController@edit')->name('produk.edit');
+
+    //Routing halaman pelanggan
+    Route::resource('pelanggan', 'PelangganController')->except(['show', 'destroy']);
+    
+    
+    //Routing halaman komisi
+    Route::resource('komisi', 'KomisiController')->except(['show', 'destroy']);
+
+
+    
+    //Routing halaman kategori blog
     
     Route::prefix('blog/kategori')->name('blog.')->group(function () {
         Route::get('/', 'KategoriBlogController@index')->name('kategori.index');
@@ -64,29 +78,52 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::post('{id}/edit', 'KategoriBlogController@update')->name('kategori.update');
      });
 
+
+    //Routing halaman blog
     
-    Route::get('produk', 'ProdukController@index')->name('produk.index');
-    Route::get('produk/tambah', 'ProdukController@create')->name('produk.create');
-    Route::get('produk/edit', 'ProdukController@edit')->name('produk.edit');
+    Route::resource('blog', 'BlogController')->except(['show', 'destroy']);
 
-    
-    Route::get('spanduk', 'SpandukController@index')->name('spanduk.index');
-    Route::get('spanduk/tambah', 'SpandukController@create')->name('spanduk.create');
-    Route::get('spanduk/edit', 'SpandukController@edit')->name('spanduk.edit');
-
-    
-    Route::get('testimoni', 'TestimoniController@index')->name('testimoni.index');
-    Route::get('testimoni/tambah', 'TestimoniController@create')->name('testimoni.create');
-    Route::post('testimoni/tambah', 'TestimoniController@store')->name('testimoni.store');
-    Route::get('testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');
-    Route::post('testimoni/{id}/edit', 'TestimoniController@update')->name('testimoni.update');
-
-
-    Route::get('halaman', 'HalamanController@index')->name('halaman.index');
-    Route::get('halaman/tambah', 'HalamanController@create')->name('halaman.create');
-    Route::get('halaman/edit', 'HalamanController@edit')->name('halaman.edit');
+        // Route::get('blog', 'BlogController@index')->name('blog.index');
+        // Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
+        // Route::post('blog/tambah', 'BlogController@add')->name('blog.add');
+        // Route::get('blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
+        // Route::post('blog/{id}/edit', 'BlogController@update')->name('blog.update');
 
     
+    //Routing halaman halaman
+
+    Route::resource('halaman', 'HalamanController')->except(['show', 'destroy']);
+
+        // Route::get('halaman', 'HalamanController@index')->name('halaman.index');
+        // Route::get('halaman/tambah', 'HalamanController@create')->name('halaman.create');
+        // Route::get('halaman/edit', 'HalamanController@edit')->name('halaman.edit');
+    
+    
+    //Routing halaman spanduk
+    
+    Route::resource('spanduk', 'SpandukController')->except(['show','destroy']);
+
+        // Route::get('spanduk', 'SpandukController@index')->name('spanduk.index');
+        // Route::get('spanduk/tambah', 'SpandukController@create')->name('spanduk.create');
+        // Route::get('spanduk/edit', 'SpandukController@edit')->name('spanduk.edit');
+
+
+    //Routing halaman testimoni
+
+    Route::resource('testimoni', 'TestimoniController')->except(['show', 'destroy']);
+
+        // Route::get('testimoni', 'TestimoniController@index')->name('testimoni.index');
+        // Route::get('testimoni/tambah', 'TestimoniController@create')->name('testimoni.create');
+        // Route::post('testimoni/tambah', 'TestimoniController@store')->name('testimoni.store');
+        // Route::get('testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');
+        // Route::post('testimoni/{id}/edit', 'TestimoniController@update')->name('testimoni.update');
+    
+    //Routing halaman laporan
+
+    Route::resource('laporan', 'LaporanController')->except(['show', 'destroy']);
+
+    // Routing halaman pengaturan user
+
     Route::prefix('pengaturan')->name('pengaturan.')->namespace('Pengaturan')->group(function () {
         Route::get('/', 'MenuController@index')->name('menu');
         Route::get('menu/tambah', 'MenuController@create')->name('menu.create');

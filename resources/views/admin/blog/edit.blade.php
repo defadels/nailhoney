@@ -36,82 +36,56 @@
 								<h4 class="mb-0">Edit Blog</h4>
 							</div>
 							<hr/>
+							
+							{!! Form::model($blog, ['route' => ['admin.blog.update', $blog->id]]) !!}
 
-							<form action="{{ route('admin.blog.update',$blog->id) }}" method="post">
-							@csrf
 							<div class="form-group">
-							<label for="judul"><h5>Judul</h5></label>
-								<input class="form-control form-control-lg" value="{{$blog->judul}}" name="judul" type="text" />
+							{!! Form::label('judul', 'Judul') !!}
+							{!! Form::text('judul', old('judul'),['class' => 'form-control form-control-lg']) !!}
 							</div>
 
 							
 							<div class="form-group">
-							<label for="abstrak"><h5>Abstrak</h5></label>
-								<textarea class="form-control" name="abstrak" id="exampleFormControlTextarea1" rows="3">{{ $blog->abstrak }}</textarea>
+							{!! Form::label('abstrak', 'Abstrak') !!}
+							{!! Form::textarea('abstrak', old('abstrak'), ['class' => 'form-control', 'rows' => '3']) !!}
+							
 							</div>
 
 							<div class="form-group">
-							<label for="konten"><h5>Isi Blog</h5></label>
-							<textarea id="mytextarea" name="konten" rows="10">
-							{{$blog->konten}}
-							</textarea>
+							{!! Form::label('konten', 'Isi Blog') !!}
+							{!! Form::textarea('konten', old('konten'), ['id' => 'mytextarea', 'rows' => '10']) !!}
 							</div>
 
 
 							
 							<div class="form-group">
-							<label for="penulis"><h5>Penulis</h5></label>
-								<input type="text" name="penulis" value="{{ $blog->penulis }}" class="form-control">
+							{!! Form::label('penulis', 'Penulis') !!}
+							{!! Form::text('penulis', old('penulis'),['class' => 'form-control form-control-lg']) !!}
+							
 							</div>
 
 							<div class="form-group">
-                            <label for="kategori_id"><h5>Kategori</h5></label>
-                                <select name="kategori_id" class="form-control">
-                                @foreach($daftar_kategori as $key=>$nama)
-									@if($key == $blog->kategori->nama)
-			
-									<option selected value="{{ $key }}">
-									{{ $nama}}</option>
-									
-									@else
-									
-									<option value="{{ $key }}">
-									{{ $nama }}</option>
-									
-									@endif
-								@endforeach
-								</select>
+							{!! Form::label('kategori_id"', 'Kategori') !!}
+
+							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
+      
                             </div>
 
 							<div class="form-group">
-								<label for="thumbnail"><h5>Thumbnail</h5></label>
-								<input type="file" class="form-control">
+							{!! Form::label('thumbnail"', 'Thumbnail') !!}
+							{!! Form::file('thumbnail', ['class' => 'form-control']) !!}
 							</div>	
 
 							<div class="form-group">
-                            <label for="status"><h5>Status</h5></label>
-                                <select name="status" class="form-control">
-                                @foreach($daftar_status as $key=>$status)
-									@if($key == $blog->status)
-			
-									<option selected value="{{ $key }}">
-									{{ $status}}</option>
-									
-									@else
-									
-									<option value="{{ $key }}">
-									{{ $status }}</option>
-									
-									@endif
-								@endforeach
-								</select>
+							{!! Form::label('status"', 'Status') !!}
+							{!! Form::select('status', $daftar_status, old('status'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
                             </div>
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 
 						</div>
-						</form>
+						{!! Form::close() !!}
 					</div>
     @endsection
 

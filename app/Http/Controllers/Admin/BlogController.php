@@ -28,7 +28,7 @@ class BlogController extends Controller
         return view('admin.blog.create',compact('title','description'));
     }
 
-    public function add(Request $req) {
+    public function store(Request $req) {
         $input = $req->all();
 
         $rules = [
@@ -75,6 +75,7 @@ class BlogController extends Controller
         ];
 
         $daftar_kategori = KategoriBlog::pluck('nama','id');
+        
 
         $description = "Ini halaman untuk kelola blog";
         return view('admin.blog.edit',compact('title',
