@@ -15,6 +15,7 @@ class PembayaranController extends Controller
 
     return view('admin.pengaturan.pembayaran.index',compact('title', 'description'));
 
+    
    }
    
    public function create() {
