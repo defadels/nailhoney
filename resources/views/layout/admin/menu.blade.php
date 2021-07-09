@@ -105,6 +105,10 @@
 						<div class="menu-title">Pengaturan</div>
 					</a>
 					<ul>
+						<li class="{{ rute('admin.pengaturan.menu') }}"> <a href="{{ route('admin.pengaturan.menu') }}"><i class="bx bx-menu"></i>Pembayaran</a>
+						</li>
+						<li class="{{ rute('admin.pengaturan.menu') }}"> <a href="{{ route('admin.pengaturan.menu') }}"><i class="bx bx-menu"></i>Pengiriman</a>
+						</li>
 						<li class="{{ rute('admin.pengaturan.menu') }}"> <a href="{{ route('admin.pengaturan.menu') }}"><i class="bx bx-menu"></i>Menu</a>
 						</li>
 						<li class="{{ rute('admin.pengaturan.footer') }}"> <a href="{{ route('admin.pengaturan.footer') }}"><i class="bx bx-border-bottom"></i>Footer</a>

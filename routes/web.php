@@ -66,8 +66,6 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     //Routing halaman komisi
     Route::resource('komisi', 'KomisiController')->except(['show', 'destroy']);
 
-
-    
     //Routing halaman kategori blog
     
     Route::prefix('blog/kategori')->name('blog.')->group(function () {
