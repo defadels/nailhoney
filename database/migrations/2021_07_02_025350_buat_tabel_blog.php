@@ -47,6 +47,6 @@ class BuatTabelBlog extends Migration
     public function down()
     {
         Schema::dropIfExists('blog');
-        Schema::dropIfExists('kategori');
+        Schema::dropIfExists('kategori_blog');
     }
 }

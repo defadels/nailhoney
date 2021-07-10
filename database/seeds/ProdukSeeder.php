@@ -11,28 +11,13 @@ class ProdukSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('produk')->insert([
-            [ 
-            
-                'foto' => '',
-                'nama' => '',
-                'deskripsi' => '',
-                'asal_stok' => '',
-            ],
+        // Membuat 10 kategori produk
+        factory(App\KategoriProduk::class, 10)->create()->each(function ($kategori) {
 
-            [
-                'foto' => '',
-                'nama' => '',
-                'deskripsi' => '',
-                'asal_stok' => '',
-            ],
-
-            [
-                'foto' => '',
-                'nama' => '',
-                'deskripsi' => '',
-                'asal_stok' => '',
-            ]
-        ]);
+            // Setiap kategori punya 10 blog
+            $daftar_produk = factory(App\Produk::class, 10)->make();
+            $kategori->daftar_produk()->saveMany($daftar_produk);
+        });
+        // $daftar_produk = factory(App\Produk::class, 10)->create();
     }
 }

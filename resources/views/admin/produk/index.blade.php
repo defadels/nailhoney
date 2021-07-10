@@ -18,7 +18,7 @@
 						</div>
 						<div class="ml-auto">
 						<a class="btn btn-light" href="{{ route('admin.produk.create') }}">Tambah</a>
-						<a class="btn btn-light" href="">Kategori</a>
+						<a class="btn btn-light" href="{{ route('admin.produk.kategori.index') }}">Kategori</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -39,22 +39,23 @@
 										</tr>
 									</thead>
 									<tbody>
-
+									@foreach($daftar_produk as $produk)
 										<tr>
 											<td>
-											<img src="{{ asset('img/1kg kotak.jpg') }}" style="width: 100px;" alt="">
+											<img src="{{ $produk->foto_produk }}" style="width: 100px;" alt="">
 											</td>
-											<td>Madu Al-Hafizh</td>
-											<td>Madu ukuran 1kg kemasan kotak</td>
+											<td>{{ $produk->nama_produk }}</td>
+											<td>{{ $produk->deskripsi_produk }}</td>
 											<td>
-											<a href="{{ route('admin.produk.edit') }}" class="btn btn-primary">Edit</a>
+											<a href="" class="btn btn-primary">Edit</a>
 											<a href="" class="btn btn-danger">Hapus</a>
 											</td>
 											
 										</tr>
-
+									@endforeach
 									</tbody>
 								</table>
+								{{ $daftar_produk->links() }}
 							</div>
 						</div>
 					</div>

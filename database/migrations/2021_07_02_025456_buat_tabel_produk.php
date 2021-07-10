@@ -12,13 +12,14 @@ class BuatTabelProduk extends Migration
      * @return void
      */
     public function up()
+    
     {
         Schema::create('produk', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('foto')->nullable();
-            $table->string('nama')->nullable();
-            $table->string('deskripsi')->nullable();
-            $table->string('asal_stok')->nullable();
+            $table->string('foto_produk')->nullable();
+            $table->string('nama_produk')->nullable();
+            $table->unsignedInteger('kategori_id')->nullable();
+            $table->string('deskripsi_produk')->nullable();
             $table->timestamps();
         });
     }

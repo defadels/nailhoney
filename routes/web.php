@@ -53,11 +53,17 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
-    //Routing halaman produk
+    //Routing halaman kategori produk
+    Route::prefix('produk/kategori')->name('produk.')->group(function () {
+        Route::get('/', 'KategoriProdukController@index')->name('kategori.index');
+        Route::get('tambah', 'KategoriProdukController@create')->name('kategori.create');
+        Route::post('tambah', 'KategoriProdukController@add')->name('kategori.add');
+        Route::get('{id}/edit', 'KategoriProdukController@edit')->name('kategori.edit');
+        Route::post('{id}/edit', 'KategoriProdukController@update')->name('kategori.update');
+     });
 
-    Route::get('produk', 'ProdukController@index')->name('produk.index');
-    Route::get('produk/tambah', 'ProdukController@create')->name('produk.create');
-    Route::get('produk/edit', 'ProdukController@edit')->name('produk.edit');
+    //Routing halaman produk
+    Route::resource('produk', 'ProdukController')->except(['show', 'destroy']);
 
     //Routing halaman pelanggan
     Route::resource('pelanggan', 'PelangganController')->except(['show', 'destroy']);
