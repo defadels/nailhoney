@@ -38,13 +38,19 @@
 										</tr>
 									</thead>
 									<tbody>
-
+									@foreach($kategori_produk as $kategori)
 										<tr>
-											<th scope="row"></th>
-											<td></td>
-											<td></td>
+											<th scope="row">
+												{{ $kategori->created_at }}
+											</th>
 											<td>
-											<a class="btn btn-success" href="{{ route('admin.produk.kategori.edit') }}">
+												{{ $kategori->nama }}
+											</td>
+											<td>
+												{{ $kategori->keterangan }}
+											</td>
+											<td>
+											<a class="btn btn-success" href="{{ route('admin.produk.kategori.edit',$kategori->id) }}">
 												Edit
 											</a>
 											
@@ -54,7 +60,7 @@
 											
 											</td>
 										</tr>
-
+									@endforeach
 									</tbody>
 								</table>
 

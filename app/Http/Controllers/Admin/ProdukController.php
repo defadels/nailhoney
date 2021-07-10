@@ -26,6 +26,10 @@ class ProdukController extends Controller
         return view('admin.produk.create',compact('title','description'));
     }
     
+    public function store(Request $req) {
+        
+    }
+
     public function edit($id) {
         $title = 'Kelola Produk';
         $description = 'Ini adalah halaman untuk mengelola produk';

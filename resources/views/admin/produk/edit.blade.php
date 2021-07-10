@@ -6,13 +6,13 @@
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
-						<div class="breadcrumb-title pr-3">User</div>
+						<div class="breadcrumb-title pr-3">Produk</div>
 						<div class="pl-3">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">User</li>
+									<li class="breadcrumb-item active" aria-current="page">Edit Produk</li>
 								</ol>
 							</nav>
 						</div>
@@ -36,32 +36,32 @@
 								<h4 class="mb-0">Edit Produk</h4>
 							</div>
 							<hr/>
-
-							<form action="" method="post">
-
-                            <div class="form-group">
-                            <label for=""><h5>Foto Produk</h5></label>
-                            <input type="file" name="" id="" class="form-control">
-                            </div>
+							{!! Form::model($produk, ['route' => ['admin.produk.store.update']]) !!}
 
 							<div class="form-group">
-							<label for=""><h5>Nama Produk</h5></label>
-								<input class="form-control" type="text" />
+							{!! Form::label('foto_produk', 'Foto Produk') !!}
+
+							{!! Form::file('image',['class' => 'form-control form-control-lg']) !!}
+
+							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
+							</div>
+
+							<div class="form-group">
+							{!! Form::label('nama_produk', 'Nama Produk') !!}
+
+							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
+							</div>
+
+							
+							<div class="form-group">
+							{!! Form::label('keterangan', 'Keterangan') !!}
+
+							{!! Form::textarea('keterangan', old('keterangan'), ['class' => 'form-control', 'rows' => '3']) !!}
 							</div>
 
 
-
-                            <div class="form-group">
-                            <label for=""><h5>Asal Stok</h5></label>
-                                <select name="" class="form-control">
-                                    <option value="">Sawahlunto</option>
-                                    <option value="">Cibinong</option>
-                                </select>
-                            </div>
-
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
-
 						</div>
 						</form>
 					</div>

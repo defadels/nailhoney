@@ -12,10 +12,10 @@
 	<!--favicon-->
 	<link rel="icon" href="{{asset('/assets-admin/images/favicon-32x32.png') }}" type="image/png" />
 	<!--plugins-->
-	<link href="{{asset('/assets-admin/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
-	<link href="{{asset('/assets-admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
-	<link href="{{asset('/assets-admin/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
-	<link href="{{asset('/assets-admin/plugins/input-tags/css/tagsinput.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/assets-admin/plugins/simplebar/css/simplebar.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/assets-admin/plugins/perfect-scrollbar/css/perfect-scrollbar.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/assets-admin/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
+	<link href="{{ asset('/assets-admin/plugins/input-tags/css/tagsinput.css') }}" rel="stylesheet" />
 	<!-- loader-->
 	<link href="{{asset('/assets-admin/css/pace.min.css') }}" rel="stylesheet" />
 	<script src="{{asset('/assets-admin/js/pace.min.js') }}"></script>
