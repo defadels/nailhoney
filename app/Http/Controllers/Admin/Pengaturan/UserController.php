@@ -88,6 +88,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->nama = $req->nama;
         $user->email = $req->email;
+        
         if ($req->has('password') && $req->password != ''){
             $user->password = Hash::make($req->password);
         }

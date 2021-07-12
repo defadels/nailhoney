@@ -98,6 +98,8 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
     Route::resource('halaman', 'HalamanController')->except(['show', 'destroy']);
 
+    
+
         // Route::get('halaman', 'HalamanController@index')->name('halaman.index');
         // Route::get('halaman/tambah', 'HalamanController@create')->name('halaman.create');
         // Route::get('halaman/edit', 'HalamanController@edit')->name('halaman.edit');

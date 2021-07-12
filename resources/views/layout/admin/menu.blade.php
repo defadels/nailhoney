@@ -46,16 +46,16 @@
 					</ul>
 				</li>
 
-				<li class="{{ rute('admin.blog') }}">
-					<a href="{{ route('admin.blog.index') }}">
+				<li class="{{ rute('admin.pelanggan') }}">
+					<a href="{{ route('admin.pelanggan.index') }}">
 						<div class="parent-icon"><i class="bx bx-user"></i>
 						</div>
 						<div class="menu-title">Pelanggan</div>
 					</a>
 				</li>
 
-				<li class="{{ rute('admin.blog') }}">
-					<a href="{{ route('admin.blog.index') }}">
+				<li class="{{ rute('admin.komisi') }}">
+					<a href="{{ route('admin.komisi.index') }}">
 						<div class="parent-icon"><i class="bx bx-money"></i>
 						</div>
 						<div class="menu-title">Pencairan Komisi</div>

@@ -17,16 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<div class="btn-group">
-								<button type="button" class="btn btn-light">Settings</button>
-								<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
-									<a class="dropdown-item" href="javascript:;">Another action</a>
-									<a class="dropdown-item" href="javascript:;">Something else here</a>
-									<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-								</div>
-							</div>
+						<a href="{{ route('admin.halaman.create') }}" class="btn btn-light">Tambah</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -48,19 +39,20 @@
 										</tr>
 									</thead>
 									<tbody>
+										@foreach($daftar_halaman as $halaman)
 										<tr>
-											<th>1 Jul 2021</th>
-											<td>Cara Bayar</td>
-											<td>alhafizh.id/carabayar</td>
+											<th>{{ $halaman->created_at }}</th>
+											<td>{{ $halaman->judul }}</td>
+											<td>{{ $halaman->link }}</td>
 											<td>
-											<button class="btn btn-primary">Published</button>
+											<button class="btn btn-primary">{{ $halaman->status }}</button>
 											</td>
 											<td>
 											<a href="" class="btn btn-success">Lihat</a>
-											<a href="" class="btn btn-warning">Edit</a>
+											<a href="{{ route('admin.halaman.edit', $halaman->id) }}" class="btn btn-warning">Edit</a>
 											</td>
 										</tr>
-									
+										@endforeach
 									</tbody>
 								</table>
 							</div>
