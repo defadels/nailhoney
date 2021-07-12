@@ -47,7 +47,7 @@
 											<td>{{ $produk->nama_produk }}</td>
 											<td>{{ $produk->deskripsi_produk }}</td>
 											<td>
-											<a href="" class="btn btn-primary">Edit</a>
+											<a href="{{ route('admin.produk.edit', $produk->id) }}" class="btn btn-primary">Edit</a>
 											<a href="" class="btn btn-danger">Hapus</a>
 											</td>
 											

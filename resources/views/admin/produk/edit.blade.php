@@ -1,6 +1,6 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Edit Produk')
+@section('title', 'Tambah Produk')
 
 
 @section('content')
@@ -12,7 +12,7 @@
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">Edit Produk</li>
+									<li class="breadcrumb-item active" aria-current="page">Tambah Produk</li>
 								</ol>
 							</nav>
 						</div>
@@ -33,37 +33,42 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Edit Produk</h4>
+								<h4 class="mb-0">Tambah Produk</h4>
 							</div>
 							<hr/>
-							{!! Form::model($produk, ['route' => ['admin.produk.store.update']]) !!}
+
+							{!! Form::open(['route' => 'admin.produk.update']) !!}
+
+                            <div class="form-group">
+							{!! Form::label('foto_produk', 'Foto Produk') !!}	
+
+							{!! Form::file('foto_produk', ['class' => 'form-control']) !!}
+                            
+                            </div>
 
 							<div class="form-group">
-							{!! Form::label('foto_produk', 'Foto Produk') !!}
+							{!! Form::label('nama_produk', 'Nama Produk') !!}	
 
-							{!! Form::file('image',['class' => 'form-control form-control-lg']) !!}
-
-							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
+							{!! Form::text('nama_produk', old('nama_produk'),['class' => 'form-control']) !!}
 							</div>
-
-							<div class="form-group">
-							{!! Form::label('nama_produk', 'Nama Produk') !!}
-
-							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
-							</div>
-
 							
 							<div class="form-group">
-							{!! Form::label('keterangan', 'Keterangan') !!}
+							{!! Form::label('kategori_id', 'Kategori Produk') !!}	
 
-							{!! Form::textarea('keterangan', old('keterangan'), ['class' => 'form-control', 'rows' => '3']) !!}
+							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pilih kategori produk', 'class' => 'form-control']) !!}
 							</div>
 
+							<div class="form-group">
+							{!! Form::label('deskripsi_produk', 'Deskripsi Produk') !!}	
+
+							{!! Form::text('deskripsi_produk', old('deskripsi_produk'),['class' => 'form-control']) !!}
+							</div>
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
+
 						</div>
-						</form>
+						{!! Form::close() !!}
 					</div>
     @endsection
 

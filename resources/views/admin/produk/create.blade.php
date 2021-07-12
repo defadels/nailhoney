@@ -37,33 +37,38 @@
 							</div>
 							<hr/>
 
-							<form action="" method="post">
+							{!! Form::open(['route' => 'admin.produk.store']) !!}
 
                             <div class="form-group">
-                            <label for=""><h5>Foto Produk</h5></label>
-                            <input type="file" name="" id="" class="form-control">
+							{!! Form::label('foto_produk', 'Foto Produk') !!}	
+
+							{!! Form::file('foto_produk', ['class' => 'form-control']) !!}
+                            
                             </div>
 
 							<div class="form-group">
-							<label for=""><h5>Nama Produk</h5></label>
-								<input class="form-control" type="text" />
+							{!! Form::label('nama_produk', 'Nama Produk') !!}	
+
+							{!! Form::text('nama_produk', old('nama_produk'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('kategori_id', 'Kategori Produk') !!}	
+
+							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pilih kategori produk', 'class' => 'form-control']) !!}
 							</div>
 
+							<div class="form-group">
+							{!! Form::label('deskripsi_produk', 'Deskripsi Produk') !!}	
 
-
-                            <div class="form-group">
-                            <label for=""><h5>Asal Stok</h5></label>
-                                <select name="" class="form-control">
-                                    <option value="">Sawahlunto</option>
-                                    <option value="">Cibinong</option>
-                                </select>
-                            </div>
+							{!! Form::text('deskripsi_produk', old('deskripsi_produk'),['class' => 'form-control']) !!}
+							</div>
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 
 						</div>
-						</form>
+						{!! Form::close() !!}
 					</div>
     @endsection
 
