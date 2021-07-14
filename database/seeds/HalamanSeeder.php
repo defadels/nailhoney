@@ -14,22 +14,29 @@ class HalamanSeeder extends Seeder
         DB::table('halaman')->insert([
         [
             'judul' => 'Cara Bayar',
+            'konten' => 'ini adlaah konten cara bayar',
+            'slug' => 'slug cara bayar',
+            'foto' => 'alhafizh.id/carabayar',
             'link' => 'alhafizh.id/carabayar',
+            'keyword' => 'carabayar',
+            'deskripsi' => 'ini adalah deskripsi carabayar',
             'status' => 'draft',
         ],
         
         [
-            'judul' => 'Madu Alhafizh',
-            'link' => 'alhafish.id/madu',
-            'status' => 'published',
-        ],
-
-        [
             'judul' => 'Rekening',
+            'konten' => 'ini adlaah konten rekening',
+            'slug' => 'slug cara rekening',
+            'foto' => 'alhafizh.id/rekening',
             'link' => 'alhafizh.id/rekening',
-            'status' => 'draft',  
+            'keyword' => 'rekening',
+            'deskripsi' => 'ini adalah deskripsi deskripsi',
+            'status' => 'draft',
         ]
         
         ]);
+
+        $halaman = factory(App\Halaman::class, 10)->create();
+    
     }
 }

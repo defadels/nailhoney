@@ -1,6 +1,6 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Tambah Produk')
+@section('title', 'Edit Produk')
 
 
 @section('content')
@@ -12,7 +12,7 @@
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">Tambah Produk</li>
+									<li class="breadcrumb-item active" aria-current="page">Edit Produk</li>
 								</ol>
 							</nav>
 						</div>
@@ -33,23 +33,23 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tambah Produk</h4>
+								<h4 class="mb-0">Edit Produk</h4>
 							</div>
 							<hr/>
 
-							{!! Form::open(['route' => 'admin.produk.update']) !!}
+							{!! Form::model($produk, ['route' => ['admin.produk.update', $produk->id], 'method' => 'PUT']) !!}
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
 							{!! Form::label('foto_produk', 'Foto Produk') !!}	
 
-							{!! Form::file('foto_produk', ['class' => 'form-control']) !!}
+							{!! Form::file('foto_produk', ['class' => 'form-control']) !!} -->
                             
-                            </div>
+                            <!-- </div> -->
 
 							<div class="form-group">
-							{!! Form::label('nama_produk', 'Nama Produk') !!}	
+							{!! Form::label('nama', 'Nama Produk') !!}	
 
-							{!! Form::text('nama_produk', old('nama_produk'),['class' => 'form-control']) !!}
+							{!! Form::text('nama', old('nama'),['class' => 'form-control']) !!}
 							</div>
 							
 							<div class="form-group">
@@ -59,9 +59,45 @@
 							</div>
 
 							<div class="form-group">
-							{!! Form::label('deskripsi_produk', 'Deskripsi Produk') !!}	
+							{!! Form::label('konten', 'Konten Produk') !!}	
 
-							{!! Form::text('deskripsi_produk', old('deskripsi_produk'),['class' => 'form-control']) !!}
+							{!! Form::text('konten', old('konten'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('slug', 'Slug Produk') !!}	
+
+							{!! Form::text('slug', old('slug'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('harga', 'Harga Produk') !!}	
+
+							{!! Form::number('harga', old('harga'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('komisi', 'Komisi Produk') !!}	
+
+							{!! Form::number('komisi', old('komisi'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('satuan', 'Satuan Produk') !!}	
+
+							{!! Form::text('satuan', old('satuan'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('keyword', 'Keyword') !!}	
+
+							{!! Form::text('keyword', old('keyword'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('deskripsi', 'Deskripsi Produk') !!}	
+
+							{!! Form::text('deskripsi', old('deskripsi'),['class' => 'form-control']) !!}
 							</div>
 
 							<hr>

@@ -32,9 +32,11 @@
 								<table class="table mb-0">
 									<thead>
 										<tr>
-											<th scope="col">Foto Produk</th>
+											<th scope="col">Kategori</th>
 											<th scope="col">Nama Produk</th>
-											<th scope="col">Deskripsi</th>	
+											<th scope="col">Harga</th>	
+											<th scope="col">Komisi</th>	
+											<th scope="col">Satuan</th>	
 											<th scope="col" colspan="2">Aksi</th>
 										</tr>
 									</thead>
@@ -42,13 +44,14 @@
 									@foreach($daftar_produk as $produk)
 										<tr>
 											<td>
-											<img src="{{ $produk->foto_produk }}" style="width: 100px;" alt="">
+											{{ $produk->kategori->nama }}
 											</td>
-											<td>{{ $produk->nama_produk }}</td>
-											<td>{{ $produk->deskripsi_produk }}</td>
+											<td>{{ $produk->nama }}</td>
+											<td>{{ $produk->harga }}</td>
+											<td>{{ $produk->komisi }}</td>
+											<td>{{ $produk->satuan }}</td>
 											<td>
 											<a href="{{ route('admin.produk.edit', $produk->id) }}" class="btn btn-primary">Edit</a>
-											<a href="" class="btn btn-danger">Hapus</a>
 											</td>
 											
 										</tr>

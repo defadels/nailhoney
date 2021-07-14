@@ -1,6 +1,6 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Edit Halaman')
+@section('title', 'Tambah Halaman')
 
 
 @section('content')
@@ -40,32 +40,50 @@
 							{!! Form::open(['route' => 'admin.halaman.store']) !!}
 						
 							<div class="form-group">
-							{!! Form::label('tanggal', 'Tanggal') !!}
-
-
-							{!! Form::date('tanggal', old('tanggal'),['class' => 'form-control']) !!}
-							</div>
-
-							
-							<div class="form-group">
 							{!! Form::label('judul', 'Judul') !!}
 							
 							{!! Form::text('judul', old('judul'),['class' => 'form-control']) !!}
 							</div>
 							
-                            
-                            <div class="form-group">
+							<div class="form-group">
+							{!! Form::label('konten', 'Konten') !!}
+							
+							{!! Form::textarea('konten', old('konten'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('slug', 'Slug') !!}
+							
+							{!! Form::text('slug', old('slug'),['class' => 'form-control']) !!}
+							</div>
+							
+							
+							<div class="form-group">
 							{!! Form::label('link', 'Link') !!}
 
 							
 							{!! Form::text('link', old('link'),['class' => 'form-control']) !!}
 							</div>
+							
+							<div class="form-group">
+							{!! Form::label('keyword', 'Keyword') !!}
 
-                            <div class="form-group">
-                            {!! Form::label('status', 'Status') !!}
-                            
+							
+							{!! Form::text('keyword', old('keyword'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('deskripsi', 'Deskripsi') !!}
+
+							
+							{!! Form::text('deskripsi', old('deskripsi'),['class' => 'form-control']) !!}
+							</div>
+
+							<div class="form-group">
+							{!! Form::label('status', 'Status') !!}
+							
 							{!! Form::select('status', $daftar_status, old('status'), ['placeholder' => 'Pilih status','class' => 'form-control']) !!}
-                            </div>
+							</div>
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">

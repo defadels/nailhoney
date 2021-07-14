@@ -41,7 +41,12 @@ class HalamanController extends Controller
 
         $rules = [
             'judul' => 'required|max:80',
+            'konten' => 'required',
+            'slug' => 'required',
+            'foto' => 'required',
             'link' => 'required',
+            'keyword' => 'required',
+            'deskripsi' => 'required',
             'status' => 'required'
         ];
         
@@ -54,7 +59,12 @@ class HalamanController extends Controller
         $halaman = Halaman::create(
             [
                 'judul' => $req->judul,
+                'konten' => $req->konten,
+                'slug' => $req->slug,
+                'foto' => $req->foto,
                 'link' => $req->link,
+                'keyword' => $req->keyword,
+                'deskripsi' => $req->deskripsi,
                 'status' => $req->status
             ]
         );
@@ -85,7 +95,12 @@ class HalamanController extends Controller
 
         $rules = [
             'judul' => 'required|max:80',
+            'konten' => 'required',
+            'slug' => 'required',
+            'foto' => 'required',
             'link' => 'required',
+            'keyword' => 'required',
+            'deskripsi' => 'required',
             'status' => 'required'
         ];
         
@@ -97,7 +112,12 @@ class HalamanController extends Controller
 
         $halaman = Halaman::findOrFail($id);
         $halaman->judul = $req->judul;
+        $halaman->konten = $req->konten;
+        $halaman->slug = $req->slug;
+        $halaman->foto = $req->foto;
         $halaman->link = $req->link;
+        $halaman->keyword = $req->keyword;
+        $halaman->deskripsi = $req->deskripsi;
         $halaman->status = $req->status;
 
         $halaman->save();
@@ -111,4 +131,21 @@ class HalamanController extends Controller
         $description = "Ini adalah halaman untuk kelola Halaman";
         return view('admin.halaman.show',compact('title','description'));
     }
+
+    public function destroy($id) {
+        try {
+            $halaman = Halaman::findOrFail($id);
+
+            $halaman->delete();
+        } catch (Exception $e) {
+           
+            return redirect()->route('admin.halaman.index')
+            ->with('gagal', $halaman->judul.' gagal dihapus');
+        }
+
+
+        return redirect()->route('admin.halaman.index')
+        ->with('sukses', $halaman->judul.' berhasil dihapus');
+    }
+
 }

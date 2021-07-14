@@ -37,9 +37,14 @@ class ProdukController extends Controller
 
         $rules = [
             // 'foto_produk' => 'required',
-            'kategori_id' => 'required',
-            'nama_produk' => 'required',
-            'deskripsi_produk' => 'required'
+            'nama' => 'required',
+            'konten' => 'required',
+            'slug' => 'required',
+            'harga' => 'required',
+            'komisi' => 'required',
+            'satuan' => 'required',
+            'keyword' => 'required',
+            'deskripsi' => 'required'
         ];
 
         $messages = [
@@ -52,8 +57,14 @@ class ProdukController extends Controller
             [
                 // 'foto_produk' => $req->foto_produk,
                 'kategori_id' => $req->kategori_id,
-                'nama_produk' => $req->nama_produk,
-                'deskripsi_produk' => $req->deskripsi_produk
+                'nama' => $req->nama,
+                'konten' => $req->konten,
+                'slug' => $req->slug,
+                'harga' => $req->harga,
+                'komisi' => $req->komisi,
+                'satuan' => $req->satuan,
+                'keyword' => $req->keyword,
+                'deskripsi' => $req->deskripsi
             ]
         );
 
@@ -63,8 +74,14 @@ class ProdukController extends Controller
 
     public function edit($id) {
         $title = 'Kelola Produk';
+
+        $daftar_kategori = KategoriProduk::pluck('nama', 'id');
+
+        $produk = Produk::findOrFail($id);
+
         $description = 'Ini adalah halaman untuk mengelola produk';
-        return view('admin.produk.edit',compact('title','description'));
+        return view('admin.produk.edit',compact('title','description',
+        'produk','daftar_kategori'));
     }
 
     public function update(Request $req, $id) {
@@ -72,8 +89,14 @@ class ProdukController extends Controller
 
         $rules = [
             // 'foto_produk' => 'required',
-            'nama_produk' => 'required',
-            'deskripsi_produk' => 'required'
+            'nama' => 'required',
+            'konten' => 'required',
+            'slug' => 'required',
+            'harga' => 'required',
+            'komisi' => 'required',
+            'satuan' => 'required',
+            'keyword' => 'required',
+            'deskripsi' => 'required'
         ];
 
         $messages = [
@@ -83,8 +106,16 @@ class ProdukController extends Controller
         $validate = Validator::make($input, $rules, $messages)->validate();
         $produk = Produk::findOrFail($id);
         // $produk->foto_produk = $req->foto_produk;
-        $produk->nama_produk = $req->nama_produk;
-        $produk->deskripsi_produk = $req->deskripsi_produk;
+        $produk->nama = $req->nama;
+        $produk->konten = $req->konten;
+        $produk->slug = $req->slug;
+        $produk->harga = $req->harga;
+        $produk->komisi = $req->komisi;
+        $produk->satuan = $req->satuan;
+        $produk->keyword = $req->keyword;
+        $produk->deskripsi = $req->deskripsi;
+
+        $produk->save();
 
         return redirect()->route('admin.produk.index')
         ->with('sukses', $produk->nama.' berhasil diubah');

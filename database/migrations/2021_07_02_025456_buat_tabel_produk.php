@@ -16,10 +16,16 @@ class BuatTabelProduk extends Migration
     {
         Schema::create('produk', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('foto_produk')->nullable();
-            $table->string('nama_produk')->nullable();
+            $table->string('foto')->nullable();
+            $table->string('nama')->nullable();
             $table->unsignedInteger('kategori_id')->nullable();
-            $table->string('deskripsi_produk')->nullable();
+            $table->text('konten')->nullable();
+            $table->string('slug')->nullable();
+            $table->integer('harga')->nullable();
+            $table->integer('komisi')->nullable();
+            $table->string('satuan')->nullable();
+            $table->string('keyword')->nullable();
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }

@@ -96,7 +96,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     
     //Routing halaman halaman
 
-    Route::resource('halaman', 'HalamanController')->except(['show', 'destroy']);
+    Route::resource('halaman', 'HalamanController')->except(['show']);
 
     
 
