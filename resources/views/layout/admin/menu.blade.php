@@ -105,15 +105,15 @@
 						<div class="menu-title">Pengaturan</div>
 					</a>
 					<ul>
-						<li class="{{ rute('admin.pengaturan.menu') }}"> <a href="{{ route('admin.pengaturan.menu') }}"><i class="bx bx-menu"></i>Pembayaran</a>
+						<li class="{{ rute('admin.pengaturan.pembayaran') }}"> <a href="{{ route('admin.pengaturan.pembayaran.index') }}"><i class="bx bx-menu"></i>Pembayaran</a>
 						</li>
-						<li class="{{ rute('admin.pengaturan.menu') }}"> <a href="{{ route('admin.pengaturan.menu') }}"><i class="bx bx-menu"></i>Pengiriman</a>
+						<li class="{{ rute('admin.pengaturan.pengiriman') }}"> <a href="{{ route('admin.pengaturan.pengiriman.index') }}"><i class="bx bx-menu"></i>Pengiriman</a>
 						</li>
 						<li class="{{ rute('admin.pengaturan.menu') }}"> <a href="{{ route('admin.pengaturan.menu') }}"><i class="bx bx-menu"></i>Menu</a>
 						</li>
-						<li class="{{ rute('admin.pengaturan.footer') }}"> <a href="{{ route('admin.pengaturan.footer') }}"><i class="bx bx-border-bottom"></i>Footer</a>
+						<li class="{{ rute('admin.pengaturan.footer') }}"> <a href="{{ route('admin.pengaturan.footer') }}"><i class="bx bx-menu"></i>Footer</a>
 						</li>
-						<li class="{{ rute('admin.pengaturan.user') }}"> <a href="{{ route('admin.pengaturan.user.index') }}"><i class="bx bx-user-circle"></i>User</a>
+						<li class="{{ rute('admin.pengaturan.user') }}"> <a href="{{ route('admin.pengaturan.user.index') }}"><i class="bx bx-menu"></i>User</a>
 						</li>
 					</ul>
 				</li>

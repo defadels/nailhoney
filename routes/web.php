@@ -142,6 +142,18 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::post('user/tambah', 'UserController@store')->name('user.store');
         Route::get('user/{id}/edit', 'UserController@edit')->name('user.edit');
         Route::post('user/{id}/edit', 'UserController@update')->name('user.update');
+
+        Route::get('pembayaran', 'PembayaranController@index')->name('pembayaran.index');
+        Route::get('pembayaran/tambah', 'PembayaranController@create')->name('pembayaran.create');
+        Route::post('pembayaran/tambah', 'PembayaranController@store')->name('pembayaran.store');
+        Route::get('pembayaran/{id}/edit', 'PembayaranController@edit')->name('pembayaran.edit');
+        Route::post('pembayaran/{id}/edit', 'PembayaranController@update')->name('pembayaran.update');
+
+        Route::get('pengiriman', 'PembayaranController@index')->name('pengiriman.index');
+        Route::get('pengiriman/tambah', 'PengirimanController@create')->name('pengiriman.create');
+        Route::post('pengiriman/tambah', 'PengirimanController@store')->name('pengiriman.store');
+        Route::get('pengiriman/edit', 'PengirimanController@edit')->name('pengiriman.edit');
+        Route::post('pengiriman/{id}/edit', 'PengirimanController@update')->name('pengiriman.update');
     });
 
 });
