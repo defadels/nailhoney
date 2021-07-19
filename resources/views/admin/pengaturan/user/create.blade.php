@@ -17,51 +17,45 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<div class="btn-group">
-								<button type="button" class="btn btn-light">Settings</button>
-								<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
-									<a class="dropdown-item" href="javascript:;">Another action</a>
-									<a class="dropdown-item" href="javascript:;">Something else here</a>
-									<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-								</div>
-							</div>
+							
 						</div>
 					</div>
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tambah User</h4>
+								<h4 class="mb-0">Edit User</h4>
 							</div>
 							<hr/>
-							
-							<form action="{{ route('admin.pengaturan.user.store') }}" method="post">
-							@csrf
+							{!! Form::open(['route' => 'admin.pengaturan.user.store']) !!}
+
 							<div class="form-group">
-							<label for="nama"><h5>Nama</h5></label>
-								<input name="nama" class="form-control" type="text" />
+							{!! Form::label('nama', 'Nama') !!}
+							
+							{!! Form::text('nama', old('nama'), ['class' => 'form-control']) !!}
+							
 							</div>
 
 							
 							<div class="form-group">
-							<label for="email"><h5>Email</h5></label>
-								<input name="email" type="email" class="form-control">
+							{!! Form::label('email', 'Email') !!}
+							
+							{!! Form::email('email', old('email'), ['class' => 'form-control'] ) !!}
+							
 							</div>
 							
                             <div class="form-group">
-							<label for="password"><h5>Password</h5></label>
-								<input name="password" type="password" class="form-control">
+							{!! Form::label('password', 'Password') !!}
+							
+							{!! Form::email('password', old('password'), ['class' => 'form-control', 'placeholder' => 'Kosongkan jika tidak ingin diubah'] ) !!}
+							
 							</div>
 
                             <div class="form-group">
-                            <label for="hak_akses"><h5>Hak Akses</h5></label>
-                                <select name="hak_akses" class="form-control">
-                                    <option value="admin">Admin</option>
-                                    <option value="editor">Editor</option>
-                                    <option value="user">User</option>
-                                </select>
+							{!! Form::label('hak_akses', 'Hak Akses') !!}
+                            
+							{!! Form::select('hak_akses', $daftar_hak_akses, old('hak_akses'), ['placeholder' => 'Pilih hak akses','class' => 'form-control']) !!}
+                                
                             </div>
 
 							<hr>
@@ -70,6 +64,9 @@
 						</div>
 						</form>
 					</div>
+
+					
+					
     @endsection
 
 	@section('page_script')

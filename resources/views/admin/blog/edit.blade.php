@@ -1,7 +1,12 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Blog')
+@section('title', 'Edit Blog')
 
+@section('page_style')
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
 	<!--breadcrumb-->
@@ -17,16 +22,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<div class="btn-group">
-								<button type="button" class="btn btn-light">Settings</button>
-								<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
-									<a class="dropdown-item" href="javascript:;">Another action</a>
-									<a class="dropdown-item" href="javascript:;">Something else here</a>
-									<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-								</div>
-							</div>
+								<button class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal5">Hapus</button>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -53,7 +49,7 @@
 
 							<div class="form-group">
 							{!! Form::label('konten', 'Isi Blog') !!}
-							{!! Form::textarea('konten', old('konten'), ['id' => 'mytextarea', 'rows' => '10']) !!}
+							{!! Form::textarea('konten', old('konten'), ['id' => 'summernote', 'rows' => '10']) !!}
 							</div>
 
 
@@ -87,15 +83,40 @@
 						</div>
 						{!! Form::close() !!}
 					</div>
+
+					<!-- Modal -->
+				<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-hidden="true">
+					{!! Form::open(['url' => route('admin.blog.destroy',$blog->id), 'method' => 'DELETE']) !!}	
+							<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Anda yakin ingin hapus data?</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">	<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">Penghapusan data akan mengakibatkan kejadian yang fatal
+											pada data Anda. Yakin untk menghapus?</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+										<input type="submit" class="btn btn-md btn-danger" value="Hapus">
+										
+										</div>
+									</div>
+								</div>
+						{!! Form::close() !!}
+							</div>
     @endsection
 
 	@section('page_script')
-	<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
 	<script src="{{asset('/assets-admin/plugins/input-tags/js/tagsinput.js') }}"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 	<script>
-		tinymce.init({
-		  selector: '#mytextarea'
-		});
-	</script>
+      $('#summernote').summernote({
+        placeholder: 'Isi blog',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
 	@endsection

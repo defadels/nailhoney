@@ -20,6 +20,26 @@
 						<a class="btn btn-light" href="{{ route('admin.pelanggan.create') }}">Tambah</a>
 						</div>
 					</div>
+
+					{!! Form::open(['route' => 'admin.pelanggan.index' , 'method' => 'GET']) !!}
+
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+
+							{!! Form::text('keyword', $keyword, ['class'=>'form-control','placeholder' => 'Cari produk ...']) !!}
+							</div>
+							
+							<div class="col-md-4 mb-3">
+
+							{!! Form::select('kategori_id', $daftar_kategori, $kategori_id, ['class' => 'form-control', 'placeholder' => 'Semua kategori']) !!}
+							</div>
+
+							<div class="col-md-2 mb-3">
+
+							<input type="submit" value="Cari" class="btn btn-warning">
+							</div>
+						</div>	
+					{!! Form::close() !!}	
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
@@ -49,7 +69,7 @@
 											<td>
 											{{ $pelanggan->nama }}
 											</td>
-											<td>{{ $pelanggan->nohp }}</td>
+											<td>{{ $pelanggan->nomor_hp }}</td>
 											<td>{{ $pelanggan->email }}</td>
 											<td>200</td>
 											<td>200.000</td>
@@ -62,7 +82,7 @@
 												Edit
 											</a>
 											
-											<a class="btn btn-danger">
+											<a class="btn btn-warning">
 												Komisi
 											</a>
 											

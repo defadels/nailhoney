@@ -89,4 +89,22 @@ class KategoriProdukController extends Controller
         return redirect()->route('admin.produk.kategori.index')
         ->with('sukses',$kategori->nama.' berhasil di update');
     }
+
+    public function destroy($id) {
+        try {
+
+            $kategori = KategoriProduk::findOrFail($id);
+
+            $kategori->delete();
+
+        } catch(Exception $e) {
+
+            return redirect()->route('admin.produk.kategori.index')
+        ->with('gagal',$kategori->nama.' gagal di update');
+
+        }
+
+        return redirect()->route('admin.produk.kategori.index')
+        ->with('sukses',$kategori->nama.' berhasil di update');
+    }
 }

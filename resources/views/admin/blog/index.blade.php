@@ -21,6 +21,27 @@
 						<a class="btn btn-light" href="{{ route('admin.blog.kategori.index') }}">Kategori</a>
 						</div>
 					</div>
+
+					{!! Form::open(['route' => 'admin.blog.index' , 'method' => 'GET']) !!}
+
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+
+							{!! Form::text('keyword', $keyword, ['class'=>'form-control','placeholder' => 'Cari blog ...']) !!}
+							</div>
+							
+							<div class="col-md-4 mb-3">
+
+							{!! Form::select('kategori_id', $daftar_kategori, $kategori_id, ['class' => 'form-control', 'placeholder' => 'Semua kategori']) !!}
+							</div>
+
+							<div class="col-md-2 mb-3">
+
+							<input type="submit" value="Cari" class="btn btn-warning">
+							</div>
+						</div>	
+					{!! Form::close() !!}
+
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
@@ -59,11 +80,6 @@
 											<a class="btn btn-success" href="{{ route('admin.blog.edit',$blog->id) }}">
 												Edit
 											</a>
-											
-											<button class="btn btn-danger">
-												Hapus
-											</button>
-											
 											</td>
 										</tr>
 									@endforeach

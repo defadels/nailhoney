@@ -24,6 +24,9 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password' => Hash::make('janganlupa'), // password
         'hak_akses' => $faker->randomElement(['admin', 'user', 'editor']),
+        'nomor_hp' => $faker->randomNumber(1, true),
+        'facebook' => $faker->name,
+        'google' => $faker->safeEmail,
         'remember_token' => Str::random(10),
     ];
 });

@@ -128,5 +128,20 @@ class PembayaranController extends Controller
             return redirect()->route('admin.pengaturan.pembayaran.index')
             ->with('sukses', $pembayaran->nama.' berhasil diubah');
         }
+    
 
+    public function destroy($id) {
+        try {
+            $pembayaran = Pembayaran::findOrFail($id);
+
+            $pembayaran->delete();
+        } catch(Exception $e) {
+
+            return redirect()->route('admin.pengaturan.pembayaran.index')
+            ->with('gagal', $pembayaran->nama.' gagal dihapus');
+        }
+
+        return redirect()->route('admin.pengaturan.pembayaran.index')
+            ->with('sukses', $pembayaran->nama.' berhasil dihapus');
+    }
 }

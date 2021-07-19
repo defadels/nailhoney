@@ -19,6 +19,7 @@
 	<!-- loader-->
 	<link href="{{asset('/assets-admin/css/pace.min.css') }}" rel="stylesheet" />
 	<script src="{{asset('/assets-admin/js/pace.min.js') }}"></script>
+	@yield('page_script_header')
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="{{asset('/assets-admin/css/bootstrap.min.css') }}" />
 	<!-- Icons CSS -->
@@ -26,6 +27,7 @@
 	<!-- App CSS -->
 	<link rel="stylesheet" href="{{asset('/assets-admin/css/app.css') }}" />
 	@yield('page_style')
+
 	
 </head>
 

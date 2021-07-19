@@ -103,4 +103,19 @@ class SpandukController extends Controller
         return redirect()->route('admin.spanduk.index')
         ->with('sukses', $spanduk->judul.' berhasil diubah');
     }
+
+    public function destroy($id) {
+        try {
+            $spanduk = Spanduk::findOrFail($id);
+
+            $spanduk->delete();
+        } catch(Exception $e) {
+
+            return redirect()->route('admin.spanduk.index')
+        ->with('gagal', $spanduk->judul.' gagal dihapus');
+        }
+
+        return redirect()->route('admin.spanduk.index')
+        ->with('sukses', $spanduk->judul.' berhasil dihapus');
+    }
 }

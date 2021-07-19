@@ -100,4 +100,22 @@ class UserController extends Controller
         return redirect()->route('admin.pengaturan.user.index')
             ->with('sukses',$user->nama.' berhasil di ubah');
     }
+
+    public function destroy($id) {
+        try{
+
+            $user = User::findOrFail($id);
+
+            $user->delete();
+
+        } catch(Exception $e) {
+
+            return redirect()->route('admin.pengaturan.user.index')
+            ->with('gagal',$user->nama.' gagal di ubah');
+
+        }
+
+        return redirect()->route('admin.pengaturan.user.index')
+        ->with('sukses',$user->nama.' berhasil di ubah');
+    }
 }

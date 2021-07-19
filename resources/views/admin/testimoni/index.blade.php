@@ -45,7 +45,6 @@
 											<td>{{ $testimoni->isi_testimoni }}</td>
 											<td>
 											<a href="{{ route('admin.testimoni.edit',$testimoni->id) }}" class="btn btn-primary">Edit</a>
-											<a href="#" class="btn btn-danger">Hapus</a>
 											</td>
 										</tr>
 									@endforeach	

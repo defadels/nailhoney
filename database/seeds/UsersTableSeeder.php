@@ -16,6 +16,9 @@ class UsersTableSeeder extends Seeder
             'nama' => 'Zaid',
             'email' => 'editor96@gmail.com',
             'hak_akses' => 'editor',
+            'nomor_hp' => '081376490300',
+            'facebook' => 'Zaid Abdurahman',
+            'google' => 'zaidabd@gmail.com',
             'password' => Hash::make('editor123'),
         ],
         
@@ -23,6 +26,9 @@ class UsersTableSeeder extends Seeder
             'nama' => 'Fadhil',
             'email' => 'admin26@gmail.com',
             'hak_akses' => 'admin',
+            'nomor_hp' => '082273318016',
+            'facebook' => 'Muhammad Fadhil Adha',
+            'google' => 'fadhil.adhaa26@gmail.com',
             'password' => Hash::make('admin123'),
         ]
     ]);

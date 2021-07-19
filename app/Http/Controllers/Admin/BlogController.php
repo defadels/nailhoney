@@ -11,15 +11,29 @@ use Validator;
 
 class BlogController extends Controller
 {
-    public function index() {
+    public function index(Request $req) {
         $title = "Kelola Blog";
 
-        $daftar_blog = Blog::orderBy('id','desc')->paginate(10);
+        $keyword = $req->keyword;
+        $kategori_id = $req->kategori_id;
+
+        $daftar_blog = Blog::orderBy('id','desc');
+
+        if($req->has('keyword') && $req->keyword != "") {
+            $daftar_blog = $daftar_blog->where('nama', 'like', '%'.$keyword.'%');
+        }
+
+        if($req->has('kategori_id') && $req->kategori_id != "") {
+            $daftar_blog = $daftar_blog->where('kategori_id', '=', $kategori_id);
+        }
+
+        $daftar_blog = $daftar_blog->paginate(10);
+
+        $daftar_kategori = KategoriBlog::pluck('nama', 'id');
 
         $description = "Ini halaman untuk kelola blog";
-        return view('admin.blog.index',compact('title',
-        'description',
-        'daftar_blog'));
+        return view('admin.blog.index',compact('title','description','daftar_blog',
+        'keyword', 'daftar_kategori','kategori_id'));
     }
 
     public function create() {
@@ -117,6 +131,21 @@ class BlogController extends Controller
         $blog->status = $req->status;
 
         $blog->save();
+
+        return redirect()->route('admin.blog.index')
+            ->with('sukses',$blog->nama.' berhasil di ubah');
+    }
+
+    public function destroy($id) {
+        try {
+            $blog = Blog::findOrFail($id);
+
+            $blog->delete();
+        } catch(Exception $e) {
+        
+            return redirect()->route('admin.blog.index')
+            ->with('gagal',$blog->nama.' gagal di ubah');
+        }
 
         return redirect()->route('admin.blog.index')
             ->with('sukses',$blog->nama.' berhasil di ubah');

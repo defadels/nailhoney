@@ -60,17 +60,18 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::post('tambah', 'KategoriProdukController@add')->name('kategori.add');
         Route::get('{id}/edit', 'KategoriProdukController@edit')->name('kategori.edit');
         Route::post('{id}/edit', 'KategoriProdukController@update')->name('kategori.update');
+        // Route::get('{id}/destroy', 'KategoriProdukController@destroy')->name('kategori.destroy');
      });
 
     //Routing halaman produk
-    Route::resource('produk', 'ProdukController')->except(['show', 'destroy']);
+    Route::resource('produk', 'ProdukController')->except(['show']);
 
     //Routing halaman pelanggan
-    Route::resource('pelanggan', 'PelangganController')->except(['show', 'destroy']);
+    Route::resource('pelanggan', 'PelangganController')->except(['show']);
     
     
     //Routing halaman komisi
-    Route::resource('komisi', 'KomisiController')->except(['show', 'destroy']);
+    Route::resource('komisi', 'KomisiController')->except(['show']);
 
     //Routing halaman kategori blog
     
@@ -80,12 +81,13 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::post('tambah', 'KategoriBlogController@add')->name('kategori.add');
         Route::get('{id}/edit', 'KategoriBlogController@edit')->name('kategori.edit');
         Route::post('{id}/edit', 'KategoriBlogController@update')->name('kategori.update');
+        Route::delete('{id}/edit', 'KategoriBlogController@destroy')->name('kategori.destroy');
      });
 
 
     //Routing halaman blog
     
-    Route::resource('blog', 'BlogController')->except(['show', 'destroy']);
+    Route::resource('blog', 'BlogController')->except(['show']);
 
         // Route::get('blog', 'BlogController@index')->name('blog.index');
         // Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
@@ -107,7 +109,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     
     //Routing halaman spanduk
     
-    Route::resource('spanduk', 'SpandukController')->except(['show','destroy']);
+    Route::resource('spanduk', 'SpandukController')->except(['show']);
 
         // Route::get('spanduk', 'SpandukController@index')->name('spanduk.index');
         // Route::get('spanduk/tambah', 'SpandukController@create')->name('spanduk.create');
@@ -116,7 +118,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
     //Routing halaman testimoni
 
-    Route::resource('testimoni', 'TestimoniController')->except(['show', 'destroy']);
+    Route::resource('testimoni', 'TestimoniController')->except(['show']);
 
         // Route::get('testimoni', 'TestimoniController@index')->name('testimoni.index');
         // Route::get('testimoni/tambah', 'TestimoniController@create')->name('testimoni.create');
@@ -131,9 +133,12 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     // Routing halaman pengaturan user
 
     Route::prefix('pengaturan')->name('pengaturan.')->namespace('Pengaturan')->group(function () {
-        Route::get('/', 'MenuController@index')->name('menu');
+        Route::get('menu', 'MenuController@index')->name('menu.index');
         Route::get('menu/tambah', 'MenuController@create')->name('menu.create');
-        Route::get('menu/edit', 'MenuController@edit')->name('menu.edit');
+        Route::post('menu/tambah', 'MenuController@store')->name('menu.store');
+        Route::get('menu/{id}/edit', 'MenuController@edit')->name('menu.edit');
+        Route::post('menu/{id}/edit', 'MenuController@update')->name('menu.update');
+        Route::delete('menu/{id}/destroy', 'MenuController@destroy')->name('menu.destroy');
 
         Route::get('footer', 'FooterController@index')->name('footer');
         
@@ -142,18 +147,21 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::post('user/tambah', 'UserController@store')->name('user.store');
         Route::get('user/{id}/edit', 'UserController@edit')->name('user.edit');
         Route::post('user/{id}/edit', 'UserController@update')->name('user.update');
+        Route::delete('user/{id}/destroy', 'UserController@destroy')->name('user.destroy');
 
         Route::get('pembayaran', 'PembayaranController@index')->name('pembayaran.index');
         Route::get('pembayaran/tambah', 'PembayaranController@create')->name('pembayaran.create');
         Route::post('pembayaran/tambah', 'PembayaranController@store')->name('pembayaran.store');
         Route::get('pembayaran/{id}/edit', 'PembayaranController@edit')->name('pembayaran.edit');
         Route::post('pembayaran/{id}/edit', 'PembayaranController@update')->name('pembayaran.update');
+        Route::delete('pembayaran/{id}/destroy', 'PembayaranController@destroy')->name('pembayaran.destroy');
 
-        Route::get('pengiriman', 'PembayaranController@index')->name('pengiriman.index');
+        Route::get('pengiriman', 'PengirimanController@index')->name('pengiriman.index');
         Route::get('pengiriman/tambah', 'PengirimanController@create')->name('pengiriman.create');
         Route::post('pengiriman/tambah', 'PengirimanController@store')->name('pengiriman.store');
-        Route::get('pengiriman/edit', 'PengirimanController@edit')->name('pengiriman.edit');
+        Route::get('pengiriman/{id}/edit', 'PengirimanController@edit')->name('pengiriman.edit');
         Route::post('pengiriman/{id}/edit', 'PengirimanController@update')->name('pengiriman.update');
+        Route::delete('pengiriman/{id}/destroy', 'PengirimanController@destroy')->name('pengiriman.destroy');
     });
 
 });

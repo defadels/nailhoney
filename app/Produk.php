@@ -12,6 +12,6 @@ class Produk extends Model
 
     public function kategori()
     {
-        return $this->belongsTo('App\KategoriProduk','kategori_id');
+        return $this->belongsTo('App\KategoriProduk','kategori_id')->withDefault();
     }
 }

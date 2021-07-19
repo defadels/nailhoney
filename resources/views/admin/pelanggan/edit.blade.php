@@ -17,15 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<div class="btn-group">
-								<button type="button" class="btn btn-light">Settings</button>
-								<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
-									<a class="dropdown-item" href="javascript:;">Another action</a>
-									<a class="dropdown-item" href="javascript:;">Something else here</a>
-									<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-								</div>
+						<button class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal5">Hapus</button>
 							</div>
 						</div>
 					</div>
@@ -57,14 +49,14 @@
 							{!! Form::label('password', 'Password') !!}
 
 
-							{!! Form::password('password', ['class' => 'form-control']) !!}
+							{!! Form::password('password', ['class' => 'form-control', 'placeholder' => 'Ketika jika ingin diubah!']) !!}
 							</div>
                             
                             <div class="form-group">
-							{!! Form::label('nohp', 'Nomor Handphone') !!}
+							{!! Form::label('nomor_hp', 'Nomor Handphone') !!}
 
 
-							{!! Form::number('nohp', old('nohp'), ['class' => 'form-control']) !!}
+							{!! Form::number('nomor_hp', old('nomor_hp'), ['class' => 'form-control']) !!}
 							</div>
 
                             <!-- <div class="form-group">
@@ -80,8 +72,30 @@
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 						{!! Form::close() !!}
 						</div>
-						</form>
+			
 					</div>
+
+					<!-- Modal -->
+				<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-hidden="true">
+					{!! Form::open(['url' => route('admin.pelanggan.destroy',$pelanggan->id), 'method' => 'DELETE']) !!}	
+							<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Anda yakin ingin hapus data?</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">	<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">Penghapusan data akan mengakibatkan kejadian yang fatal
+											pada data Anda. Yakin untk menghapus?</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+										<input type="submit" class="btn btn-md btn-danger" value="Hapus">
+										
+										</div>
+									</div>
+								</div>
+						{!! Form::close() !!}
+							</div>
     @endsection
 
 	@section('page_script')

@@ -54,10 +54,6 @@
 												Edit
 											</a>
 											
-											<button class="btn btn-danger">
-												Hapus
-											</button>
-											
 											</td>
 										</tr>
 									@endforeach

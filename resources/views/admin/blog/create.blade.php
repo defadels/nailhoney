@@ -3,6 +3,14 @@
 @section('title', 'Blog')
 
 
+@section('page_style')
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+@endsection
+
+
+
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
@@ -36,70 +44,72 @@
 								<h4 class="mb-0">Tambah Blog</h4>
 							</div>
 							<hr/>
+							
+							{!! Form::open(['route' => 'admin.blog.store']) !!}
 
-							<form action="{{ route('admin.blog.store') }}" method="post">
-							@csrf
 							<div class="form-group">
-							<label for="judul"><h5>Judul</h5></label>
-								<input class="form-control form-control-lg" name="judul" type="text" />
+							{!! Form::label('judul', 'Judul') !!}
+							{!! Form::text('judul', old('judul'),['class' => 'form-control form-control-lg']) !!}
 							</div>
 
 							
 							<div class="form-group">
-							<label for="abstrak"><h5>Abstrak</h5></label>
-								<textarea class="form-control" name="abstrak" id="exampleFormControlTextarea1" rows="3"></textarea>
+							{!! Form::label('abstrak', 'Abstrak') !!}
+							{!! Form::textarea('abstrak', old('abstrak'), ['class' => 'form-control', 'rows' => '3']) !!}
+							
 							</div>
 
 							<div class="form-group">
-							<label for="konten"><h5>Isi Blog</h5></label>
-							<textarea id="mytextarea" name="konten"></textarea>
+							{!! Form::label('konten', 'Isi Blog') !!}
+							{!! Form::textarea('konten', old('konten'), ['id' => 'summernote', 'rows' => '10']) !!}
 							</div>
 
 
 							
 							<div class="form-group">
-							<label for="penulis"><h5>Penulis</h5></label>
-								<input type="text" name="penulis" class="form-control">
+							{!! Form::label('penulis', 'Penulis') !!}
+							{!! Form::text('penulis', old('penulis'),['class' => 'form-control form-control-lg']) !!}
+							
 							</div>
 
 							<div class="form-group">
-                            <label for="kategori_id"><h5>Kategori</h5></label>
-                                <select name="kategori_id" class="form-control">
-									<option selected value="1">Kategori 1</option>
-									<option value="2">Kategori 2</option>
-		\
-								</select>
+							{!! Form::label('kategori_id"', 'Kategori') !!}
+
+							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
+      
                             </div>
 
 							<div class="form-group">
-								<label for=""><h5>Thumbnail</h5></label>
-								<input type="file" class="form-control">
-							</div>
+							{!! Form::label('thumbnail"', 'Thumbnail') !!}
+							{!! Form::file('thumbnail', ['class' => 'form-control']) !!}
+							</div>	
 
 							<div class="form-group">
-                            <label for="status"><h5>Status Publish</h5></label>
-                                <select name="status" class="form-control">
-                                    <option value="nonaktif">Nonaktif</option>
-                                    <option value="aktif">Aktif</option>
-                                </select>
-                            </div>	
+							{!! Form::label('status"', 'Status') !!}
+							{!! Form::select('status', $daftar_status, old('status'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
+                            </div>
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Tambah"> ||
 							<input type="reset" class="btn btn-md btn-danger" value="Reset">
 
 						</div>
-						</form>
+						{!! Form::close() !!}
 					</div>
     @endsection
 
 	@section('page_script')
-	<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+	
 	<script src="{{asset('/assets-admin/plugins/input-tags/js/tagsinput.js') }}"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 	<script>
-		tinymce.init({
-		  selector: '#mytextarea'
-		});
-	</script>
+      $('#summernote').summernote({
+        placeholder: 'Isi blog',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
+
 	@endsection

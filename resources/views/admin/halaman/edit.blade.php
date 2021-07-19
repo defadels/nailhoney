@@ -85,15 +85,9 @@
 					</div>
 					{!! Form::close() !!}
 
-					
-					
 
-
-
-					
-
-					
 				</div>
+				
 				<!-- Modal -->
 				<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-hidden="true">
 					{!! Form::open(['url' => route('admin.halaman.destroy',$halaman->id), 'method' => 'DELETE']) !!}	

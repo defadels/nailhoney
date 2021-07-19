@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BuatTabelPelangganDanHalaman extends Migration
+class BuatTabelPengiriman extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,14 @@ class BuatTabelPelangganDanHalaman extends Migration
      */
     public function up()
     {
-        Schema::create('pelanggan', function (Blueprint $table) {
+        Schema::create('pengiriman', function(Blueprint $table) {
             $table->increments('id');
             $table->string('nama')->nullable();
-            $table->string('email')->unique();
-            $table->timestamp('register')->nullable();
-            $table->string('password');
-            $table->bigInteger('nohp');
+            $table->text('keterangan')->nullable();
+            $table->enum('status', ['aktif', 'nonaktif']);
             $table->timestamps();
+            $table->index(['status', 'created_at']);
         });
-
-       
     }
 
     /**
@@ -33,7 +30,6 @@ class BuatTabelPelangganDanHalaman extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pelanggan');
-       
+        Schema::dropIfExists('pengiriman');
     }
 }

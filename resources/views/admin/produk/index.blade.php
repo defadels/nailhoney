@@ -21,6 +21,26 @@
 						<a class="btn btn-light" href="{{ route('admin.produk.kategori.index') }}">Kategori</a>
 						</div>
 					</div>
+
+					{!! Form::open(['route' => 'admin.produk.index' , 'method' => 'GET']) !!}
+
+						<div class="form-row">
+							<div class="col-md-6 mb-3">
+
+							{!! Form::text('keyword', $keyword, ['class'=>'form-control','placeholder' => 'Cari produk ...']) !!}
+							</div>
+							
+							<div class="col-md-4 mb-3">
+
+							{!! Form::select('kategori_id', $daftar_kategori, $kategori_id, ['class' => 'form-control', 'placeholder' => 'Semua kategori']) !!}
+							</div>
+
+							<div class="col-md-2 mb-3">
+
+							<input type="submit" value="Cari" class="btn btn-warning">
+							</div>
+						</div>	
+					{!! Form::close() !!}	
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
@@ -37,7 +57,7 @@
 											<th scope="col">Harga</th>	
 											<th scope="col">Komisi</th>	
 											<th scope="col">Satuan</th>	
-											<th scope="col" colspan="2">Aksi</th>
+											<th scope="col">Aksi</th>
 										</tr>
 									</thead>
 									<tbody>

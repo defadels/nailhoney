@@ -13,6 +13,6 @@ class Blog extends Model
 
     public function kategori()
     {
-        return $this->belongsTo('App\KategoriBlog','kategori_id');
+        return $this->belongsTo('App\KategoriBlog','kategori_id')->withDefault();
     }
 }

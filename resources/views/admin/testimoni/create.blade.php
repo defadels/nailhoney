@@ -37,27 +37,32 @@
 							</div>
 							<hr/>
 
-							<form action="{{ route('admin.testimoni.store') }}" method="post">
-							@csrf
+							{!! Form::open(['route' => 'admin.testimoni.store']) !!}
+
                             <div class="form-group">
-                            <label for="foto"><h5>Foto Konsumen</h5></label>
-                            <input type="file" name="foto" id="" class="form-control">
+							{!! Form::label('foto', 'Foto') !!}
+
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
                             </div>
 
 							<div class="form-group">
-							<label for="nama_konsumen"><h5>Nama Konsumen</h5></label>
-								<input name="nama_konsumen" class="form-control" type="text" />
+							{!! Form::label('nama_konsumen', 'Nama Konsumen') !!}
+
+
+							{!! Form::text('nama_konsumen', old('nama_konsumen'), ['class' => 'form-control']) !!}
 							</div>
 
 							<div class="form-group">
-							<label for="isi_testimoni"><h5>Isi Testimoni</h5></label>
-								<textarea class="form-control" name="isi_testimoni" id="" rows="3"></textarea>
+							{!! Form::label('isi_testimoni', 'Isi Testimoni') !!}
+
+							{!! Form::textarea('isi_testimoni', old('isi_testimoni'), ['class' => 'form-control']) !!}
 							</div>
 							<hr>
+
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 
 						</div>
-						</form>
+						{!! Form::close() !!}
 					</div>
     @endsection
 

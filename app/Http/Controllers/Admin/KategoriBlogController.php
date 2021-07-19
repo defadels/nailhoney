@@ -85,4 +85,20 @@ class KategoriBlogController extends Controller
         return redirect()->route('admin.blog.kategori.index')
         ->with('sukses',$kategori->nama.' berhasil di update');
     }
+
+    public function destroy($id) {
+        try {
+            $kategori = KategoriBlog::findOrFail($id);
+
+            $kategori->delete();
+        } catch(Exception $id) {
+
+            return redirect()->route('admin.blog.kategori.index')
+        ->with('gagal',$kategori->nama.' gagal di update');
+        
+        }
+
+        return redirect()->route('admin.blog.kategori.index')
+        ->with('sukses',$kategori->nama.' berhasil di update');
+    }
 }

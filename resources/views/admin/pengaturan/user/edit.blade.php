@@ -17,16 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<div class="btn-group">
-								<button type="button" class="btn btn-light">Settings</button>
-								<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
-									<a class="dropdown-item" href="javascript:;">Another action</a>
-									<a class="dropdown-item" href="javascript:;">Something else here</a>
-									<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-								</div>
-							</div>
+							<button class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal5">Hapus</button>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -36,42 +27,35 @@
 								<h4 class="mb-0">Edit User</h4>
 							</div>
 							<hr/>
+							{!! Form::model($user, ['route' => ['admin.pengaturan.user.update', $user->id],'method' => 'PUT']) !!}
 
-							<form action="{{ route('admin.pengaturan.user.update',$user->id) }}" method="post">
-							@csrf
 							<div class="form-group">
-							<label for="nama"><h5>Nama</h5></label>
-								<input name="nama" value="{{ $user->nama }}" class="form-control" type="text" />
+							{!! Form::label('nama', 'Nama') !!}
+							
+							{!! Form::text('nama', old('nama'), ['class' => 'form-control']) !!}
+							
 							</div>
 
 							
 							<div class="form-group">
-							<label for="email"><h5>Email</h5></label>
-								<input name="email" value="{{ $user->email }}" type="email" class="form-control">
+							{!! Form::label('email', 'Email') !!}
+							
+							{!! Form::email('email', old('email'), ['class' => 'form-control'] ) !!}
+							
 							</div>
 							
                             <div class="form-group">
-							<label for="password"><h5>Password</h5></label>
-								<input name="password" placeholder="Kosongkan jika tidak ingin diubah"  type="password" class="form-control">
+							{!! Form::label('password', 'Password') !!}
+							
+							{!! Form::email('password', old('password'), ['class' => 'form-control', 'placeholder' => 'Kosongkan jika tidak ingin diubah'] ) !!}
+							
 							</div>
 
                             <div class="form-group">
-                            <label for="hak_akses"><h5>Hak Akses</h5></label>
-                                <select name="hak_akses"  name="email"  class="form-control">
-                                @foreach($daftar_hak_akses as $key=>$hak_akses)
-									@if($key == $user->hak_akses)
-			
-									<option selected value="{{ $key }}">
-									{{ $hak_akses }}</option>
-									
-									@else
-									
-									<option value="{{ $key }}">
-									{{ $hak_akses }}</option>
-									
-									@endif
-								@endforeach
-								</select>
+							{!! Form::label('hak_akses', 'Hak Akses') !!}
+                            
+							{!! Form::select('hak_akses', $daftar_hak_akses, old('hak_akses'), ['placeholder' => 'Pilih hak akses','class' => 'form-control']) !!}
+                                
                             </div>
 
 							<hr>
@@ -80,6 +64,29 @@
 						</div>
 						</form>
 					</div>
+
+					
+					<!-- Modal -->
+				<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-hidden="true">
+					{!! Form::open(['url' => route('admin.pengaturan.user.destroy',$user->id), 'method' => 'DELETE']) !!}	
+							<div class="modal-dialog modal-lg">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title">Anda yakin ingin hapus data?</h5>
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close">	<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">Penghapusan data akan mengakibatkan kejadian yang fatal
+											pada data Anda. Yakin untk menghapus?</div>
+										<div class="modal-footer">
+										<button type="button" class="btn btn-light" data-dismiss="modal">Batal</button>
+										<input type="submit" class="btn btn-md btn-danger" value="Hapus">
+										
+										</div>
+									</div>
+								</div>
+						{!! Form::close() !!}
+							</div>
     @endsection
 
 	@section('page_script')

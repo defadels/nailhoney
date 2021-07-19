@@ -93,4 +93,19 @@ class TestimoniController extends Controller
         return redirect()->route('admin.testimoni.index')
             ->with('sukses',$testimoni->nama_konsumen.' berhasil di ubah');
     }
+
+    public function destroy($id) {
+        try {
+            $testimoni = Testimoni::findOrFail($id);
+
+            $testimoni->delete();
+        } catch(Exception $e) {
+
+            return redirect()->route('admin.testimoni.index')
+            ->with('gagal',$testimoni->nama_konsumen.' gagal di hapus');
+        }
+
+        return redirect()->route('admin.testimoni.index')
+            ->with('sukses',$testimoni->nama_konsumen.' berhasil di hapus');
+    }
 }

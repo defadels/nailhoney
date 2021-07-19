@@ -4,8 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Pelanggan;
-use Hash;
+use App\User;
 use Validator;
 
 class PelangganController extends Controller
@@ -14,7 +13,8 @@ class PelangganController extends Controller
         $title = 'Pelanggan';
         $description = 'Ini adalah halaman untuk mengelola data pelanggan';
 
-        $daftar_pelanggan = Pelanggan::get();
+        $daftar_pelanggan = User::where('hak_akses', ['user'])
+                            ->paginate(10);;
 
         return view('admin.pelanggan.index',compact('title',
         'description',
@@ -43,12 +43,12 @@ class PelangganController extends Controller
 
         $validator = Validator::make($input, $rules, $messages)->validate();
 
-        $pelanggan = Pelanggan::create(
+        $pelanggan = User::create(
             [
                 'nama' => $req->nama,
                 'email' => $req->email,
                 'password' => Hash::make($req->password),
-                'nohp' => $req->nohp
+                'nomor_hp' => $req->nomor_hp
             ]
         );
 
@@ -60,7 +60,7 @@ class PelangganController extends Controller
         $title = 'Edit Pelanggan';
         $description = 'Ini adalah halaman untuk mengedit data pelanggan';
 
-        $pelanggan = Pelanggan::findOrFail($id);
+        $pelanggan = User::findOrFail($id);
 
         return view('admin.pelanggan.edit',compact('title','description','pelanggan'));
     }
@@ -72,7 +72,7 @@ class PelangganController extends Controller
             'nama' => 'required|max:80',
             'email' => 'required|email|unique:pelanggan,email,'.$id,
             'password' => 'nullable',
-            'nohp' => 'required|max:13'
+            'nomor_hp' => 'required|max:13'
         ];
         
         $messages = [
@@ -81,7 +81,7 @@ class PelangganController extends Controller
 
         $validator = Validator::make($input, $rules, $messages)->validate();
 
-        $pelanggan = Pelanggan::findOrFail($id);
+        $pelanggan = User::findOrFail($id);
         $pelanggan->nama = $req->nama;
         $pelanggan->email = $req->email;
         
@@ -89,7 +89,7 @@ class PelangganController extends Controller
             $user->password = Hash::make($req->password);
         }
 
-        $pelanggan->nohp = $req->nohp;
+        $pelanggan->nomor_hp = $req->nomor_hp;
 
         $pelanggan->save();
 

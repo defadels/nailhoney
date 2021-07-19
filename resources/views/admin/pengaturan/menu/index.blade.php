@@ -17,16 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<div class="btn-group">
-								<button type="button" class="btn btn-light">Settings</button>
-								<button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-toggle="dropdown">	<span class="sr-only">Toggle Dropdown</span>
-								</button>
-								<div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">	<a class="dropdown-item" href="javascript:;">Action</a>
-									<a class="dropdown-item" href="javascript:;">Another action</a>
-									<a class="dropdown-item" href="javascript:;">Something else here</a>
-									<div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
-								</div>
-							</div>
+							<a href="{{ route('admin.pengaturan.menu.create') }}" class="btn btn-outline-success">Tambah</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -40,31 +31,32 @@
 								<table class="table mb-0">
 									<thead>
 										<tr>
-											<th scope="col">#</th>
-											<th scope="col">First</th>
-											<th scope="col">Last</th>
-											<th scope="col">Handle</th>
+											<th>Menu</th>
+											<th>Link</th>
+											<th>Status</th>
+											<th>Aksi</th>
 										</tr>
 									</thead>
 									<tbody>
+										@foreach($daftar_menu as $menu)
 										<tr>
-											<th scope="row">1</th>
-											<td>Mark</td>
-											<td>Otto</td>
-											<td>@mdo</td>
+											<th>
+												{{ $menu->nama }}
+											</th>
+											<td>
+												{{ $menu->link }}
+											</td>
+											<td>
+											<button class="btn btn-primary">
+												{{ $menu->status }}
+											</button>
+
+											</td>
+											<td>
+												<a href="{{ route('admin.pengaturan.menu.edit', $menu->id) }}" class="btn btn-warning">Edit</a>
+											</td>
 										</tr>
-										<tr>
-											<th scope="row">2</th>
-											<td>Jacob</td>
-											<td>Thornton</td>
-											<td>@fat</td>
-										</tr>
-										<tr>
-											<th scope="row">3</th>
-											<td>Larry</td>
-											<td>the Bird</td>
-											<td>@twitter</td>
-										</tr>
+										@endforeach
 									</tbody>
 								</table>
 							</div>
