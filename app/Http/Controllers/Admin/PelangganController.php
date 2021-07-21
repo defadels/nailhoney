@@ -9,16 +9,27 @@ use Validator;
 
 class PelangganController extends Controller
 {
-    public function index() {
+    public function index(Request $req) {
         $title = 'Pelanggan';
         $description = 'Ini adalah halaman untuk mengelola data pelanggan';
 
+        $keyword = $req->keyword;
+        $nohp = $req->nohp;
+
+        if($req->has('keyword') && $req->keyword != "") {
+            $daftar_pelanggan= $daftar_pelanggan->where('nama', 'like', '%'.$keyword.'%');
+        }
+
+        if($req->has('kategori_id') && $req->kategori_id != "") {
+            $daftar_pelanggan = $daftar_pelanggan->where('nohp', '=', $nohp);
+        }
+        
         $daftar_pelanggan = User::where('hak_akses', ['user'])
                             ->paginate(10);;
+        
 
         return view('admin.pelanggan.index',compact('title',
-        'description',
-        'daftar_pelanggan'));
+        'description','daftar_pelanggan', 'keyword', 'nohp'));
     }
     
     public function create() {
@@ -95,5 +106,20 @@ class PelangganController extends Controller
 
         return redirect()->route('admin.pelanggan.index')
         ->with('sukses', 'Pelanggan '.$pelanggan->nama.' berhasil diubah');
+    }
+
+    public function destroy($id) {
+        try {
+
+            $pelanggan = User::findOrFail($id);
+
+            $pelanggan->delete();
+
+        } catch(Exception $e) {
+            return redirect()->route('admin.pelanggan.index')
+        ->with('gagal', 'Pelanggan '.$pelanggan->nama.' gagal dihapus');
+        }
+        return redirect()->route('admin.pelanggan.index')
+        ->with('sukses', 'Pelanggan '.$pelanggan->nama.' berhasil dihapus');
     }
 }

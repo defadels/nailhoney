@@ -6,7 +6,7 @@
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
-						<div class="breadcrumb-title pr-3">)Pelanggan</div>
+						<div class="breadcrumb-title pr-3">Pelanggan</div>
 						<div class="pl-3">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb mb-0 p-0">
@@ -31,7 +31,7 @@
 							
 							<div class="col-md-4 mb-3">
 
-							{!! Form::select('kategori_id', $daftar_kategori, $kategori_id, ['class' => 'form-control', 'placeholder' => 'Semua kategori']) !!}
+							{!! Form::text('nohp',  $nohp, ['class' => 'form-control', 'placeholder' => 'Cari nomor handphone ...']) !!}
 							</div>
 
 							<div class="col-md-2 mb-3">
@@ -40,11 +40,12 @@
 							</div>
 						</div>	
 					{!! Form::close() !!}	
+					
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tabel Kategori Blog</h4>
+								<h4 class="mb-0">Tabel Pelanggan</h4>
 							</div>
 							<hr/>
 							<div class="table-responsive">
