@@ -164,5 +164,19 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::delete('pengiriman/{id}/destroy', 'PengirimanController@destroy')->name('pengiriman.destroy');
     });
 
+
 });
+
+    Route::prefix('penjualan')->name('penjualan')->namespace('Penjualan')->group(function() {
+        Route::get('masuk', 'MasukController@index')->name('masuk.index');
+
+        Route::get('proses', 'ProsesController@index')->name('proses.index');
+
+        Route::get('kirim', 'KirimController@index')->name('kirim.index');
+
+        Route::get('selesai', 'SelesaiController@index')->name('selesai.index');
+
+        Route::get('batal', 'BatalController@index')->name('batal.index');
+    
+    });
 
