@@ -165,9 +165,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     });
 
 
-});
-
-    Route::prefix('penjualan')->name('penjualan')->namespace('Penjualan')->group(function() {
+    Route::prefix('penjualan')->name('penjualan.')->namespace('Penjualan')->group(function () {
         Route::get('masuk', 'MasukController@index')->name('masuk.index');
 
         Route::get('proses', 'ProsesController@index')->name('proses.index');
@@ -179,4 +177,8 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::get('batal', 'BatalController@index')->name('batal.index');
     
     });
+
+});
+
+    
 

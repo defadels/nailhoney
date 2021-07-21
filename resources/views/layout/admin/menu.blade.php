@@ -33,15 +33,15 @@
 						<div class="menu-title">Penjualan</div>
 					</a>
 					<ul>
-						<li class="{{ rute('admin.penjualan.masuk') }}"> <a href=""><i class="bx bx-menu"></i>Masuk</a>
+						<li class="{{ rute('admin.penjualan.masuk') }}"> <a href="{{ route('admin.penjualan.masuk.index') }}"><i class="bx bx-menu"></i>Masuk</a>
 						</li>
-						<li class="{{ rute('admin.penjualan.proses') }}"> <a href=""><i class="bx bx-border-bottom"></i>Diproses</a>
+						<li class="{{ rute('admin.penjualan.proses') }}"> <a href="{{ route('admin.penjualan.proses.index') }}"><i class="bx bx-border-bottom"></i>Diproses</a>
 						</li>
-						<li class="{{ rute('admin.penjualan.kirim') }}"> <a href=""><i class="bx bx-user-circle"></i>Dikirim</a>
+						<li class="{{ rute('admin.penjualan.kirim') }}"> <a href="{{ route('admin.penjualan.kirim.index') }}"><i class="bx bx-user-circle"></i>Dikirim</a>
 						</li>
-						<li class="{{ rute('admin.penjualan.selesai') }}"> <a href=""><i class="bx bx-user-circle"></i>Selesai</a>
+						<li class="{{ rute('admin.penjualan.selesai') }}"> <a href="{{ route('admin.penjualan.selesai.index') }}"><i class="bx bx-user-circle"></i>Selesai</a>
 						</li>
-						<li class="{{ rute('admin.penjualan.batal') }}"> <a href=""><i class="bx bx-user-circle"></i>Batal</a>
+						<li class="{{ rute('admin.penjualan.batal') }}"> <a href="{{ route('admin.penjualan.batal.index') }}"><i class="bx bx-user-circle"></i>Batal</a>
 						</li>
 					</ul>
 				</li>

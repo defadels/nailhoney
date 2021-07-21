@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use Validator;
+use Hash;
 
 class PelangganController extends Controller
 {
@@ -14,22 +15,23 @@ class PelangganController extends Controller
         $description = 'Ini adalah halaman untuk mengelola data pelanggan';
 
         $keyword = $req->keyword;
-        $nohp = $req->nohp;
+
+        $daftar_pelanggan = User::whereIn('hak_akses', ['user']);
 
         if($req->has('keyword') && $req->keyword != "") {
-            $daftar_pelanggan= $daftar_pelanggan->where('nama', 'like', '%'.$keyword.'%');
-        }
-
-        if($req->has('kategori_id') && $req->kategori_id != "") {
-            $daftar_pelanggan = $daftar_pelanggan->where('nohp', '=', $nohp);
+            $daftar_pelanggan= $daftar_pelanggan->where(function($query) 
+            use($keyword)
+            {
+                $query->where('nama', 'like', '%'.$keyword.'%')
+                      ->orWhere('nomor_hp', 'like', '%'.$keyword.'%');
+            });
         }
         
-        $daftar_pelanggan = User::where('hak_akses', ['user'])
-                            ->paginate(10);;
+        $daftar_pelanggan = $daftar_pelanggan->paginate(10);
         
 
         return view('admin.pelanggan.index',compact('title',
-        'description','daftar_pelanggan', 'keyword', 'nohp'));
+        'description','daftar_pelanggan', 'keyword'));
     }
     
     public function create() {
@@ -43,7 +45,7 @@ class PelangganController extends Controller
 
         $rules = [
             'nama' => 'required|max:80',
-            'email' => 'required|email|unique:pelanggan,email',
+            'email' => 'required|email|unique:users,email',
             'password' => 'required',
             'nohp' => 'required|max:13'
         ];
@@ -59,6 +61,7 @@ class PelangganController extends Controller
                 'nama' => $req->nama,
                 'email' => $req->email,
                 'password' => Hash::make($req->password),
+                'hak_akses' => "user",
                 'nomor_hp' => $req->nomor_hp
             ]
         );
@@ -81,7 +84,7 @@ class PelangganController extends Controller
  
         $rules = [
             'nama' => 'required|max:80',
-            'email' => 'required|email|unique:pelanggan,email,'.$id,
+            'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'nullable',
             'nomor_hp' => 'required|max:13'
         ];

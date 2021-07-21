@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->enum('hak_akses', ['admin', 'editor', 'user']);
-            $table->bigInteger('nomor_hp')->nullable();
+            $table->string('nomor_hp')->nullable();
             $table->string('facebook')->nullable();
             $table->string('google')->nullable();
             $table->rememberToken();    

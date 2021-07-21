@@ -49,15 +49,16 @@ class ProdukController extends Controller
     public function store(Request $req) {
         $input = $req->all();
 
+        // return $input;
+
         $rules = [
-            // 'foto_produk' => 'required',
             'nama' => 'required',
             'konten' => 'required',
-            'slug' => 'required',
+            // 'slug' => 'required',
             'harga' => 'required',
             'komisi' => 'required',
             'satuan' => 'required',
-            'keyword' => 'required',
+            // 'keyword' => 'required',
             'deskripsi' => 'required'
         ];
 
@@ -69,19 +70,26 @@ class ProdukController extends Controller
 
         $produk = Produk::create(
             [
-                // 'foto_produk' => $req->foto_produk,
                 'kategori_id' => $req->kategori_id,
                 'nama' => $req->nama,
                 'konten' => $req->konten,
-                'slug' => $req->slug,
+                // 'slug' => $req->slug,
                 'harga' => $req->harga,
                 'komisi' => $req->komisi,
                 'satuan' => $req->satuan,
-                'keyword' => $req->keyword,
+                // 'keyword' => $req->keyword,
                 'deskripsi' => $req->deskripsi
             ]
         );
 
+        
+        if($req->hasFile('foto_produk')) {
+            $path = $req->file('foto_produk')->store('foto_produk');
+            $produk->foto_produk = $path;
+            $produk->save();
+        }
+
+        
         return redirect()->route('admin.produk.index')
         ->with('sukses', $produk->nama.' berhasil ditambahkan');
     }
@@ -105,10 +113,10 @@ class ProdukController extends Controller
             // 'foto_produk' => 'required',
             'nama' => 'required',
             'konten' => 'required',
-            'slug' => 'required',
+            // 'slug' => 'required',
             'harga' => 'required',
             'komisi' => 'required',
-            'satuan' => 'required',
+            // 'satuan' => 'required',
             'keyword' => 'required',
             'deskripsi' => 'required'
         ];
@@ -122,11 +130,11 @@ class ProdukController extends Controller
         // $produk->foto_produk = $req->foto_produk;
         $produk->nama = $req->nama;
         $produk->konten = $req->konten;
-        $produk->slug = $req->slug;
+        // $produk->slug = $req->slug;
         $produk->harga = $req->harga;
         $produk->komisi = $req->komisi;
         $produk->satuan = $req->satuan;
-        $produk->keyword = $req->keyword;
+        // $produk->keyword = $req->keyword;
         $produk->deskripsi = $req->deskripsi;
 
         $produk->save();

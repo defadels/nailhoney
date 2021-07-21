@@ -43,13 +43,36 @@
 							{!! Form::label('foto_produk', 'Foto Produk') !!}	
 
 							{!! Form::file('foto_produk', ['class' => 'form-control']) !!}
-                            
                             </div>
 
 							<div class="form-group">
-							{!! Form::label('nama_produk', 'Nama Produk') !!}	
+							{!! Form::label('nama', 'Nama Produk') !!}	
 
-							{!! Form::text('nama_produk', old('nama_produk'),['class' => 'form-control']) !!}
+							{!! Form::text('nama', old('nama'),['class' => 'form-control']) !!}
+							</div>
+
+							<div class="form-group">
+							{!! Form::label('konten', 'Konten Produk') !!}	
+
+							{!! Form::text('konten', old('konten'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('harga', 'Harga Produk') !!}	
+
+							{!! Form::number('harga', old('harga'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('komisi', 'Komisi Produk') !!}	
+
+							{!! Form::number('komisi', old('komisi'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('satuan', 'Satuan') !!}	
+
+							{!! Form::text('satuan', old('satuan'),['class' => 'form-control']) !!}
 							</div>
 							
 							<div class="form-group">
@@ -59,9 +82,9 @@
 							</div>
 
 							<div class="form-group">
-							{!! Form::label('deskripsi_produk', 'Deskripsi Produk') !!}	
+							{!! Form::label('deskripsi', 'Deskripsi Produk') !!}	
 
-							{!! Form::text('deskripsi_produk', old('deskripsi_produk'),['class' => 'form-control']) !!}
+							{!! Form::text('deskripsi', old('deskripsi'),['class' => 'form-control']) !!}
 							</div>
 
 							<hr>

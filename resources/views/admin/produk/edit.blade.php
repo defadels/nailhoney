@@ -30,35 +30,22 @@
 
 							{!! Form::model($produk, ['route' => ['admin.produk.update', $produk->id], 'method' => 'PUT']) !!}
 
-                            <!-- <div class="form-group">
+							<div class="form-group">
 							{!! Form::label('foto_produk', 'Foto Produk') !!}	
 
-							{!! Form::file('foto_produk', ['class' => 'form-control']) !!} -->
-                            
-                            <!-- </div> -->
+							{!! Form::file('foto_produk', ['class' => 'form-control']) !!}
+                            </div>
 
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama Produk') !!}	
 
 							{!! Form::text('nama', old('nama'),['class' => 'form-control']) !!}
 							</div>
-							
-							<div class="form-group">
-							{!! Form::label('kategori_id', 'Kategori Produk') !!}	
-
-							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pilih kategori produk', 'class' => 'form-control']) !!}
-							</div>
 
 							<div class="form-group">
 							{!! Form::label('konten', 'Konten Produk') !!}	
 
 							{!! Form::text('konten', old('konten'),['class' => 'form-control']) !!}
-							</div>
-							
-							<div class="form-group">
-							{!! Form::label('slug', 'Slug Produk') !!}	
-
-							{!! Form::text('slug', old('slug'),['class' => 'form-control']) !!}
 							</div>
 							
 							<div class="form-group">
@@ -74,17 +61,17 @@
 							</div>
 							
 							<div class="form-group">
-							{!! Form::label('satuan', 'Satuan Produk') !!}	
+							{!! Form::label('satuan', 'Satuan') !!}	
 
 							{!! Form::text('satuan', old('satuan'),['class' => 'form-control']) !!}
 							</div>
 							
 							<div class="form-group">
-							{!! Form::label('keyword', 'Keyword') !!}	
+							{!! Form::label('kategori_id', 'Kategori Produk') !!}	
 
-							{!! Form::text('keyword', old('keyword'),['class' => 'form-control']) !!}
+							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pilih kategori produk', 'class' => 'form-control']) !!}
 							</div>
-							
+
 							<div class="form-group">
 							{!! Form::label('deskripsi', 'Deskripsi Produk') !!}	
 

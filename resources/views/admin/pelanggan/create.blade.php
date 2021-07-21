@@ -64,7 +64,7 @@
 							{!! Form::label('nohp', 'Nomor Handphone') !!}
 
 
-							{!! Form::number('nohp', old('nohp'),['class' => 'form-control']) !!}
+							{!! Form::text('nohp', old('nohp'),['class' => 'form-control']) !!}
 							</div>
 
                             <!-- <div class="form-group">

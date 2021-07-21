@@ -26,15 +26,11 @@
 						<div class="form-row">
 							<div class="col-md-6 mb-3">
 
-							{!! Form::text('keyword', $keyword, ['class'=>'form-control','placeholder' => 'Cari produk ...']) !!}
+							{!! Form::text('keyword', $keyword, ['class'=>'form-control','placeholder' => 'Cari pelanggan ...']) !!}
 							</div>
 							
-							<div class="col-md-4 mb-3">
 
-							{!! Form::text('nohp',  $nohp, ['class' => 'form-control', 'placeholder' => 'Cari nomor handphone ...']) !!}
-							</div>
-
-							<div class="col-md-2 mb-3">
+							<div class="col-md-6 mb-3">
 
 							<input type="submit" value="Cari" class="btn btn-warning">
 							</div>

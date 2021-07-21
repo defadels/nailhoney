@@ -7,5 +7,11 @@ use Illuminate\Http\Request;
 
 class MasukController extends Controller
 {
-    //
+    public function index() {
+        $title = "Penjualan Masuk";
+ 
+        $description = "Penjualan yang masuk";
+ 
+        return view('admin.penjualan.masuk.index', compact('title', 'description'));
+    }
 }
