@@ -33,11 +33,11 @@
 							</div>
 							<hr/>
 							
-							{!! Form::model($blog, ['route' => ['admin.blog.update', $blog->id]]) !!}
+							{!! Form::model($blog, ['route' => ['admin.blog.update', $blog->id],'method' => 'PUT']) !!}
 
 							<div class="form-group">
 							{!! Form::label('judul', 'Judul') !!}
-							{!! Form::text('judul', old('judul'),['class' => 'form-control form-control-lg']) !!}
+							{!! Form::text('judul', old('judul'),['class' => 'form-control form-control']) !!}
 							</div>
 
 							
@@ -56,7 +56,7 @@
 							
 							<div class="form-group">
 							{!! Form::label('penulis', 'Penulis') !!}
-							{!! Form::text('penulis', old('penulis'),['class' => 'form-control form-control-lg']) !!}
+							{!! Form::text('penulis', old('penulis'),['class' => 'form-control form-control']) !!}
 							
 							</div>
 

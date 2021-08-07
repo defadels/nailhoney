@@ -39,7 +39,14 @@ class BlogController extends Controller
     public function create() {
         $title = "Kelola Blog";
         $description = "Ini halaman untuk kelola blog";
-        return view('admin.blog.create',compact('title','description'));
+
+        $daftar_status = [
+            'aktif' => 'Aktif',
+            'nonaktif' => 'Nonaktif'
+        ];
+        $daftar_kategori = KategoriBlog::pluck('nama', 'id');
+        return view('admin.blog.create',compact('title','description',
+        'daftar_kategori','daftar_status'));
     }
 
     public function store(Request $req) {
@@ -48,13 +55,13 @@ class BlogController extends Controller
         $rules = [
             'judul' => 'required',
 
-            'abstrak' => 'required|max:250',
+            'abstrak' => 'nullable|max:250',
 
-            'konten' => 'required',
+            'konten' => 'nullable',
 
             'penulis' => 'required',
 
-            'kategori_id' => 'required',
+            'kategori_id' => 'nullable',
 
             'status' => 'required'
         ];
@@ -106,13 +113,13 @@ class BlogController extends Controller
         $rules = [
             'judul' => 'required',
 
-            'abstrak' => 'required',
+            'abstrak' => 'nullable|max:250',
 
-            'konten' => 'required',
+            'konten' => 'nullable',
 
             'penulis' => 'required',
 
-            'kategori_id' => 'required',
+            'kategori_id' => 'nullable',
 
             'status' => 'required'
         ];
@@ -133,7 +140,7 @@ class BlogController extends Controller
         $blog->save();
 
         return redirect()->route('admin.blog.index')
-            ->with('sukses',$blog->nama.' berhasil di ubah');
+            ->with('sukses',$blog->judul.' berhasil di ubah');
     }
 
     public function destroy($id) {
@@ -144,10 +151,10 @@ class BlogController extends Controller
         } catch(Exception $e) {
         
             return redirect()->route('admin.blog.index')
-            ->with('gagal',$blog->nama.' gagal di ubah');
+            ->with('gagal',$blog->judul.' gagal di ubah');
         }
 
         return redirect()->route('admin.blog.index')
-            ->with('sukses',$blog->nama.' berhasil di ubah');
+            ->with('sukses',$blog->judul.' berhasil di ubah');
     }
 }

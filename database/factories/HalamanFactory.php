@@ -11,7 +11,6 @@ $factory->define(Halaman::class, function (Faker $faker) {
         'konten' => $faker->paragraphs(5, true),
         'slug' => $faker->slug,
         'foto' => $faker->imageUrl(320, 480),
-        'link' => $faker->words(4, true),
         'keyword' => $faker->sentence(3, true),
         'deskripsi' => $faker->paragraph(1, true),
         'status' => $faker-> randomElement(['draft', 'published']),

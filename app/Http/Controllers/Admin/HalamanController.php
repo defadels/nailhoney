@@ -41,12 +41,15 @@ class HalamanController extends Controller
 
         $rules = [
             'judul' => 'required|max:80',
+
             'konten' => 'required',
-            'slug' => 'required',
-            'foto' => 'required',
-            'link' => 'required',
+
+            'slug' => 'required|unique:halaman,slug',
+
             'keyword' => 'required',
-            'deskripsi' => 'required',
+
+            'deskripsi' => 'nullable',
+
             'status' => 'required'
         ];
         
@@ -61,14 +64,13 @@ class HalamanController extends Controller
                 'judul' => $req->judul,
                 'konten' => $req->konten,
                 'slug' => $req->slug,
-                'foto' => $req->foto,
-                'link' => $req->link,
                 'keyword' => $req->keyword,
                 'deskripsi' => $req->deskripsi,
                 'status' => $req->status
             ]
         );
-
+        
+        return $input;
         return redirect()->route('admin.halaman.index')
         ->with('sukses', $halaman->judul.' berhasil ditambah');
     }
@@ -95,12 +97,15 @@ class HalamanController extends Controller
 
         $rules = [
             'judul' => 'required|max:80',
+
             'konten' => 'required',
-            'slug' => 'required',
-            'foto' => 'required',
-            'link' => 'required',
+
+            'slug' => 'required|unique:halaman,slug',
+
             'keyword' => 'required',
-            'deskripsi' => 'required',
+
+            'deskripsi' => 'nullable',
+
             'status' => 'required'
         ];
         
@@ -114,8 +119,6 @@ class HalamanController extends Controller
         $halaman->judul = $req->judul;
         $halaman->konten = $req->konten;
         $halaman->slug = $req->slug;
-        $halaman->foto = $req->foto;
-        $halaman->link = $req->link;
         $halaman->keyword = $req->keyword;
         $halaman->deskripsi = $req->deskripsi;
         $halaman->status = $req->status;

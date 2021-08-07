@@ -2,6 +2,11 @@
 
 @section('title', 'Edit Produk')
 
+@section('page_style')
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
 	<!--breadcrumb-->
@@ -28,12 +33,14 @@
 							</div>
 							<hr/>
 
-							{!! Form::model($produk, ['route' => ['admin.produk.update', $produk->id], 'method' => 'PUT']) !!}
-
+							{!! Form::model($produk, ['route' => ['admin.produk.update', $produk->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
 							<div class="form-group">
-							{!! Form::label('foto_produk', 'Foto Produk') !!}	
+								<img src="{{  Storage::url($produk->foto) }}" alt="">
+							</div>	
+							<div class="form-group">
+							{!! Form::label('foto', 'Foto Produk') !!}	
 
-							{!! Form::file('foto_produk', ['class' => 'form-control']) !!}
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
                             </div>
 
 							<div class="form-group">
@@ -45,7 +52,7 @@
 							<div class="form-group">
 							{!! Form::label('konten', 'Konten Produk') !!}	
 
-							{!! Form::text('konten', old('konten'),['class' => 'form-control']) !!}
+							{!! Form::textarea('konten', old('konten'), ['id' => 'summernote', 'rows' => '10']) !!}
 							</div>
 							
 							<div class="form-group">
@@ -65,6 +72,12 @@
 
 							{!! Form::text('satuan', old('satuan'),['class' => 'form-control']) !!}
 							</div>
+
+							<div class="form-group">
+							{!! Form::label('slug', 'Slug') !!}	
+
+							{!! Form::text('slug', old('slug'),['class' => 'form-control']) !!}
+							</div>
 							
 							<div class="form-group">
 							{!! Form::label('kategori_id', 'Kategori Produk') !!}	
@@ -73,10 +86,17 @@
 							</div>
 
 							<div class="form-group">
+							{!! Form::label('keyword', 'Keyword') !!}	
+
+							{!! Form::text('keyword', old('keyword'),['class' => 'form-control']) !!}
+							</div>
+
+							<div class="form-group">
 							{!! Form::label('deskripsi', 'Deskripsi Produk') !!}	
 
 							{!! Form::text('deskripsi', old('deskripsi'),['class' => 'form-control']) !!}
 							</div>
+
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
@@ -110,12 +130,15 @@
     @endsection
 
 	@section('page_script')
-	<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
 	<script src="{{asset('/assets-admin/plugins/input-tags/js/tagsinput.js') }}"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 	<script>
-		tinymce.init({
-		  selector: '#mytextarea'
-		});
-	</script>
+      $('#summernote').summernote({
+        placeholder: 'Isi konten produk',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
 	@endsection

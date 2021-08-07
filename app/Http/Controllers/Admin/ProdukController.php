@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Produk;
 use App\KategoriProduk;
 use Validator;
+
 
 class ProdukController extends Controller
 {
@@ -54,11 +56,11 @@ class ProdukController extends Controller
         $rules = [
             'nama' => 'required',
             'konten' => 'required',
-            // 'slug' => 'required',
+            'slug' => 'nullable',
             'harga' => 'required',
             'komisi' => 'required',
             'satuan' => 'required',
-            // 'keyword' => 'required',
+            'keyword' => 'nullable',
             'deskripsi' => 'required'
         ];
 
@@ -73,20 +75,21 @@ class ProdukController extends Controller
                 'kategori_id' => $req->kategori_id,
                 'nama' => $req->nama,
                 'konten' => $req->konten,
-                // 'slug' => $req->slug,
+                'slug' => $req->slug,
                 'harga' => $req->harga,
                 'komisi' => $req->komisi,
                 'satuan' => $req->satuan,
-                // 'keyword' => $req->keyword,
+                'keyword' => $req->keyword,
                 'deskripsi' => $req->deskripsi
             ]
         );
 
         
-        if($req->hasFile('foto_produk')) {
-            $path = $req->file('foto_produk')->store('foto_produk');
-            $produk->foto_produk = $path;
+        if($req->hasFile('foto')) {
+            $path = $req->file('foto')->store('foto');
+            $produk->foto = $path;
             $produk->save();
+            Storage::put($produk->foto, 'public');
         }
 
         
@@ -94,12 +97,18 @@ class ProdukController extends Controller
         ->with('sukses', $produk->nama.' berhasil ditambahkan');
     }
 
-    public function edit($id) {
+    public function edit(Request $req, $id) {
         $title = 'Kelola Produk';
 
         $daftar_kategori = KategoriProduk::pluck('nama', 'id');
 
         $produk = Produk::findOrFail($id);
+
+        if($req->hasFile('foto')) {
+            $path = $req->file('foto')->store('foto');
+            $produk->foto = $path;
+            $produk->save();
+        }
 
         $description = 'Ini adalah halaman untuk mengelola produk';
         return view('admin.produk.edit',compact('title','description',
@@ -110,14 +119,13 @@ class ProdukController extends Controller
         $input = $req->all();
 
         $rules = [
-            // 'foto_produk' => 'required',
             'nama' => 'required',
             'konten' => 'required',
-            // 'slug' => 'required',
+            'slug' => 'nullable',
             'harga' => 'required',
             'komisi' => 'required',
-            // 'satuan' => 'required',
-            'keyword' => 'required',
+            'satuan' => 'required',
+            'keyword' => 'nullable',
             'deskripsi' => 'required'
         ];
 
@@ -130,15 +138,26 @@ class ProdukController extends Controller
         // $produk->foto_produk = $req->foto_produk;
         $produk->nama = $req->nama;
         $produk->konten = $req->konten;
-        // $produk->slug = $req->slug;
+        $produk->slug = $req->slug;
         $produk->harga = $req->harga;
         $produk->komisi = $req->komisi;
         $produk->satuan = $req->satuan;
-        // $produk->keyword = $req->keyword;
+        $produk->keyword = $req->keyword;
         $produk->deskripsi = $req->deskripsi;
 
-        $produk->save();
+        if($req->hasFile('foto')) {
+            $nama_file = 'robot.'.$req->file('foto')->extension();
+            $path = 'produk/foto/'; 
+            $file = $req->file('foto');
+            // Storage::put($path, $file, 'public');
+            Storage::put($nama_file, $file);
+            $produk->foto = $path.$nama_file;
+            $produk->save();
+            // Storage::setVisibility($produk->foto, 'public');
+        }
 
+        // Storage::setVisibility($produk->foto, 'public');
+        // return Storage::getVisibility($produk->foto);
         return redirect()->route('admin.produk.index')
         ->with('sukses', $produk->nama.' berhasil diubah');
     }

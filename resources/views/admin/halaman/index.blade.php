@@ -33,7 +33,6 @@
 										<tr>
 											<th scope="col">Tanggal</th>
 											<th scope="col">Judul</th>
-											<th scope="col">Link</th>
 											<th scope="col">Status</th>
 											<th scope="col">Aksi</th>
 										</tr>
@@ -43,7 +42,6 @@
 										<tr>
 											<th>{{ $halaman->created_at }}</th>
 											<td>{{ $halaman->judul }}</td>
-											<td>{{ $halaman->link }}</td>
 											<td>
 											<button class="btn btn-primary">{{ $halaman->status }}</button>
 											</td>

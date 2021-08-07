@@ -19,7 +19,6 @@ class BuatTabelHalaman extends Migration
             $table->text('konten');
             $table->string('slug');
             $table->string('foto');
-            $table->string('link');
             $table->string('keyword');
             $table->string('deskripsi');
             $table->enum('status', ['draft','published']);

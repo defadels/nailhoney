@@ -2,6 +2,11 @@
 
 @section('title', 'Tambah Halaman')
 
+@section('page_style')
+
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+
+@endsection
 
 @section('content')
 	<!--breadcrumb-->
@@ -48,7 +53,7 @@
 							<div class="form-group">
 							{!! Form::label('konten', 'Konten') !!}
 							
-							{!! Form::textarea('konten', old('konten'),['class' => 'form-control']) !!}
+							{!! Form::textarea('konten', old('konten'),['id' => 'summernote', 'rows' => '10']) !!}
 							</div>
 							
 							<div class="form-group">
@@ -56,14 +61,7 @@
 							
 							{!! Form::text('slug', old('slug'),['class' => 'form-control']) !!}
 							</div>
-							
-							
-							<div class="form-group">
-							{!! Form::label('link', 'Link') !!}
 
-							
-							{!! Form::text('link', old('link'),['class' => 'form-control']) !!}
-							</div>
 							
 							<div class="form-group">
 							{!! Form::label('keyword', 'Keyword') !!}
@@ -94,7 +92,15 @@
     @endsection
 
 	@section('page_script')
-	<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
 	<script src="{{asset('/assets-admin/plugins/input-tags/js/tagsinput.js') }}"></script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
+	<script>
+      $('#summernote').summernote({
+        placeholder: 'Isi konten halaman',
+        tabsize: 2,
+        height: 100
+      });
+    </script>
 	@endsection
