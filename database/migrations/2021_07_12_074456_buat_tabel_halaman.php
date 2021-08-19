@@ -16,12 +16,12 @@ class BuatTabelHalaman extends Migration
         Schema::create('halaman', function (Blueprint $table) {
             $table->increments('id');
             $table->string('judul');
-            $table->text('konten');
+            $table->text('konten')->nullable();
             $table->string('slug');
-            $table->string('foto');
-            $table->string('keyword');
-            $table->string('deskripsi');
-            $table->enum('status', ['draft','published']);
+            $table->string('foto')->nullable();
+            $table->string('keyword')->nullable();
+            $table->string('deskripsi')->nullable();
+            $table->enum('status', ['draft','published'])->default('draft');
             $table->timestamps();
             $table->index(['status','created_at']);
         });

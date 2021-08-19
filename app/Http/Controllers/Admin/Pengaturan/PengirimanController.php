@@ -106,7 +106,7 @@ class PengirimanController extends Controller
 
 
         return redirect()->route('admin.pengaturan.pengiriman.index')
-        ->with('sukses', $pembayaran->nama.' berhasil diubah');
+        ->with('sukses', $pengiriman->nama.' berhasil diubah');
     }
 
     public function destroy($id) {

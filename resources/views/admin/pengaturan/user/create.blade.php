@@ -24,7 +24,7 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Edit User</h4>
+								<h4 class="mb-0">Tambah User</h4>
 							</div>
 							<hr/>
 							{!! Form::open(['route' => 'admin.pengaturan.user.store']) !!}
@@ -47,7 +47,7 @@
                             <div class="form-group">
 							{!! Form::label('password', 'Password') !!}
 							
-							{!! Form::email('password', old('password'), ['class' => 'form-control', 'placeholder' => 'Kosongkan jika tidak ingin diubah'] ) !!}
+							{!! Form::password('password', ['class' => 'form-control'] ) !!}
 							
 							</div>
 

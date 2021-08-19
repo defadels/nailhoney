@@ -46,7 +46,6 @@
 											<td>{{ $pengiriman->keterangan }}</td>
 											<td>{{ $pengiriman->status }}</td>
 											<td>
-												<a href="" class="btn btn-primary">Lihat</a>
 												<a href="{{ route('admin.pengaturan.pengiriman.edit', $pengiriman->id) }}" class="btn btn-warning">Edit</a>
 											</td>
 										</tr>

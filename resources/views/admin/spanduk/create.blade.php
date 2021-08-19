@@ -37,14 +37,14 @@
 							</div>
 							<hr/>
 							
-							{!! Form::open(['route' => 'admin.spanduk.store']) !!}
+							{!! Form::open(['route' => 'admin.spanduk.store', 'enctype' => 'multipart/form-data']) !!}
 						
-							<!-- <div class="form-group">
+							<div class="form-group">
 							{!! Form::label('foto', 'Foto') !!}
 
 
 							{!! Form::file('foto',['class' => 'form-control']) !!}
-							</div> -->
+							</div>
 
 							
 							<div class="form-group">
@@ -53,12 +53,32 @@
 							{!! Form::text('judul', old('judul'),['class' => 'form-control']) !!}
 							</div>
 							
+							<div class="form-group">
+							{!! Form::label('deskripsi', 'Deskripsi') !!}
+							
+							{!! Form::text('deskripsi', old('deskripsi'),['class' => 'form-control']) !!}
+							</div>
+							
                             
                             <div class="form-group">
 							{!! Form::label('link', 'Link') !!}
 
 							
 							{!! Form::text('link', old('link'),['class' => 'form-control']) !!}
+							</div>
+                            
+							<div class="form-group">
+							{!! Form::label('label_tombol', 'Label Tombol') !!}
+
+							
+							{!! Form::text('label_tombol', old('label_tombol'),['class' => 'form-control']) !!}
+							</div>
+							
+							<div class="form-group">
+							{!! Form::label('warna_tulisan', 'Warna Tulisan') !!}
+
+							
+							{!! Form::text('warna_tulisan', old('warna_tulisan'),['class' => 'form-control']) !!}
 							</div>
 
                             <div class="form-group">

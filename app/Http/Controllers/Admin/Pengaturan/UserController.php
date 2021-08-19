@@ -25,7 +25,15 @@ class UserController extends Controller
     public function create() {
         $title = "Kelola User";
         $description = "Ini halaman untuk kelola user";
-        return view('admin.pengaturan.user.create',compact('title','description'));
+
+        $daftar_hak_akses = [
+            'editor' => 'Editor',
+            'admin' => 'Admin',
+            'user' => 'User'
+        ];
+
+        return view('admin.pengaturan.user.create',compact('title',
+        'description','daftar_hak_akses '));
     }
     
     public function edit($id) {
@@ -50,7 +58,7 @@ class UserController extends Controller
             'nama' => 'required|max:100',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8',
-            'hak_akses' => 'required'
+            'hak_akses' => 'nullable'
         ];
 
         $messages = [
@@ -77,7 +85,7 @@ class UserController extends Controller
             'nama' => 'required|max:100',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'nullable|min:8',
-            'hak_akses' => 'required'
+            'hak_akses' => 'nullable'
         ];
 
         $messages = [

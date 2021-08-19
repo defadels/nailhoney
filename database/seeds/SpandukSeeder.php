@@ -15,8 +15,11 @@ class SpandukSeeder extends Seeder
             [
                 'foto' => '',
                 'judul' => 'Cara Bayar',
+                'deskripsi' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
                 'link' => 'alhafizh.id/carabayar',
-                'status' => 'draft',
+                'label_tombol' => 'label-label-label',
+                'warna_tulisan' => '#000',
+                'status' => 'nonaktif',
             ]
             
             ]);

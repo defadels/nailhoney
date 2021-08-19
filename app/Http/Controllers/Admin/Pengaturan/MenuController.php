@@ -35,8 +35,8 @@ class MenuController extends Controller
 
         $rules = [
             'nama' => 'required',
-            'link' => 'required',
-            'status' => 'required',
+            'link' => 'nullable',
+            'status' => 'nullable',
         ];
 
         $messages = [
@@ -59,21 +59,56 @@ class MenuController extends Controller
     public function edit($id) {
         $title = "Edit Menu";
 
+        $menu = Menu::findOrFail($id);
+        
+        $daftar_status = [
+            'aktif' => 'Aktif',
+            'nonaktif' => 'Nonaktif'
+        ];
+
         $description = "Ini halaman untuk mengedit halaman menu";
 
-        return view('admin.pengaturan.menu.edit', compact('title', 'description'));
+        return view('admin.pengaturan.menu.edit', compact('title', 'description', 'menu', 'daftar_status'));
         
     }
 
     public function update(Request $req, $id) {
         $input = $req->all();
+
+        $rules = [
+            'nama' => 'required',
+            'link' => 'nullable',
+            'status' => 'nullable',
+        ];
+
+        $messages = [
+            'required' => ' :atribute wajib diisi',
+        ];
+
+        $validator = Validator::make($input, $rules, $messages)->validate();
+
+        $menu = Menu::findOrFail($id);
+
+        $menu->nama = $req->nama;
+        $menu->link = $req->link;
+        $menu->status = $req->status;
+
+        $menu->save();
+
+        return redirect()->route('admin.pengaturan.menu.index')
+        ->with('sukses', $menu->nama.' berhasil diubah');
     }
 
     public function destroy($id) {
         try {
+            $menu = Menu::findOrFail($id);
 
+            $menu->delete();
         } catch(Exception $e) {
-
+            return redirect()->route('admin.pengaturan.menu.index')
+            ->with('gagal', $menu->nama.' gagal dihapus');
         }
+        return redirect()->route('admin.pengaturan.menu.index')
+            ->with('sukses', $menu->nama.' berhasil dihapus');
     }
 }

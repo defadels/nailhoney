@@ -53,6 +53,7 @@
 										@endforeach
 									</tbody>
 								</table>
+								{{ $daftar_halaman->links() }}
 							</div>
 						</div>
 					</div>

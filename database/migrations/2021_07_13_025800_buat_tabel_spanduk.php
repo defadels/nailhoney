@@ -17,8 +17,11 @@ class BuatTabelSpanduk extends Migration
             $table->increments('id');
             $table->string('foto')->nullable();
             $table->string('judul')->nullable();
+            $table->text('deskripsi')->nullable();
             $table->string('link')->nullable();
-            $table->enum('status', ['draft','published']);
+            $table->string('label_tombol')->nullable();
+            $table->string('warna_tulisan')->nullable();
+            $table->enum('status', ['nonaktif','aktif']);
             $table->timestamps();
         });
     }

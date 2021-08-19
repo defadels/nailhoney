@@ -16,7 +16,7 @@ class BuatTabelPembayaran extends Migration
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama')->nullable();
-            $table->text('keterangan')->nullable();
+            $table->string('keterangan')->nullable();
             $table->enum('status', ['aktif','nonaktif']);
             $table->enum('jenis', ['online','manual']);
             $table->string('drive')->nullable();

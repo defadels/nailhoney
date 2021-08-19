@@ -88,7 +88,7 @@
 										@endforeach
 									</tbody>
 								</table>
-								
+								{{ $daftar_pelanggan->links() }}
 							</div>
 						</div>
 					</div>

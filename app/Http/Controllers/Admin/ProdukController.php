@@ -53,8 +53,10 @@ class ProdukController extends Controller
 
         // return $input;
 
-        $rules = [
+        $rules = [     
+            
             'nama' => 'required',
+            'kategori_id' => 'nullable',
             'konten' => 'required',
             'slug' => 'nullable',
             'harga' => 'required',
@@ -72,8 +74,9 @@ class ProdukController extends Controller
 
         $produk = Produk::create(
             [
-                'kategori_id' => $req->kategori_id,
+                
                 'nama' => $req->nama,
+                'kategori_id' => $req->kategori_id,
                 'konten' => $req->konten,
                 'slug' => $req->slug,
                 'harga' => $req->harga,
@@ -118,8 +121,12 @@ class ProdukController extends Controller
     public function update(Request $req, $id) {
         $input = $req->all();
 
+        
+
         $rules = [
+            
             'nama' => 'required',
+            'kategori_id' => 'required',
             'konten' => 'required',
             'slug' => 'nullable',
             'harga' => 'required',
@@ -136,7 +143,9 @@ class ProdukController extends Controller
         $validate = Validator::make($input, $rules, $messages)->validate();
         $produk = Produk::findOrFail($id);
         // $produk->foto_produk = $req->foto_produk;
+       
         $produk->nama = $req->nama;
+        $produk->kategori_id = $req->kategori_id;
         $produk->konten = $req->konten;
         $produk->slug = $req->slug;
         $produk->harga = $req->harga;
@@ -152,10 +161,11 @@ class ProdukController extends Controller
             // Storage::put($path, $file, 'public');
             Storage::put($nama_file, $file);
             $produk->foto = $path.$nama_file;
-            $produk->save();
+            
             // Storage::setVisibility($produk->foto, 'public');
         }
 
+        $produk->save();
         // Storage::setVisibility($produk->foto, 'public');
         // return Storage::getVisibility($produk->foto);
         return redirect()->route('admin.produk.index')

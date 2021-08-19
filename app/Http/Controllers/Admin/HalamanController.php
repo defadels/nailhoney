@@ -14,7 +14,7 @@ class HalamanController extends Controller
         $title = "Kelola Halaman";
         $description = "Ini adalah halaman untuk kelola Halaman";
 
-        $daftar_halaman = Halaman::get();
+        $daftar_halaman = Halaman::paginate(10);
 
         return view('admin.halaman.index',compact('title',
         'description',
@@ -39,16 +39,13 @@ class HalamanController extends Controller
         
         $input = $req->all();
 
+
         $rules = [
             'judul' => 'required|max:80',
 
             'konten' => 'required',
 
             'slug' => 'required|unique:halaman,slug',
-
-            'keyword' => 'required',
-
-            'deskripsi' => 'nullable',
 
             'status' => 'required'
         ];
@@ -70,7 +67,6 @@ class HalamanController extends Controller
             ]
         );
         
-        return $input;
         return redirect()->route('admin.halaman.index')
         ->with('sukses', $halaman->judul.' berhasil ditambah');
     }
@@ -98,13 +94,7 @@ class HalamanController extends Controller
         $rules = [
             'judul' => 'required|max:80',
 
-            'konten' => 'required',
-
-            'slug' => 'required|unique:halaman,slug',
-
-            'keyword' => 'required',
-
-            'deskripsi' => 'nullable',
+            'slug' => 'required|unique:halaman,slug,'.$id,
 
             'status' => 'required'
         ];

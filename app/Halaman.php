@@ -8,5 +8,5 @@ class Halaman extends Model
 {
     protected $table = 'halaman';
 
-    protected $fillable = ['judul','link','status'];
+    protected $guarded = [];
 }

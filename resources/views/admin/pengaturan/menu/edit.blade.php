@@ -20,16 +20,15 @@
 						<button class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal5">Hapus</button>
 							</div>
 						</div>
-					</div>
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Edit Pembayaran</h4>
+								<h4 class="mb-0">Edit Menu</h4>
 							</div>
 							<hr/>
 							
-							{!! Form::model($pembayaran, ['route' => ['admin.pengaturan.pembayaran.update', $pembayaran->id], 'method' => 'POST']) !!}
+							{!! Form::model($menu, ['route' => ['admin.pengaturan.menu.update', $menu->id], 'method' => 'POST']) !!}
 							
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama') !!}
@@ -38,9 +37,9 @@
 							</div>
 							
                             <div class="form-group">
-							{!! Form::label('keterangan', 'Keterangan') !!}
+							{!! Form::label('link', 'Link') !!}
 							
-							{!! Form::textarea('keterangan', old('keterangan'),['class' => 'form-control']) !!}
+							{!! Form::text('link', old('link'),['class' => 'form-control']) !!}
 							</div>
 							
                             <div class="form-group">
@@ -49,17 +48,6 @@
 							{!! Form::select('status', $daftar_status, old('status'), ['placeholder' => 'Pilih status','class' => 'form-control']) !!}
                             </div>
 
-                            <div class="form-group">
-                            {!! Form::label('jenis', 'Jenis') !!}
-                            
-							{!! Form::select('jenis', $daftar_jenis, old('jenis'), ['placeholder' => 'Pilih jenis pembayaran','class' => 'form-control']) !!}
-                            </div>
-
-                            <div class="form-group">
-							{!! Form::label('drive', 'Drive') !!}
-							
-							{!! Form::text('drive', old('drive'),['class' => 'form-control']) !!}
-							</div>
 
 							<hr>
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
@@ -70,7 +58,7 @@
 
 					<!-- Modal -->
 				<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-hidden="true">
-					{!! Form::open(['url' => route('admin.pengaturan.pembayaran.destroy',$pembayaran->id), 'method' => 'DELETE']) !!}	
+					{!! Form::open(['url' => route('admin.pengaturan.menu.destroy',$menu->id), 'method' => 'DELETE']) !!}	
 							<div class="modal-dialog modal-lg">
 									<div class="modal-content">
 										<div class="modal-header">

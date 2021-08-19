@@ -48,7 +48,6 @@
 											<td>{{ $pembayaran->jenis }}</td>
 											<td>{{ $pembayaran->status }}</td>
 											<td>
-												<a href="" class="btn btn-primary">Lihat</a>
 												<a href="{{ route('admin.pengaturan.pembayaran.edit', $pembayaran->id) }}" class="btn btn-warning">Edit</a>
 											</td>
 										</tr>

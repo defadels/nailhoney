@@ -27,7 +27,7 @@
 								<h4 class="mb-0">Edit User</h4>
 							</div>
 							<hr/>
-							{!! Form::model($user, ['route' => ['admin.pengaturan.user.update', $user->id],'method' => 'PUT']) !!}
+							{!! Form::model($user, ['route' => ['admin.pengaturan.user.update', $user->id]]) !!}
 
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama') !!}
@@ -47,7 +47,7 @@
                             <div class="form-group">
 							{!! Form::label('password', 'Password') !!}
 							
-							{!! Form::email('password', old('password'), ['class' => 'form-control', 'placeholder' => 'Kosongkan jika tidak ingin diubah'] ) !!}
+							{!! Form::password('password', ['class' => 'form-control'] ) !!}
 							
 							</div>
 

@@ -50,7 +50,6 @@
 											</button>
 											</td>
 											<td>
-											<a href="" class="btn btn-success">Lihat</a>
 											<a href="{{ route('admin.spanduk.edit', $spanduk->id) }}" class="btn btn-warning">Edit</a>
 											</td>
 										</tr>

@@ -23,8 +23,8 @@ class SpandukController extends Controller
         $description = 'Ini adalah halaman untuk menambah spanduk';
 
         $daftar_status = [
-            'draft' => 'Draft',
-            'published' => 'Published'
+            'nonaktif' => 'Nonaktif',
+            'aktif' => 'Aktif'
         ];
 
         return view('admin.spanduk.create',compact('title','description','daftar_status')); 
@@ -50,7 +50,10 @@ class SpandukController extends Controller
             [
                 'foto' => $req->foto,
                 'judul' => $req->judul,
+                'deskripsi' => $req->deskripsi,
                 'link' => $req->link,
+                'label_tombol' => $req->label_tombol,
+                'warna_tulisan' => $req->warna_tulisan,
                 'status' => $req->status
             ]
         );
@@ -67,9 +70,10 @@ class SpandukController extends Controller
         $spanduk = Spanduk::findOrFail($id);
 
         $daftar_status = [
-            'draft' => 'Draft',
-            'published' => 'Published'
+            'nonaktif' => 'Nonaktif',
+            'aktif' => 'Aktif'
         ];
+
 
         return view('admin.spanduk.edit',compact('title','description',
         'spanduk',
@@ -95,7 +99,10 @@ class SpandukController extends Controller
         $spanduk = Spanduk::findOrFail($id);
         $spanduk->foto = $req->foto;
         $spanduk->judul = $req->judul;
+        $spanduk->deskripsi = $req->deskripsi;
         $spanduk->link = $req->link;
+        $spanduk->label_tombol = $req->label_tombol;
+        $spanduk->warna_tulisan = $req->warna_tulisan;
         $spanduk->status = $req->status;
 
         $spanduk->save();

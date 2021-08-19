@@ -8,6 +8,7 @@ class Spanduk extends Model
 {
    protected $table = 'spanduk';
 
-   protected $fillable = ['judul', 'link', 'status'];
+   protected $fillable = ['judul','deskripsi', 'link', 
+   'label_tombol', 'warna_tulisan', 'status'];
 
 }
