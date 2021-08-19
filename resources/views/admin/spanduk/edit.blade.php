@@ -28,8 +28,11 @@
 							</div>
 							<hr/>
 							
-						{!! Form::model($spanduk, ['route' => ['admin.spanduk.update', $spanduk->id], 'method' => 'PUT']) !!}
-						
+						{!! Form::model($spanduk, ['route' => ['admin.spanduk.update', $spanduk->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+						<div class="form-group">
+								<img src="{{  Storage::url($spanduk->foto) }}" alt="" style="width:550px; height:250px;">
+						</div>
+
 						<div class="form-group">
 						{!! Form::label('foto', 'Foto') !!}
 

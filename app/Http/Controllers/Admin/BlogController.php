@@ -82,6 +82,25 @@ class BlogController extends Controller
         'status' => $req->status
         ]
         );
+
+        if($req->hasFile('foto')) {
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $nama_file = Str::uuid();
+            $path = 'blog/foto/'; 
+            $file_extension = $req->foto->extension();
+            $produk->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(500, 500, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$produk->foto);
+
+            $produk->save();
+        }
+
         return redirect()->route('admin.blog.index')
         ->with('sukses',$blog->kategori.' berhasil di tambah');
     }

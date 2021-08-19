@@ -44,14 +44,16 @@ class PelangganController extends Controller
         $input = $req->all();
 
         $rules = [
-            'nama' => 'required|max:80',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required',
-            'nohp' => 'required|max:13'
+            'nama' => ['required','max:80'],
+            'email' => ['required','email','unique:users,email,'.$id],
+            'password' => ['required'],
+            'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^08)(\d{3,4}?){2}\d{2,4}$/','max:13']
         ];
         
         $messages = [
             'required' => ' :attribute wajib diisi.',
+            'nomor_hp.regex' => 'Format nomor handphone salah. Contoh: 082273318016',
+            'nomor_hp.max' => 'Nomor handphone maksimal 13 digit', 
         ];
 
         $validator = Validator::make($input, $rules, $messages)->validate();
@@ -83,14 +85,15 @@ class PelangganController extends Controller
         $input = $req->all();
  
         $rules = [
-            'nama' => 'required|max:80',
-            'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'nullable',
-            'nomor_hp' => 'required|max:13'
+            'nama' => ['required','max:80'],
+            'email' => ['required','email','unique:users,email,'.$id],
+            'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^08)(\d{3,4}?){2}\d{2,4}$/','max:13']
         ];
         
         $messages = [
             'required' => ' :attribute wajib diisi.',
+            'nomor_hp.regex' => 'Format nomor handphone salah. Contoh: 082273318016',
+            'nomor_hp.max' => 'Nomor handphone maksimal 13 digit', 
         ];
 
         $validator = Validator::make($input, $rules, $messages)->validate();

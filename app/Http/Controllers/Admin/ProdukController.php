@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Storage;
 use App\Produk;
 use App\KategoriProduk;
 use Validator;
-
+use Str;
+use Image;
 
 class ProdukController extends Controller
 {
@@ -89,10 +90,21 @@ class ProdukController extends Controller
 
         
         if($req->hasFile('foto')) {
-            $path = $req->file('foto')->store('foto');
-            $produk->foto = $path;
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $nama_file = Str::uuid();
+            $path = 'produk/foto/'; 
+            $file_extension = $req->foto->extension();
+            $produk->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(500, 500, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$produk->foto);
+
             $produk->save();
-            Storage::put($produk->foto, 'public');
         }
 
         
@@ -106,12 +118,6 @@ class ProdukController extends Controller
         $daftar_kategori = KategoriProduk::pluck('nama', 'id');
 
         $produk = Produk::findOrFail($id);
-
-        if($req->hasFile('foto')) {
-            $path = $req->file('foto')->store('foto');
-            $produk->foto = $path;
-            $produk->save();
-        }
 
         $description = 'Ini adalah halaman untuk mengelola produk';
         return view('admin.produk.edit',compact('title','description',
@@ -155,12 +161,26 @@ class ProdukController extends Controller
         $produk->deskripsi = $req->deskripsi;
 
         if($req->hasFile('foto')) {
-            $nama_file = 'robot.'.$req->file('foto')->extension();
+
+            $foto_lama = $produk->foto;
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $nama_file = Str::uuid();
             $path = 'produk/foto/'; 
-            $file = $req->file('foto');
+            $file_extension = $req->foto->extension();
+            $produk->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(500, 500, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$produk->foto);
+
+            Storage::disk('public')->delete($foto_lama);
+
             // Storage::put($path, $file, 'public');
-            Storage::put($nama_file, $file);
-            $produk->foto = $path.$nama_file;
+            
             
             // Storage::setVisibility($produk->foto, 'public');
         }

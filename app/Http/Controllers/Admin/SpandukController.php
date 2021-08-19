@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Spanduk;
 use Validator;
+use Str;
+use Image;
 
 class SpandukController extends Controller
 {
@@ -34,7 +37,6 @@ class SpandukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'foto' => 'nullable',
             'judul' => 'required|max:80',
             'link' =>'required',
             'status' => 'required',
@@ -48,7 +50,6 @@ class SpandukController extends Controller
 
         $spanduk = Spanduk::create(
             [
-                'foto' => $req->foto,
                 'judul' => $req->judul,
                 'deskripsi' => $req->deskripsi,
                 'link' => $req->link,
@@ -57,6 +58,24 @@ class SpandukController extends Controller
                 'status' => $req->status
             ]
         );
+
+        if($req->hasFile('foto')) {
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $nama_file = Str::uuid();
+            $path = 'spanduk/foto/'; 
+            $file_extension = $req->foto->extension();
+            $spanduk->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(1280, 600, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$spanduk->foto);
+
+            $spanduk->save();
+        }
 
         return redirect()->route('admin.spanduk.index')
         ->with('sukses', $spanduk->judul.' berhasil ditambahkan');
@@ -84,7 +103,6 @@ class SpandukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'foto' => 'nullable',
             'judul' => 'required|max:80',
             'link' =>'required',
             'status' => 'required',
@@ -97,13 +115,37 @@ class SpandukController extends Controller
         $validator = Validator::make($input, $rules, $messages)->validate();
 
         $spanduk = Spanduk::findOrFail($id);
-        $spanduk->foto = $req->foto;
         $spanduk->judul = $req->judul;
         $spanduk->deskripsi = $req->deskripsi;
         $spanduk->link = $req->link;
         $spanduk->label_tombol = $req->label_tombol;
         $spanduk->warna_tulisan = $req->warna_tulisan;
         $spanduk->status = $req->status;
+
+        if($req->hasFile('foto')) {
+
+            $foto_lama = $spanduk->foto;
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $nama_file = Str::uuid();
+            $path = 'spanduk/foto/'; 
+            $file_extension = $req->foto->extension();
+            $spanduk->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(1280, 600, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$spanduk->foto);
+
+            Storage::disk('public')->delete($foto_lama);
+
+            // Storage::put($path, $file, 'public');
+            
+            
+            // Storage::setVisibility($produk->foto, 'public');
+        }
 
         $spanduk->save();
 
