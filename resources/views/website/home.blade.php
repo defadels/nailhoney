@@ -150,7 +150,7 @@
         @endif
         <div class="row">
             <div class="col-md-6 col-sm-4" >
-              <img src="img/300gr.jpg" style="width: 150px;" class="rounded-circle mx-auto d-block" alt="">
+              <img src="{{ Storage::url($testimoni->foto) }}" style="width: 150px;" class="rounded-circle mx-auto d-block" alt="">
             </div>
             <div class="col-md-6 col-sm-8">
               <h1>{{ $testimoni->nama_konsumen }}</h1>

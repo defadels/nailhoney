@@ -30,8 +30,11 @@
 							</div>
 							<hr/>
 
-							{!! Form::model($testimoni, ['route' => ['admin.testimoni.update', $testimoni->id], 'method' => 'PUT']) !!}
+							{!! Form::model($testimoni, ['route' => ['admin.testimoni.update', $testimoni->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
 
+							<div class="form-group">
+								<img src="{{ Storage::url($testimoni->foto) }}" alt="">
+							</div>
                             <div class="form-group">
 							{!! Form::label('foto', 'Foto') !!}
 

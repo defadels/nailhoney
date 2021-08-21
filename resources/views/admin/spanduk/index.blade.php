@@ -41,7 +41,7 @@
 									<tbody>
 										@foreach($daftar_spanduk as $spanduk)
 										<tr>
-											<th>{{ $spanduk->foto }}</th>
+											<th><img src="{{ Storage::url($spanduk->foto) }}" alt="" style="width:300px;"></th>
 											<td>{{ $spanduk->judul }}</td>
 											<td>{{ $spanduk->link }}</td>
 											<td>

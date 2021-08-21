@@ -37,7 +37,7 @@
 							</div>
 							<hr/>
 
-							{!! Form::open(['route' => 'admin.testimoni.store']) !!}
+							{!! Form::open(['route' => 'admin.testimoni.store', 'enctype' => 'multipart/form-data']) !!}
 
                             <div class="form-group">
 							{!! Form::label('foto', 'Foto') !!}

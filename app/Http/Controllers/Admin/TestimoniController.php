@@ -4,8 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Testimoni;
 use Validator;
+use Str;
+use Image;
 
 class TestimoniController extends Controller
 {
@@ -35,8 +38,6 @@ class TestimoniController extends Controller
         
         $rules = [
             'nama_konsumen' => 'required|max:100',
-            'isi_testimoni' => 'required',
-            'foto' => 'nullable'
         ];
 
         $messages = [
@@ -48,9 +49,27 @@ class TestimoniController extends Controller
             [
                 'nama_konsumen'=> $req->nama_konsumen,
                 'isi_testimoni' => $req->isi_testimoni,
-                'foto' => $req->foto
             ]
         );
+
+        if($req->hasFile('foto')) {
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $nama_file = Str::uuid();
+            $path = 'testimoni/foto/'; 
+            $file_extension = $req->foto->extension();
+            $testimoni->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(150, 150, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$testimoni->foto);
+
+            $testimoni->save();
+        }
+
         return redirect()->route('admin.testimoni.index')
             ->with('sukses',$testimoni->nama_konsumen.' berhasil di tambah');
     }
@@ -73,8 +92,6 @@ class TestimoniController extends Controller
         
         $rules = [
             'nama_konsumen' => 'required|max:100',
-            'isi_testimoni' => 'required',
-            'foto' => 'nullable'
         ];
 
         $messages = [
@@ -83,10 +100,28 @@ class TestimoniController extends Controller
         
         $validator = Validator::make($input, $rules, $messages)->validate();
         $testimoni = Testimoni::findOrFail($id);
-        $testimoni->foto = $req->foto;
         $testimoni->nama_konsumen = $req->nama_konsumen;
         $testimoni->isi_testimoni = $req->isi_testimoni;        
         
+        if($req->hasFile('foto')) {
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $foto_lama = $testimoni->foto;
+            
+            $nama_file = Str::uuid();
+            $path = 'testimoni/foto/'; 
+            $file_extension = $req->foto->extension();
+            $testimoni->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(150, 150, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$testimoni->foto);
+
+            Storage::disk('public')->delete($foto_lama);
+        }   
 
         $testimoni->save();
 

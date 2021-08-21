@@ -71,7 +71,7 @@ class UserController extends Controller
                 'nama'=> $req->nama,
                 'email' => $req->email,
                 'password' => Hash::make($req->password),
-                'hak_akses' => $req->hak_akses
+                'hak_akses' => $req->hak_akses,
             ]
         );
         return redirect()->route('admin.pengaturan.user.index')

@@ -40,7 +40,7 @@
 									<tbody>
 									@foreach($daftar_testimoni as $testimoni)
 										<tr>
-											<td></td>
+											<td><img src="{{ Storage::url($testimoni->foto) }}" alt="" style="width:100px"></td>
 											<td>{{ $testimoni->nama_konsumen }}</td>
 											<td>{{ $testimoni->isi_testimoni }}</td>
 											<td>
