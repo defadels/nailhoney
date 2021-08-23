@@ -21,7 +21,7 @@ class BuatTabelSpanduk extends Migration
             $table->string('link')->nullable();
             $table->string('label_tombol')->nullable();
             $table->string('warna_tulisan')->nullable();
-            $table->enum('status', ['nonaktif','aktif']);
+            $table->enum('status', ['nonaktif','aktif'])->default('nonaktif');
             $table->timestamps();
         });
     }

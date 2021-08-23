@@ -72,6 +72,7 @@
 											<td>{{ $produk->satuan }}</td>
 											<td>
 											<a href="{{ route('admin.produk.edit', $produk->id) }}" class="btn btn-primary">Edit</a>
+											<a href="" class="btn btn-secondary">Foto</a>
 											</td>
 											
 										</tr>

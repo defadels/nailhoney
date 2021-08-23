@@ -34,13 +34,14 @@ class MenuController extends Controller
         $input = $req->all();
 
         $rules = [
-            'nama' => 'required',
-            'link' => 'nullable',
-            'status' => 'nullable',
+            'nama' => 'max:255',
+            'link' => 'max:255',
         ];
 
         $messages = [
             'required' => ' :atribute wajib diisi',
+            'nama.max' => 'Nama maksimal 255 karakter',
+            'link.max' => 'Link maksimal 255 karakter',
         ];
 
         $validator = Validator::make($input, $rules, $messages)->validate();
@@ -76,13 +77,14 @@ class MenuController extends Controller
         $input = $req->all();
 
         $rules = [
-            'nama' => 'required',
-            'link' => 'nullable',
-            'status' => 'nullable',
+            'nama' => 'max:255',
+            'link' => 'max:255',
         ];
 
         $messages = [
             'required' => ' :atribute wajib diisi',
+            'nama.max' => 'Nama maksimal 255 karakter',
+            'link.max' => 'Link maksimal 255 karakter',
         ];
 
         $validator = Validator::make($input, $rules, $messages)->validate();

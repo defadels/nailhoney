@@ -28,8 +28,18 @@
 							</div>
 							<hr/>
 							
-							{!! Form::model($pelanggan, ['route' => ['admin.pelanggan.update', $pelanggan->id], 'method' => 'PATCH']) !!}
+							{!! Form::model($pelanggan, ['route' => ['admin.pelanggan.update', $pelanggan->id], 'method' => 'PATCH', 'enctype' => 'multipart/form-data']) !!}
 							
+							<div class="form-group">
+								<img src="{{ Storage::url($pelanggan->foto) }}" alt="" style="width:250px; height:250px;">
+							</div>
+
+							<div class="form-group">
+							{!! Form::label('foto','Foto Profil') !!}
+
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
+							</div>
+
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama') !!}
 

@@ -56,19 +56,21 @@ class ProdukController extends Controller
 
         $rules = [     
             
-            'nama' => 'required',
-            'kategori_id' => 'nullable',
-            'konten' => 'required',
-            'slug' => 'nullable',
-            'harga' => 'required',
-            'komisi' => 'required',
-            'satuan' => 'required',
-            'keyword' => 'nullable',
-            'deskripsi' => 'required'
+            'nama' => 'max:255',
+            'kategori_id' => 'required',
+            'harga' => 'numeric|min:0',
+            'komisi' => 'numeric|min:0',
+            'satuan' => 'max:255',
+            'keyword' => 'max:255',
+            'deskripsi' => 'max:255'
         ];
 
         $messages = [
             'required' => ' :atribute wajib diisi',
+            'harga.min' => 'Jumlah harga tidak boleh minus',
+            'harga.numeric' => 'Harga harus di input dengan angka',
+            'komisi.min' => 'Komisi tidak boleh  minus',
+            'komisi.numeric' => 'Komisi harus di input dengan angka'
         ];
 
         $validate = Validator::make($input, $rules, $messages)->validate();
@@ -131,19 +133,21 @@ class ProdukController extends Controller
 
         $rules = [
             
-            'nama' => 'required',
+            'nama' => 'max:255',
             'kategori_id' => 'required',
-            'konten' => 'required',
-            'slug' => 'nullable',
-            'harga' => 'required',
-            'komisi' => 'required',
-            'satuan' => 'required',
-            'keyword' => 'nullable',
-            'deskripsi' => 'required'
+            'harga' => 'numeric|min:0',
+            'komisi' => 'numeric|min:0',
+            'satuan' => 'max:255',
+            'keyword' => 'max:255',
+            'deskripsi' => 'max:255'
         ];
 
         $messages = [
             'required' => ' :atribute wajib diisi',
+            'harga.min' => 'Jumlah harga tidak boleh minus',
+            'harga.numeric' => 'Harga harus di input dengan angka',
+            'komisi.min' => 'Komisi tidak boleh  minus',
+            'komisi.numeric' => 'Komisi harus di input dengan angka'
         ];
 
         $validate = Validator::make($input, $rules, $messages)->validate();

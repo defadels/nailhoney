@@ -53,21 +53,21 @@ class BlogController extends Controller
         $input = $req->all();
 
         $rules = [
-            'judul' => 'required',
+            'foto' => 'file|mimes:jpeg,png|size:10000',
+            
+            'thumbnail' => 'file|mimes:jpeg,png|size:10000',
 
-            'abstrak' => 'nullable|max:250',
+            'judul' => 'required|max:255',
 
-            'konten' => 'nullable',
+            'abstrak' => 'max:255',
 
-            'penulis' => 'required',
-
-            'kategori_id' => 'nullable',
-
-            'status' => 'required'
+            'penulis' => 'max:255'
         ];
 
         $messages = [
             'required' => ' :attribute wajib diisi.',
+            'foto.size' => 'Ukuran foto minimal 1MB',
+            'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
 
         $validator = Validator::make($input, $rules, $messages)->validate();
@@ -130,17 +130,15 @@ class BlogController extends Controller
         
         
         $rules = [
-            'judul' => 'required',
+            'foto' => 'mimes:jpeg,png',
+            
+            'thumbnail' => 'mimes:jpeg,png',
 
-            'abstrak' => 'nullable|max:250',
+            'judul' => 'required|max:255',
 
-            'konten' => 'nullable',
+            'abstrak' => 'max:255',
 
-            'penulis' => 'required',
-
-            'kategori_id' => 'nullable',
-
-            'status' => 'required'
+            'penulis' => 'max:255'
         ];
 
         $messages = [

@@ -40,15 +40,16 @@ class PengirimanController extends Controller
         $input = $req->all();
 
         $rules = [
-            'nama' => 'required',
-            'keterangan' => 'required',
-            'status' => 'required'
+            'nama' => 'max:255',
+            'keterangan' => 'max:255'
         ];
 
         $messages = [
             'required' => ' :attribute ini wajib diisi',
+            'nama' => 'Nama maksimal di isi 255 karakter',
+            'keterangan' => 'Keterangan maksimal di isi 255 karakter',
         ];
-
+        
         $validate = Validator::make($input, $rules, $messages)->validate();
 
         $pengiriman = Pengiriman::create(
@@ -85,13 +86,14 @@ class PengirimanController extends Controller
         $input = $req->all();
 
         $rules = [
-            'nama' => 'required',
-            'keterangan' => 'required',
-            'status' => 'required'
+            'nama' => 'max:255',
+            'keterangan' => 'max:255'
         ];
 
         $messages = [
             'required' => ' :attribute ini wajib diisi',
+            'nama' => 'Nama maksimal di isi 255 karakter',
+            'keterangan' => 'Keterangan maksimal di isi 255 karakter',
         ];
 
         $validate = Validator::make($input, $rules, $messages)->validate();

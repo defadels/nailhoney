@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class BuatTabelPembayaran extends Migration
+class FotoProduk extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class BuatTabelPembayaran extends Migration
      */
     public function up()
     {
-        Schema::create('pembayaran', function (Blueprint $table) {
+        Schema::create('foto_produk', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('nama')->nullable();
-            $table->string('keterangan')->nullable();
-            $table->enum('status', ['aktif','nonaktif'])->default('nonaktif');
-            $table->enum('jenis', ['online','manual']);
-            $table->string('drive')->nullable();
+            $table->unsignedInteger('produk_id');
+            $table->string('foto');
+            $table->string('keterangan');
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class BuatTabelPembayaran extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pembayaran');
+        Schema::dropIfExist('foto_produk');
     }
 }

@@ -37,8 +37,14 @@
 							</div>
 							<hr/>
 							
-							{!! Form::open(['route' => 'admin.pelanggan.store']) !!}
+							{!! Form::open(['route' => 'admin.pelanggan.store', 'enctype' => 'multipart/form-data']) !!}
 							
+							<div class="form-group">
+							{!! Form::label('foto','Foto Profil') !!}
+
+							{!! Form::file('foto',['class' => 'form-control']) !!}
+							</div>
+
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama') !!}
 

@@ -27,6 +27,7 @@ $factory->define(User::class, function (Faker $faker) {
         'nomor_hp' => $faker->randomNumber(1, true),
         'facebook' => $faker->name,
         'google' => $faker->safeEmail,
+        'foto' => $faker->imageUrl(500, 500),
         'remember_token' => Str::random(10),
     ];
 });

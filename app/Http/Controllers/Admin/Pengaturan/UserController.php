@@ -57,8 +57,7 @@ class UserController extends Controller
         $rules = [
             'nama' => 'required|max:100',
             'email' => 'required|email|unique:users,email',
-            'password' => 'required|min:8',
-            'hak_akses' => 'nullable'
+            'password' => 'required|min:8'
         ];
 
         $messages = [
@@ -84,8 +83,7 @@ class UserController extends Controller
         $rules = [
             'nama' => 'required|max:100',
             'email' => 'required|email|unique:users,email,'.$id,
-            'password' => 'nullable|min:8',
-            'hak_akses' => 'nullable'
+            'password' => 'nullable|min:8'
         ];
 
         $messages = [

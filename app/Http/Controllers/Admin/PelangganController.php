@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\User;
 use Validator;
 use Hash;
+use Image;
+use Str;
 
 class PelangganController extends Controller
 {
@@ -68,6 +71,23 @@ class PelangganController extends Controller
             ]
         );
 
+        if($req->hasFile('foto')) {
+            $nama_file = Str::uuid();
+            $path = 'pelanggan/foto/';
+            $file_extension = $req->foto->extension();
+            $pelanggan->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(500, 500, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$pelanggan->foto);
+
+            $pelanggan->save();
+        }
+
         return redirect()->route('admin.pelanggan.index')
         ->with('sukses', 'Pelanggan bernama '.$pelanggan->nama.' berhasil ditambah');
     }
@@ -85,7 +105,7 @@ class PelangganController extends Controller
         $input = $req->all();
  
         $rules = [
-            'nama' => ['required','max:80'],
+            'nama' => ['required','max:255'],
             'email' => ['required','email','unique:users,email,'.$id],
             'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^08)(\d{3,4}?){2}\d{2,4}$/','max:13']
         ];
@@ -107,6 +127,25 @@ class PelangganController extends Controller
         }
 
         $pelanggan->nomor_hp = $req->nomor_hp;
+
+        if($req->hasFile('foto')) {
+            $foto_lama = $pelanggan->foto;
+
+            $nama_file = Str::uuid();
+            $path = 'pelanggan/foto/';
+            $file_extension = $req->foto->extension();
+            $pelanggan->foto = $path.$nama_file.".".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(500, 500, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$pelanggan->foto);
+
+            Storage::disk('public')->delete($foto_lama);
+        }
 
         $pelanggan->save();
 

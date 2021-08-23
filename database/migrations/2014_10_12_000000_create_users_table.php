@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('nomor_hp')->nullable();
             $table->string('facebook')->nullable();
             $table->string('google')->nullable();
+            $table->string('foto')->nullable();
             $table->rememberToken();    
             $table->timestamps();
         });

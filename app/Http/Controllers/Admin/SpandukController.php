@@ -37,13 +37,18 @@ class SpandukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'judul' => 'required|max:80',
-            'link' =>'required',
-            'status' => 'required',
+            'judul' => 'required|max:255',
+            'link' =>'max:255',
+            'label_tombol' => 'max:255',
+            'warna_tulisan' => 'max"255',
+            'foto' => 'file|mimes:jpeg,png|size:10000'
         ];
 
         $messages = [
             'required' => ':attribute wajib diisi.',
+            'judul.max' => 'Judul maksimal 255 karakter',
+            'foto.size' => 'Ukuran foto minimal 1MB',
+            'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
 
         $validator = Validator::make($input, $rules, $messages)->validate();
@@ -103,13 +108,18 @@ class SpandukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'judul' => 'required|max:80',
-            'link' =>'required',
-            'status' => 'required',
+            'judul' => 'required|max:255',
+            'link' =>'max:255',
+            'label_tombol' => 'max:255',
+            'warna_tulisan' => 'max"255',
+            'foto' => 'file|mimes:jpeg,png|size:10000'
         ];
 
         $messages = [
             'required' => ':attribute wajib diisi.',
+            'judul.max' => 'Judul maksimal 255 karakter',
+            'foto.size' => 'Ukuran foto minimal 1MB',
+            'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
 
         $validator = Validator::make($input, $rules, $messages)->validate();

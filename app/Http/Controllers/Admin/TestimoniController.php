@@ -37,11 +37,15 @@ class TestimoniController extends Controller
         $input = $req->all();
         
         $rules = [
-            'nama_konsumen' => 'required|max:100',
+            'nama_konsumen' => 'required|max:255',
+            'isi_testimoni' => 'max:255',
+            'foto' => 'file|mimes:jpeg,png|size:10000'
         ];
 
         $messages = [
             'required' => ' :attribute wajib diisi.',
+            'foto.size' => 'Ukuran foto minimal 1MB',
+            'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
         
         $validator = Validator::make($input, $rules, $messages)->validate();
@@ -91,11 +95,15 @@ class TestimoniController extends Controller
         $input = $req->all();
         
         $rules = [
-            'nama_konsumen' => 'required|max:100',
+            'nama_konsumen' => 'required|max:255',
+            'isi_testimoni' => 'max:255',
+            'foto' => 'file|mimes:jpeg,png|size:10000'
         ];
 
         $messages = [
             'required' => ' :attribute wajib diisi.',
+            'foto.size' => 'Ukuran foto minimal 1MB',
+            'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
         
         $validator = Validator::make($input, $rules, $messages)->validate();

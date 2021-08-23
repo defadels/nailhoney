@@ -50,15 +50,15 @@ class PembayaranController extends Controller
             $input = $req->all();
 
             $rules = [
-                'nama' => 'required',
-                'keterangan' => 'required',
-                'status' => 'required',
+                'nama' => 'max:255',
+                'keterangan' => 'max:255',
                 'jenis' => 'required',
-                'drive' => 'required'
+                'drive' => 'max:255'
             ];
 
             $messages = [
                 'required' => ' :atribute wajib diisi',
+                'keterangan.max' => 'Keterangan maksimal berjumlah 255 karakter'
             ];
 
             $validate = Validator::make($input, $rules, $messages)->validate();
@@ -103,15 +103,15 @@ class PembayaranController extends Controller
             $input = $req->all();
 
             $rules = [
-                'nama' => 'required',
-                'keterangan' => 'required',
-                'status' => 'required',
+                'nama' => 'max:255',
+                'keterangan' => 'max:255',
                 'jenis' => 'required',
-                'drive' => 'required'
+                'drive' => 'max:255'
             ];
 
             $messages = [
                 'required' => ' :atribute wajib diisi',
+                'keterangan.max' => 'Keterangan maksimal berjumlah 255 karakter'
             ];
 
             $validate = Validator::make($input, $rules, $messages)->validate();
