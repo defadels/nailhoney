@@ -17,14 +17,14 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-						<a class="btn btn-light" href="{{ route('admin.blog.kategori.create') }}">Tambah</a>
+						<a class="btn btn-light" href="{{ route('admin.produk.kategori.create') }}">Tambah</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tabel Kategori Blog</h4>
+								<h4 class="mb-0">Tabel Kategori Produk</h4>
 							</div>
 							<hr/>
 							<div class="table-responsive">

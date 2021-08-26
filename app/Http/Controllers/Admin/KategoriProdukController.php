@@ -100,11 +100,11 @@ class KategoriProdukController extends Controller
         } catch(Exception $e) {
 
             return redirect()->route('admin.produk.kategori.index')
-        ->with('gagal',$kategori->nama.' gagal di update');
+        ->with('gagal',$kategori->nama.' gagal di hapus');
 
         }
 
         return redirect()->route('admin.produk.kategori.index')
-        ->with('sukses',$kategori->nama.' berhasil di update');
+        ->with('sukses',$kategori->nama.' berhasil di hapus');
     }
 }

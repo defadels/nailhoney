@@ -14,11 +14,20 @@ class BuatTabelProduk extends Migration
     public function up()
     
     {
+        Schema::create('kategori_produk', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama')->nullable();
+            $table->string('keterangan')->nullable();
+            $table->integer('count')->default(0);
+            $table->timestamps();
+        });
+
         Schema::create('produk', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('foto')->nullable();
             $table->string('nama')->nullable();
             $table->unsignedInteger('kategori_id')->nullable();
+            $table->foreign('kategori_id')->references('id')->on('kategori_produk');
             $table->text('konten')->nullable();
             $table->string('slug')->nullable();
             $table->integer('harga')->nullable();
@@ -38,5 +47,6 @@ class BuatTabelProduk extends Migration
     public function down()
     {
         Schema::dropIfExists('produk');
+        Schema::dropIfExists('kategori_produk');
     }
 }

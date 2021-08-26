@@ -28,6 +28,7 @@ class BuatTabelBlog extends Migration
             $table->text('konten')->nullable();
             $table->string('penulis')->nullable();
             $table->unsignedInteger('kategori_id')->nullable();
+            $table->foreign('kategori_id')->references('id')->on('kategori_blog');
             $table->string('foto')->nullable();
             $table->string('thumbnail')->nullable();
             $table->string('keyword')->nullable();

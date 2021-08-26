@@ -11,4 +11,9 @@ class Pengiriman extends Model
     protected $guarded = [];
 
     protected $fillable = ['nama','keterangan', 'status'];
+
+    public function daftar_penjualan() {
+        return $this->hasMany('App\Penjualan','pengiriman_id');
+    }
+
 }

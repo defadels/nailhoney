@@ -67,10 +67,10 @@
 							</div>
                             
                             <div class="form-group">
-							{!! Form::label('nohp', 'Nomor Handphone') !!}
+							{!! Form::label('nomor_hp', 'Nomor Handphone') !!}
 
 
-							{!! Form::text('nohp', old('nohp'),['class' => 'form-control']) !!}
+							{!! Form::text('nomor_hp', old('nomor_hp'),['class' => 'form-control']) !!}
 							</div>
 
                             <!-- <div class="form-group">

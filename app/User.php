@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nama', 'email', 'password', 'hak_akses', 'nphp',
+        'nama', 'email', 'password', 'hak_akses', 'nomor_hp',
     ];
 
     /**
@@ -36,4 +36,8 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function daftar_penjualan() {
+        return $this->hasMany('App\Penjualan','pelanggan_id');
+    }
 }

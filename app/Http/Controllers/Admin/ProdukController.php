@@ -55,18 +55,22 @@ class ProdukController extends Controller
         // return $input;
 
         $rules = [     
-            
+            'foto' => 'file|mimes:jpeg,png|max:10240',
             'nama' => 'max:255',
             'kategori_id' => 'required',
-            'harga' => 'numeric|min:0',
-            'komisi' => 'numeric|min:0',
-            'satuan' => 'max:255',
+            'harga' => 'required|numeric|min:0',
+            'komisi' => 'required|numeric|min:0',
+            'satuan' => 'required|max:255',
             'keyword' => 'max:255',
+            'konten' => 'max:65535',
             'deskripsi' => 'max:255'
         ];
 
         $messages = [
             'required' => ' :atribute wajib diisi',
+            'konten.max' => 'Isi konten maksimal 65535 karakter',
+            'foto.max' => 'Ukuran foto maksimal 10MB',
+            'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
             'harga.min' => 'Jumlah harga tidak boleh minus',
             'harga.numeric' => 'Harga harus di input dengan angka',
             'komisi.min' => 'Komisi tidak boleh  minus',
@@ -75,13 +79,17 @@ class ProdukController extends Controller
 
         $validate = Validator::make($input, $rules, $messages)->validate();
 
+        
+
+        $slug = Str::slug($req->nama.' '.Str::random(5));
+
         $produk = Produk::create(
             [
                 
                 'nama' => $req->nama,
                 'kategori_id' => $req->kategori_id,
                 'konten' => $req->konten,
-                'slug' => $req->slug,
+                'slug' => $slug,
                 'harga' => $req->harga,
                 'komisi' => $req->komisi,
                 'satuan' => $req->satuan,
@@ -132,18 +140,23 @@ class ProdukController extends Controller
         
 
         $rules = [
-            
+            'foto' => 'file|mimes:jpeg,png|max:10240',
             'nama' => 'max:255',
             'kategori_id' => 'required',
-            'harga' => 'numeric|min:0',
-            'komisi' => 'numeric|min:0',
-            'satuan' => 'max:255',
+            'harga' => 'required|numeric|min:0',
+            'komisi' => 'required|numeric|min:0',
+            'satuan' => 'required|max:255',
             'keyword' => 'max:255',
+            'slug' => 'max:255|unique:produk,slug,'.$id,
+            'konten' => 'max:65535',
             'deskripsi' => 'max:255'
         ];
 
         $messages = [
             'required' => ' :atribute wajib diisi',
+            'konten.max' => 'Isi konten maksimal 65535 karakter',
+            'foto.size' => 'Ukuran foto minimal 1MB',
+            'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
             'harga.min' => 'Jumlah harga tidak boleh minus',
             'harga.numeric' => 'Harga harus di input dengan angka',
             'komisi.min' => 'Komisi tidak boleh  minus',
@@ -204,11 +217,11 @@ class ProdukController extends Controller
         } catch(Exception $e) {
 
             return redirect()->route('admin.produk.index')
-        ->with('gagal', $produk->nama.' gagal diubah');
+        ->with('gagal', $produk->nama.' gagal dihapus');
 
         }
 
         return redirect()->route('admin.produk.index')
-        ->with('sukses', $produk->nama.' berhasil diubah');
+        ->with('sukses', $produk->nama.' berhasil dihapus');
     }
 }

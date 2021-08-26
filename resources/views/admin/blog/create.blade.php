@@ -45,8 +45,13 @@
 							</div>
 							<hr/>
 							
-							{!! Form::open(['route' => 'admin.blog.store']) !!}
-
+							{!! Form::open(['route' => 'admin.blog.store','enctype' => 'multipart/form-data']) !!}
+							
+							<div class="form-group">
+							{!! Form::label('foto"', 'Foto') !!}
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
+							</div>
+							
 							<div class="form-group">
 							{!! Form::label('judul', 'Judul') !!}
 							{!! Form::text('judul', old('judul'),['class' => 'form-control']) !!}
@@ -63,8 +68,6 @@
 							{!! Form::label('konten', 'Isi Blog') !!}
 							{!! Form::textarea('konten', old('konten'), ['id' => 'summernote', 'rows' => '10']) !!}
 							</div>
-
-
 							
 							<div class="form-group">
 							{!! Form::label('penulis', 'Penulis') !!}
@@ -77,12 +80,7 @@
 
 							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
       
-                            </div>
-
-							<div class="form-group">
-							{!! Form::label('thumbnail"', 'Thumbnail') !!}
-							{!! Form::file('thumbnail', ['class' => 'form-control']) !!}
-							</div>	
+                            </div>	
 
 							<div class="form-group">
 							{!! Form::label('status"', 'Status') !!}

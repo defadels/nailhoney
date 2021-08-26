@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Blog;
 use App\KategoriBlog;
 use Validator;
-
+use Image;
+use Str;
 
 class BlogController extends Controller
 {
@@ -45,6 +47,7 @@ class BlogController extends Controller
             'nonaktif' => 'Nonaktif'
         ];
         $daftar_kategori = KategoriBlog::pluck('nama', 'id');
+        
         return view('admin.blog.create',compact('title','description',
         'daftar_kategori','daftar_status'));
     }
@@ -53,9 +56,7 @@ class BlogController extends Controller
         $input = $req->all();
 
         $rules = [
-            'foto' => 'file|mimes:jpeg,png|size:10000',
-            
-            'thumbnail' => 'file|mimes:jpeg,png|size:10000',
+            'foto' => 'file|mimes:jpeg,png|max:10240',
 
             'judul' => 'required|max:255',
 
@@ -86,19 +87,25 @@ class BlogController extends Controller
         if($req->hasFile('foto')) {
             // $nama_file = 'robot.'.$req->file('foto')->extension();
             $nama_file = Str::uuid();
+            
             $path = 'blog/foto/'; 
             $file_extension = $req->foto->extension();
-            $produk->foto = $path.$nama_file.".".$file_extension;
+            $blog->foto = $path.$nama_file.".".$file_extension;
+            $blog->thumbnail = $path.$nama_file."-thumbnail.".$file_extension;
 
             $gambar = $req->file('foto');
             $destinationPath = storage_path('/app/public/');
 
             $img = Image::make($gambar->path());
-            $img->fit(500, 500, function ($cons) {
+            $img->fit(1000, 500, function ($cons) {
                 $cons->aspectRatio();
-            })->save($destinationPath.$produk->foto);
+            })->save($destinationPath.$blog->foto);
 
-            $produk->save();
+            $img->fit(600, 300, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$blog->thumbnail);
+
+            $blog->save();
         }
 
         return redirect()->route('admin.blog.index')
@@ -130,9 +137,7 @@ class BlogController extends Controller
         
         
         $rules = [
-            'foto' => 'mimes:jpeg,png',
-            
-            'thumbnail' => 'mimes:jpeg,png',
+            'foto' => 'file|mimes:jpeg,jpg,png|max:10240',
 
             'judul' => 'required|max:255',
 
@@ -153,6 +158,36 @@ class BlogController extends Controller
         $blog->konten = $req->konten;
         $blog->kategori_id = $req->kategori_id;
         $blog->status = $req->status;
+
+        if($req->hasFile('foto')) {
+
+            $foto_lama = $blog->foto;
+            $thumbnail_lama = $blog->thumbnail;
+
+            // $nama_file = 'robot.'.$req->file('foto')->extension();
+            $nama_file = Str::uuid();
+            
+            $path = 'blog/foto/'; 
+            $file_extension = $req->foto->extension();
+            $blog->foto = $path.$nama_file.".".$file_extension;
+            $blog->thumbnail = $path.$nama_file."-thumbnail.".$file_extension;
+
+            $gambar = $req->file('foto');
+            $destinationPath = storage_path('/app/public/');
+
+            $img = Image::make($gambar->path());
+            $img->fit(1000, 500, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$blog->foto);
+
+            $img->fit(600, 300, function ($cons) {
+                $cons->aspectRatio();
+            })->save($destinationPath.$blog->thumbnail);
+
+           Storage::disk('public')->delete($foto_lama);
+           Storage::disk('public')->delete($thumbnail_lama);
+        }
+
 
         $blog->save();
 

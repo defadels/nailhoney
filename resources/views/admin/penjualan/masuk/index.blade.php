@@ -17,7 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-							<a href="" class="btn btn-outline-primary">Tambah</a>
+							<a href="{{ route('admin.penjualan.masuk.create') }}" class="btn btn-outline-primary">Tambah</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->
@@ -41,12 +41,13 @@
 										</tr>
 									</thead>
 									<tbody>
+									@foreach($daftar_penjualan as $penjualan)
 										<tr>
-											<td>25/02/2021</td>
-											<td>INV00001</td>
-											<td>150.000</td>
-											<td>20.000</td>
-											<td>Fadil</td>
+											<td>{{ $penjualan->tanggal }}</td>
+											<td>{{ $penjualan->no_transaksi }}</td>
+											<td>{{ $penjualan->jumlah_pembelian }}</td>
+											<td>{{ $penjualan->ongkos_kirim }}</td>
+											<td>{{ $penjualan->pelanggan->nama }}</td>
 											<td>Medan</td>
 											<td>	
 												<a href="" class="btn btn-outline-warning">Lihat</a>	
@@ -54,9 +55,10 @@
 												<a href="" class="btn btn-outline-success">Proses</a>	
 											</td>
 										</tr>
-			
+									@endforeach
 									</tbody>
 								</table>
+								{{ $daftar_penjualan->links() }}
 							</div>
 						</div>
 					</div>

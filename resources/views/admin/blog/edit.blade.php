@@ -33,7 +33,16 @@
 							</div>
 							<hr/>
 							
-							{!! Form::model($blog, ['route' => ['admin.blog.update', $blog->id],'method' => 'PUT']) !!}
+							{!! Form::model($blog, ['route' => ['admin.blog.update', $blog->id],'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+							
+							<div class="form-group">
+								<img src="{{ Storage::url($blog->foto) }}" alt="">
+							</div>
+
+							<div class="form-group">
+							{!! Form::label('foto', 'Foto') !!}
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
+							</div>	
 
 							<div class="form-group">
 							{!! Form::label('judul', 'Judul') !!}
@@ -66,11 +75,6 @@
 							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
       
                             </div>
-
-							<div class="form-group">
-							{!! Form::label('thumbnail"', 'Thumbnail') !!}
-							{!! Form::file('thumbnail', ['class' => 'form-control']) !!}
-							</div>	
 
 							<div class="form-group">
 							{!! Form::label('status"', 'Status') !!}

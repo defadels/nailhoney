@@ -20,7 +20,6 @@
 							<button class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal5">Hapus</button>
 							</div>
 						</div>
-					</div>
 					<!--end breadcrumb-->
 					<div class="card radius-15">
 						<div class="card-body">
@@ -33,7 +32,7 @@
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama Kategori') !!}
 
-							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
+							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control']) !!}
 							</div>
 
 							

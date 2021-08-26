@@ -79,12 +79,6 @@
 
 							{!! Form::text('satuan', old('satuan'),['class' => 'form-control']) !!}
 							</div>
-
-							<div class="form-group">
-							{!! Form::label('slug', 'Slug') !!}	
-
-							{!! Form::text('slug', old('slug'),['class' => 'form-control']) !!}
-							</div>
 							
 							<div class="form-group">
 							{!! Form::label('kategori_id', 'Kategori Produk') !!}	

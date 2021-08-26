@@ -45,10 +45,10 @@ class PelangganController extends Controller
 
     public function store(Request $req) {
         $input = $req->all();
-
+        
         $rules = [
             'nama' => ['required','max:80'],
-            'email' => ['required','email','unique:users,email,'.$id],
+            'email' => ['required','email','unique:users,email'],
             'password' => ['required'],
             'nomor_hp' => ['required', 'regex:/^(^\+628\s?|^08)(\d{3,4}?){2}\d{2,4}$/','max:13']
         ];

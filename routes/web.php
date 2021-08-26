@@ -57,10 +57,10 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::prefix('produk/kategori')->name('produk.')->group(function () {
         Route::get('/', 'KategoriProdukController@index')->name('kategori.index');
         Route::get('tambah', 'KategoriProdukController@create')->name('kategori.create');
-        Route::post('tambah', 'KategoriProdukController@add')->name('kategori.add');
+        Route::post('tambah', 'KategoriProdukController@store')->name('kategori.store');
         Route::get('{id}/edit', 'KategoriProdukController@edit')->name('kategori.edit');
         Route::post('{id}/edit', 'KategoriProdukController@update')->name('kategori.update');
-        // Route::get('{id}/destroy', 'KategoriProdukController@destroy')->name('kategori.destroy');
+        Route::delete('{id}/edit', 'KategoriProdukController@destroy')->name('kategori.destroy');
      });
 
     //Routing halaman produk
@@ -78,7 +78,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
     Route::prefix('blog/kategori')->name('blog.')->group(function () {
         Route::get('/', 'KategoriBlogController@index')->name('kategori.index');
         Route::get('tambah', 'KategoriBlogController@create')->name('kategori.create');
-        Route::post('tambah', 'KategoriBlogController@add')->name('kategori.add');
+        Route::post('tambah', 'KategoriBlogController@store')->name('kategori.store');
         Route::get('{id}/edit', 'KategoriBlogController@edit')->name('kategori.edit');
         Route::post('{id}/edit', 'KategoriBlogController@update')->name('kategori.update');
         Route::delete('{id}/edit', 'KategoriBlogController@destroy')->name('kategori.destroy');
@@ -167,6 +167,10 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
     Route::prefix('penjualan')->name('penjualan.')->namespace('Penjualan')->group(function () {
         Route::get('masuk', 'MasukController@index')->name('masuk.index');
+        Route::get('masuk/tambah', 'MasukController@create')->name('masuk.create');
+        Route::post('masuk/tambah', 'MasukController@store')->name('masuk.store');
+        Route::get('masuk/{id}/edit', 'MasukController@proses')->name('masuk.edit');
+        Route::post('masuk/{id}/edit', 'MasukController@proses')->name('masuk.update');
 
         Route::get('proses', 'ProsesController@index')->name('proses.index');
 
