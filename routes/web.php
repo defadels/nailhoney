@@ -169,8 +169,13 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
         Route::get('masuk', 'MasukController@index')->name('masuk.index');
         Route::get('masuk/tambah', 'MasukController@create')->name('masuk.create');
         Route::post('masuk/tambah', 'MasukController@store')->name('masuk.store');
-        Route::get('masuk/{id}/edit', 'MasukController@proses')->name('masuk.edit');
-        Route::post('masuk/{id}/edit', 'MasukController@proses')->name('masuk.update');
+        Route::get('masuk/{id}/edit', 'MasukController@edit')->name('masuk.edit');
+        Route::post('masuk/{id}/edit', 'MasukController@update')->name('masuk.update');
+        Route::get('masuk/{id}/konfirmasi', 'MasukController@konfirmasi')->name('masuk.konfirmasi');
+        Route::post('masuk/{id}/konfirmasi', 'MasukController@proses')->name('masuk.proses');
+        Route::delete('masuk/{id}/destroy', 'MasukController@destroy')->name('masuk.destroy');
+        Route::get('masuk/daftar_pelanggan', 'MasukController@json_daftar_pelanggan')->name('masuk.daftar_pelanggan');
+        Route::get('masuk/daftar_alamat', 'MasukController@json_daftar_alamat')->name('masuk.daftar_alamat');
 
         Route::get('proses', 'ProsesController@index')->name('proses.index');
 

@@ -14,7 +14,7 @@ class PembayaranSeeder extends Seeder
         DB::table('pembayaran')->insert([
             [
 
-                'nama' => 'Fadhil',
+                'nama' => 'Bank Mandiri',
                 'keterangan' => 'klasdjalsdknza',
                 'jenis' => 'manual',
                 'drive' => 'gojek',

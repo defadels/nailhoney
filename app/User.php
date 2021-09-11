@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function daftar_penjualan() {
         return $this->hasMany('App\Penjualan','pelanggan_id');
     }
+
+    public function daftar_alamat() {
+        return $this->hasMany('App\AlamatUser','id_alamat');
+    }
 }

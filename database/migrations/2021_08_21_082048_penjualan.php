@@ -85,6 +85,12 @@ class Penjualan extends Migration
             $table->string('catatan_pembatalan')->nullable();
             $table->string('catatan_pengiriman')->nullable();
             $table->string('catatan_penyelesaian')->nullable();
+            $table->string('dari_nama')->nullable();
+            $table->string('dari_nomor_hp')->nullable();
+            $table->string('dari_alamat')->nullable();
+            $table->string('kepada_nama')->nullable();
+            $table->string('kepada_nomor_hp')->nullable();
+            $table->string('kepada_alamat')->nullable();
             $table->timestamps();
         });
     }

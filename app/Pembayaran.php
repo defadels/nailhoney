@@ -10,9 +10,7 @@ class Pembayaran extends Model
 
     protected $guarded = [];
 
-    protected $fillable = ['nama','keterangan', 'jenis', 'drive'];
-
     public function daftar_penjualan() {
-        return $this->hasMany('App\Penjualan','pembayaran_id');
+        return $this->hasMany('App\Penjualan','pembayaran_id')->withDefault();
     }
 }

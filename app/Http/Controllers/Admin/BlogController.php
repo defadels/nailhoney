@@ -125,6 +125,7 @@ class BlogController extends Controller
         
 
         $description = "Ini halaman untuk kelola blog";
+        
         return view('admin.blog.edit',compact('title',
         'description',
         'blog',

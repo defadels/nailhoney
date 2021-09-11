@@ -46,7 +46,7 @@
 
 							<div class="form-group">
 							{!! Form::label('judul', 'Judul') !!}
-							{!! Form::text('judul', old('judul'),['class' => 'form-control form-control']) !!}
+							{!! Form::text('judul', old('judul'),['class' => 'form-control']) !!}
 							</div>
 
 							
@@ -70,14 +70,14 @@
 							</div>
 
 							<div class="form-group">
-							{!! Form::label('kategori_id"', 'Kategori') !!}
+							{!! Form::label('kategori_id', 'Kategori') !!}
 
 							{!! Form::select('kategori_id', $daftar_kategori, old('kategori_id'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
       
                             </div>
 
 							<div class="form-group">
-							{!! Form::label('status"', 'Status') !!}
+							{!! Form::label('status', 'Status') !!}
 							{!! Form::select('status', $daftar_status, old('status'), ['placeholder' => 'Pick a size...','class' => 'form-control']) !!}
                             </div>
 

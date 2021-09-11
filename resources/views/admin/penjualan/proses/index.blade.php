@@ -41,22 +41,24 @@
 										</tr>
 									</thead>
 									<tbody>
+										@foreach($daftar_penjualan as $penjualan)
 										<tr>
-											<td>25/02/2021</td>
+											<td>{{$penjualan->created_at}}</td>
 											<td>INV00001</td>
-											<td>150.000</td>
-											<td>20.000</td>
-											<td>Fadil</td>
+											<td>{{$penjualan->total}}0</td>
+											<td>{{$penjualan->ongkir_kirim}}</td>
+											<td>{{$penjualan->pelanggan->nama}}</td>
 											<td>Medan</td>
 											<td>	
 												<a href="" class="btn btn-outline-warning">Lihat</a>	
 												<a href="" class="btn btn-outline-danger">Label</a>	
 												<a href="" class="btn btn-outline-success">Kirim</a>	
 											</td>
-										</tr>
-			
+										</tr>	
+									@endforeach
 									</tbody>
 								</table>
+								{{ $daftar_penjualan->links() }}
 							</div>
 						</div>
 					</div>

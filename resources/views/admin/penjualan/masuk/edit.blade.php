@@ -1,6 +1,6 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Tambah Penjualan Masuk')
+@section('title', 'Edit Penjualan Masuk')
 
 @section('page_style')
 <link href="{{asset('/assets-admin/plugins/select2/css/select2.min.css')}}" rel="stylesheet" />
@@ -17,6 +17,7 @@
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
 									<li class="breadcrumb-item active" aria-current="page">Tambah Penjualan Masuk</li>
+									<li class="breadcrumb-item active" aria-current="page">Edit</li>
 								</ol>
 							</nav>
 						</div>
@@ -34,7 +35,7 @@
 						</div>
 					</div>
 					<!--end breadcrumb-->
-					{!! Form::open(['route' => 'admin.penjualan.masuk.store']) !!}
+					{!! Form::model(['route' => ['admin.penjualan.masuk.update', $penjualan->id], 'method' => 'PUT']) !!}
 
 					<div class="row">
 						<div class="col-12 col-lg-6">
@@ -42,35 +43,26 @@
 								<div class="card-body">
 
 										<div class="form-body">
-											
+											<div class="form-group row">
+												<label for="" class="col-sm-3 col-form-label">Diproses Oleh</label>
+												<div class="col-sm-9">
+													<input type="text" name="" id="" class="form-control">
+
+												</div>
+											</div>
 											<div class="form-group row">
 												<!-- <label for="" class="col-sm-3 col-form-label">Pelanggan</label> -->
 												{!! Form::label('pelanggan_id', 'Nama Pelanggan', ['class'=> 'col-sm-3 col-form-label']) !!}
 												<div class="col-sm-9">
 													<!-- <input type="text" name="" id="" class="form-control"> -->
-												{!! Form::select('pelanggan_id', $daftar_pelanggan, old('pelanggan_id'), ['placeholder' => 'Cari nama pelanggan','id' => 'cari-pelanggan']) !!}
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<!-- <label for="" class="col-sm-3 col-form-label">Pelanggan</label> -->
-												<!-- {!! Form::label('pelanggan_id', 'Nomor Handphone', ['class'=> 'col-sm-3 col-form-label']) !!} -->
-												<div class="col-sm-9">
-													<!-- <input type="text" name="" id="" class="form-control"> -->
-												<!-- {!! Form::text('pelanggan_id', old('pelanggan_id'), ['class' => 'form-control']) !!} -->
-												</div>
-											</div>
-
-											<div class="form-group row">
-												<!-- <label for="" class="col-sm-3 col-form-label">Pelanggan</label> -->
-												<!-- {!! Form::label('pelanggan_id', 'Email Pelanggan', ['class'=> 'col-sm-3 col-form-label']) !!} -->
-												<div class="col-sm-9">
-													<!-- <input type="text" name="" id="" class="form-control"> -->
-												<!-- {!! Form::email('pelanggan_id', old('pelanggan_id'), ['class' => 'form-control']) !!} -->
+												{!! Form::select('pelanggan_id', $daftar_pelanggan, old('pelanggan_id'), ['placeholder' => 'Cari nama pelanggan','class' => 'single-select']) !!}
 												</div>
 											</div>
 										</div>
-
+										<br />
+										<br />
+										<br />
+										<br />
 								</div>
 							</div>
 						</div>
@@ -83,21 +75,21 @@
 											<div class="form-group row">
 												<!-- <label for="" class="col-sm-3 col-form-label">Metode Pembayaran</label> -->
 
-												<!-- {!! Form::label('pembayaran_id', 'Metode Pembayaran', ['class'=> 'col-sm-3 col-form-label']) !!} -->
+												{!! Form::label('pembayaran_id', 'Metode Pembayaran', ['class'=> 'col-sm-3 col-form-label']) !!}
 												<div class="col-sm-9">
 													<!-- <input type="text" name="" id="" class="form-control"> -->
 
-													<!-- {!! Form::select('pembayaran_id', $daftar_pembayaran, old('pembayaran_id'), ['placeholder' => 'Pilih metode pembayaran...','class' => 'select2']) !!} -->
+													{!! Form::select('pembayaran_id', $daftar_pembayaran, old('pembayaran_id'), ['placeholder' => 'Pilih metode pembayaran...','class' => 'single-select']) !!}
 												</div>
 											</div>
 											<div class="form-group row">
 												<!-- <label for="" class="col-sm-3 col-form-label">Metode Pengiriman</label> -->
 
-												<!-- {!! Form::label('pengiriman_id', 'Metode Pengiriman', ['class'=> 'col-sm-3 col-form-label']) !!} -->
+												{!! Form::label('pengiriman_id', 'Metode Pengiriman', ['class'=> 'col-sm-3 col-form-label']) !!}
 												<div class="col-sm-9">
 													<!-- <input type="text" name="" id="" class="form-control"> -->
 												
-													<!-- {!! Form::select('pengiriman_id', $daftar_pengiriman, old('pengiriman_id'), ['placeholder' => 'Pilih metode pengiriman...','class' => 'select2']) !!} -->
+													{!! Form::select('pengiriman_id', $daftar_pengiriman, old('pengiriman_id'), ['placeholder' => 'Pilih metode pengiriman...','class' => 'single-select']) !!}
 												</div>
 											</div>
 											<div class="form-group row">
@@ -151,19 +143,25 @@
 										<div class="form-body">
 
 											<div class="form-group row">
-											<label for="" class="col-sm-2 col-form-label">Pilih Alamat</label>
-												<div class="col-sm-10">
-												{!! Form::select('pengiriman_id', $daftar_pengiriman, old('pengiriman_id'), ['placeholder' => 'Pilih alamat...','class' => 'select2','id' => 'daftar_alamat']) !!}
+												<label for="" class="col-sm-2 col-form-label">Dari</label>
+												<div class="col-sm-5">
+													<input type="text" name="" id="" class="form-control">
 
 												</div>
+												<div class="col-sm-5">
+													<input type="text" name="" id="" class="form-control">
 
+												</div>
+											</div>
+
+											<div class="form-group row">
 												<label for="" class="col-sm-2 col-form-label">Kepada</label>
 												<div class="col-sm-5">
-													<input type="text" name="" id="tujuan_nama" class="form-control">
+													<input type="text" name="" id="" class="form-control">
 
 												</div>
 												<div class="col-sm-5">
-													<input type="text" name="" id="tujuan_nomor_hp" class="form-control">
+													<input type="text" name="" id="" class="form-control">
 
 												</div>
 											</div>
@@ -172,7 +170,7 @@
 												<label for="" class="col-sm-2 col-form-label">Alamat Tujuan</label>
 
 												<div class="col-sm-10">
-													<textarea class="form-control" rows="3" cols="3" id="tujuan_alamat"></textarea>
+													<textarea class="form-control" rows="3" cols="3"></textarea>
 
 												</div>
 											</div>
@@ -193,7 +191,7 @@
 											<div class="form-group row">
 												<label for="" class="col-sm-3 col-form-label">Biaya Tambahan</label>
 												<div class="col-sm-9">
-													<!-- <input type="text" name="" id="" class="form-control"> -->
+													<input type="text" name="" id="" class="form-control">
 												</div>
 											</div>
 
@@ -208,7 +206,7 @@
 											<div class="form-group row">
 												<label for="" class="col-sm-3 col-form-label">Grand Total</label>
 												<div class="col-sm-9">
-													<!-- <input type="number" value="0" disabled name="" id="" class="form-control"> -->
+													<input type="number" value="0" disabled name="" id="" class="form-control">
 												</div>
 											</div>
 
@@ -222,7 +220,7 @@
 											<div class="form-group row">
 												<label for="" class="col-sm-3 col-form-label"></label>
 												<div class="col-sm-9">
-												<input type="submit" class="btn btn-md btn-primary" value="Pesan">
+												<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 												<input type="reset" class="btn btn-md btn-danger" value="Batal">
 												</div>
 											</div>
@@ -238,135 +236,11 @@
 	@section('page_script')
 	<script src="{{asset('/assets-admin/plugins/select2/js/select2.min.js')}}"></script>
 	<script>
-		
-		$('.select2').select2({
+		$('.single-select').select2({
 			theme: 'bootstrap4',
 			width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
 			placeholder: $(this).data('placeholder'),
 			allowClear: Boolean($(this).data('allow-clear')),
-			
 		});
-
-		$('#cari-pelanggan').select2({
-			theme: 'bootstrap4',
-			width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' : 'style',
-			placeholder: $(this).data('placeholder'),
-			allowClear: Boolean($(this).data('allow-clear')),
-			
-			ajax: {
-      url: '{{route("admin.penjualan.masuk.daftar_pelanggan")}}',
-      dataType: 'json',
-      delay: 250,
-      data: function (params) {
-          return {
-            cari: params.term,
-            page: params.page || 1
-          };
-        },
-      processResults: function (data) {
-        return {
-          results:  $.map(data.results, function (item) {
-            return {
-              text: item.nama +" ["+item.email+"]",
-              id: item.id,
-            }
-          }),
-          pagination: data.pagination
-        };
-      },
-      cache: true
-    },
-
-    templateSelection: formatRepoSelection
-
-	
-
-		});
-
-		function formatRepoSelection (repo) {
-
-
-		return repo.text;
-		}
-
-
-		$("#cari-pelanggan").change(function(){
-       		var id_pelanggan = $(this).val(); 
-	   		var $el = $("#daftar_alamat");
-			var $kepada = $('#tujuan_nama');
-			var $alamat_tujuan = $('#tujuan_alamat');
-			var $tujuan_nomor_hp = $('#tujuan_nomor_hp');
-
-			$el.empty(); // remove old options
-			$kepada.val('');
-			$alamat_tujuan.empty();
-			$tujuan_nomor_hp.val('');
-
-       $.ajax({
-          type: "GET",
-          dataType: "json",
-          url: '{{ route("admin.penjualan.masuk.daftar_pelanggan")}}?id='+id_pelanggan,
-          success: function(msg){
-
-			if(msg.results){
-				var $pertama = msg.results[0]; 
-				console.log($pertama);	
-				$kepada.val($pertama.nama_penerima);
-				$alamat_tujuan.html($pertama.alamat_penerima);
-				$tujuan_nomor_hp.val($pertama.nomor_hp_penerima);	
-			}
-
-				$el.empty(); // remove old options
-				$.each(msg.results, function(key, value) {
-					$el.append($("<option></option>")
-     				.attr("value", value.id).text(value.label));
-				
-				});                                                     
-          }
-       });
-	   
-	   
-     });  
-
-	 $("#daftar_alamat").change(function(){
-       		var id_alamat = $(this).val();    		
-			var $kepada = $('#tujuan_nama');
-			var $el = $("#daftar_alamat");
-			var $alamat_tujuan = $('#tujuan_alamat');
-			var $tujuan_nomor_hp = $('#tujuan_nomor_hp');
-
-			$el.empty(); // remove old options
-			$kepada.val('');
-			$alamat_tujuan.empty();
-			$tujuan_nomor_hp.val('');
-
-       $.ajax({
-          type: "GET",
-          dataType: "json",
-          url: '{{ route("admin.penjualan.masuk.daftar_alamat")}}?id='+id_alamat,
-          success: function(msg){	
-			
-			$alamat = msg.result;
-			console.log(msg.result);
-			
-			if(msg.result){
-				$kepada.val($alamat.nama_penerima);
-				$alamat_tujuan.html($alamat.alamat_penerima);
-				$tujuan_nomor_hp.val($alamat.nomor_hp_penerima);
-				
-			}
-				$.each(msg.result, function(key, value) {
-					$el.append($("<option></option>")
-     				.attr("value", value.id).text(value.label));
-				
-				});
-			
-                                                                   
-          }
-       });
-	   
-	   
-     });  
-	
 	</script>
 	@endsection
