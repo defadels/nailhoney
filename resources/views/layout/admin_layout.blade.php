@@ -17,15 +17,15 @@
 	<link href="{{ asset('/assets-admin/plugins/metismenu/css/metisMenu.min.css') }}" rel="stylesheet" />
 	<link href="{{ asset('/assets-admin/plugins/input-tags/css/tagsinput.css') }}" rel="stylesheet" />
 	<!-- loader-->
-	<link href="{{asset('/assets-admin/css/pace.min.css') }}" rel="stylesheet" />
-	<script src="{{asset('/assets-admin/js/pace.min.js') }}"></script>
+	<link href="{{ asset('/assets-admin/css/pace.min.css') }}" rel="stylesheet" />
+	<script src="{{ asset('/assets-admin/js/pace.min.js') }}"></script>
 	@yield('page_script_header')
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="{{asset('/assets-admin/css/bootstrap.min.css') }}" />
+	<link rel="stylesheet" href="{{ asset('/assets-admin/css/bootstrap.min.css') }}" />
 	<!-- Icons CSS -->
-	<link rel="stylesheet" href="{{asset('/assets-admin/css/icons.css') }}" />
+	<link rel="stylesheet" href="{{ asset('/assets-admin/css/icons.css') }}" />
 	<!-- App CSS -->
-	<link rel="stylesheet" href="{{asset('/assets-admin/css/app.css') }}" />
+	<link rel="stylesheet" href="{{ asset('/assets-admin/css/app.css') }}" />
 	@yield('page_style')
 
 	
