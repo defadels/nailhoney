@@ -39,10 +39,10 @@ class Penjualan extends Migration
             $table->foreign('pelanggan_id')->references('id')->on('users');
             
             $table->unsignedInteger('pengiriman_id')->nullable();
-            $table->foreign('pengiriman_id')->references('id')->on('pengiriman');
+            $table->foreign('pengiriman_id')->references('id')->on('pengiriman')->onDelete('cascade');
             
             $table->unsignedInteger('pembayaran_id')->nullable();
-            $table->foreign('pembayaran_id')->references('id')->on('pembayaran');
+            $table->foreign('pembayaran_id')->references('id')->on('pembayaran')->onDelete('cascade');
             
             $table->dateTime('tanggal')->nullable();
             $table->dateTime('diproses_pada')->nullable();

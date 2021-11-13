@@ -1,6 +1,6 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Edit User')
+@section('title', 'Tambah User')
 
 
 @section('content')
@@ -12,7 +12,7 @@
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">User</li>
+									<li class="breadcrumb-item active" aria-current="page">Tambah User</li>
 								</ol>
 							</nav>
 						</div>

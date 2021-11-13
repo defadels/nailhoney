@@ -45,8 +45,8 @@
 										<tr>
 											<th>{{ $pembayaran->nama }}</th>
 											<td>{{ $pembayaran->keterangan }}</td>
-											<td>{{ $pembayaran->jenis }}</td>
-											<td>{{ $pembayaran->status }}</td>
+											<td>{{ ucfirst(trans($pembayaran->jenis)) }}</td>
+											<td>{{ ucfirst(trans($pembayaran->status)) }}</td>
 											<td>
 												<a href="{{ route('admin.pengaturan.pembayaran.edit', $pembayaran->id) }}" class="btn btn-warning">Edit</a>
 											</td>

@@ -42,6 +42,6 @@ class User extends Authenticatable
     }
 
     public function daftar_alamat() {
-        return $this->hasMany('App\AlamatUser','id_alamat');
+        return $this->hasMany('App\AlamatUser','pelanggan_id','id');
     }
 }

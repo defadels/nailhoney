@@ -40,14 +40,14 @@ class SpandukController extends Controller
             'judul' => 'required|max:255',
             'link' =>'max:255',
             'label_tombol' => 'max:255',
-            'warna_tulisan' => 'max"255',
-            'foto' => 'file|mimes:jpeg,png|size:10000'
+            'warna_tulisan' => 'max:255',
+            'foto' => 'file|mimes:jpeg,png',
         ];
 
         $messages = [
             'required' => ':attribute wajib diisi.',
             'judul.max' => 'Judul maksimal 255 karakter',
-            'foto.size' => 'Ukuran foto minimal 1MB',
+            // 'foto.size' => 'Ukuran foto minimal 1MB',
             'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
 
@@ -111,14 +111,14 @@ class SpandukController extends Controller
             'judul' => 'required|max:255',
             'link' =>'max:255',
             'label_tombol' => 'max:255',
-            'warna_tulisan' => 'max"255',
-            'foto' => 'file|mimes:jpeg,png|size:10000'
+            'warna_tulisan' => 'max:255',
+            'foto' => 'file|mimes:jpeg,png'
         ];
 
         $messages = [
             'required' => ':attribute wajib diisi.',
             'judul.max' => 'Judul maksimal 255 karakter',
-            'foto.size' => 'Ukuran foto minimal 1MB',
+            // 'foto.size' => 'Ukuran foto minimal 1MB',
             'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
 

@@ -14,7 +14,7 @@ class HalamanController extends Controller
         $title = "Kelola Halaman";
         $description = "Ini adalah halaman untuk kelola Halaman";
 
-        $daftar_halaman = Halaman::paginate(10);
+        $daftar_halaman = Halaman::latest()->paginate(10);
 
         return view('admin.halaman.index',compact('title',
         'description',
@@ -116,7 +116,7 @@ class HalamanController extends Controller
         $halaman->save();
 
         return redirect()->route('admin.halaman.index')
-        ->with('sukses', $halaman->link.' berhasil diubah');
+        ->with('sukses', $halaman->judul.' berhasil diubah');
     }
 
     public function show() {

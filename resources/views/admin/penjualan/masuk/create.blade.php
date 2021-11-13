@@ -153,17 +153,21 @@
 											<div class="form-group row">
 											<label for="" class="col-sm-2 col-form-label">Pilih Alamat</label>
 												<div class="col-sm-10">
-												{!! Form::select('pengiriman_id', $daftar_pengiriman, old('pengiriman_id'), ['placeholder' => 'Pilih alamat...','class' => 'select2','id' => 'daftar_alamat']) !!}
+												
+												<!-- {!! Form::select('alamat_id', $alamat, old('alamat_id'), ['placeholder' => 'Pilih alamat...','class' => 'select2','id' => 'daftar_alamat']) !!} -->
+												<select name="label" id="label_alamat" class="form-control">
+													<option value="">Pilih alamat...</option>
+												</select>
 
 												</div>
 
 												<label for="" class="col-sm-2 col-form-label">Kepada</label>
 												<div class="col-sm-5">
-													<input type="text" name="" id="tujuan_nama" class="form-control">
+													<input type="text" name="nama_penerima" value="" id="tujuan_nama" class="form-control">
 
 												</div>
 												<div class="col-sm-5">
-													<input type="text" name="" id="tujuan_nomor_hp" class="form-control">
+													<input type="text" name="nomor_hp_penerima" value="" id="tujuan_nomor_hp" class="form-control">
 
 												</div>
 											</div>
@@ -172,7 +176,7 @@
 												<label for="" class="col-sm-2 col-form-label">Alamat Tujuan</label>
 
 												<div class="col-sm-10">
-													<textarea class="form-control" rows="3" cols="3" id="tujuan_alamat"></textarea>
+													<textarea class="form-control" name="alamat_penerima" rows="3" cols="3" id="tujuan_alamat"></textarea>
 
 												</div>
 											</div>
@@ -238,6 +242,8 @@
 	@section('page_script')
 	<script src="{{asset('/assets-admin/plugins/select2/js/select2.min.js')}}"></script>
 	<script>
+
+		var data_global = ""; 
 		
 		$('.select2').select2({
 			theme: 'bootstrap4',
@@ -254,23 +260,23 @@
 			allowClear: Boolean($(this).data('allow-clear')),
 			
 			ajax: {
-      url: '{{route("admin.penjualan.masuk.daftar_pelanggan")}}',
-      dataType: 'json',
-      delay: 250,
-      data: function (params) {
-          return {
-            cari: params.term,
-            page: params.page || 1
-          };
-        },
-      processResults: function (data) {
-        return {
-          results:  $.map(data.results, function (item) {
-            return {
-              text: item.nama +" ["+item.email+"]",
-              id: item.id,
-            }
-          }),
+			url: '{{route("admin.penjualan.masuk.daftar_pelanggan")}}',
+			dataType: 'json',
+			delay: 250,
+			data: function (params) {
+				return {
+					cari: params.term,
+					page: params.page || 1
+				};
+				},
+			processResults: function (data) {
+				return {
+				results:  $.map(data.results, function (item) {
+					return {
+					text: item.nama +" ["+item.email+"]",
+					id: item.id,
+					}
+				}),
           pagination: data.pagination
         };
       },
@@ -292,7 +298,7 @@
 
 		$("#cari-pelanggan").change(function(){
        		var id_pelanggan = $(this).val(); 
-	   		var $el = $("#daftar_alamat");
+	   		var $el = $("#label_alamat");
 			var $kepada = $('#tujuan_nama');
 			var $alamat_tujuan = $('#tujuan_alamat');
 			var $tujuan_nomor_hp = $('#tujuan_nomor_hp');
@@ -305,68 +311,137 @@
        $.ajax({
           type: "GET",
           dataType: "json",
-          url: '{{ route("admin.penjualan.masuk.daftar_pelanggan")}}?id='+id_pelanggan,
+          url: '{{ route("admin.penjualan.masuk.daftar_alamat")}}?pelanggan_id='+id_pelanggan,
           success: function(msg){
 
-			if(msg.results){
-				var $pertama = msg.results[0]; 
-				console.log($pertama);	
-				$kepada.val($pertama.nama_penerima);
-				$alamat_tujuan.html($pertama.alamat_penerima);
-				$tujuan_nomor_hp.val($pertama.nomor_hp_penerima);	
-			}
+			console.log(msg);
 
-				$el.empty(); // remove old options
-				$.each(msg.results, function(key, value) {
+			data_global = msg;
+
+			// if(msg.results){
+			// 	var $id = $('#cari-pelanggan').val() - 1;
+			// 	var $pertama = msg.results[$id];
+
+			// 	console.log($pertama.result[0]);
+				
+				var status = ["ya"];
+				var filteredArray = msg.result.filter(function(df){
+
+				return status.indexOf(df.is_default) > -1;
+				});
+
+				filteredArray = filteredArray[0];
+
+				console.log(filteredArray[0]);
+
+
+				$kepada.val(filteredArray.nama_penerima);
+				$alamat_tujuan.html(filteredArray.alamat_penerima);
+				$tujuan_nomor_hp.val(filteredArray.nomor_hp_penerima);
+
+			// }
+
+				// $el.empty(); // remove old options
+				$.each(msg.result, function(key, value) {
 					$el.append($("<option></option>")
      				.attr("value", value.id).text(value.label));
+					 console.log(value.id);
+					 console.log(value.label);
 				
 				});                                                     
           }
        });
 	   
 	   
-     });  
+     });
+	 
+	 console.log(data_global);
+	 
+	
 
-	 $("#daftar_alamat").change(function(){
-       		var id_alamat = $(this).val();    		
-			var $kepada = $('#tujuan_nama');
-			var $el = $("#daftar_alamat");
-			var $alamat_tujuan = $('#tujuan_alamat');
-			var $tujuan_nomor_hp = $('#tujuan_nomor_hp');
+	 function get_alamat(id_alamat) {
+		 var hasil = 0;
+		 if(isNaN(id_alamat)){
+			 return 0;
+		 }
+		//  $.ajax({
+		// 	url: '{{route("admin.penjualan.masuk.daftar_alamat")}}?id='+id_alamat,
+		// 	success : function (data) {
+		// 		hasil = data;
+		// 	},
+		// 	async : false
+		//  });
+		 return hasil;
+	 }
 
-			$el.empty(); // remove old options
-			$kepada.val('');
-			$alamat_tujuan.empty();
-			$tujuan_nomor_hp.val('');
+	 $("#label_alamat").change(function() {
+		 
+		 var id = $('#label_alamat').val();
 
-       $.ajax({
-          type: "GET",
-          dataType: "json",
-          url: '{{ route("admin.penjualan.masuk.daftar_alamat")}}?id='+id_alamat,
-          success: function(msg){	
+		 var filteredArray = msg.result.filter(function(df){
+
+		return status.indexOf(df.is_default) > -1;
+		});
+
+		filteredArray = filteredArray[0];
+
+		console.log(filteredArray[0]);
+
+		 var alamat = get_alamat(id);
+
+		 console.log(alamat);
+
+		 if (alamat.is_default == 1) {
+			$('#tujuan_nama').val(alamat.result.nama_penerima);
+			$('#tujuan_nomor_hp').val(alamat.result.nomor_hp_penerima);
+			$('#alamat_tujuan').html(alamat.result.alamat_penerima);
+		 } else {
+			$('#tujuan_nama').val();
+			$('#tujuan_nomor_hp').val("");
+			$('#alamat_tujuan').html("");
+		 }
+	 });
+
+	//  $("#daftar_alamat").change(function(){
+    //    		var id_alamat = $(this).val();    		
+	// 		var $kepada = $('#tujuan_nama');
+	// 		var $el = $("#daftar_alamat");
+	// 		var $alamat_tujuan = $('#tujuan_alamat');
+	// 		var $tujuan_nomor_hp = $('#tujuan_nomor_hp');
+
+	// 		// $el.empty(); // remove old options
+	// 		$kepada.val('');
+	// 		$alamat_tujuan.empty();
+	// 		$tujuan_nomor_hp.val('');
+
+    //    $.ajax({
+    //       type: "GET",
+    //       dataType: "json",
+    //       url: '{{ route("admin.penjualan.masuk.daftar_alamat")}}?id='+id_alamat,
+    //       success: function(msg){	
 			
-			$alamat = msg.result;
-			console.log(msg.result);
+	// 		var $id = $('daftar_alamat').val();
+
+	// 		$alamat = msg.result;
+	// 		console.log(msg.result);
 			
-			if(msg.result){
-				$kepada.val($alamat.nama_penerima);
-				$alamat_tujuan.html($alamat.alamat_penerima);
-				$tujuan_nomor_hp.val($alamat.nomor_hp_penerima);
+	// 		if(msg.result){
+	// 			$kepada.val($alamat.nama_penerima);
+	// 			$alamat_tujuan.html($alamat.alamat_penerima);
+	// 			$tujuan_nomor_hp.val($alamat.nomor_hp_penerima);
 				
-			}
-				$.each(msg.result, function(key, value) {
-					$el.append($("<option></option>")
-     				.attr("value", value.id).text(value.label));
+	// 		}
+	// 			$.each(msg.result, function(key, value) {
+	// 				$el.append($("<option></option>")
+    //  				.attr("value", value.id).text(value.label));
 				
-				});
-			
+	// 			});
                                                                    
-          }
-       });
+    //       }
+    //    });
 	   
 	   
-     });  
+    //  });  
 	
 	</script>
 	@endsection

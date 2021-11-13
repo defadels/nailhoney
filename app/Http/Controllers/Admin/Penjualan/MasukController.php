@@ -32,6 +32,7 @@ class MasukController extends Controller
         $daftar_pembayaran = Pembayaran::pluck('nama', 'id');
         $daftar_pengiriman = Pengiriman::pluck('nama', 'id');
         $daftar_pelanggan = User::pluck('nama','id');
+        $alamat = AlamatUser::pluck('label', 'id');
 
         $daftar_status = [
             'masuk' => 'Masuk',
@@ -45,7 +46,7 @@ class MasukController extends Controller
 
         return view('admin.penjualan.masuk.create', compact('title', 
         'description', 'daftar_pembayaran','daftar_pengiriman',
-        'daftar_pelanggan','daftar_status'));
+        'daftar_pelanggan','daftar_status','alamat'));
     }
 
     public function store(Request $req) {
@@ -211,11 +212,22 @@ class MasukController extends Controller
 
         $kata_kunci = $req->cari;
 
-        if ($req->has("cari") && $req->cari != "" ) {
+        // $daftar_pelanggan = User::whereIn('hak_akses', ['user']);
+
+        if ($req->has('cari') && $req->cari != "") {
+
+            // $daftar_pelanggan = $daftar_pelanggan->where(function($query)
+            // use($kata_kunci) {
+            //     $query->where('nama', 'like', '%'.$kata_kunci.'%')
+            //          ->orWhere('nomor_hp', '=', $kata_kunci)
+            //         ->orWhere('email', '=', $kata_kunci)
+            //         ->paginate(5);
+            // });
 
             $daftar_pelanggan = User::where('nama', 'like', '%'.$kata_kunci.'%')
             ->orWhere('nomor_hp', '=', $kata_kunci)
             ->orWhere('email', '=', $kata_kunci)
+            ->orWhere('hak_akses', ['user'])
             ->paginate(5);
 
         } else {
@@ -234,8 +246,8 @@ class MasukController extends Controller
 
     public function json_daftar_alamat(Request $req) {
 
-        $id_alamat = $req->id;
-        $alamat = AlamatUser::find($id_alamat); 
+        $id_pelanggan = $req->pelanggan_id;
+        $alamat = User::findOrFail($id_pelanggan)->daftar_alamat()->get(); 
         
         $hasil = array(
             'result' => $alamat

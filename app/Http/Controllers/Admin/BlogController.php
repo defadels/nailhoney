@@ -109,7 +109,7 @@ class BlogController extends Controller
         }
 
         return redirect()->route('admin.blog.index')
-        ->with('sukses',$blog->kategori.' berhasil di tambah');
+        ->with('sukses',$blog->judul.' berhasil di tambah');
     }
 
     public function edit($id) {
@@ -204,10 +204,10 @@ class BlogController extends Controller
         } catch(Exception $e) {
         
             return redirect()->route('admin.blog.index')
-            ->with('gagal',$blog->judul.' gagal di ubah');
+            ->with('gagal',$blog->judul.' gagal dihapus');
         }
 
         return redirect()->route('admin.blog.index')
-            ->with('sukses',$blog->judul.' berhasil di ubah');
+            ->with('sukses',$blog->judul.' berhasil dihapus');
     }
 }

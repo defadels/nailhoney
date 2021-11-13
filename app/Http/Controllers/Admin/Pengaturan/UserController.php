@@ -15,7 +15,7 @@ class UserController extends Controller
         $description = "Ini halaman untuk kelola user";
 
         $daftar_user = User::whereIn('hak_akses', ['admin','editor','user'])
-                            ->paginate(10);
+                            ->latest()->paginate(10);
         return view('admin.pengaturan.user.index',compact(
             'title',
             'description',
@@ -33,7 +33,7 @@ class UserController extends Controller
         ];
 
         return view('admin.pengaturan.user.create',compact('title',
-        'description','daftar_hak_akses '));
+        'description','daftar_hak_akses'));
     }
     
     public function edit($id) {
@@ -117,11 +117,11 @@ class UserController extends Controller
         } catch(Exception $e) {
 
             return redirect()->route('admin.pengaturan.user.index')
-            ->with('gagal',$user->nama.' gagal di ubah');
+            ->with('gagal',$user->nama.' gagal dihapus');
 
         }
 
         return redirect()->route('admin.pengaturan.user.index')
-        ->with('sukses',$user->nama.' berhasil di ubah');
+        ->with('sukses',$user->nama.' berhasil dihapus');
     }
 }

@@ -39,12 +39,12 @@ class TestimoniController extends Controller
         $rules = [
             'nama_konsumen' => 'required|max:255',
             'isi_testimoni' => 'max:255',
-            'foto' => 'file|mimes:jpeg,png|size:10000'
+            'foto' => 'file|mimes:jpeg,png'
         ];
 
         $messages = [
             'required' => ' :attribute wajib diisi.',
-            'foto.size' => 'Ukuran foto minimal 1MB',
+            // 'foto.size' => 'Ukuran foto minimal 1MB',
             'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
         
@@ -97,12 +97,12 @@ class TestimoniController extends Controller
         $rules = [
             'nama_konsumen' => 'required|max:255',
             'isi_testimoni' => 'max:255',
-            'foto' => 'file|mimes:jpeg,png|size:10000'
+            'foto' => 'file|mimes:jpeg,png'
         ];
 
         $messages = [
             'required' => ' :attribute wajib diisi.',
-            'foto.size' => 'Ukuran foto minimal 1MB',
+            // 'foto.size' => 'Ukuran foto minimal 1MB',
             'foto.mimes' => 'Jenis file foto berupa JPG dan PNG',
         ];
         

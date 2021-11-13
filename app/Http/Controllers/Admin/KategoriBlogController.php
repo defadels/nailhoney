@@ -9,14 +9,24 @@ use Validator;
 
 class KategoriBlogController extends Controller
 {
-    public function index() {
+    public function index(Request $req) {
         $title = "Kategori Pada Halaman Blog";
+
+        $keyword = $req->keyword;
+
+        $daftar_kategori = KategoriBlog::orderBy('id','desc');
+
+        if($req->has('keyword') && $req->keyword != "" )
+        {
+            $daftar_kategori = $daftar_kategori->where('nama', 'like', '%'.$keyword.'%');
+        }
+
         $description = "Menampilkan semua data kategori pada halaman blog";
-        $daftar_kategori = KategoriBlog::orderBy('id','desc')->paginate(10);
+
+        $daftar_kategori = $daftar_kategori->paginate(10);
 
         return view('admin.blog.kategori.index', compact('title',
-        'description',
-        'daftar_kategori'));
+        'description', 'daftar_kategori', 'keyword'));
     }
     
     public function create() {
