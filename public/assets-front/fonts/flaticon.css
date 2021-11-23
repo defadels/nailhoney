@@ -1,0 +1,133 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "flaticon";
+  src: url("./flaticon.ttf?6b10d6f8d5ccbf1360e338d5dc5fb538") format("truetype"), url("./flaticon.woff?6b10d6f8d5ccbf1360e338d5dc5fb538") format("woff"), url("./flaticon.woff2?6b10d6f8d5ccbf1360e338d5dc5fb538") format("woff2"), url("./flaticon.eot?6b10d6f8d5ccbf1360e338d5dc5fb538#iefix") format("embedded-opentype"), url("./flaticon.svg?6b10d6f8d5ccbf1360e338d5dc5fb538#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+  font-family: flaticon !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-bag:before {
+  content: "";
+}
+
+.flaticon-shopping-cart:before {
+  content: "";
+}
+
+.flaticon-loupe:before {
+  content: "";
+}
+
+.flaticon-heart:before {
+  content: "";
+}
+
+.flaticon-like:before {
+  content: "";
+}
+
+.flaticon-envelope:before {
+  content: "";
+}
+
+.flaticon-pin:before {
+  content: "";
+}
+
+.flaticon-call:before {
+  content: "";
+}
+
+.flaticon-mobile-phone:before {
+  content: "";
+}
+
+.flaticon-user:before {
+  content: "";
+}
+
+.flaticon-delete:before {
+  content: "";
+}
+
+.flaticon-x-mark:before {
+  content: "";
+}
+
+.flaticon-cancel:before {
+  content: "";
+}
+
+.flaticon-menu:before {
+  content: "";
+}
+
+.flaticon-play-button:before {
+  content: "";
+}
+
+.flaticon-play:before {
+  content: "";
+}
+
+.flaticon-right-arrow:before {
+  content: "";
+}
+
+.flaticon-left-arrow:before {
+  content: "";
+}
+
+.flaticon-left-quote:before {
+  content: "";
+}
+
+.flaticon-right-quote:before {
+  content: "";
+}
+
+.flaticon-delivery:before {
+  content: "";
+}
+
+.flaticon-credit-card:before {
+  content: "";
+}
+
+.flaticon-support:before {
+  content: "";
+}
+
+.flaticon-honey:before {
+  content: "";
+}
+
+.flaticon-honey-1:before {
+  content: "";
+}
+
+.flaticon-honeycomb:before {
+  content: "";
+}
+
+.flaticon-honey-2:before {
+  content: "";
+}
+
+.flaticon-bee-2:before {
+  content: "";
+}
+
+.flaticon-honey-3:before {
+  content: "";
+}
+/*# sourceMappingURL=flaticon.css.map */

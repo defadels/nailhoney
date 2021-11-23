@@ -21,6 +21,7 @@ class BuatTabelProduk extends Migration
             $table->integer('count')->default(0);
             $table->timestamps();
         });
+        
 
         Schema::create('produk', function (Blueprint $table) {
             $table->bigIncrements('id');
@@ -37,6 +38,14 @@ class BuatTabelProduk extends Migration
             $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
+
+        Schema::create('foto_produk', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->unsignedInteger('produk_id')->nullable();
+            $table->string('foto');
+            $table->string('keterangan');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -48,5 +57,6 @@ class BuatTabelProduk extends Migration
     {
         Schema::dropIfExists('produk');
         Schema::dropIfExists('kategori_produk');
+        Schema::dropIfExists('foto_produk');
     }
 }

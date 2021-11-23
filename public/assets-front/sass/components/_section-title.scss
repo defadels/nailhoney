@@ -1,0 +1,40 @@
+.section-title {
+	text-align: center;
+	margin-bottom: 60px;
+	
+	@include media-query(767px) {
+		margin-bottom: 40px;
+	}
+
+	.title-box {
+		display: inline-block;
+	}
+
+	h2 {
+		font-size: 50px;
+		font-weight: 600;
+		line-height: 1em;
+		margin: 0;
+		padding-bottom: 30px;
+		position: relative;
+		text-transform: capitalize;
+
+		@include media-query(767px) {
+			font-size: 32px;
+		}
+
+		@include media-query(330px) {
+			font-size: 30px;
+		}
+
+		span{
+			color: $theme-primary-color;
+		}
+
+	}
+
+	p{
+		font-size: 16px;
+	}
+
+}

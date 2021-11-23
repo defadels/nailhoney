@@ -1,46 +1,101 @@
-<footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
-        <small class="d-block mb-3 text-muted">&copy; 2017–2021</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Features</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Cool stuff</a></li>
-          <li><a class="link-secondary" href="#">Random feature</a></li>
-          <li><a class="link-secondary" href="#">Team feature</a></li>
-          <li><a class="link-secondary" href="#">Stuff for developers</a></li>
-          <li><a class="link-secondary" href="#">Another one</a></li>
-          <li><a class="link-secondary" href="#">Last time</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Resource name</a></li>
-          <li><a class="link-secondary" href="#">Resource</a></li>
-          <li><a class="link-secondary" href="#">Another resource</a></li>
-          <li><a class="link-secondary" href="#">Final resource</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>Resources</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Business</a></li>
-          <li><a class="link-secondary" href="#">Education</a></li>
-          <li><a class="link-secondary" href="#">Government</a></li>
-          <li><a class="link-secondary" href="#">Gaming</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="link-secondary" href="#">Team</a></li>
-          <li><a class="link-secondary" href="#">Locations</a></li>
-          <li><a class="link-secondary" href="#">Privacy</a></li>
-          <li><a class="link-secondary" href="#">Terms</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+<footer class="tp-site-footer">
+            <div class="tp-upper-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                            <div class="widget about-widget">
+                                <div class="logo widget-title">
+                                    <a href="index.html"><img src="{{asset('assets-front/images/logo2.png')}}" alt="blog"> Annahl</a>
+                                </div>
+                                <p>Management consulting includes a broad range of activities, and the many firms and
+                                    their members often define these practices.</p>
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-facebook"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-twitter-alt"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-instagram"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="ti-google"></i>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                            <div class="widget tp-service-link-widget">
+                                <div class="widget-title">
+                                    <h3>Contact </h3>
+                                </div>
+                                <div class="contact-ft">
+                                    <ul>
+                                        <li><i class="fi flaticon-pin"></i>7 Green Lake Street Crawfordsville, IN 47933
+                                        </li>
+                                        <li><i class="fi flaticon-call"></i>+1 800 123 456 789</li>
+                                        <li><i class="fi flaticon-envelope"></i>Annahl@gmail.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                            <div class="widget link-widget">
+                                <div class="widget-title">
+                                    <h3>My Account</h3>
+                                </div>
+                                <ul>
+                                    <li><a href="project.html">Our Projects</a></li>
+                                    <li><a href="order.html">Order History</a></li>
+                                    <li><a href="wishlist.html">Wishlist</a></li>
+                                    <li><a href="checkout.html">Checkout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
+                            <div class="widget newsletter-widget">
+                                <div class="widget-title">
+                                    <h3>Newsletter</h3>
+                                </div>
+                                <p>You will be notified when somthing new will be appear.</p>
+                                <form>
+                                    <div class="input-1">
+                                        <input type="email" class="form-control" placeholder="Email Address *" required>
+                                    </div>
+                                    <div class="submit clearfix">
+                                        <button type="submit"><i class="ti-email"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end container -->
+            </div>
+            <div class="tp-lower-footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col col-xs-12">
+                            <p class="copyright"> Copyright &copy; 2021 Annahl by <a href="index.html">themepresss</a>.
+                                All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-shape1">
+                <i class="fi flaticon-honeycomb"></i>
+            </div>
+            <div class="footer-shape2">
+                <i class="fi flaticon-honey-1"></i>
+            </div>
+        </footer>

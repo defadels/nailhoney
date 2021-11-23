@@ -1,0 +1,136 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+Theme Name: Annahl - Organic & Honey Shop HTML5 Template
+Version:        1.0.0
+Author:  themepresss           
+-------------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+#0.1	Theme Reset Style
+#0.2	Global Elements
+#0.3	header
+#0.4	hero-slider
+#0.5	tp-footer
+#0.6	category-area
+#0.7	product-area
+#0.8	offer-area
+#0.9	flash-Sale-area
+#1.0	service-area
+#1.1	tp-projects
+#1.2	testimonial-area
+#1.3	client-area
+#1.4	blog-area
+
+
+--------------------------------------------------------------
+#2.0 Home-style-2
+--------------------------------------------------------------
+#2.1	category-area-style2
+#2.2	about-section
+
+--------------------------------------------------------------
+#3.0 	about page
+--------------------------------------------------------------
+#3.1	team-section
+#3.2	tp-fun-fact-section
+
+
+--------------------------------------------------------------
+	service details page
+--------------------------------------------------------------
+#4.1	service-single-section
+
+
+--------------------------------------------------------------
+	cart-page-style
+--------------------------------------------------------------
+#5.0	cart-page-style
+
+
+--------------------------------------------------------------
+   checkout-page-style
+--------------------------------------------------------------
+#6.0	checkout-page-style
+
+
+--------------------------------------------------------------
+	contact page
+--------------------------------------------------------------
+#7.1	contact-pg-contact-section
+
+
+--------------------------------------------------------------
+	blog page
+--------------------------------------------------------------
+#8.1	blog-pg-section
+
+
+--------------------------------------------------------------
+	blog single page
+--------------------------------------------------------------
+#9.1	blog-single-section
+
+
+--------------------------------------------------------------
+	Auth-page-style
+--------------------------------------------------------------
+#10.0	Auth-page-style
+
+
+--------------------------------------------------------------
+	404 page
+--------------------------------------------------------------
+#11.1	error-404-section
+
+
+
+----------------------------------------------------------------*/
+
+// helpers
+@import "helpers/variables";
+@import "helpers/functions";
+@import "helpers/mixins";
+
+// base
+@import "base/base";
+
+
+// components
+@import "components/section-title";
+@import "components/buttons";
+@import "components/form";
+@import "components/social-links";
+@import "components/page-title";
+@import "components/preloader";
+@import "components/blog-sidebar";
+@import "components/pagination";
+@import "components/modal";
+
+// layout
+@import "layout/header";
+@import "layout/hero-slider";
+@import "layout/footer";
+
+// components
+@import "components/sticky-header";
+
+
+// page
+@import "page/home-default";
+@import "page/home-style2";
+@import "page/about";
+@import "page/project-single";
+@import "page/shop";
+@import "page/product-single";
+@import "page/cart";
+@import "page/checkout";
+@import "page/contact";
+@import "page/blog";
+@import "page/blog-single";
+@import "page/auth";
+@import "page/error-404";
+
+

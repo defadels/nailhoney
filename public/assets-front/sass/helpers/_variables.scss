@@ -1,0 +1,63 @@
+/*---------------------------
+	Fonts
+----------------------------*/
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@font-face {
+    font-family: 'Conv_Now-Bold';
+    src: url('../fonts/text-fonts/Now-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url(../fonts/text-fonts/now-regular.otf) format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url(../fonts/text-fonts/now-medium.otf) format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url(../fonts/text-fonts/now-light.otf) format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Now';
+    src: url(../fonts/text-fonts/now-thin.otf) format("truetype");
+    font-weight: 200;
+    font-style: normal;
+}
+
+
+// fonts
+$base-font-size: 15;
+$base-font: 'Poppins', sans-serif;
+$heading-font: 'Now';
+$heading-font-s2: 'Conv_Now-Bold';
+$heading-font-s3: 'Barlow Condensed', sans-serif;
+
+
+
+// color
+$dark-gray: #30180d;
+$white: #fff;
+$black: #000;
+$small-black: #333;
+
+$theme-primary-color: #b83806;
+$theme-secondary-color: #bf692d;
+$body-bg-color: #f2f0f0;
+$section-bg-color: #fdf5ee;
+$text-color: #696664;
+$heading-color: $dark-gray;
+$border-color: #ebebeb;

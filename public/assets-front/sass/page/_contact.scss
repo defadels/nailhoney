@@ -1,0 +1,145 @@
+/*--------------------------------------------------------------
+	contact page
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+#7.1	contact-pg-contact-section
+--------------------------------------------------------------*/
+.contact-pg-contact-section {
+	.contact-details ul {
+		margin-top: 50px;
+	}
+
+	.contact-details ul  li {
+		position: relative;
+		padding-left: 70px;
+	}
+
+	.contact-details ul > li {
+		margin-top: 45px;
+	}
+
+	.icon {
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		position: absolute;
+		left: 0;
+		top: 0;
+		text-align: center;
+		border-radius: 5px;
+		box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
+
+		i {
+			font-size: 20px;
+			font-size: calc-rem-value(20);
+			color: $theme-primary-color;
+		}
+	}
+
+	.contact-details h5 {
+		font-size: 20px;
+		font-size: calc-rem-value(20);
+		margin: 0 0 0.3em;
+	}
+
+
+	.contact-form {
+		margin-top: 40px;
+
+		@include media-query(991px) {
+			margin-top: 40px;
+		}
+
+		@include media-query(767px) {
+			margin-top: 30px;
+		}
+	}
+
+	.contact-form input,
+	.contact-form textarea {
+		background: #fef6f3;
+		width: 100%;
+		height: 45px;
+		border: 1px solid transparent;
+		color: $text-color;
+		border-radius: 0;
+		padding: 6px 18px;
+		box-shadow: none;
+
+		&:focus {
+			box-shadow: none;
+			border-color: $theme-primary-color;
+		}
+	}
+
+	.contact-form form {
+		margin: 0 -15px;
+
+		@include placeholder-style(#666666, 16px, normal);
+	}
+
+	.contact-form form > div {
+		width: calc(50% - 30px);
+		float: left;
+		margin: 0 15px 30px;
+
+		@include media-query(550px) {
+			width: calc(100% - 30px);
+			float: none;
+		}
+	}
+
+	.contact-form form > .submit-area {
+		margin-bottom: 0;
+	}
+
+	.contact-form form .comment-area {
+		width: calc(100% - 30px);
+		float: none;
+
+		textarea {
+			height: 170px;
+		}
+
+		textarea:focus {
+			border-color: $theme-primary-color;
+			outline: none;
+		}
+	}
+
+	.theme-btn-s2 {
+		border: 0;
+		outline: 0;
+	}
+
+	.contact-map {
+		height: 450px;
+		margin-top: 75px;
+
+		@include media-query(991px) {
+			margin-top: 55px;
+		}
+
+		@include media-query(767px) {
+			height: 350px;
+			margin-top: 45px;
+		}
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			border: 0;
+			outline: 0;
+		}
+	}
+
+	.contact-form-area {
+		@include media-query(991px) {
+			margin-top: 80px;
+
+			.section-title-s3 {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

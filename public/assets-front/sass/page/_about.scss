@@ -1,0 +1,186 @@
+
+/*--------------------------------------------------------------
+#3.0 	about page
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+#3.1 team-section
+--------------------------------------------------------------*/
+.team-section {
+	background: $white;
+	
+	.grid .details {
+		text-align: center;
+		padding: 35px 0;
+        background: #fdf5ee;
+
+		h4 {
+			font-size: 25px;
+			font-size: calc-rem-value(25);
+			margin: 0 0 0.3em;
+			font-weight: 600;
+
+			@include media-query(991px) {
+				font-size: 16px;
+				font-size: calc-rem-value(16);
+			}
+		}
+
+		p {
+			font-size: 14px;
+			font-size: calc-rem-value(14);
+			margin: 0 0 0.4em;
+		}
+
+
+		ul {
+			overflow: hidden;
+			display: inline-block;
+
+			li {
+				float: left;
+			}
+
+			> li + li {
+				margin-left: 12px;
+			}
+
+			a {
+				font-size: 12px;
+				font-size: calc-rem-value(12);
+				color: $text-color;
+			}
+
+			a:hover {
+				color: $theme-primary-color;
+			}
+		}
+	}
+
+	.owl-nav{
+		text-align: center;
+		margin-top: 30px;
+	}
+
+	.owl-nav button {
+		background: transparent;
+		padding: 0;
+		margin: 0 15px;
+		color: $text-color;
+
+		&:hover {
+			color: $theme-primary-color;
+		}
+	}
+
+    .owl-nav [class*=owl-] {
+        line-height: 43px;
+    }
+
+    .owl-theme .owl-controls {
+        margin-top: 30px;
+    }
+
+    .owl-theme .owl-controls .owl-nav [class*=owl-] {
+        border: 1px solid #dfd8d2;
+
+        &:hover{
+            background: $theme-primary-color;
+            color: $white;
+        }
+    }
+}
+
+
+
+/*--------------------------------------------------------------
+#3.2 tp-fun-fact-section
+--------------------------------------------------------------*/
+.tp-fun-fact-section {
+	text-align: center;
+    background: $section-bg-color;
+
+	@include media-query(767px) {
+		padding-bottom: 30px;
+	}
+
+	h2 {
+		font-size: 30px;
+		font-size: calc-rem-value(30);
+		font-weight: 600;
+		margin: 0 0 1.8em;
+
+		
+
+		@include media-query(991px) {
+			font-size: 26px;
+			font-size: calc-rem-value(26);
+		}
+
+		@include media-query(767px) {
+			font-size: 25px;
+			font-size: calc-rem-value(25);
+		}
+	}
+
+	.tp-fun-fact-grids .grid {
+		width: 25%;
+		float: left;
+
+		@include media-query(767px) {
+			width: 50%;
+			margin-bottom: 50px;
+		}
+	}
+
+	.grid {
+
+        h3 {
+            font-size: 60px;
+            font-size: calc-rem-value(60);
+            font-weight: 700;
+            color: $theme-primary-color;
+            margin: 0 0 0.2em;
+            font-family: $heading-font;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include media-query(1200px) {
+                font-size: 50px;
+                ont-size: calc-rem-value(50);
+            }
+    
+            @include media-query(991px) {
+                font-size: 40px;
+                font-size: calc-rem-value(40);
+            }
+    
+            @include media-query(767px) {
+                font-size: 30px;
+                font-size: calc-rem-value(30);
+            }
+        }
+
+    }
+
+
+
+	.grid h3 + p {
+		font-size: 30px;
+		font-size: calc-rem-value(30);
+		margin: 0;
+        color: $dark-gray;
+        font-family: $heading-font;
+
+		@include media-query(1200px) {
+			font-size: 18px;
+			font-size: calc-rem-value(15);
+		}
+
+		@include media-query(991px) {
+			font-size: 15px;
+			font-size: calc-rem-value(15);
+		}
+	}
+}

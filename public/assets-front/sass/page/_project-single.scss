@@ -1,0 +1,192 @@
+/*--------------------------------------------------------------
+#4.0	service details page
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+#4.1	service-single-section
+--------------------------------------------------------------*/
+.service-single-section,
+.project-single-section {
+	.service-content > .img-holder,
+	.project-content > .img-holder {
+		margin-bottom: 45px;
+	}
+
+	h2 {
+		font-size: 30px;
+		font-size: calc-rem-value(30);
+		margin: 0 0 1em;
+
+		@include media-query(991px) {
+			font-size: 25px;
+			font-size: calc-rem-value(25);
+		}
+
+		@include media-query(767px) {
+			font-size: 22px;
+			font-size: calc-rem-value(22);
+		}
+	}
+
+	p {
+		margin-bottom: 1.2em;
+	}
+
+	.service-content > ul,
+	.project-content > ul {
+		margin: 45px 0 65px;
+	}
+
+	.service-content > ul li,
+	.project-content > ul li {
+		padding-left: 30px;
+		position: relative;
+
+		&:before {
+			content: "";
+			background: $theme-primary-color;
+			width: 12px;
+			height: 12px;
+			position: absolute;
+			left: 0;
+			top: 4px;
+			-webkit-transform: rotate(135deg);
+			transform: rotate(135deg);
+		}
+	}
+
+	.service-content > ul > li + li,
+	.project-content > ul > li + li {
+		margin-top: 13px;
+	}
+
+	.img-with-text {
+		.img-holder {
+			width: 50%;
+			float: left;
+			margin-right: 25px;
+			padding-top: 10px;
+
+			@include media-query(767px) {
+				width: 100%;
+				float: none;
+				margin: 0 0 35px;
+			}
+		}
+	}
+
+	.pagi {
+		padding-top: 50px;
+
+		@include media-query(767px) {
+			padding-top: 30px;
+		}
+	}
+
+	.pagi ul {
+		overflow: hidden;
+
+		li {
+			width: 50%;
+			float: left;
+			text-align: center;
+			border: 1px solid #d7d7d7;
+		}
+
+		> li:last-child {
+			margin-left: -1px;
+		}
+
+		a {
+			display: block;
+			padding: 15px;
+			color: $text-color;
+		}
+
+		a:hover {
+			background-color: #fdf4f1;
+			color: $theme-primary-color;
+		}
+	}
+
+	.project-content .pagi {
+		padding-top: 0;
+	}
+}
+
+
+/*--------------------------------
+	service sidebar
+-------------------------------*/
+.service-sidebar {
+	@include widther(1200px) {
+		padding-left: 30px;
+	}
+
+	@include media-query(991px) {
+		margin-top: 80px;
+		max-width: 300px;
+	}
+
+	> .widget + .widget {
+		margin-top: 55px;
+	}
+
+	.widget h3 {
+		font-size: 24px;
+		font-size: calc-rem-value(24);
+		font-weight: bold;
+		margin: 0 0 1em;
+		padding-bottom: 25px;
+		text-transform: capitalize;
+		position: relative;
+
+		@include media-query(767px) {
+			font-size: 22px;
+			font-size: calc-rem-value(22);
+		}
+
+		&:after{
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 6px;
+            background: linear-gradient(to right, $theme-primary-color , $theme-secondary-color);
+            content: "";
+        }
+        &:before{
+            position: absolute;
+            left: 40px;
+            bottom: 0;
+            width: 40px;
+            height: 6px;
+            background: linear-gradient(to right, $theme-primary-color , $theme-secondary-color);
+            content: "";               
+        }
+	}
+
+    /*** project-info-widget ***/
+	.project-info-widget {
+		background-color: $section-bg-color;
+		padding: 40px 30px;
+
+		@include media-query(767px) {
+			padding: 40px 20px;
+		}
+
+		ul li {
+			line-height: 1.7em;
+		}
+
+		ul > li + li {
+			margin-top: 15px;
+		}
+
+		ul li span {
+			font-weight: 600;
+			color: $heading-color;
+		}
+	}
+}
+
+

@@ -1,0 +1,142 @@
+/*mobal-subscribe*/
+.subscribe-dialog {
+    max-width: 900px;
+    margin: 200px auto;
+
+    @media(max-width:767px){
+        max-width: 500px;
+    }
+
+    .modal-body{
+        padding: 0;
+    }
+
+    .subscribe-box {
+        padding: 50px;
+
+        @media(max-width:767px){
+            padding: 30px;
+        }
+
+        h2 {
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: 600;
+
+            @media(max-width:767px){
+                font-size: 20px;
+            }
+        }
+
+        p {
+            margin-bottom: 0px;
+            @media(max-width:767px){
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        form {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        input[type="email"] {
+            height: 50px;
+            width: 100%;
+            border: 1px solid #ddd;
+            padding: 0px 120px 0px 20px;
+        }
+        input[type="submit"] {
+            width: 120px;
+            height: 50px;
+            border: none;
+            text-transform: uppercase;
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            top: 24px;
+            background: $black;
+            color: $white;
+
+            @media(max-width:767px){
+                top: 21px;
+            }
+        }
+        input[type="submit"]:hover {
+            background: $black;
+            color: $white;
+        }
+    }
+}
+
+.modal-content {
+    button {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 40px;
+        height: 40px;
+        background: #ececec;
+        text-align: center;
+        font-size: 24px;
+        border: none;
+        color: $dark-gray;
+        z-index: 9;
+        &:focus{
+            outline: none;
+            box-shadow: none;
+        }
+        &:hover{
+            background-color: $theme-primary-color;
+            color: $white;
+        }
+        .fi{
+            &:before{
+                font-size: 15px;
+            }
+        }
+    }
+
+}
+
+
+/*mobal-subscribe*/
+
+
+
+.quickview-dialog{
+    max-width: 1120px;
+    margin: 200px auto;
+
+    @media(max-width:991px){
+        max-width: 500px;
+    }
+
+    .modal-product{
+        img{
+            width: 100%;
+        }
+    }
+
+    .product-details{
+        position: relative;
+        z-index: 1;
+
+        .m-shape{
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            content: "";
+            z-index: -1;
+            max-width: 220px;
+            opacity: .03;
+            transform: rotate(-45deg);
+        }
+    }
+
+}
+
+.modal{
+    z-index: 9999;
+}

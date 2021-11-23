@@ -14,4 +14,9 @@ class Produk extends Model
     {
         return $this->belongsTo('App\KategoriProduk','kategori_id')->withDefault();
     }
+
+    public function daftar_foto()
+    {
+        return $this->hasMany('App\FotoProduk', 'produk_id')->withDefault();
+    }
 }

@@ -1,0 +1,524 @@
+/*--------------------------------------------------------------
+	blog single page
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+#9.1	blog-single-section
+--------------------------------------------------------------*/
+.blog-single-section {
+	.blog-content {
+		@include widther(1200px) {
+			padding-right: 40px;
+		}
+	}
+
+	&.s2{
+		.blog-content {
+			@include widther(1200px) {
+				padding-right: 0px;
+				padding-left: 40px;
+			}
+		}
+	}
+	
+	.entry-meta {
+		overflow: hidden;
+		padding: 35px 0 20px;
+
+		> li {
+			font-size: 14px;
+			font-size: calc-rem-value(14);
+			float: left;
+
+			@include media-query(767px) {
+				font-size: 13px;
+				font-size: calc-rem-value(13);
+			}
+		}
+
+		> li + li {
+			margin-left: 15px;
+			padding-left: 15px;
+			padding-top: 9px;
+			position: relative;
+
+			&:before {
+				content: "|";
+				position: absolute;
+				left: 0;
+				top: 9px;
+			}
+		}
+
+		li a {
+			color: $theme-primary-color;
+		}
+
+		img {
+			border-radius: 50%;
+			border: 1px solid #e6e6e6;
+		}
+	}
+
+	.post {
+		h2 {
+			font-size: 25px;
+			font-size: calc-rem-value(25);
+			margin: 0 0 0.5em;
+
+			@include media-query(991px) {
+				font-size: 22px;
+				font-size: calc-rem-value(22);
+			}
+
+			@include media-query(767px) {
+				font-size: 22px;
+				font-size: calc-rem-value(22);
+			}
+		}
+
+		p {
+			margin-bottom: 1.5em;
+		}
+
+		h3 {
+			font-size: 22px;
+			font-size: calc-rem-value(22);
+			line-height: 1.5em;
+			margin: 1.8em 0 1em;
+
+			@include media-query(991px) {
+				font-size: 20px;
+				font-size: calc-rem-value(20);
+			}
+
+			@include media-query(767px) {
+				font-size: 18px;
+				font-size: calc-rem-value(18);
+			}
+		}
+
+		blockquote {
+			background-color: #feebe4;
+			padding: 40px 55px;
+			margin: 60px 0;
+			border: 0;
+			line-height: 1.9em;
+			position: relative;
+
+			@include media-query(991px) {
+				padding: 30px 40px;
+			}
+
+			@include media-query(767px) {
+				padding: 20px 30px;
+			}
+
+			.quoter {
+				display: block;
+				margin-top: 15px;
+			}
+
+		}
+
+		.entry-media{
+			img{
+				width: 100%;
+			}
+		}
+	}
+
+
+	/*** tag-share ***/
+	.tag-share {
+		margin: 70px 0;
+
+		@include widther(1200px) {
+			box-shadow: 0px 4px 14.1px 0.9px rgba(0, 0, 0, 0.08);
+			padding: 35px 25px;
+		}
+
+		@include media-query(767px) {
+			margin: 60px 0;
+		}
+
+		.tag {
+			display: inline-block;
+			float: left;
+			@include media-query(767px) {
+				float: none;
+				display: block;
+				margin-bottom: 25px;
+			}
+		}
+		.share {
+			display: inline-block;
+			float: right;
+			@include media-query(767px) {
+				float: none;
+				display: block;
+			}
+		}
+
+		ul {
+			overflow: hidden;
+		}
+
+		ul li {
+			float: left;
+		}
+
+		.tag ul > li + li,
+		.share ul > li + li {
+			margin-left: 10px;
+		}
+
+		.tag a {
+			background-color: #feebe4;
+			display: block;
+			padding: 9px 18px;
+			color: $text-color;
+			border-radius: 50px;
+
+			&:hover {
+				background-color: $theme-primary-color;
+				color: $white;
+			}
+		}
+
+		.share a {
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			font-size: 14px;
+			font-size: calc-rem-value(14);
+			text-align: center;
+			color: $text-color;
+			border-radius: 50%;
+			padding: 0;
+			display: block;
+			border: 1px solid #dadada;
+
+			&:hover {
+				background: $theme-primary-color;
+				color: $white;
+				border-color: $theme-primary-color;
+			}
+		}
+	}
+
+
+	/*** author-box ***/
+	.author-box {
+		padding: 45px 50px 35px;
+		margin: 70px 0;
+		border: 1px solid #e1e1e1;
+
+	    @include media-query(991px) {
+			padding: 35px 40px;
+		}
+
+	    @include media-query(767px) {
+			padding: 25px;
+		}
+
+
+	    .author-avatar {
+	    	float: left;
+
+	    	@include media-query(767px) {
+	    		float: none;
+	    	}
+
+	    	img {
+	    		border-radius: 50%;
+	    	}
+	    }
+
+	    .author-content {
+	    	display: block;
+		    overflow: hidden;
+		    padding-left: 25px;
+
+		    @include media-query(767px) {
+	    		padding: 0;
+	    		margin: 15px 0 0 0;
+	    	}
+	    }
+
+	    .author-content p {
+	    	margin-bottom: 20px;
+	    }
+
+	    .author-name {
+	    	font-size: 18px;
+	    	font-size: calc-rem-value(18);
+	    	font-weight: 600;
+	    	display: inline-block;
+		    margin-bottom: 10px;
+		    color: $heading-color;
+	    }
+
+	    .social-link {
+	    	display: inline-block;
+	    }
+
+	    .social-link li {
+	    	float: left;
+	    	margin-right: 15px;
+	    }
+
+	    .social-link a {
+	    	display: block;
+	    	font-size: 15px;
+	    	font-size: calc-rem-value(15);
+	    	color: $heading-color;
+	    }
+
+	    .social-link a:hover {
+	    	color: $theme-primary-color;
+	    }
+	}
+
+	/*** more-posts ***/
+	.more-posts {
+		margin: 70px 0;
+		.previous-post {
+			display: inline-block;
+			float: left;
+		}
+		.next-post {
+			display: inline-block;
+			float: right;
+		}
+
+		.previous-post a,
+		.next-post a {
+			background-color: #feebe4;
+			font-weight: 500;
+			color: $text-color;
+			display: block;
+			padding: 15px 40px;
+			border-radius: 60px;
+
+			@include media-query(767px) {
+				padding: 12px 35px;
+			}
+
+			&:hover {
+				background-color: $theme-primary-color;
+				color: $white;
+			}
+		}
+	}
+
+	/*** comments area ***/
+	.comments-area {
+		margin-top: 70px;
+
+		.comments {
+		}
+
+		li > div {
+			background: #f8f8f8;
+			padding: 30px;
+			margin-bottom: 20px;
+
+			@include media-query(991px) {
+				padding: 30px 25px;
+			}
+		}
+
+		ol {
+			list-style-type: none;
+			padding-left: 0;
+
+			ul {
+				padding-left: 30px;
+			}
+
+			> li:last-child div {
+				border-bottom: 0;
+			}
+		}
+
+		.comments-title {
+			font-size: 30px;
+			font-size: calc-rem-value(30);
+			margin: 0 0 1.5em;
+
+			@include media-query(991px) {
+				font-size: 20px;
+				font-size: calc-rem-value(20);
+			}
+		}
+
+		li > div {
+			position: relative;
+		}
+
+		.comment-theme {
+			position: absolute;
+			left: 35px;
+
+			@include media-query(767px) {
+				position: static;
+			}
+
+			img {
+				border-radius: 50%;
+			}
+		}
+
+		.comment-main-area {
+			padding-left: 100px;
+
+			@include media-query(767px) {
+				padding-left: 0;
+				margin-top: 25px;
+			}
+
+			p {
+				margin-bottom: 20px;
+			}
+		}
+
+		.comments-meta {
+			h4 {
+				font-size: 22px;
+				font-size: calc-rem-value(22);
+				font-weight: 600;
+				margin: 0 0 1em;
+			}
+
+			h4 span {
+				font-weight: normal;
+				text-transform: none;
+				display: block;
+				font-size: 16px;
+				font-size: calc-rem-value(16);
+				color: #666;
+				margin-top: 8px;
+			}
+		}
+
+		.comment-reply-link {
+			background: lighten($theme-primary-color, 25%);
+			font-size: 16px;
+			font-size: calc-rem-value(16);
+			color: $white;
+			display: inline-block;
+			padding: 4px 14px;
+			border-radius: 50px;
+			display: inline-block;
+
+			&:hover {
+				background-color: $theme-primary-color;
+			}
+		}
+	}
+
+
+	/*** comment-respond ***/
+	.comment-respond {
+		margin-top: 70px;
+
+		.comment-reply-title {
+			font-size: 30px;
+			font-size: calc-rem-value(30);
+			margin: 0 0 1.0em;
+
+			@include media-query(991px) {
+				font-size: 20px;
+				font-size: calc-rem-value(20);
+			}
+		}
+
+		form input,
+		form textarea {
+			background-color: #f8f8f8;
+			width: 100%;
+			height: 50px;
+			border: 1px solid #f8f8f8;
+			padding: 6px 15px;
+			margin-bottom: 15px;
+	        outline: 0;
+	        box-shadow: none;
+	        @include transition-time(0.3s);
+
+			&:focus {
+				box-shadow: none;
+				border-color: $theme-primary-color;
+			}
+
+			@include media-query(991px) {
+				height: 40px;
+			}
+		}
+
+		form textarea {
+			height: 220px;
+			padding: 15px;
+
+			@include media-query(991px) {
+				height: 150px;
+			}
+		}
+
+		.form-inputs {
+			overflow: hidden;
+		}
+
+		.form-inputs > input:nth-child(2) {
+			width: 49%;
+			float: left;
+
+			@include media-query(767px) {
+				width: 100%;
+				float: none;
+			}
+		}
+
+		.form-inputs > input:nth-child(3) {
+			width: 49%;
+			float: right;
+
+			@include media-query(767px) {
+				width: 100%;
+				float: none;
+			}
+		}
+
+		.form-submit input {
+			max-width: 180px;
+			background-color: $theme-primary-color;
+			color: $white;
+			font-weight: 500;
+			margin-bottom: 0;
+			border: 0;
+			outline: 0;
+			margin-top: 20px;
+		}
+
+		.form-submit input:hover {
+			background-color: $theme-primary-color;
+		}
+	}
+}
+
+.blog-single-left-sidebar-section {
+	.blog-content {
+		@include widther(1200px) {
+			padding-right: 0;
+			padding-left: 50px;
+		}
+	}
+}
+
+.blog-single-fullwidth  {
+	.blog-content {
+		@include widther(1200px) {
+			padding: 0;
+		}
+	}
+}
+

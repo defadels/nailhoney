@@ -79,8 +79,6 @@ class ProdukController extends Controller
 
         $validate = Validator::make($input, $rules, $messages)->validate();
 
-        
-
         $slug = Str::slug($req->nama.' '.Str::random(5));
 
         $produk = Produk::create(
@@ -136,8 +134,6 @@ class ProdukController extends Controller
 
     public function update(Request $req, $id) {
         $input = $req->all();
-
-        
 
         $rules = [
             'foto' => 'file|mimes:jpeg,png|max:10240',

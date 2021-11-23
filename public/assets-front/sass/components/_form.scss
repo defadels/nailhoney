@@ -1,0 +1,74 @@
+.form {
+    input,
+    textarea,
+    select {
+        border-color: lighten( $black, 75% );
+        border-radius: 0;
+        outline: 0;
+        box-shadow: none;
+        color: lighten($black, 35%);
+
+        &:focus {
+            border-color: $theme-primary-color;
+            @include round-box-shadow( lighten($theme-primary-color, 10%), 5px, 0 );
+        }
+    }
+
+    @include placeholder-style(lighten($black, 35%));
+
+    select {
+        font-style: italic;
+        background: url(../images/select-icon.png) no-repeat right center;
+        display: inline-block;
+        -webkit-appearance:none;
+        -moz-appearance:none;
+        -ms-appearance:none;
+        appearance:none;
+        cursor:pointer;
+    }
+    
+    select::-ms-expand { /* for IE 11 */
+        display: none;
+    }
+
+}
+
+.quantity {
+    position: relative;
+    display: inline-block;
+    input {
+        width: 160px;
+        background: transparent;
+        padding: 0px 35px;
+        text-align: center;
+        height: 40px;
+        border: none;
+        position: relative;
+        border: 1.5px solid $border-color;
+    }
+
+    .qtybutton {
+        position: absolute;
+        top: 4px;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        line-height: 38px;
+        font-size: 18px;
+        cursor: pointer;
+        font-size: 25px;
+
+        .qtybutton {
+            top: 50%;
+            left: 17px;
+            transform: translateY(-51%);
+            -webkit-transform: translateY(-51%);
+            -moz-transform: translateY(-51%);
+        }
+    }
+    .qtybutton.inc {
+        right: 0px;
+        left: auto;
+    }
+}
