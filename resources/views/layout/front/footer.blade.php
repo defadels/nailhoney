@@ -5,10 +5,10 @@
                         <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                             <div class="widget about-widget">
                                 <div class="logo widget-title">
-                                    <a href="index.html"><img src="{{asset('assets-front/images/logo2.png')}}" alt="blog"> Annahl</a>
+                                    <a href="index.html"><img src="{{asset('assets-front/images/logo2.png')}}" alt="blog"> Nailhoney</a>
                                 </div>
-                                <p>Management consulting includes a broad range of activities, and the many firms and
-                                    their members often define these practices.</p>
+                                <p>Sebagai Supplier Madu Sumatera terbesar di Indonesia yang mampu menjaga hutan tetap
+                                  lestari dan meningkatkan kesejahteraan seluruh stakeholder.</p>
                                 <ul>
                                     <li>
                                         <a href="#">
@@ -36,14 +36,14 @@
                         <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                             <div class="widget tp-service-link-widget">
                                 <div class="widget-title">
-                                    <h3>Contact </h3>
+                                    <h3>Kontak </h3>
                                 </div>
                                 <div class="contact-ft">
                                     <ul>
-                                        <li><i class="fi flaticon-pin"></i>7 Green Lake Street Crawfordsville, IN 47933
+                                        <li><i class="fi flaticon-pin"></i>Jalan Karya Dame Komplek Orlando Karya No. 21 H
                                         </li>
-                                        <li><i class="fi flaticon-call"></i>+1 800 123 456 789</li>
-                                        <li><i class="fi flaticon-envelope"></i>Annahl@gmail.com</li>
+                                        <li><i class="fi flaticon-call"></i>+62 813-7072-1854</li>
+                                        <li><i class="fi flaticon-envelope"></i>refill.madu@gmail.com</li>
                                     </ul>
                                 </div>
                             </div>
@@ -51,13 +51,12 @@
                         <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                             <div class="widget link-widget">
                                 <div class="widget-title">
-                                    <h3>My Account</h3>
+                                    <h3>Halaman</h3>
                                 </div>
                                 <ul>
-                                    <li><a href="project.html">Our Projects</a></li>
-                                    <li><a href="order.html">Order History</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="checkout.html">Checkout</a></li>
+                                    <li><a href="project.html">Produk</a></li>
+                                    <li><a href="order.html">Blog</a></li>
+                                    <li><a href="wishlist.html">Sistem Keagenan</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -85,7 +84,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col col-xs-12">
-                            <p class="copyright"> Copyright &copy; 2021 Annahl by <a href="index.html">themepresss</a>.
+                            <p class="copyright"> Copyright &copy; 2021 Nailhoney by <a href="index.html">Refillmadu</a>.
                                 All Rights Reserved.</p>
                         </div>
                     </div>

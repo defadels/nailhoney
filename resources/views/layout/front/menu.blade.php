@@ -20,23 +20,26 @@ function rute($namarute){
                                     <span class="icon-bar last-angle"></span>
                                 </button>
                                 <a class="navbar-brand" href="index.html"><img src="{{asset('assets/images/logo.png')}}"
-                                        alt="">Annahl</a>
+                                        alt="">Nailhoney</a>
                             </div>
                         </div>
                         <div class="col-lg-7">
                             <div id="navbar" class="collapse navbar-collapse navigation-holder">
                                 <a class="menu-close" href="#"><i class="fi flaticon-cancel"></i></a>
                                 <ul class="nav navbar-nav me-auto mb-2 mb-lg-0">
-                                    <li class="menu-item-has-children">
+                                    <!-- <li class="menu-item-has-children">
                                         <a class="active" href="#">Home</a>
                                         <ul class="sub-menu">
                                             <li><a href="index.html">Home Style 1</a></li>
                                             <li><a href="index-2.html">Home Style 2</a></li>
                                         </ul>
+                                    </li> -->
+                                    <li>
+                                      <a href="" class="active">Beranda</a>
                                     </li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="shop.html">Shop</a></li>
-                                    <li class="menu-item-has-children">
+                                    <li><a href="about.html">Tentang</a></li>
+                                    <li><a href="shop.html">Produk</a></li>
+                                    <!-- <li class="menu-item-has-children">
                                         <a href="http://google.com">Pages</a>
                                         <ul class="sub-menu">
                                             <li><a href="cart.html">Cart</a></li>
@@ -58,30 +61,20 @@ function rute($namarute){
                                                 </ul>
                                             </li>
                                         </ul>
-                                    </li>
+                                    </li> -->
                                     <li class="menu-item-has-children">
                                         <a href="#">Blog</a>
                                         <ul class="sub-menu">
-                                            <li><a href="blog.html">Blog right sidebar</a></li>
-                                            <li><a href="blog-left-sidebar.html">Blog left sidebar</a></li>
-                                            <li><a href="blog-fullwidth.html">Blog fullwidth</a></li>
-                                            <li class="menu-item-has-children">
-                                                <a href="#">Blog details</a>
-                                                <ul class="sub-menu">
-                                                    <li><a href="blog-single.html">Blog details right sidebar</a></li>
-                                                    <li><a href="blog-single-left-sidebar.html">Blog details left
-                                                            sidebar</a></li>
-                                                    <li><a href="blog-single-fullwidth.html">Blog details fullwidth</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
+                                            <li><a href="blog.html">Manfaat Madu</a></li>
+                                            <li><a href="blog-left-sidebar.html">Tentang Madu</a></li>
+                                            <li><a href="blog-fullwidth.html">Bisnis Madu</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">Contact</a></li>
+                                    <li><a href="contact.html">Kontak</a></li>
                                 </ul>
                             </div><!-- end of nav-collapse -->
                         </div>
-                        <div class="col-lg-2">
+                        <!-- <div class="col-lg-2">
                             <div class="header-right d-flex">
                                 <div class="header-profile-form-wrapper">
                                     <button class="profile-toggle-btn"><i class="fi flaticon-user"></i></button>
@@ -177,7 +170,7 @@ function rute($namarute){
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div><!-- end of container -->
             </nav>

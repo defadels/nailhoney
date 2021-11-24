@@ -5,19 +5,19 @@
 
 @section('content')
 <!-- start preloader -->
-<!-- <div class="preloader">
+<div class="preloader">
             <div class="inner">
                 <span class="icon"><i><img src="{{asset('assets-front/images/bee.png')}}" alt=""></i></span>
             </div>
 
-          </div> -->
+          </div>
 <!-- end preloader -->
 
  <!-- start of hero -->
  <section class="hero hero-style-2">
             <div class="hero-slider">
                 <div class="slide">
-                    <img src="assets-front/images/slider/slide-2.jpg" alt class="slider-bg">
+                    <img src="{{asset('/img/carousel/carousel-1.jpg')}}" alt class="slider-bg">
                     <div class="container">
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="assets-front/images/slider/slide-3.jpg" alt class="slider-bg">
+                    <img src="{{asset('/img/carousel/carousel-2.jpg')}}" alt class="slider-bg">
                     <div class="container">
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="{{asset('assets-front/images/slider/slide-4.jpg')}}" alt class="slider-bg">
+                    <img src="{{asset('/img/carousel/carousel-3.jpg')}}" alt class="slider-bg">
                     <div class="container">
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
@@ -79,7 +79,7 @@
                                     <img src="{{asset('assets-front/images/category/icon-1.png')}}" alt="">
                                 </div>
                                 <div class="category-content">
-                                    <h2><a href="product.html">Queen Bee Honey</a></h2>
+                                    <h2><a href="product.html">Bersanad</a></h2>
                                     <p>Lorem Ipsum is simply dummy text of the printing industry has been the industry's
                                         standard eos fugit industry's standard consectetur ipsum.</p>
                                 </div>
@@ -91,7 +91,7 @@
                                     <img src="{{asset('assets-front/images/category/icon-2.png')}}" alt="">
                                 </div>
                                 <div class="category-content">
-                                    <h2><a href="product.html">Sunflower Honey</a></h2>
+                                    <h2><a href="product.html">Murni</a></h2>
                                     <p>Lorem Ipsum is simply dummy text of the printing industry has been the industry's
                                         standard eos fugit industry's standard consectetur ipsum.</p>
                                 </div>
@@ -103,7 +103,7 @@
                                     <img src="{{asset('assets-front/images/category/icon-3.png')}}" alt="">
                                 </div>
                                 <div class="category-content">
-                                    <h2><a href="product.html">Manuka Honey</a></h2>
+                                    <h2><a href="product.html">Bergaransi</a></h2>
                                     <p>Lorem Ipsum is simply dummy text of the printing industry has been the industry's
                                         standard eos fugit industry's standard consectetur ipsum.</p>
                                 </div>
@@ -125,7 +125,7 @@
                         <div class="video-area">
                             <img src="assets-front/images/abou2.jpg" alt>
                             <div class="video-holder">
-                                <a href="https://www.youtube.com/embed/Z54bL6kjyOI" class="video-btn" data-type="iframe"
+                                <a href="https://www.youtube.com/embed/bLJ8n5YGLv8" class="video-btn" data-type="iframe"
                                     tabindex="0"><i class="fi flaticon-play-button"></i></a>
                             </div>
                         </div>
@@ -134,14 +134,11 @@
                         <div class="about-area">
                             <div class="about-wrap">
                                 <div class="about-title">
-                                    <small>About our Company</small>
-                                    <h2>All in one <span>to make a</span> different structure</h2>
+                                    <small>Tentang Perusahaan Kami</small>
+                                    <h2>Membangun yayasan <span>yang peduli</span> dengan hutan</h2>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint placeat consectetur
-                                    sapiente tempore nobis iure quos neque laboriosam, doloribus labore ad assumenda
-                                    veritatis asperiores possimus, tenetur id dolorum minus ipsa, quam eligendi odit
-                                    accusamus necessitatibus. Dicta aut delectus minima atque illo hic, totam deleniti
-                                    magni nam, ex perferendis, excepturi impedit voluptates ipsam.</p>
+                                <p>Sebagai Supplier Madu Sumatera terbesar di Indonesia yang mampu menjaga hutan tetap
+                                  lestari dan meningkatkan kesejahteraan seluruh stakeholder.</p>
                                 <a href="about.html" class="btn theme-btn" tabindex="0">More About<i
                                         class="fa fa-angle-double-right"></i></a>
                             </div>
@@ -498,9 +495,10 @@
                                 <small>Limited Offer For Customer</small>
                                 <h2>Fresh Sunflower <span>Orginal Honey Up</span> <br> To 58% Off.</h2>
                             </div>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, eos fugit officiis
-                                error ipsum, dolor ducimus nam ratione nulla deleniti inventore blanditiis lorem inorci
-                                sed vestibulum tempus.</p>
+                            <p>Cara paling mudah untuk mendapatkan madu hutan asli dan berkualitas adalah dengan
+                              “melihat” siapa yang menjual madu tersebut.
+                            Jika kita mengenalnya sebagai orang yang jujur dan amanah, insyaAllah, MADU
+                            yang mereka jual, terjaga keasliannya. </p>
                             <a href="shop.html" class="btn theme-btn" tabindex="0">Shop Now <i
                                     class="fa fa-angle-double-right"></i></a>
                         </div>
@@ -842,11 +840,11 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 col-12">
                         <div class="service-item">
                             <div class="service-icon">
-                                <span><img draggable="false" src="{{asset('assets-front/images/support/1.png')}})" alt=""></span>
+                                <span><img draggable="false" src="{{ asset('assets-front/images/support/1.png') }}" alt=""></span>
                             </div>
                             <div class="service-icon-text">
-                                <h2>Free Shipping</h2>
-                                <span>Order Over $560</span>
+                                <h2>Ongkir Murah</h2>
+                                <span>Ongkos kirim dengan harga terjangkau.</span>
                             </div>
                         </div>
                     </div>
@@ -856,8 +854,8 @@
                                 <span><img draggable="false" src="{{asset('assets-front/images/support/2.png')}}" alt=""></span>
                             </div>
                             <div class="service-icon-text">
-                                <h2>Easy Payment</h2>
-                                <span>100% Secure Payment</span>
+                                <h2>Mudah Pembayaran</h2>
+                                <span>Sistem pembayaran yang memudahkan dan dijamin aman.</span>
                             </div>
                         </div>
                     </div>
@@ -867,8 +865,8 @@
                                 <span><img draggable="false" src="{{asset('assets-front/images/support/3.png')}}" alt=""></span>
                             </div>
                             <div class="service-icon-text">
-                                <h2>20/07 Support</h2>
-                                <span>Any time Support </span>
+                                <h2>Cepat Respon</h2>
+                                <span>Tim cepat dalam melayani dan merespon. </span>
                             </div>
                         </div>
                     </div>
@@ -883,9 +881,8 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
                         <div class="section-title">
-                            <h2>Client <span>Testimonial</span></h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the
-                                industry's standard consectetur adipisicing elit.</p>
+                            <h2><span>Testimonial</span> Konsumen</h2>
+                            <p>Berbagai macam testimoni dari konsumen setelah mengonsumsi <span>Madu Al-Hafizh</span> </p>
                         </div>
                     </div>
                 </div>
@@ -987,9 +984,8 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
                         <div class="section-title">
-                            <h2>News And <span>Blog</span></h2>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry has been the
-                                industry's standard consectetur adipisicing elit.</p>
+                            <h2><span>Blog</span> Terbaru</h2>
+                            <p>Artikel-artikel seputar tentang madu, manfaat madu, dan berbisnis madu. </p>
                         </div>
                     </div>
                 </div>
