@@ -13,7 +13,7 @@ class BlogController extends Controller
     public function index() {
         $title = "Blog";
         $daftar_blog = Blog::where('status','aktif')
-        ->orderBy('id','desc')->simplePaginate(6);
+        ->orderBy('id','desc')->simplePaginate(2);
 
         $description = "Ini adalah halaman Blog Madu Al-Hafizh";
         return view('website.blog.index',compact('title',
@@ -27,8 +27,7 @@ class BlogController extends Controller
         $keyword = $blog->keyword;
         $description = $blog->abstrak;
         return view('website.blog.detail',compact('title',
-        'description',
-        'blog',
-        'keyword'));
+        'keyword',
+        'description','blog'));
     }
 }

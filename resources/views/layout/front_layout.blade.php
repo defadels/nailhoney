@@ -35,7 +35,7 @@
     <link href="{{ asset('assets-front/css/owl.transitions.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-front/css/jquery.fancybox.css') }}" rel="stylesheet">
     <link href="{{ asset('assets-front/css/style.css') }}" rel="stylesheet">
-
+    @yield('page_style')
     <!-- Google Analytics -->
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YD7D898YBE"></script>

@@ -35,10 +35,10 @@ function rute($namarute){
                                         </ul>
                                     </li> -->
                                     <li>
-                                      <a href="" class="active">Beranda</a>
+                                      <a href="{{route('website.home')}}" class="{{rute('website.home')}}">Beranda</a>
                                     </li>
-                                    <li><a href="about.html">Tentang</a></li>
-                                    <li><a href="shop.html">Produk</a></li>
+                                    <li><a href="{{route('website.tentang')}}" class="{{rute('website.tentang')}}">Tentang</a></li>
+                                    <li><a href="{{route('website.produk')}}" class="{{rute('website.produk')}}">Produk</a></li>
                                     <!-- <li class="menu-item-has-children">
                                         <a href="http://google.com">Pages</a>
                                         <ul class="sub-menu">
@@ -70,7 +70,7 @@ function rute($namarute){
                                             <li><a href="blog-fullwidth.html">Bisnis Madu</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">Kontak</a></li>
+                                    <li><a href="{{route('website.kontak')}}" class="{{rute('website.kontak')}}">Kontak</a></li>
                                 </ul>
                             </div><!-- end of nav-collapse -->
                         </div>

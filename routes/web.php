@@ -38,12 +38,14 @@ Route::name('website.')->namespace('Website')->group(function () {
     Route::get('/','HomeController@index')->name('home');
     
     Route::get('blog','BlogController@index')->name('blog');
-    Route::get('blog/{id}','BlogController@detail')->name('blog.detail');
+    Route::get('blog/{id}/detail','BlogController@detail')->name('blog.detail');
     
     Route::get('produk','ProdukController@index')->name('produk');
     Route::get('produk/detail','ProdukController@detail')->name('produk.detail');
     
     Route::get('kontak','KontakController@index')->name('kontak');
+
+    Route::get('tentang', 'TentangController@index')->name('tentang');
 
 });
 

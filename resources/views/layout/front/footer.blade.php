@@ -64,9 +64,9 @@
                         <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
                             <div class="widget newsletter-widget">
                                 <div class="widget-title">
-                                    <h3>Newsletter</h3>
+                                    <h3>Subscribe Email</h3>
                                 </div>
-                                <p>You will be notified when somthing new will be appear.</p>
+                                <p>Kamu akan mendapatkan informasi terbaru melalui email.</p>
                                 <form>
                                     <div class="input-1">
                                         <input type="email" class="form-control" placeholder="Email Address *" required>

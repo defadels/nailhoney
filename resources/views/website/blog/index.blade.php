@@ -12,7 +12,7 @@
                         <div class="tp-breadcumb-wrap">
                             <h2>Blog</h2>
                             <ul>
-                                <li><a href="index.html">Home</a></li>
+                                <li><a href="index.html">Beranda</a></li>
                                 <li><span>Blog</span></li>
                             </ul>
                         </div>
@@ -31,6 +31,7 @@
                 <div class="row">
                     <div class="col col-lg-8 col-12">
                         <div class="blog-posts clearfix">
+                            @foreach($daftar_blog as $blog)
                             <div class="post">
                                 <div class="entry-media">
                                     <img src="{{asset('assets-front/images/blog/img-7.jpg')}}" alt>
@@ -39,38 +40,17 @@
                                     <ul class="entry-meta">
                                         <li>
                                             <img src="{{asset('assets-front/images/blog/author.jpg')}}" alt>
-                                            &nbsp; By <a href="#">Lily Anne</a>
+                                            &nbsp; Oleh <a href="#">{{$blog->penulis}}</a>
                                         </li>
-                                        <li>January 12,2021</li>
+                                        <li>{{$blog->created_at->format('M d, Y')}}</li>
                                     </ul>
-                                    <h3><a href="#">How to get more traffic in your website of ecommerce</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form, by injected humour, or randomised words
-                                        which don't look even slightly believable. If you are going to use a passage of
-                                        Lorem Ipsum, you need to be sure there isn't </p>
-                                    <a href="#" class="read-more">Read More..</a>
+                                    <h3><a href="{{route('website.blog.detail', $blog->id)}}">{{$blog->judul}}</a></h3>
+                                    <p>{{$blog->abstrak}} </p>
+                                    <a href="{{route('website.blog.detail', $blog->id)}}" class="read-more">Lihat selengkapnya..</a>
                                 </div>
                             </div>
-                            <div class="post">
-                                <div class="entry-media">
-                                    <img src="{{asset('assets-front/images/blog/img-8.jpg')}}" alt>
-                                </div>
-                                <div class="details">
-                                    <ul class="entry-meta">
-                                        <li>
-                                            <img src="{{asset('assets-front/images/blog/author.jpg')}}" alt>
-                                            &nbsp; By <a href="#">Lily Anne</a>
-                                        </li>
-                                        <li>January 12,2021</li>
-                                    </ul>
-                                    <h3><a href="#">25 Rules and regulation to be successful in your business.</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form, by injected humour, or randomised words
-                                        which don't look even slightly believable. If you are going to use a passage of
-                                        Lorem Ipsum, you need to be sure there isn't </p>
-                                    <a href="#" class="read-more">Read More..</a>
-                                </div>
-                            </div>
+                            @endforeach()
+
                             <div class="post format-video">
                                 <div class="entry-media video-holder">
                                     <img src="{{asset('assets-front/images/blog/img-9.jpg')}}" alt>
@@ -109,27 +89,7 @@
                                         have suffered alteration in some form, by injected humour, or randomised words
                                         which don't look even slightly believable. If you are going to use a passage of
                                         Lorem Ipsum, you need to be sure there isn't </p>
-                                    <a href="#" class="read-more">Read More..</a>
-                                </div>
-                            </div>
-                            <div class="post">
-                                <div class="entry-media">
-                                    <img src="{{asset('assets-front/images/blog/img-10.jpg')}}" alt>
-                                </div>
-                                <div class="details">
-                                    <ul class="entry-meta">
-                                        <li>
-                                            <img src="{{asset('assets-front/images/blog/author.jpg')}}" alt>
-                                            &nbsp; By <a href="#">Lily Anne</a>
-                                        </li>
-                                        <li>January 12,2021</li>
-                                    </ul>
-                                    <h3><a href="#">How to get more traffic in your website of ecommerce</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority
-                                        have suffered alteration in some form, by injected humour, or randomised words
-                                        which don't look even slightly believable. If you are going to use a passage of
-                                        Lorem Ipsum, you need to be sure there isn't </p>
-                                    <a href="#" class="read-more">Read More..</a>
+                                    <a href="" class="read-more">Read More..</a>
                                 </div>
                             </div>
                             <div class="pagination-wrapper pagination-wrapper-left">
