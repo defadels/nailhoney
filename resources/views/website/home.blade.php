@@ -854,7 +854,7 @@
                                 <span><img draggable="false" src="{{asset('assets-front/images/support/2.png')}}" alt=""></span>
                             </div>
                             <div class="service-icon-text">
-                                <h2>Mudah Pembayaran</h2>
+                                <h2>Pembayaran Mudah</h2>
                                 <span>Sistem pembayaran yang memudahkan dan dijamin aman.</span>
                             </div>
                         </div>
