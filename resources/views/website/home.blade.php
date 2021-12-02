@@ -154,7 +154,7 @@
                     <div class="col-lg-6 offset-lg-3">
                         <div class="section-title">
                             <h2>Daftar <span>Produk</span></h2>
-                            <p>Berikut adalah daftar produk yang kami sediakan untuk konsumen</p>
+                            <p>Berikut adalah daftar produk yang kami sediakan untuk konsumen.</p>
                         </div>
                     </div>
                 </div>
