@@ -230,6 +230,8 @@
     <!-- Custom script for this template -->
     <script src="{{ asset('assets-front/js/script.js') }}"></script>
     <script src="{{ asset('assets-front/js/modernizr.custom.js') }}"></script>
+
+    @yield('page_script')
 </body>
 
 </html>

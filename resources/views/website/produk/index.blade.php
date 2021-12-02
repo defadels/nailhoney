@@ -19,8 +19,8 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-shape-img-1"><img src="assets/images/slider/img-2.png" alt=""></div>
-            <div class="hero-shape-img-2"><img src="assets/images/slider/img-3.png" alt=""></div>
+            <div class="hero-shape-img-1"><img src="assets-front-front/images/slider/img-2.png" alt=""></div>
+            <div class="hero-shape-img-2"><img src="assets-front-front/images/slider/img-3.png" alt=""></div>
         </div>
         <!-- end of tp-breadcumb-section-->
 
@@ -239,33 +239,37 @@
                             <div class="tab-pane fade show active" id="grid" role="tabpanel" aria-labelledby="grid-tab">
                                 <div class="product-wrap">
                                     <div class="row align-items-center">
+                                        @foreach($daftar_produk as $produk)
+                                            <?php
+                                                $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".$produk->harga."%0AApakah bisa diproses?";
+                                            ?>
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                             <div class="product-item">
                                                 <div class="product-img">
-                                                    <img src="assets/images/product/1.png" alt="">
+                                                    <img src="{{ Storage::url($produk->foto) }}" alt="" style="background-size: cover;">
                                                     <ul>
                                                         <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
+                                                                title="Pesan" href="{{ $links }}" target="_blank"><i
                                                                     class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
+                                                        <!-- <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
                                                             <button data-bs-toggle="tooltip" data-bs-html="true"
                                                                 title="Quick View"><i class="fi ti-eye"></i></button>
                                                         </li>
                                                         <li><a data-bs-toggle="tooltip" data-bs-html="true"
                                                                 title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
+                                                                    class="fi flaticon-like"></i></a></li> -->
                                                     </ul>
-                                                    <div class="offer-thumb">
+                                                    <!-- <div class="offer-thumb">
                                                         <span>-28%</span>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="product-content">
-                                                    <h3><a href="product-single.html">Manuka Honey</a></h3>
+                                                    <h3><a href="product-single.html" id="nama">{{$produk->nama}}</a></h3>
                                                     <div class="product-btm">
-                                                        <div class="product-price">
+                                                        <div>
                                                             <ul>
-                                                                <li>$85.00</li>
-                                                                <li>$98.00</li>
+                                                                <li id="harga">Rp.{{ number_format($produk->harga)}}</li>
+                                                                <!-- <li>$98.00</li> -->
                                                             </ul>
                                                         </div>
                                                         <div class="product-ratting">
@@ -274,360 +278,23 @@
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
+                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                                <!-- <li><span><i class="fa fa-star" aria-hidden="true"></i></span> -->
                                                                 </li>
                                                             </ul>
                                                         </div>
+                                                        
                                                     </div>
+
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/2.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>-25%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Raw Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$100.00</li>
-                                                                <li>$158.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/3.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>New</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Wildflower Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$75.00</li>
-                                                                <li>$88.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/4.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Queen Bee Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$85.00</li>
-                                                                <li>$98.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/8.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>-18%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Mustard Flower Honey </a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$95.00</li>
-                                                                <li>$108.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/6.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>New</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Pure Hill Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$75.00</li>
-                                                                <li>$88.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/7.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>-15%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Black Seed Flower Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$75.00</li>
-                                                                <li>$99.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/5.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>New</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Mango Flower Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$155.00</li>
-                                                                <li>$198.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/1.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>-28%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Manuka Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$85.00</li>
-                                                                <li>$98.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                           
+                                        @endforeach
+                                       
+                                        {{$daftar_produk->links()}}
+                                    
+                                  
                                     </div>
                                 </div>
                             </div>
@@ -635,33 +302,34 @@
                                 aria-labelledby="list-tab">
                                 <div class="product-wrap">
                                     <div class="row align-items-center">
+
+                                        @foreach($daftar_produk as $produk)
                                         <div class="col-xl-12 col-12">
                                             <div class="product-item">
                                                 <div class="product-img">
-                                                    <img src="assets/images/product/5.png" alt="">
+                                                    <img src="{{Storage::url($produk->foto)}}" alt="">
                                                     <ul>
                                                         <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
+                                                                title="Pesan" id="pesan" href=""><i
                                                                     class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
+                                                        <!-- <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
                                                             <button data-bs-toggle="tooltip" data-bs-html="true"
                                                                 title="Quick View"><i class="fi ti-eye"></i></button>
                                                         </li>
                                                         <li><a data-bs-toggle="tooltip" data-bs-html="true"
                                                                 title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
+                                                                    class="fi flaticon-like"></i></a></li> -->
                                                     </ul>
-                                                    <div class="offer-thumb">
+                                                    <!-- <div class="offer-thumb">
                                                         <span>-28%</span>
-                                                    </div>
+                                                    </div> -->
                                                 </div>
                                                 <div class="product-content">
-                                                    <h3><a href="product-single.html">Manuka Honey</a></h3>
+                                                    <h3><a href="product-single.html" id="nama">{{$produk->nama}}</a></h3>
                                                     <div class="product-btm">
-                                                        <div class="product-price">
+                                                        <div>
                                                             <ul>
-                                                                <li>$85.00</li>
-                                                                <li>$98.00</li>
+                                                                <li id="harga">Rp.{{ number_format($produk->harga)}}</li>
                                                             </ul>
                                                         </div>
                                                         <div class="product-ratting">
@@ -670,248 +338,22 @@
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
+                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                                                                <!-- <li><span><i class="fa fa-star"
+                                                                            aria-hidden="true"></i></span> -->
                                                                 </li>
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-                                                        consequuntur laudantium quod ratione nulla modi? Repudiandae
-                                                        quidem dicta quia eveniet dignissimos.</p>
+                                                    {{$produk->konten}}
+                                                    
                                                 </div>
+                                               
                                             </div>
                                         </div>
-                                        <div class="col-xl-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/2.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>-25%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Raw Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$100.00</li>
-                                                                <li>$158.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-                                                        consequuntur laudantium quod ratione nulla modi? Repudiandae
-                                                        quidem dicta quia eveniet dignissimos.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/3.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>New</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Wildflower Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$75.00</li>
-                                                                <li>$88.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-                                                        consequuntur laudantium quod ratione nulla modi? Repudiandae
-                                                        quidem dicta quia eveniet dignissimos.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/4.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Queen Bee Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$85.00</li>
-                                                                <li>$98.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-                                                        consequuntur laudantium quod ratione nulla modi? Repudiandae
-                                                        quidem dicta quia eveniet dignissimos.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/8.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>-18%</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Mustard Flower Honey </a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$95.00</li>
-                                                                <li>$108.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-                                                        consequuntur laudantium quod ratione nulla modi? Repudiandae
-                                                        quidem dicta quia eveniet dignissimos.</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-12">
-                                            <div class="product-item">
-                                                <div class="product-img">
-                                                    <img src="assets/images/product/6.png" alt="">
-                                                    <ul>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Cart" href="cart.html"><i
-                                                                    class="fi flaticon-shopping-cart"></i></a></li>
-                                                        <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
-                                                            <button data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Quick View"><i class="fi ti-eye"></i></button>
-                                                        </li>
-                                                        <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Add to Wishlist" href="wishlist.html"><i
-                                                                    class="fi flaticon-like"></i></a></li>
-                                                    </ul>
-                                                    <div class="offer-thumb">
-                                                        <span>New</span>
-                                                    </div>
-                                                </div>
-                                                <div class="product-content">
-                                                    <h3><a href="product-single.html">Pure Hill Honey</a></h3>
-                                                    <div class="product-btm">
-                                                        <div class="product-price">
-                                                            <ul>
-                                                                <li>$75.00</li>
-                                                                <li>$88.00</li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="product-ratting">
-                                                            <ul>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                                <li><span><i class="fa fa-star"
-                                                                            aria-hidden="true"></i></span>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aperiam
-                                                        consequuntur laudantium quod ratione nulla modi? Repudiandae
-                                                        quidem dicta quia eveniet dignissimos.</p>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        @endforeach
+                                        {{$daftar_produk->links()}}
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -926,5 +368,21 @@
 
 
 @section('page_script')
+ <script>
+     document.querySelector("#pesan").addEventListener("click", pesanProduk);
+
+     function pesanProduk()
+     {
+         const nama_produk = document.querySelector("#nama").innerHTML;
+
+         const harga = document.querySelector("#harga").innerHTML;
+
+         const linkWA = 'https://api.whatsapp.com/send?phone=6281370721854<&text=';
+
+         const formatOrder = "Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A" + "%0ASaya ingin memesan produk berikut %0A" + "%0ANama produk : " + nama_produk + "%0AHarga : " + harga + "%0AApakah bisa diproses?";
+
+        window.open(linkWA+formatOrder);
+     }
+ </script>
 @endsection
 

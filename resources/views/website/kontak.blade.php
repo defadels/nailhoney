@@ -19,8 +19,8 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-shape-img-1"><img src="assets/images/slider/img-2.png" alt=""></div>
-            <div class="hero-shape-img-2"><img src="assets/images/slider/img-3.png" alt=""></div>
+            <div class="hero-shape-img-1"><img src="{{asset('assets-front/images/slider/img-2.png')}}" alt=""></div>
+            <div class="hero-shape-img-2"><img src="{{asset('assets-front/images/slider/img-3.png')}}" alt=""></div>
         </div>
         <!-- end of tp-breadcumb-section-->
 
@@ -70,7 +70,7 @@
                             <div class="contact-form">
                                 <form method="post" class="contact-validation-active" id="contact-form">
                                     <div>
-                                        <input type="text" class="form-control" name="name" id="name"
+                                        <input type="text" class="form-control" name="nama" id="nama"
                                             placeholder="Nama Lengkap*">
                                     </div>
                                     <div>
@@ -78,21 +78,21 @@
                                             placeholder="Email*">
                                     </div>
                                     <div>
-                                        <input type="text" class="form-control" name="phone" id="phone"
+                                        <input type="text" class="form-control" name="nomor_hp" id="nomor_hp"
                                             placeholder="Nomor Handphone/WhatsApp*">
                                     </div>
                                     <div>
-                                        <input type="text" class="form-control" name="address" id="address"
+                                        <input type="text" class="form-control" name="alamat" id="alamat"
                                             placeholder="Alamat Lengkap*">
                                     </div>
                                     <div class="comment-area">
-                                        <textarea name="note" id="note" placeholder="Silahkan isi pesan Anda...*"></textarea>
+                                        <textarea name="isiPesan" id="isiPesan" placeholder="Silahkan isi pesan Anda...*"></textarea>
                                     </div>
                                     <div class="submit-area">
-                                        <button type="submit" class="theme-btn">Kirim</button>
-                                        <div id="loader">
+                                        <a id="kirim" href="javascript:void(0)" class="theme-btn">Kirim</a>
+                                        <!-- <div id="loader">
                                             <i class="ti-reload"></i>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="clearfix error-handling-messages">
                                         <div id="success">Thank you</div>
@@ -153,12 +153,35 @@
 
  <hr class="featurette-divider"> -->
 
+ @section('page_script')
+
+<script>
+    document.querySelector("#kirim").addEventListener("click", kirimPesan);
+
+    function kirimPesan(){
+        const linkWA = 'https://api.whatsapp.com/send?phone=6281370721854<&text=';
+
+        const namaLengkap = document.querySelector("#nama").value;
+
+        const email = document.querySelector("#email").value;
+
+        const nomor_hp = document.querySelector("#nomor_hp").value;
+
+        const alamat = document.querySelector("#alamat").value;
+
+        const isiPesan = document.querySelector("#isiPesan").value;
+
+            const pesan = "Assalamualaikum, saya mengirim pesan melalui website www.nailhoney.id.%0A" + "%0ANama :"+ namaLengkap +"%0AEmail :"+" "+email+"%0ANomor handphone/WA :"+" "+nomor_hp+"%0AAlamat lengkap :"+" "+alamat+"%0A%0AIsi pesan :"+" "+isiPesan;
+
+        window.open(linkWA+pesan);
+
+    }
+
+</script>
+
+
 @endsection
 
-@section('page_style')
-    <style>
-        h1 {
-            color: blue;
-        }  
-    </style>
 @endsection
+
+

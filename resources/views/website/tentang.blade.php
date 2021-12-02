@@ -45,14 +45,10 @@
                         <div class="about-area">
                             <div class="about-wrap">
                                 <div class="about-title">
-                                    <small>About our Company</small>
-                                    <h2>All in one <span>to make a</span> different structure</h2>
+                                    <small>Tentang Perusahaan Kami</small>
+                                    <h2>Membangun yayasan <span>yang peduli </span> dengan hutan.</h2>
                                 </div>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint placeat consectetur
-                                    sapiente tempore nobis iure quos neque laboriosam, doloribus labore ad assumenda
-                                    veritatis asperiores possimus, tenetur id dolorum minus ipsa, quam eligendi odit
-                                    accusamus necessitatibus. Dicta aut delectus minima atque illo hic, totam deleniti
-                                    magni nam, ex perferendis, excepturi impedit voluptates ipsam.</p>
+                                <p>Sebagai penjaga sehat, penjaga keluarga dan penjaga alam.</p>
                                 <a href="about.html" class="btn theme-btn" tabindex="0">More About<i
                                         class="fa fa-angle-double-right"></i></a>
                             </div>
@@ -74,9 +70,8 @@
                                     <img src="assets-front/images/category/icon-1.png" alt="">
                                 </div>
                                 <div class="category-content">
-                                    <h2><a href="product.html">Queen Bee Honey</a></h2>
-                                    <p>Lorem Ipsum is simply dummy text of the printing industry has been the industry's
-                                        standard eos fugit officiis error ipsum.</p>
+                                    <h2><a href="product.html">Bersanad</a></h2>
+                                    <p>Kami mampu menunjukkan asal asul produksi madu.</p>
                                 </div>
                             </div>
                         </div>
@@ -86,9 +81,8 @@
                                     <img src="assets-front/images/category/icon-2.png" alt="">
                                 </div>
                                 <div class="category-content">
-                                    <h2><a href="product.html">Sunflower Honey</a></h2>
-                                    <p>Lorem Ipsum is simply dummy text of the printing industry has been the industry's
-                                        standard eos fugit officiis error ipsum.</p>
+                                    <h2><a href="product.html">Murni</a></h2>
+                                    <p>Produk madu yang kami hasilkan adalah madu murni.</p>
                                 </div>
                             </div>
                         </div>
@@ -98,9 +92,10 @@
                                     <img src="assets-front/images/category/icon-3.png" alt="">
                                 </div>
                                 <div class="category-content">
-                                    <h2><a href="product.html">Manuka Honey</a></h2>
-                                    <p>Lorem Ipsum is simply dummy text of the printing industry has been the industry's
-                                        standard eos fugit officiis error ipsum.</p>
+                                    <h2><a href="product.html">Bergaransi</a></h2>
+                                    <p>Refill Madu memberikan garansi kepada seluruh mitra dan konsumen
+                                        yang mampu membukti bahwa madu yang kami produksi palsu dengan
+                                        bukti uji lab, maka kami akan memberikan garansi.</p>
                                 </div>
                             </div>
                         </div>

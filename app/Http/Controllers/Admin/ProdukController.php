@@ -13,6 +13,8 @@ use Image;
 
 class ProdukController extends Controller
 {
+ 
+
     public function index(Request $req) {
         $title = 'Kelola Produk';
         
@@ -108,7 +110,7 @@ class ProdukController extends Controller
             $destinationPath = storage_path('/app/public/');
 
             $img = Image::make($gambar->path());
-            $img->fit(500, 500, function ($cons) {
+            $img->fit(250, 250, function ($cons) {
                 $cons->aspectRatio();
             })->save($destinationPath.$produk->foto);
 
@@ -186,7 +188,7 @@ class ProdukController extends Controller
             $destinationPath = storage_path('/app/public/');
 
             $img = Image::make($gambar->path());
-            $img->fit(500, 500, function ($cons) {
+            $img->fit(250, 250, function ($cons) {
                 $cons->aspectRatio();
             })->save($destinationPath.$produk->foto);
 
