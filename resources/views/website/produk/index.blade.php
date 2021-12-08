@@ -19,8 +19,8 @@
                     </div>
                 </div>
             </div>
-            <div class="hero-shape-img-1"><img src="assets-front-front/images/slider/img-2.png" alt=""></div>
-            <div class="hero-shape-img-2"><img src="assets-front-front/images/slider/img-3.png" alt=""></div>
+            <div class="hero-shape-img-1"><img src="assets-front/images/slider/img-2.png" alt=""></div>
+            <div class="hero-shape-img-2"><img src="assets-front/images/slider/img-3.png" alt=""></div>
         </div>
         <!-- end of tp-breadcumb-section-->
 
@@ -241,7 +241,7 @@
                                     <div class="row align-items-center">
                                         @foreach($daftar_produk as $produk)
                                             <?php
-                                                $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".$produk->harga."%0AApakah bisa diproses?";
+                                                $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".number_format($produk->harga)."%0AApakah bisa diproses?";
                                             ?>
                                         <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 col-12">
                                             <div class="product-item">
@@ -309,8 +309,11 @@
                                                 <div class="product-img">
                                                     <img src="{{Storage::url($produk->foto)}}" alt="">
                                                     <ul>
+                                                    <?php
+                                                        $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".number_format($produk->harga)."%0AApakah bisa diproses?";
+                                                    ?>
                                                         <li><a data-bs-toggle="tooltip" data-bs-html="true"
-                                                                title="Pesan" id="pesan" href=""><i
+                                                                title="Pesan" href="{{$links}}" target="_blank"><i
                                                                     class="fi flaticon-shopping-cart"></i></a></li>
                                                         <!-- <li data-bs-toggle="modal" data-bs-target="#popup-quickview">
                                                             <button data-bs-toggle="tooltip" data-bs-html="true"

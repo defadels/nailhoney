@@ -34,7 +34,7 @@
                 <div class="row align-items-center">
                     <div class="col col-lg-5 col-12">
                         <div class="video-area">
-                            <img src="assets-front/images/abou2.jpg" alt>
+                            <img src="{{asset('img/about.jpg')}}" alt>
                             <div class="video-holder">
                                 <a href="https://www.youtube.com/embed/Z54bL6kjyOI" class="video-btn" data-type="iframe"
                                     tabindex="0"><i class="fi flaticon-play-button"></i></a>
@@ -49,8 +49,8 @@
                                     <h2>Membangun yayasan <span>yang peduli </span> dengan hutan.</h2>
                                 </div>
                                 <p>Sebagai penjaga sehat, penjaga keluarga dan penjaga alam.</p>
-                                <a href="about.html" class="btn theme-btn" tabindex="0">More About<i
-                                        class="fa fa-angle-double-right"></i></a>
+                                <!-- <a href="about.html" class="btn theme-btn" tabindex="0">More About<i
+                                        class="fa fa-angle-double-right"></i></a> -->
                             </div>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ function rute($namarute){
                                     <span class="icon-bar middle-angle"></span>
                                     <span class="icon-bar last-angle"></span>
                                 </button>
-                                <a class="navbar-brand" href="index.html"><img src="{{asset('assets/images/logo.png')}}"
+                                <a class="navbar-brand" href="{{route('website.home')}}"><img src="{{asset('assets-front/images/logo.png')}}"
                                         alt="">Nailhoney</a>
                             </div>
                         </div>

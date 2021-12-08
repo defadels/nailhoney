@@ -116,37 +116,7 @@
 
         <!-- category-area-end -->
 
-        <!-- start about-section -->
-        <section class="about-section section-padding p-t-0">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col col-lg-5 col-12">
-                        <div class="video-area">
-                            <img src="assets-front/images/abou2.jpg" alt>
-                            <div class="video-holder">
-                                <a href="https://www.youtube.com/embed/bLJ8n5YGLv8" class="video-btn" data-type="iframe"
-                                    tabindex="0"><i class="fi flaticon-play-button"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col col-lg-7 col-12">
-                        <div class="about-area">
-                            <div class="about-wrap">
-                                <div class="about-title">
-                                    <small>Tentang Perusahaan Kami</small>
-                                    <h2>Membangun yayasan <span>yang peduli</span> dengan hutan</h2>
-                                </div>
-                                <p>Sebagai penjaga sehat, penjaga keluarga dan penjaga alam.</p>
-                                <a href="{{route('website.tentang')}}" class="btn theme-btn" tabindex="0">Lihat Selengkapnya<i
-                                        class="fa fa-angle-double-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- end container -->
-        </section>
-        <!-- end about-section -->
-
+        
         <!-- product-area-start -->
         <section class="product-area section-padding">
             <div class="container">
@@ -168,7 +138,7 @@
                                     <img src="{{Storage::url($produk->foto)}}" alt="">
                                     <ul>
                                         <?php
-                                        $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".$produk->harga."%0AApakah bisa diproses?";
+                                        $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".number_format($produk->harga)."%0AApakah bisa diproses?";
                                         ?>
                                         <li><a data-bs-toggle="tooltip" data-bs-html="true" title="Pesan"
                                                 href="{{$links}}" target="_blank"><i class="fi flaticon-shopping-cart"></i></a></li>
@@ -249,7 +219,9 @@
         <!-- offer-area-end -->
 
         <!-- Flash-Sale-area-start -->
-        <section class="flash-Sale-area product-area section-padding">
+        <!-- Section daftar produk promo -->
+
+        <!-- <section class="flash-Sale-area product-area section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -424,7 +396,8 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
+
         <!-- Flash-Sale-area-end -->
 
         <!-- start tp-projects -->
@@ -432,12 +405,12 @@
             <div class="container">
                 <div class="row">
                     <div class="section-title mb-0">
-                        <h2>Latest <span>Project</span></h2>
+                        <h2>Konten <span>Madu</span></h2>
                     </div>
                     <div class="col col-xs-12 sortable-gallery">
                         <div class="gallery-filters projects-menu">
                             <ul>
-                                <li><a data-filter="*" href="#" class="current">All Project</a></li>
+                                <li><a data-filter="*" href="#" class="current">Semua Konten</a></li>
                                 <li><a data-filter=".flower" href="#">Flower</a></li>
                                 <li><a data-filter=".hill" href="#">Hill</a></li>
                                 <li><a data-filter=".forest" href="#">Forest</a></li>
@@ -613,6 +586,37 @@
             </div>
         </div>
         <!-- service-area-end -->
+
+        <!-- start about-section -->
+        <section class="about-section section-padding p-t-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col col-lg-5 col-12">
+                        <div class="video-area">
+                            <img src="{{asset('img/about.jpg')}}" alt>
+                            <div class="video-holder">
+                                <a href="https://www.youtube.com/embed/bLJ8n5YGLv8" class="video-btn" data-type="iframe"
+                                    tabindex="0"><i class="fi flaticon-play-button"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-7 col-12">
+                        <div class="about-area">
+                            <div class="about-wrap">
+                                <div class="about-title">
+                                    <small>Tentang Perusahaan Kami</small>
+                                    <h2>Membangun yayasan <span>yang peduli</span> dengan hutan</h2>
+                                </div>
+                                <p>Sebagai penjaga sehat, penjaga keluarga dan penjaga alam.</p>
+                                <a href="{{route('website.tentang')}}" class="btn theme-btn" tabindex="0">Lihat Selengkapnya<i
+                                        class="fa fa-angle-double-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- end about-section -->
 
         <!-- testimonial-area-start -->
         <section class="testimonial-area section-padding">
