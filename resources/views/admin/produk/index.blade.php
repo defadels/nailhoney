@@ -1,6 +1,6 @@
 @extends('layout.admin_layout')
 
-@section('title', 'Produk')
+@section('title', 'Daftar Produk')
 
 
 @section('content')

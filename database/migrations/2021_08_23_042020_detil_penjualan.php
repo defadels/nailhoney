@@ -23,6 +23,6 @@ class DetilPenjualan extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('detil_penjualan');
+        Schema::dropIfExists('detil_penjualan');
     }
 }

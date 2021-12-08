@@ -6,13 +6,13 @@
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
-						<div class="breadcrumb-title pr-3">Kategori Produk</div>
+						<div class="breadcrumb-title pr-3">Foto Produk</div>
 						<div class="pl-3">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">Tambah Kategori Produk</li>
+									<li class="breadcrumb-item active" aria-current="page">Tambah Foto Produk</li>
 								</ol>
 							</nav>
 						</div>
@@ -38,7 +38,7 @@
 							<hr/>
 
 							
-							{!! Form::open(['route' => 'admin.produk.foto.store']) !!}
+							{!! Form::open(['url' => route('admin.produk.foto.store',$produk->id), 'method' => 'POST']) !!}
 
 							<div class="form-group">
 							{!! Form::label('foto', 'Foto') !!}

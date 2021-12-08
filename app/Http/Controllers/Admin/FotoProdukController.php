@@ -13,7 +13,7 @@ use Image;
 
 class FotoProdukController extends Controller
 {
-    public function index($produk_id)
+    public function index($id)
     {
         $title = 'Kelola Foto Produk';
 
@@ -21,19 +21,19 @@ class FotoProdukController extends Controller
 
         $foto_produk = FotoProduk::paginate(10);
 
-        $pilihan_produk = Produk::findOrFail($produk_id);
+        $pilihan_produk = Produk::findOrFail($id);
        
         
         return view('admin.produk.foto.index',compact('title','description','foto_produk',
         'pilihan_produk'));
     }
 
-    public function create($produk_id) {
+    public function create($id) {
         $title = 'Tambah Foto Produk';
 
         $description = 'Halaman untuk tambah foto produk';
 
-        $produk = FotoProduk::findOrFail($produk_id);
+        $produk = Produk::findOrFail($id);
 
         return view('admin.produk.foto.create', compact('title', 'description','produk'));
     }
@@ -42,17 +42,18 @@ class FotoProdukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'foto' => 'required|max:100',
+            'foto' => 'file|mimes:jpeg,png|nullable',
             'keterangan' => 'max:100'
         ];
 
         $messages = [
-            'foto' => 'file|mimes:jpeg,png',
+            'foto.file' => 'Foto harus berupa file',
+            'foto.mimes' => 'File foto harus JPEG atau PNG',
             'keterangan.max' => 'Keterangan maksimal 100 karakter'
         ];
         $produk_id = $req->produk_id;
 
-        $foto_produk = Produk::create(
+        $foto_produk = FotoProduk::create(
             [
                 'produk_id' => $req->produk_id,
                 'keterangan' => $req->keterangan
@@ -67,7 +68,7 @@ class FotoProdukController extends Controller
             $foto_produk->foto = $path.$nama_file.".".$file_extension;
 
             $gambar = $req->file('foto');
-            $destinationPath = storage_path('/app/public/');
+            $destinationPath = storage_path('app/public/');
 
             $img = Image::make($gambar->path());
             $img->fit(500, 500, function ($cons) {
@@ -96,13 +97,13 @@ class FotoProdukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'foto' => 'file|mimes:jpeg,png',
+            'foto' => 'file|mimes:jpeg,png|nullable',
             'keterangan' => 'max:100'
         ];
 
         $messages = [
             'foto.file' => 'Foto harus berupa file',
-            'foto.mimes' => 'File foto harus jpeg atau png',
+            'foto.mimes' => 'File foto harus JPEG atau PNG',
             'keterangan.max' => 'Keterangan maksimal 100 karakter'
         ];
 
@@ -124,7 +125,7 @@ class FotoProdukController extends Controller
             $foto_produk->foto = $path.$nama_file.".".$file_extension;
 
             $gambar = $req->file('foto');
-            $destinationPath = storage_path('/app/public/');
+            $destinationPath = storage_path('app/public/');
 
             $img = Image::make($gambar->path());
             $img->fit(500, 500, function ($cons) {

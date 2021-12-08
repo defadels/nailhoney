@@ -17,7 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-						 <a class="btn btn-light" href="{{ route('admin.produk.foto.tambah') }}">Tambah</a>
+						 <a class="btn btn-light" href="{{ route('admin.produk.foto.create',$pilihan_produk->id) }}">Tambah</a>
 						<!--<a class="btn btn-light" href="{{ route('admin.produk.kategori.index') }}">Kategori</a> -->
 						</div>
 					</div>

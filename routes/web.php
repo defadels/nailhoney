@@ -68,8 +68,8 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
      //Routing halaman foto produk
      Route::prefix('produk/foto')->name('produk.')->group(function () {
         Route::get('{produk_id}/foto-produk', 'FotoProdukController@index')->name('foto.index');
-        Route::get('{produk_id}/foto-produk/tambah', 'FotoProdukController@create')->name('foto.tambah');
-        Route::post('foto-produk/tambah', 'FotoProdukController@store')->name('foto.store');
+        Route::get('{produk_id}/foto-produk/tambah', 'FotoProdukController@create')->name('foto.create');
+        Route::post('{produk_id}/foto-produk/tambah', 'FotoProdukController@store')->name('foto.store');
         Route::get('foto-produk/{id}/edit', 'FotoProdukController@edit')->name('foto.edit');
         Route::post('{id}/edit', 'FotoProdukController@update')->name('foto.update');
         Route::delete('{id}/edit', 'FotoProdukController@destroy')->name('foto.destroy');

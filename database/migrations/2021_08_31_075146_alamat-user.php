@@ -32,6 +32,6 @@ class AlamatUser extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('alamat_user');
+        Schema::dropIfExists('alamat_user');
     }
 }

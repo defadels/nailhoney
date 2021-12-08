@@ -42,7 +42,7 @@ class BuatTabelProduk extends Migration
         Schema::create('foto_produk', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('produk_id')->nullable();
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('keterangan');
             $table->timestamps();
         });
