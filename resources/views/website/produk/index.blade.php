@@ -268,10 +268,17 @@
                                                     <div class="product-btm">
                                                         <div>
                                                             <ul>
-                                                                <li id="harga">Rp.{{ number_format($produk->harga)}}</li>
+                                                                <li>Rp.{{ number_format($produk->harga)}}</li>
                                                                 <!-- <li>$98.00</li> -->
+                                                                
+                                                                <li>
+                                                                    <br>
+                                                                <a href="{{ $links }}" class="btn btn-md btn-success">Pesan</a>
+                                                                </li>
                                                             </ul>
                                                         </div>
+                                                    
+                                                        
                                                         <div class="product-ratting">
                                                             <ul>
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -283,7 +290,7 @@
                                                                 </li>
                                                             </ul>
                                                         </div>
-                                                        
+                                                       
                                                     </div>
 
                                                 </div>
@@ -348,7 +355,7 @@
                                                             </ul>
                                                         </div>
                                                     </div>
-                                                    {{$produk->konten}}
+                                                    {!!$produk->konten!!}
                                                     
                                                 </div>
                                                
