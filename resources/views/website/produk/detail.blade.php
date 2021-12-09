@@ -110,7 +110,7 @@
                                     <a href="{{ $links }}" class="theme-btn">Pesan</a>
                                 </div>
                                 <div class="social-share">
-                                    <span>Share with : </span>
+                                    <span>Bagikan ke : </span>
                                     <ul class="socialLinks">
                                         <li><a href='#'><i class="fa fa-facebook"></i></a></li>
                                         <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
@@ -148,19 +148,8 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="Descriptions-item">
-                                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                                                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
-                                                illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                                                explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                                                odit aut fugit, sed quia consequuntur magni dolores eos qui ratione
-                                                voluptatem sequi nesciunt. Neque porro quisquam.Sed ut perspiciatis unde
-                                                omnis iste natus error sit voluptatem accusantium doloremque laudantium,
-                                                totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                                                architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
-                                                quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
-                                                magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                                                quisquam </p>
-                                            <div class="Description-table">
+                                            <p>{!!$produk->konten!!} </p>
+                                            <!-- <div class="Description-table">
                                                 <h4>Find Your Category :</h4>
                                                 <form action="cart" class="table-responsive">
                                                     <table>
@@ -226,7 +215,7 @@
                                                         </tbody>
                                                     </table>
                                                 </form>
-                                            </div>
+                                            </div> -->
                                         </div>
                                     </div>
                                 </div>
@@ -615,7 +604,7 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
                         <div class="section-title">
-                            <h2>Related <span>Product</span></h2>
+                            <h2>Produk <span>Terkait</span></h2>
                         </div>
                     </div>
                 </div>

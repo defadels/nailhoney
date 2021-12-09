@@ -17,7 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-						 <a class="btn btn-light" href="{{ route('admin.produk.foto.create',$pilihan_produk->id) }}">Tambah</a>
+						 <a class="btn btn-light" href="{{ route('admin.produk.foto.create',$produk->id) }}">Tambah</a>
 						<!--<a class="btn btn-light" href="{{ route('admin.produk.kategori.index') }}">Kategori</a> -->
 						</div>
 					</div>
@@ -71,7 +71,7 @@
 											</td>
 											<td>{{ $foto->keterangan }}</td>
 											<td>
-											<a href="{{ route('admin.produk.foto.edit', $foto->id) }}" class="btn btn-primary">Edit</a>
+											<a href="{{route('admin.produk.foto.edit', $foto->id)}}" class="btn btn-primary">Edit</a>
 											</td>
 											
 										</tr>

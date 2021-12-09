@@ -21,11 +21,9 @@ class FotoProdukController extends Controller
 
         $foto_produk = FotoProduk::paginate(10);
 
-        $pilihan_produk = Produk::findOrFail($id);
+        $produk = Produk::findOrFail($id);
        
-        
-        return view('admin.produk.foto.index',compact('title','description','foto_produk',
-        'pilihan_produk'));
+        return view('admin.produk.foto.index',compact('title','description','foto_produk','produk'));
     }
 
     public function create($id) {
@@ -38,7 +36,7 @@ class FotoProdukController extends Controller
         return view('admin.produk.foto.create', compact('title', 'description','produk'));
     }
 
-    public function store(Request $req) {
+    public function store(Request $req, $id) {
         $input = $req->all();
 
         $rules = [
@@ -78,7 +76,9 @@ class FotoProdukController extends Controller
             $foto_produk->save();
         }
 
-        return redirect()->route('admin.produk.foto.index')
+        $pilihan_produk = Produk::findOrFail($id);
+
+        return redirect()->route('admin.produk.foto.index',$pilihan_produk->id)
         ->with('sukses','Foto produk berhasil ditambahkan');
     }
 
@@ -139,5 +139,19 @@ class FotoProdukController extends Controller
 
         return redirect()->route('admin.produk.foto.index')
         ->with('sukses', 'Foto produk berhasil diubah');
+    }
+
+    public function destroy($id, $produk_id){
+        try {
+            $foto = FotoProduk::findOrFail($id);
+            $produk_id = Produk::findOrFail($id);
+            $foto->delete();
+        } catch(Exception $e) {
+            return redirect()->route('admin.produk.foto.index', $produk_id)
+            ->with('gagal', 'Foto gagal ditambahkan');
+        }
+
+            return redirect()->route('admin.produk.foto.index', $produk_id)
+            ->with('sukses', 'Foto berhasil ditambahkan');
     }
 }
