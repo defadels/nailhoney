@@ -41,7 +41,7 @@ Route::name('website.')->namespace('Website')->group(function () {
     Route::get('blog/{id}/detail','BlogController@detail')->name('blog.detail');
     
     Route::get('produk','ProdukController@index')->name('produk');
-    Route::get('produk/detail','ProdukController@detail')->name('produk.detail');
+    Route::get('produk/{id}/detail','ProdukController@detail')->name('produk.detail');
     
     Route::get('kontak','KontakController@index')->name('kontak');
 

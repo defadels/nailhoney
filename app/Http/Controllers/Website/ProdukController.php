@@ -28,9 +28,14 @@ class ProdukController extends Controller
         return view('website.produk.index',compact('title','description','daftar_produk'));
     }
     
-    public function detail() {
+    public function detail($id) {
         $title = "Produk Detail";
         $description = "Ini adalah halaman Produk Madu Al-Hafizh";
-        return view('website.produk.detail',compact('title','description'));
+
+        $produk = Produk::findOrFail($id);
+
+        $daftar_produk = Produk::get();
+
+        return view('website.produk.detail',compact('title','description','produk','daftar_produk'));
     }
 }

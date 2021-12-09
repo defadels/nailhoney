@@ -50,7 +50,7 @@
 					<a href="{{ route('admin.pelanggan.index') }}">
 						<div class="parent-icon"><i class="bx bx-user"></i>
 						</div>
-						<div class="menu-title">Pelanggan1</div>
+						<div class="menu-title">Pelanggan</div>
 					</a>
 				</li>
 
