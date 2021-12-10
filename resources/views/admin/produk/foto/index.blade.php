@@ -71,7 +71,7 @@
 											</td>
 											<td>{{ $foto->keterangan }}</td>
 											<td>
-											<a href="{{route('admin.produk.foto.edit', $foto->id)}}" class="btn btn-primary">Edit</a>
+											<a href="{{route('admin.produk.foto.edit', [$foto->produk_id, $foto->id])}}" class="btn btn-primary">Edit</a>
 											</td>
 											
 										</tr>

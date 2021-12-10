@@ -38,12 +38,12 @@
 							<hr/>
 
 							
-							{!! Form::open(['url' => route('admin.produk.foto.store',$produk->id), 'method' => 'POST']) !!}
+							{!! Form::open(['url' => route('admin.produk.foto.store',$produk->id), 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
 
 							<div class="form-group">
 							{!! Form::label('foto', 'Foto') !!}
 
-							{!! Form::file('foto',['class' => 'form-control form-control']) !!}
+							{!! Form::file('foto',['class' => 'form-control']) !!}
 							</div>
 
 							<div class="form-group">

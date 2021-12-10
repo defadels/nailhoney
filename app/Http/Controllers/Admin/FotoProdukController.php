@@ -19,7 +19,7 @@ class FotoProdukController extends Controller
 
         $description = 'Halaman untuk mengelola foto produk';
 
-        $foto_produk = FotoProduk::paginate(10);
+        $foto_produk = FotoProduk::latest()->paginate(10);
 
         $produk = Produk::findOrFail($id);
        
@@ -49,7 +49,6 @@ class FotoProdukController extends Controller
             'foto.mimes' => 'File foto harus JPEG atau PNG',
             'keterangan.max' => 'Keterangan maksimal 100 karakter'
         ];
-        $produk_id = $req->produk_id;
 
         $foto_produk = FotoProduk::create(
             [
@@ -61,7 +60,7 @@ class FotoProdukController extends Controller
 
         if($req->hasFile('foto')) {
             $nama_file = Str::uuid();
-            $path = 'produk/foto/'.$produk_id."/";
+            $path = 'produk/foto/';
             $file_extension = $req->foto->extension();
             $foto_produk->foto = $path.$nama_file.".".$file_extension;
 
@@ -69,20 +68,20 @@ class FotoProdukController extends Controller
             $destinationPath = storage_path('app/public/');
 
             $img = Image::make($gambar->path());
-            $img->fit(500, 500, function ($cons) {
-                $cons->aspectRation();
+            $img->fit(855, 726, function ($cons) {
+                $cons->aspectRatio();
             })->save($destinationPath.$foto_produk->foto);
 
             $foto_produk->save();
         }
 
-        $pilihan_produk = Produk::findOrFail($id);
+        $produk = FotoProduk::findOrFail($id);
 
-        return redirect()->route('admin.produk.foto.index',$pilihan_produk->id)
+        return redirect()->route('admin.produk.foto.index')
         ->with('sukses','Foto produk berhasil ditambahkan');
     }
 
-    public function edit($id)
+    public function edit($produk_id, $id)
     {
         $title = 'Edit Foto Produk';
 
@@ -90,10 +89,12 @@ class FotoProdukController extends Controller
 
         $foto_produk = FotoProduk::findOrFail($id);
 
-        return view('admin.produk.foto.edit', compact('title','description', 'foto_produk'));
+        $produk = Produk::findOrFail($produk_id);
+
+        return view('admin.produk.foto.edit', compact('title','description', 'foto_produk','produk'));
     }
 
-    public function update(Request $req, $id) {
+    public function update(Request $req, $produk_id, $id) {
         $input = $req->all();
 
         $rules = [
@@ -111,6 +112,8 @@ class FotoProdukController extends Controller
 
         $foto_produk = FotoProduk::findOrFail($id);
 
+        $produk = Produk::FindOrFail($produk_id);
+
         $foto_produk->produk_id = $req->produk_id; 
         $foto_produk->keterangan = $req->keterangan;
 
@@ -120,7 +123,7 @@ class FotoProdukController extends Controller
             $foto_lama = $foto_produk->foto;
 
             $nama_file = Str::uuid();
-            $path = 'produk/foto/'.$produk_id.'/';
+            $path = 'produk/foto/';
             $file_extension = $req->foto->extension();
             $foto_produk->foto = $path.$nama_file.".".$file_extension;
 
@@ -137,21 +140,21 @@ class FotoProdukController extends Controller
 
         $foto_produk->save();
 
-        return redirect()->route('admin.produk.foto.index')
+        return redirect()->route('admin.produk.foto.index', $foto->produk_id)
         ->with('sukses', 'Foto produk berhasil diubah');
     }
 
-    public function destroy($id, $produk_id){
+    public function destroy($produk_id, $id){
         try {
             $foto = FotoProduk::findOrFail($id);
-            $produk_id = Produk::findOrFail($id);
+            $produk_id = Produk::findOrFail($produk_id);
             $foto->delete();
         } catch(Exception $e) {
-            return redirect()->route('admin.produk.foto.index', $produk_id)
-            ->with('gagal', 'Foto gagal ditambahkan');
+            return redirect()->route('admin.produk.foto.index', [$foto->produk_id, $foto->id])
+            ->with('gagal', 'Foto gagal dihapus');
         }
 
-            return redirect()->route('admin.produk.foto.index', $produk_id)
-            ->with('sukses', 'Foto berhasil ditambahkan');
+            return redirect()->route('admin.produk.foto.index', [$foto->produk_id, $foto->id])
+            ->with('sukses', 'Foto berhasil dihapus');
     }
 }

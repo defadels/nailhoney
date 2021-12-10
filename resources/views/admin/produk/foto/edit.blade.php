@@ -27,7 +27,7 @@
 								<h4 class="mb-0">Edit Foto Produk</h4>
 							</div>
 							<hr/>
-							{!! Form::model($foto_produk, ['route' => ['admin.produk.foto.update', $foto_produk->id]]) !!}
+							{!! Form::model($foto_produk, ['route' => ['admin.produk.foto.update', [$foto_produk->produk_id, $foto_produk->id]]]) !!}
                             <div class="form-group">
 								<img src="{{  Storage::url($foto_produk->foto) }}" alt="" style="width:250px; height:250px;">
 							</div>	
@@ -53,7 +53,7 @@
 
 					<!-- Modal -->
 				<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-hidden="true">
-					{!! Form::open(['url' => route('admin.produk.foto.destroy',$foto_produk->id), 'method' => 'DELETE']) !!}	
+					{!! Form::open(['url' => route('admin.produk.foto.destroy',[$foto_produk->produk_id, $foto_produk->id]), 'method' => 'DELETE']) !!}	
 							<div class="modal-dialog modal-lg">
 									<div class="modal-content">
 										<div class="modal-header">
