@@ -4,16 +4,16 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="title" content="@yield('title','Madu Al-Hafizh')">
-    <meta name="description" content="@yield('description','Supplier Madu Sumatera Terbesar')">
+    <meta name="title" content="@yield('title','Nailhoney.id')">
+    <meta name="description" content="@yield('description','Supplier Terbesar')">
     <meta name="keywords" content="Madu, Hutan, Madu Ternak, Ganti Gula ke Madu">
     <meta name="author" content="Bag Kinantan">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta property="og:url"         content="https://madualhafizh.id" />
+    <meta property="og:url"         content="https://nailhoney.id" />
     <meta property="og:type"        content="website" />
     
-    <meta property="og:title"       content="@yield('title','Website Resmi Madu Al-Hafizh')" />
-    <meta property="og:description" content="@yield('description','Supplier Madu Hutan Sumatera Terbesar')" />
+    <meta property="og:title"       content="@yield('title','Website Resmi Nailhoney')" />
+    <meta property="og:description" content="@yield('description','Supplier Madu Sumatera Terbesar')" />
     <meta property="og:image"       content="@yield('logo','/img/logo.png')" />
     <link rel="icon" href="{{ asset('/img/logo.png') }}" type="image/gif" sizes="16x16">    
 

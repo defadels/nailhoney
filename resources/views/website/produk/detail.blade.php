@@ -1,7 +1,6 @@
 @extends('layout.front_layout')
 
-@section('title','Produk')
-
+@section('title','Detail Produk')
 
 @section('content')
  <!-- product-single-section  start-->
@@ -96,13 +95,11 @@
                                     <a href="{{ $links }}" class="theme-btn" target="_blank">Pesan</a>
                                 </div>
                                 <div class="social-share">
-                                    <span>Bagikan ke : </span>
+                                    <span>Share : </span>
                                     <ul class="socialLinks">
                                         <li><a href='#'><i class="fa fa-facebook"></i></a></li>
-                                        <li><a href='#'><i class="fa fa-linkedin"></i></a></li>
                                         <li><a href='#'><i class="fa fa-twitter"></i></a></li>
                                         <li><a href='#'><i class="fa fa-instagram"></i></a></li>
-                                        <li><a href='#'><i class="fa fa-youtube-play"></i></a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -615,7 +612,7 @@
                                     </div> -->
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="product-single.html">{{$produk->nama}} </a></h3>
+                                    <h3><a href="{{route('website.produk.detail',[$produk->id, $produk->produk_id])}}">{{$produk->nama}} </a></h3>
                                     <div class="product-btm">
                                         <div class="product-price">
                                             <ul>

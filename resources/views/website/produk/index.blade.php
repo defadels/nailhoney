@@ -1,7 +1,6 @@
 @extends('layout.front_layout')
 
-@section('title','Produk')
-
+@section('title','Daftar Produk')
 
 @section('content')
  <!-- start of breadcumb-section -->
