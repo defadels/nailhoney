@@ -19,7 +19,7 @@ class FotoProdukController extends Controller
 
         $description = 'Halaman untuk mengelola foto produk';
 
-        $foto_produk = FotoProduk::latest()->paginate(10);
+        $foto_produk = FotoProduk::where('produk_id', '=', $id)->get();
 
         $produk = Produk::findOrFail($id);
        
@@ -40,7 +40,7 @@ class FotoProdukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'foto' => 'file|mimes:jpeg,png|nullable',
+            'foto' => 'file|mimes:jpeg,jpg,png|nullable',
             'keterangan' => 'max:100'
         ];
 
@@ -75,9 +75,9 @@ class FotoProdukController extends Controller
             $foto_produk->save();
         }
 
-        $produk = FotoProduk::findOrFail($id);
+        $produk = Produk::findOrFail($id);
 
-        return redirect()->route('admin.produk.foto.index')
+        return redirect()->route('admin.produk.foto.index', $produk->id)
         ->with('sukses','Foto produk berhasil ditambahkan');
     }
 
@@ -98,7 +98,7 @@ class FotoProdukController extends Controller
         $input = $req->all();
 
         $rules = [
-            'foto' => 'file|mimes:jpeg,png|nullable',
+            'foto' => 'file|mimes:jpeg,jpg,png|nullable',
             'keterangan' => 'max:100'
         ];
 
@@ -112,12 +112,10 @@ class FotoProdukController extends Controller
 
         $foto_produk = FotoProduk::findOrFail($id);
 
-        $produk = Produk::FindOrFail($produk_id);
+        $produk = Produk::findOrFail($produk_id);
 
         $foto_produk->produk_id = $req->produk_id; 
         $foto_produk->keterangan = $req->keterangan;
-
-        $produk_id = $foto_produk->produk_id;
 
         if($req->hasFile('foto')) {
             $foto_lama = $foto_produk->foto;
@@ -131,7 +129,7 @@ class FotoProdukController extends Controller
             $destinationPath = storage_path('app/public/');
 
             $img = Image::make($gambar->path());
-            $img->fit(500, 500, function ($cons) {
+            $img->fit(855, 726, function ($cons) {
                 $cons->aspectRatio();
             })->save($destinationPath.$foto_produk->foto);
 
@@ -140,7 +138,7 @@ class FotoProdukController extends Controller
 
         $foto_produk->save();
 
-        return redirect()->route('admin.produk.foto.index', $foto->produk_id)
+        return redirect()->route('admin.produk.foto.index', $foto_produk->produk_id)
         ->with('sukses', 'Foto produk berhasil diubah');
     }
 

@@ -67,7 +67,7 @@
 											{{ $produk->kategori->nama }}
 											</td>
 											<td>{{ $produk->nama }}</td>
-											<td>{{ $produk->harga }}</td>
+											<td>Rp.{{ number_format($produk->harga) }}</td>
 											<td>{{ $produk->komisi }}</td>
 											<td>{{ $produk->satuan }}</td>
 											<td>

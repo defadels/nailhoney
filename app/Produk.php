@@ -17,6 +17,6 @@ class Produk extends Model
 
     public function daftar_foto()
     {
-        return $this->hasMany('App\FotoProduk', 'produk_id')->withDefault();
+        return $this->hasMany('App\FotoProduk', 'produk_id');
     }
 }

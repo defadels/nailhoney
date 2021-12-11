@@ -123,7 +123,7 @@ class ProdukController extends Controller
     }
 
     public function edit(Request $req, $id) {
-        $title = 'Kelola Produk';
+        $title = 'Kelola Produk';   
 
         $daftar_kategori = KategoriProduk::pluck('nama', 'id');
 

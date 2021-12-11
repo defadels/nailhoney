@@ -13,38 +13,24 @@
                         <div class="col-lg-5">
                             <div class="product-single-img">
                                 <div class="product-active owl-carousel">
+                                    @foreach($produk->daftar_foto as $foto)
                                     <div class="item">
+                                        <img src="{{Storage::url($foto->foto)}}" alt="">
+                                    </div>
+                                    <!-- <div class="item">
                                         <img src="{{asset('assets-front/images/product-details/1.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/2.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/3.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/1.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/2.jpg')}}" alt="">
-                                    </div>
+                                    </div> -->
+                                  @endforeach()
                                 </div>
                                 <div class="product-thumbnil-active  owl-carousel">
+                                @foreach($produk->daftar_foto as $foto)
                                     <div class="item">
+                                        <img src="{{Storage::url($foto->foto)}}" alt="">
+                                    </div>
+                                    <!-- <div class="item">
                                         <img src="{{asset('assets-front/images/product-details/1.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/2.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/3.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/1.jpg')}}" alt="">
-                                    </div>
-                                    <div class="item">
-                                        <img src="{{asset('assets-front/images/product-details/2.jpg')}}" alt="">
-                                    </div>
+                                    </div> -->
+                                @endforeach()    
                                 </div>
                             </div>
                         </div>
@@ -107,7 +93,7 @@
                                     <?php
                                      $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".number_format($produk->harga)."%0AApakah bisa diproses?";
                                             ?>
-                                    <a href="{{ $links }}" class="theme-btn">Pesan</a>
+                                    <a href="{{ $links }}" class="theme-btn" target="_blank">Pesan</a>
                                 </div>
                                 <div class="social-share">
                                     <span>Bagikan ke : </span>

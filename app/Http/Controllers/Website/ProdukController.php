@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Produk;
 use App\KategoriProduk;
+use App\FotoProduk;
 use Image;
 use Storage;
 
@@ -32,7 +33,7 @@ class ProdukController extends Controller
         $title = "Produk Detail";
         $description = "Ini adalah halaman Produk Madu Al-Hafizh";
 
-        $produk = Produk::findOrFail($id);
+        $produk = Produk::find($id);
 
         $daftar_produk = Produk::get();
 

@@ -45,7 +45,7 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tabel Foto Produk</h4>
+								<h4 class="mb-0">Tabel Foto Produk {!!$produk->nama!!}</h4>
 							</div>
 							<hr/>
 							<div class="table-responsive">
@@ -78,7 +78,6 @@
                                     @endforeach
 									</tbody>
 								</table>
-							{{ $foto_produk->links() }}
 							</div>
 						</div>
 					</div>

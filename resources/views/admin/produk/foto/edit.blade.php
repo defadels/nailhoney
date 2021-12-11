@@ -27,14 +27,14 @@
 								<h4 class="mb-0">Edit Foto Produk</h4>
 							</div>
 							<hr/>
-							{!! Form::model($foto_produk, ['route' => ['admin.produk.foto.update', [$foto_produk->produk_id, $foto_produk->id]]]) !!}
+							{!! Form::model($foto_produk, ['route' => ['admin.produk.foto.update', [$foto_produk->produk_id, $foto_produk->id]], 'enctype' => 'multipart/form-data']) !!}
                             <div class="form-group">
-								<img src="{{  Storage::url($foto_produk->foto) }}" alt="" style="width:250px; height:250px;">
+								<img src="{{  Storage::url($foto_produk->foto) }}" alt="" style="width:500px; height:500px;">
 							</div>	
 							<div class="form-group">
 							{!! Form::label('foto', 'Foto') !!}
 
-							{!! Form::file('foto',['class' => 'form-control']) !!}
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
 							</div>
 
 							<div class="form-group">

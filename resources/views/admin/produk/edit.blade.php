@@ -36,7 +36,7 @@
 
 							{!! Form::model($produk, ['route' => ['admin.produk.update', $produk->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
 							<div class="form-group">
-								<img src="{{  Storage::url($produk->foto) }}" alt="" style="width:500px; height:250px;">
+								<img src="{{  Storage::url($produk->foto) }}" alt="" style="width:500px; height:500px;">
 							</div>	
 							<div class="form-group">
 							{!! Form::label('foto', 'Foto Produk') !!}	
