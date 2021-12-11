@@ -113,15 +113,15 @@
                                 data-bs-target="#descripton" type="button" role="tab" aria-controls="descripton"
                                 aria-selected="true">Deskripsi</button>
                         </li>
-                        <!-- <li class="nav-item" role="presentation">
+                        <li class="nav-item" role="presentation">
                             <button class="nav-link" id="Information-tab" data-bs-toggle="pill"
                                 data-bs-target="#Information" type="button" role="tab" aria-controls="Information"
                                 aria-selected="false">Additional Information</button>
-                        </li> -->
-                        <li class="nav-item" role="presentation">
+                        </li>
+                        <!-- <li class="nav-item" role="presentation">
                             <button class="nav-link" id="Ratings-tab" data-bs-toggle="pill" data-bs-target="#Ratings"
                                 type="button" role="tab" aria-controls="Ratings" aria-selected="false">Ratings</button>
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="tab-content">
                       <!-- Deskripsi -->
@@ -206,7 +206,7 @@
                         </div>
 
                         <!-- Rating -->
-                        <div class="tab-pane fade" id="Ratings" role="tabpanel" aria-labelledby="Ratings-tab">
+                        <!-- <div class="tab-pane fade" id="Ratings" role="tabpanel" aria-labelledby="Ratings-tab">
                             <div class="container">
                                 <div class="rating-section">
                                     <div class="row">
@@ -527,10 +527,10 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         
                         <!-- Informasi -->
-                        <!-- <div class="tab-pane fade" id="Information" role="tabpanel" aria-labelledby="Information-tab">
+                        <div class="tab-pane fade" id="Information" role="tabpanel" aria-labelledby="Information-tab">
                             <div class="container">
                                 <div class="Additional-wrap">
                                     <div class="row">
@@ -572,7 +572,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
