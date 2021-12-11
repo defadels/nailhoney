@@ -38,19 +38,19 @@
 							<hr/>
 
 							
-							{!! Form::open(['route' => 'admin.blog.kategori.add']) !!}
+							{!! Form::open(['route' => 'admin.blog.kategori.store']) !!}
 
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama Kategori') !!}
 
-							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
+							{!! Form::text('nama', old('nama'),['class' => 'form-control']) !!}
 							
 							</div>
 
 							
 							<div class="form-group">
 							{!! Form::label('keterangan', 'Keterangan') !!}
-
+	
 							{!! Form::textarea('keterangan', old('keterangan'), ['class' => 'form-control', 'rows' => '3']) !!}
 
 							</div>

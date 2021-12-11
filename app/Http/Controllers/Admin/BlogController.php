@@ -101,7 +101,7 @@ class BlogController extends Controller
                 $cons->aspectRatio();
             })->save($destinationPath.$blog->foto);
 
-            $img->fit(600, 300, function ($cons) {
+            $img->fit(600, 600, function ($cons) {
                 $cons->aspectRatio();
             })->save($destinationPath.$blog->thumbnail);
 
@@ -181,7 +181,7 @@ class BlogController extends Controller
                 $cons->aspectRatio();
             })->save($destinationPath.$blog->foto);
 
-            $img->fit(600, 300, function ($cons) {
+            $img->fit(600, 600, function ($cons) {
                 $cons->aspectRatio();
             })->save($destinationPath.$blog->thumbnail);
 

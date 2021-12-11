@@ -37,7 +37,7 @@ class KategoriBlogController extends Controller
         'description'));
     }
 
-    public function add(Request $req) {
+    public function store(Request $req) {
        $input = $req->all();
 
        $rules = [

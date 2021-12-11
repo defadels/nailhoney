@@ -34,17 +34,17 @@
                         <div class="blog-content clearfix">
                             <div class="post">
                                 <div class="entry-media">
-                                    <img src="assets/images/blog/img-7.jpg" alt>
+                                    <img src="{{Storage::url($blog->foto)}}" alt>
                                 </div>
                                 <ul class="entry-meta">
                                     <li>
                                         <img src="assets/images/blog/author.jpg" alt>
-                                        &nbsp; Oleh <a href="#">{{$blog->penulis}}</a>
+                                        &nbsp; Oleh <a href="#">{!!$blog->penulis!!}</a>
                                     </li>
-                                    <li>{{$blog->created_at->format('M, d-Y')}}</li>
+                                    <li>{!!$blog->created_at->format('M, d-Y')!!}</li>
                                 </ul>
                                 <h2>{{$blog->judul}}</h2>
-                                {{$blog->konten}}
+                                {!!$blog->konten!!}
                             </div>
 
                             <div class="tag-share clearfix">

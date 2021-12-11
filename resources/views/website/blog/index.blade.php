@@ -34,7 +34,7 @@
                             @foreach($daftar_blog as $blog)
                             <div class="post">
                                 <div class="entry-media">
-                                    <img src="{{asset('assets-front/images/blog/img-7.jpg')}}" alt>
+                                    <img src="{{Storage::url($blog->foto)}}" alt>
                                 </div>
                                 <div class="details">
                                     <ul class="entry-meta">
@@ -51,7 +51,8 @@
                             </div>
                             @endforeach()
 
-                            <div class="post format-video">
+                            <!-- Blog video thumbnail -->
+                            <!-- <div class="post format-video">
                                 <div class="entry-media video-holder">
                                     <img src="{{asset('assets-front/images/blog/img-9.jpg')}}" alt>
                                     <a href="https://www.youtube.com/embed/Z54bL6kjyOI" class="video-btn"
@@ -74,8 +75,10 @@
                                         Lorem Ipsum, you need to be sure there isn't </p>
                                     <a href="#" class="read-more">Read More..</a>
                                 </div>
-                            </div>
-                            <div class="post format-quote">
+                            </div> -->
+
+                            <!-- Blog quote thumbnail -->
+                            <!-- <div class="post format-quote">
                                 <div class="details">
                                     <ul class="entry-meta">
                                         <li>
@@ -91,7 +94,8 @@
                                         Lorem Ipsum, you need to be sure there isn't </p>
                                     <a href="" class="read-more">Read More..</a>
                                 </div>
-                            </div>
+                            </div> -->
+
                             <div class="pagination-wrapper pagination-wrapper-left">
                                 <ul class="pg-pagination">
                                     <li>
@@ -125,46 +129,30 @@
                             <div class="widget category-widget">
                                 <h3>Categories</h3>
                                 <ul>
-                                    <li><a href="#">Queen Bee Honey <span>(10)</span></a></li>
-                                    <li><a href="#">Sunflower Honey <span>(07)</span></a></li>
-                                    <li><a href="#">Manuka Honey <span>(09)</span></a></li>
-                                    <li><a href="#">Wildflower Honey <span>(11)</span></a></li>
-                                    <li><a href="#">Mango Flower Honey <span>(18)</span></a></li>
-                                    <li><a href="#">Mustard Flower Honey <span>(17)</span></a></li>
+                                    @foreach($daftar_kategori as $kategori)
+                                    <li><a href="#">{{$kategori->nama}} <span>(10)</span></a></li>
+                                    @endforeach()
                                 </ul>
                             </div>
                             <div class="widget recent-post-widget">
                                 <h3>Recent post</h3>
                                 <div class="posts">
+                                    @foreach($daftar_blog as $blog)
                                     <div class="post">
                                         <div class="img-holder">
-                                            <img src="{{asset('assets-front/images/recent-posts/img-1.jpg')}}" alt>
+                                            <img src="{{Storage::url($blog->foto)}}" style="width: 68px; height: 68px;" alt="">
                                         </div>
                                         <div class="details">
-                                            <h4><a href="#">Actual teachings of the great explorer of the truth.</a>
+                                            <h4><a href="{{route('website.blog.detail',$blog->id)}}">{!!$blog->judul!!}</a>
                                             </h4>
                                         </div>
                                     </div>
-                                    <div class="post">
-                                        <div class="img-holder">
-                                            <img src="{{asset('assets-front/images/recent-posts/img-2.jpg')}}" alt>
-                                        </div>
-                                        <div class="details">
-                                            <h4><a href="#">The truth, the master-builder of human happiness</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="post">
-                                        <div class="img-holder">
-                                            <img src="{{asset('assets-front/images/recent-posts/img-3.jpg')}}" alt>
-                                        </div>
-                                        <div class="details">
-                                            <h4><a href="#">Explorer of the truth, the master-builder of human
-                                                    happiness</a></h4>
-                                        </div>
-                                    </div>
+                                   @endforeach() 
                                 </div>
                             </div>
-                            <div class="widget tag-widget">
+
+                            <!-- Tag -->
+                            <!-- <div class="widget tag-widget">
                                 <h3>Tags</h3>
                                 <ul>
                                     <li><a href="#">Flower</a></li>
@@ -176,7 +164,8 @@
                                     <li><a href="#">Mango</a></li>
                                     <li><a href="#">Raw</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
+
                         </div>
                     </div>
                 </div>
