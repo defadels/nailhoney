@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="title" content="@yield('title','Nailhoney')">
-    <meta name="description" content="@yield('description','Supplier Madu Sumatera Terbesar')">
+    <meta name="description" content="@yield('description', 'Supplier Madu Sumatera Terbesar')">
     <meta name="keywords" content="Madu Murni, Madu Asli, Madu Bersanad, Ganti Gula ke Madu">
     <meta name="author" content="Bag Kinantan">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,7 +15,7 @@
     <meta property="og:type"        content="website" />
     
     <meta property="og:title"       content="@yield('title','Website Resmi Nailhoney')" />
-    <meta property="og:description" content="@yield('description','Supplier Hutan Sumatera Terbesar')" />
+    <meta property="og:description" content="@yield('description','Supplier Madu Sumatera Terbesar')" />
     <meta property="og:image"       content="@yield('logo','img/logo.png')" />
     <link rel="shortcut icon" type="image/png" href="{{asset('img/logo.png')}}">
 

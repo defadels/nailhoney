@@ -1,6 +1,6 @@
 @extends('layout.front_layout')
 
-@section('title','Home Page')
+@section('title','Website Nailhoney.id | Beranda')
 
 
 @section('content')
@@ -22,10 +22,10 @@
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
                                 <div class="slide-title">
-                                    <h2><span>Fresh</span> Organic <span>Honey</span></h2>
+                                    <h2><span>Satu Madu</span> Menjaga <span>Alam</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="shop.html" class="btn theme-btn">Shop Now <i
+                                    <a href="shop.html" class="btn theme-btn">Pesan Sekarang <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -38,10 +38,10 @@
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
                                 <div class="slide-title">
-                                    <h2><span>Fresh</span> Organic <span>Honey</span></h2>
+                                    <h2><span>Family</span> Sehat <span>Dengan Madu</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="shop.html" class="btn theme-btn">Shop Now <i
+                                    <a href="shop.html" class="btn theme-btn">Pesan Sekarang <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -54,10 +54,26 @@
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
                                 <div class="slide-title">
-                                    <h2><span>Fresh</span> Organic <span>Honey</span></h2>
+                                    <h2><span>Ragam</span> Manfaat <span>Madu</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="shop.html" class="btn theme-btn">Shop Now <i
+                                    <a href="shop.html" class="btn theme-btn">Lihat Selengkapnya <i
+                                            class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="{{asset('/img/carousel/carousel-4.jpg')}}" alt class="slider-bg">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col col-lg-5 slide-caption">
+                                <div class="slide-title">
+                                    <h2><span>Ganti Gula</span> Dengan <span>Madu</span></h2>
+                                </div>
+                                <div class="btns">
+                                    <a href="shop.html" class="btn theme-btn">Lihat Selengkapnya <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -69,7 +85,62 @@
         <!-- end of hero slider -->
 
         <!-- category-area-start -->
-        <section class="category-area-s2 section-padding">
+        <section class="category-area section-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="category-wrap">
+                            <div class="category-title">
+                                <h2>Menjaga 3 Tagline</h2>
+                                <p>Kami senantiasa menjaga 3 tagline sebagai nilai, garansi dan amanah kami
+                                    sehingga madu yang sampai ditangan mitra dan konsumen berkualitas serta terjaga kemurniannya.</p>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-icon">
+                                    <img src="{{asset('assets-front/images/category/icon-1.png')}}" alt="">
+                                </div>
+                                <div class="category-content">
+                                    <h2><a href="product.html">Bersanad</a></h2>
+                                    <p>Kami mampu menunjukkan asal asul produksi madu.</p>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-icon">
+                                    <img src="{{asset('assets-front/images/category/icon-2.png')}}" alt="">
+                                </div>
+                                <div class="category-content">
+                                    <h2><a href="product.html">Murni</a></h2>
+                                    <p>Produk madu yang kami hasilkan adalah madu 100% murni.</p>
+                                </div>
+                            </div>
+                            <div class="category-item">
+                                <div class="category-icon">
+                                    <img src="{{asset('assets-front/images/category/icon-3.png')}}" alt="">
+                                </div>
+                                <div class="category-content">
+                                    <h2><a href="product.html">Bergaransi</a></h2>
+                                    <p>Refill Madu memberikan garansi kepada seluruh mitra dan konsumen
+                                        yang mampu membukti bahwa madu yang kami produksi palsu dengan
+                                        bukti uji lab, maka kami akan memberikan garansi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="category-img">
+                            <img src="{{asset('/img/tagline image.jpg')}}" alt="">
+                            <div class="ct-img"><img src="{{asset('assets-front/images/category/icon-4.png')}}" alt=""></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- category-area-end -->
+
+        <!-- category-area-start -->
+        <!-- <section class="category-area-s2 section-padding">
             <div class="container">
                 <div class="category-wrap">
                     <div class="row">
@@ -91,7 +162,7 @@
                                 </div>
                                 <div class="category-content">
                                     <h2><a href="product.html">Murni</a></h2>
-                                    <p>Produk madu yang kami hasilkan adalah madu murni</p>
+                                    <p>Produk madu yang kami hasilkan adalah madu murni.</p>
                                 </div>
                             </div>
                         </div>
@@ -112,8 +183,7 @@
                 </div>
             </div>
 
-        </section>
-
+        </section> -->
         <!-- category-area-end -->
 
         
