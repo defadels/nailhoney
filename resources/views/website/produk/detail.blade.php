@@ -116,7 +116,7 @@
                         <li class="nav-item" role="presentation">
                             <button class="nav-link" id="Information-tab" data-bs-toggle="pill"
                                 data-bs-target="#Information" type="button" role="tab" aria-controls="Information"
-                                aria-selected="false">Additional Information</button>
+                                aria-selected="false">Informasi Tambahan</button>
                         </li>
                         <!-- <li class="nav-item" role="presentation">
                             <button class="nav-link" id="Ratings-tab" data-bs-toggle="pill" data-bs-target="#Ratings"
@@ -544,27 +544,27 @@
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                                 <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                                                <li><i class="fa fa-star-half-o" aria-hidden="true"></i>
+                                                                <li><i class="fa fa-star" aria-hidden="true"></i>
                                                                 </li>
-                                                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                                                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
                                                             </ul>
                                                         </td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Material Type</td>
-                                                        <td>Hill Honey</td>
+                                                        <td>Nama Produk</td>
+                                                        <td>{!!$produk->nama!!}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>weight</td>
-                                                        <td>250 gm</td>
+                                                        <td>Berat</td>
+                                                        <td>-</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Seller</td>
-                                                        <td>Annahl</td>
+                                                        <td>Kategori Produk</td>
+                                                        <td>{!!$produk->kategori->nama!!}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Size</td>
-                                                        <td>Small Jar</td>
+                                                        <td>Satuan</td>
+                                                        <td>{!!$produk->satuan!!}</td>
                                                     </tr>
                                                 </tbody>
                                             </table>

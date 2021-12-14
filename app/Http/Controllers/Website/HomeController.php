@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Testimoni;
 use App\Produk;
 use App\KategoriProduk;
+use App\Blog;
+use App\KategoriBlog;
 use Storage;
 use Image;
 
@@ -21,10 +23,13 @@ class HomeController extends Controller
         
         $daftar_produk = Produk::get();
 
+        $daftar_blog = Blog::get();
+
         return view('website.home',compact(
             'title',
             'description',
             'daftar_testimoni',
-            'daftar_produk'));
+            'daftar_produk',
+            'daftar_blog'));
     }
 }

@@ -1,6 +1,6 @@
 @extends('layout.front_layout')
 
-@section('title','Website Nailhoney.id | Beranda')
+@section('title','Nailhoney.id | Beranda')
 
 
 @section('content')
@@ -83,6 +83,47 @@
             </div>
         </section>
         <!-- end of hero slider -->
+
+        <!-- opening-section -->
+
+        <section class="product-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="section-title">
+                            <h2>Selamat Datang di Website <span>Nailhoney</span></h2>
+                            <p>Saat membaca setiap kata dalam situs web ini, Anda akan mulai menemukan solusi 
+                                bagaimana menjaga kesehatan keluarga, dan ikut berkampanye dalam melestarikan alam semesta. 
+                            </p>
+                            <div class="p-4">
+                                <img src="{{asset('/img/product.jpg')}}" alt="">
+                            </div>
+                            
+                            <p>
+                                Madu Hutan Al-Hafizh bersumber dari hutan Sumatera, dihasilkan oleh lebah Apis Dorsata
+                                dan Apis Mellifera, yang membangun koloni-koloni di pohon Sialang dan pohon Akasia. 
+                                Memiliki rasa bervariasi dan berwarna lebih tua. Pohon Sialang adalah sebutan dari masyarakat
+                                untuk pohon Menggeris. Pohon yang memiliki tinggi hingga 88 meter.
+                            </p>
+                            <p>
+                                Madu ini adalah Madu Multiflora karena lebah Apis Dorsata menghisap nektar bunga yang ada di 
+                                dalam hutan tanpa memilih. Lebah jenis Apis Dorsata adalah jenis lebah liar yang sampai saat ini
+                                belum bisa diternakkan, sehingga dapat dikatakan bahwa madu hutan murni ini adalah madu yang di dapat
+                                dari alam liar bukan dari hasil peternakan lebah.
+                            </p>
+                            <h2>Kandungan di Dalam <span>Madu</span></h2>
+                            <p>
+                                Madu memiliki kandungan vitamin A, B Complex, C, E, H, Kalium, Magnesium, Klorin, Mineral,
+                                Sufur, dan Fosfor. Antibiotik di dalam madu mampu membunuh kuman di dalam tubuh.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- end-of-opening-section -->
 
         <!-- category-area-start -->
         <section class="category-area section-padding">
@@ -194,7 +235,7 @@
                     <div class="col-lg-6 offset-lg-3">
                         <div class="section-title">
                             <h2>Daftar <span>Produk</span></h2>
-                            <p>Berikut adalah daftar produk yang kami sediakan untuk konsumen.</p>
+                            <p>Berikut adalah daftar produk yang kami sediakan untuk konsumen dan mitra.</p>
                         </div>
                     </div>
                 </div>
@@ -223,7 +264,7 @@
                                     </div> -->
                                 </div>
                                 <div class="product-content">
-                                    <h3><a href="product-single.html">{{$produk->nama}}</a></h3>
+                                    <h3><a href="{{route('website.produk.detail',$produk->id)}}">{{$produk->nama}}</a></h3>
                                     <div class="product-btm">
                                         <div>
                                             <ul>
@@ -271,20 +312,20 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7">
                         <div class="offer-img">
-                            <img src="{{asset('assets-front/images/honey.png')}}" alt="">
+                            <img src="{{asset('/img/500gr.png')}}" alt="">
                         </div>
                     </div>
                     <div class="col-lg-5">
                         <div class="offer-wrap">
                             <div class="offer-title">
-                                <small>Limited Offer For Customer</small>
-                                <h2>Fresh Sunflower <span>Orginal Honey Up</span> <br> To 58% Off.</h2>
+                                <small>Cara Mendapatkan</small>
+                                <h2>Madu <span>Murni</span> <br> Dan Asli.</h2>
                             </div>
                             <p>Cara paling mudah untuk mendapatkan madu hutan asli dan berkualitas adalah dengan
                               “melihat” siapa yang menjual madu tersebut.
                             Jika kita mengenalnya sebagai orang yang jujur dan amanah, insyaAllah, MADU
                             yang mereka jual, terjaga keasliannya. </p>
-                            <a href="shop.html" class="btn theme-btn" tabindex="0">Shop Now <i
+                            <a href="{{route('website.produk')}}" class="btn theme-btn" tabindex="0">Dapatkan Sekarang <i
                                     class="fa fa-angle-double-right"></i></a>
                         </div>
                     </div>
@@ -810,60 +851,52 @@
                 </div>
                 <div class="blog-wrap">
                     <div class="row align-items-center">
+                        @foreach($daftar_blog as $blog)
                         <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
                             <div class="blog-item">
                                 <div class="blog-img">
-                                    <img src="{{ asset('assets-front/images/blog/img-1.jpg') }}" alt="">
+                                    <img src="{{ Storage::url($blog->thumbnail) }}" alt="">
                                 </div>
                                 <div class="blog-content">
                                     <ul>
-                                        <li><i class="ti-calendar"></i> 13 April, 2021</li>
-                                        <li><i class="ti-heart"></i> 58 Million</li>
+                                        <li><i class="ti-calendar"></i> {!!$blog->created_at->format('M, d-Y')!!} </li>
+                                        <!-- <li><i class="ti-heart"></i> 58 Million</li> -->
                                     </ul>
-                                    <h3><a href="blog-single.html">We automatically search for andapply coupons
-                                            when.</a></h3>
-                                    <a href="blog-single.html" class="btn theme-btn-s2">Read more <i
+                                    <h3><a href="{{route('website.blog.detail',$blog->id)}}">{{$blog->judul}}</a></h3>
+                                    <a href="{{route('website.blog.detail',$blog->id)}}" class="btn theme-btn-s2">Lihat selengkapnya <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                            <div class="blog-item">
-                                <div class="blog-img">
-                                    <img src="{{ asset('assets-front/images/blog/img-2.jpg') }}" alt="">
-                                </div>
-                                <div class="blog-content">
-                                    <ul>
-                                        <li><i class="ti-calendar"></i> 13 April, 2021</li>
-                                        <li><i class="ti-heart"></i> 58 Million</li>
-                                    </ul>
-                                    <h3><a href="blog-single.html">How to get more traffic in your website of
-                                            ecommerce.</a></h3>
-                                    <a href="blog-single.html" class="btn theme-btn-s2">Read more <i
-                                            class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                            <div class="blog-item">
-                                <div class="blog-img">
-                                    <img src="{{ asset('assets-front/images/blog/img-3.jpg') }}" alt="">
-                                </div>
-                                <div class="blog-content">
-                                    <ul>
-                                        <li><i class="ti-calendar"></i> 13 April, 2021</li>
-                                        <li><i class="ti-heart"></i> 58 Million</li>
-                                    </ul>
-                                    <h3><a href="blog-single.html">25 Rules and regulation to be successful in your
-                                            business.</a></h3>
-                                    <a href="blog-single.html" class="btn theme-btn-s2">Read more <i
-                                            class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach()
+                    
                     </div>
                 </div>
             </div>
         </section>
         <!-- Flash-Sale-area-end -->
+
+        <!-- call-to-action-start -->
+        <section class="product-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="section-title">
+                            <h2>Apakah Anda Berminat? <span>Klik Tombol ini</span></h2>
+                            <p>Tunggu apalagi? Segera berikan kesehatan yang berkualitas untuk diri Anda, keluarga,
+                                dan ikut bergabung berkontribusi dalam menjaga kelestarian alam. 
+                            </p>
+                            <div class="p-4">
+                                <a href="" target="_blank" class="btn btn-lg btn-success">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                                </svg> Klik Untuk Pesan</a>
+                            </div>  
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!-- call-to-action-end -->
 @endsection

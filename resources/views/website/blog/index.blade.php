@@ -118,7 +118,7 @@
                     <div class="col col-lg-4 col-12">
                         <div class="blog-sidebar">
                             <div class="widget search-widget">
-                                <h3>Search</h3>
+                                <h3>Cari</h3>
                                 <form>
                                     <div>
                                         <input type="text" class="form-control" placeholder="Search">
@@ -127,7 +127,7 @@
                                 </form>
                             </div>
                             <div class="widget category-widget">
-                                <h3>Categories</h3>
+                                <h3>Kategori</h3>
                                 <ul>
                                     @foreach($daftar_kategori as $kategori)
                                     <li><a href="#">{{$kategori->nama}} <span>(10)</span></a></li>

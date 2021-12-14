@@ -212,7 +212,9 @@
                                             </div>
                                         </li>
                                     </ol>
-                                </div> <!-- end comments-section -->
+                                </div>
+                                
+                                <!-- end comments-section -->
 
                                 <div class="comment-respond">
                                     <h3 class="comment-reply-title">Post Comments</h3>
@@ -230,63 +232,49 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div> <!-- end comments-area -->
+                            </div> 
+                            <!-- end comments-area -->
                         </div>
                     </div>
                     <div class="col col-lg-4 col-12">
                         <div class="blog-sidebar">
                             <div class="widget search-widget">
-                                <h3>Search</h3>
+                                <h3>Cari</h3>
                                 <form>
                                     <div>
-                                        <input type="text" class="form-control" placeholder="Search">
+                                        <input type="text" class="form-control" placeholder="Cari disini..">
                                         <button type="submit"><i class="ti-search"></i></button>
                                     </div>
                                 </form>
                             </div>
                             <div class="widget category-widget">
-                                <h3>Categories</h3>
+                                <h3>Kategori</h3>
                                 <ul>
-                                    <li><a href="#">Queen Bee Honey <span>(10)</span></a></li>
-                                    <li><a href="#">Sunflower Honey <span>(07)</span></a></li>
-                                    <li><a href="#">Manuka Honey <span>(09)</span></a></li>
-                                    <li><a href="#">Wildflower Honey <span>(11)</span></a></li>
-                                    <li><a href="#">Mango Flower Honey <span>(18)</span></a></li>
-                                    <li><a href="#">Mustard Flower Honey <span>(17)</span></a></li>
+                                    @foreach($daftar_kategori as $kategori)
+                                    <li><a href="#">{{$kategori->nama}}<span>()</span></a></li>
+                                    @endforeach()
                                 </ul>
                             </div>
                             <div class="widget recent-post-widget">
-                                <h3>Recent post</h3>
+                                <h3>Postingan terkait</h3>
                                 <div class="posts">
+                                    @foreach($daftar_blog as $blog)
                                     <div class="post">
                                         <div class="img-holder">
-                                            <img src="assets/images/recent-posts/img-1.jpg" alt>
+                                            <img src="{{Storage::url($blog->thumbnail)}}" alt>
                                         </div>
                                         <div class="details">
-                                            <h4><a href="#">Actual teachings of the great explorer of the truth.</a>
+                                            <h4><a href="#">{{$blog->judul}}</a>
                                             </h4>
                                         </div>
                                     </div>
-                                    <div class="post">
-                                        <div class="img-holder">
-                                            <img src="assets/images/recent-posts/img-2.jpg" alt>
-                                        </div>
-                                        <div class="details">
-                                            <h4><a href="#">The truth, the master-builder of human happiness</a></h4>
-                                        </div>
-                                    </div>
-                                    <div class="post">
-                                        <div class="img-holder">
-                                            <img src="assets/images/recent-posts/img-3.jpg" alt>
-                                        </div>
-                                        <div class="details">
-                                            <h4><a href="#">Explorer of the truth, the master-builder of human
-                                                    happiness</a></h4>
-                                        </div>
-                                    </div>
+                                @endforeach()
                                 </div>
                             </div>
-                            <div class="widget tag-widget">
+
+                            <!-- Tag -->
+
+                            <!-- <div class="widget tag-widget">
                                 <h3>Tags</h3>
                                 <ul>
                                     <li><a href="#">Flower</a></li>
@@ -298,7 +286,9 @@
                                     <li><a href="#">Mango</a></li>
                                     <li><a href="#">Raw</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
+
+                            <!-- Endtag -->
                         </div>
                     </div>
                 </div>

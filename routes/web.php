@@ -46,6 +46,9 @@ Route::name('website.')->namespace('Website')->group(function () {
     Route::get('kontak','KontakController@index')->name('kontak');
 
     Route::get('tentang', 'TentangController@index')->name('tentang');
+    
+    Route::get('login', 'AuthController@login')->name('login');
+    Route::get('register', 'AuthController@register')->name('register');
 
 });
 
@@ -201,5 +204,5 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
 });
 
-    
+Auth::routes();
 
