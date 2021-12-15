@@ -10,7 +10,7 @@
                             <div class="tp-accountInfo">
                                 <div class="tp-accountInfoHeader">
                                     <a href="#"><img src="{{asset('assets-front/images/logo.png')}}" alt=""> Nailhoney</a>
-                                    <a class="tp-accountBtn" href="login.html">
+                                    <a class="tp-accountBtn" href="{{route('login')}}">
                                         <span class="">Log in</span>
                                     </a>
                                 </div>
@@ -18,7 +18,7 @@
                                     <img src="{{asset('assets-front/images/login.png')}}" alt="">
                                 </div>
                                 <div class="back-home">
-                                    <a class="tp-accountBtn" href="index.html">
+                                    <a class="tp-accountBtn" href="{{route('website.home')}}">
                                         <span class="">Kembali ke Beranda</span>
                                     </a>
                                 </div>

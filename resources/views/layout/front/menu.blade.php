@@ -86,7 +86,9 @@ function rute($namarute){
                                             <li><a href="cart.html">Cart</a></li>
                                             <li><a href="wishlist.html">Wishlist</a></li>
                                             <li><a href="checkout.html">Checkout</a></li> -->
-                                            <li><a href="{{route('logout')}}">Logout</a></li>
+                                            <li><a href="{{route('logout')}}"
+                                            onclick="event.preventDefault();
+                                            document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -176,6 +178,10 @@ function rute($namarute){
                 </div><!-- end of container -->
             </nav>
         </header>
+
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+        </form>
 
 <!-- navbar -->
 <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">

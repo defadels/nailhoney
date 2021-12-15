@@ -45,14 +45,14 @@ class LoginController extends Controller
         return view('website.auth.login');
     }
 
-    public function logout(Request $request)
-    {
-        $this->guard()->logout();
+    // public function logout(Request $request)
+    // {
+    //     $this->guard()->logout();
 
-        $request->session()->invalidate();
+    //     $request->session()->invalidate();
 
-        $request->session()->regenerateToken();
+    //     $request->session()->regenerateToken();
 
-        return $this->loggedOut($request) ?: redirect('website.auth.login');
-    }
+    //     return $this->loggedOut($request) ?: redirect('website.auth.login');
+    // }
 }
