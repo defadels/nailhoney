@@ -47,8 +47,8 @@ Route::name('website.')->namespace('Website')->group(function () {
 
     Route::get('tentang', 'TentangController@index')->name('tentang');
     
-    Route::get('login', 'AuthController@login')->name('login');
-    Route::get('register', 'AuthController@register')->name('register');
+    // Route::get('login', 'AuthController@login')->name('login');
+    // Route::get('register', 'AuthController@register')->name('register');
 
 });
 

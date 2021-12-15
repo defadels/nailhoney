@@ -74,22 +74,23 @@ function rute($namarute){
                                 </ul>
                             </div><!-- end of nav-collapse -->
                         </div>
-                        <!-- <div class="col-lg-2">
+                        <div class="col-lg-2">
                             <div class="header-right d-flex">
                                 <div class="header-profile-form-wrapper">
                                     <button class="profile-toggle-btn"><i class="fi flaticon-user"></i></button>
                                     <div class="header-profile-content">
                                         <ul>
-                                            <li><a href="login.html">Login</a></li>
+                                            <!-- <li><a href="login.html">Login</a></li>
                                             <li><a href="register.html">Register</a></li>
                                             <li><a href="order.html">Order History</a></li>
                                             <li><a href="cart.html">Cart</a></li>
                                             <li><a href="wishlist.html">Wishlist</a></li>
-                                            <li><a href="checkout.html">Checkout</a></li>
+                                            <li><a href="checkout.html">Checkout</a></li> -->
+                                            <li><a href="{{route('logout')}}">Logout</a></li>
                                         </ul>
                                     </div>
                                 </div>
-                                <div class="mini-cart">
+                                <!-- <div class="mini-cart">
                                     <button class="cart-toggle-btn"> <i class="fi flaticon-bag"></i> <span
                                             class="cart-count">2</span></button>
                                     <div class="mini-cart-content">
@@ -128,8 +129,8 @@ function rute($namarute){
                                         <div class="visible-icon"><img src="{{asset('assets/images/shop/mini-cart/bee2.png')}}"
                                                 alt=""></div>
                                     </div>
-                                </div>
-                                <div class="header-wishlist-form-wrapper">
+                                </div> -->
+                                <!-- <div class="header-wishlist-form-wrapper">
                                     <button class="wishlist-toggle-btn"><i class="fi flaticon-heart"></i> <span
                                             class="cart-count">2</span> </button>
                                     <div class="mini-wislist-content">
@@ -168,9 +169,9 @@ function rute($namarute){
                                         <div class="visible-icon"><img src="{{asset('assets/images/shop/mini-cart/bee2.png')}}"
                                                 alt=""></div>
                                     </div>
-                                </div>
+                                </div> -->
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div><!-- end of container -->
             </nav>

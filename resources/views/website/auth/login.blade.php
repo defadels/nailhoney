@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form class="tp-accountWrapper" action="{{route('login')}}">
+                        <form class="tp-accountWrapper" action="{{ route('login') }}" method="POST">
                             @csrf
                             <div class="tp-accountInfo">
                                 <div class="tp-accountInfoHeader">
@@ -27,29 +27,35 @@
                             <div class="tp-accountForm form-style">
                                 <div class="fromTitle">
                                     <h2>Login</h2>
-                                    <p>Masukkan email dan password untuk login</p>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-12 col-md-12 col-12">
-                                        <label>Email</label>
-                                        @error('email')
+                                    @error('email')
                                             <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $message }}</strong>
                                             </span>
                                         @enderror
+
+                                        @error('password')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                    <p>Masukkan email dan password untuk login</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-12">
+                                        <label>Email
+                                        
+                                        </label>
                                         <input type="text" id="email" name="email" placeholder="email-anda@gmail.com">
                                         
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Password</label>
-                                            @error('password')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
+                                            <label>Password
+                                            
+                                        </label>
+
                                             <input class="pwd" type="password" placeholder=""
-                                                name="pass">
+                                                name="password">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default reveal" type="button"><i
                                                         class="fa fa-eye"></i></button>

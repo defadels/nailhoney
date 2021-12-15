@@ -6,7 +6,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
-                        <form class="tp-accountWrapper" action="#">
+                        <form class="tp-accountWrapper" action="{{route('register')}}" method="POST">
                             <div class="tp-accountInfo">
                                 <div class="tp-accountInfoHeader">
                                     <a href="#"><img src="{{asset('assets-front/images/logo.png')}}" alt=""> Nailhoney</a>
