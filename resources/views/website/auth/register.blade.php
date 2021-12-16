@@ -7,6 +7,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <form class="tp-accountWrapper" action="{{route('register')}}" method="POST">
+                            @csrf
                             <div class="tp-accountInfo">
                                 <div class="tp-accountInfoHeader">
                                     <a href="#"><img src="{{asset('assets-front/images/logo.png')}}" alt=""> Nailhoney</a>
@@ -31,17 +32,17 @@
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <label for="name">Nama Lengkap</label>
-                                        <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap Anda..">
+                                        <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap Anda..">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <label>Email</label>
-                                        <input type="text" id="email" name="email" placeholder="Masukkan email Anda..">
+                                        <input type="email" id="email" name="email" placeholder="Masukkan email Anda..">
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input class="pwd2" type="password" placeholder="Masukkan passowrd Anda.."
-                                               name="pass">
+                                            <input class="pwd2" type="password" placeholder="Masukkan password Anda.."
+                                               name="password" id="password">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default reveal3" type="button"><i
                                                         class="fa fa-eye"></i></button>
@@ -52,7 +53,7 @@
                                         <div class="form-group">
                                             <label>Konfirmasi Password</label>
                                             <input class="pwd3" type="password" placeholder="Ketik kembali password Anda .."
-                                                name="pass">
+                                                name="password_confirmation" id="password-confirm">
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default reveal2" type="button"><i
                                                         class="fa fa-eye"></i></button>
@@ -72,7 +73,7 @@
                                     <li><button class="linkedin" tabindex="0" type="button"><span><i
                                                     class="fa fa-linkedin"></i></span></button></li>
                                 </ul>
-                                <p class="subText">Saya sudah punya akun <a href="login.html">Login akun disini</a></p>
+                                <p class="subText">Saya sudah punya akun <a href="{{route('login')}}">Login akun disini</a></p>
                             </div>
                         </form>
                     </div>

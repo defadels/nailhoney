@@ -42,23 +42,18 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 col-md-12 col-12">
-                                        <label>Email
-                                        
-                                        </label>
-                                        <input type="text" id="email" name="email" placeholder="email-anda@gmail.com">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="email-anda@gmail.com">
                                         
                                     </div>
                                     <div class="col-lg-12 col-md-12 col-12">
                                         <div class="form-group">
-                                            <label>Password
-                                            
-                                        </label>
+                                            <label for="password">Password </label>
 
-                                            <input class="pwd" type="password" placeholder=""
-                                                name="password">
+                                            <input class="pwd" type="password" placeholder="" name="password" id="password">
                                             <span class="input-group-btn">
-                                                <button class="btn btn-default reveal" type="button"><i
-                                                        class="fa fa-eye"></i></button>
+                                                <button class="btn btn-default reveal" type="button">
+                                                <i class="fa fa-eye"></i></button>
                                             </span>
                                         </div>
                                     </div>
@@ -86,7 +81,7 @@
                                     <li><button class="linkedin" tabindex="0" type="button"><span><i
                                                     class="fa fa-linkedin"></i></span></button></li>
                                 </ul>
-                                <p class="subText">Belum punya akun? <a href="register.html">Daftar akun Anda disini.</a></p>
+                                <p class="subText">Belum punya akun? <a href="{{route('register')}}">Daftar akun Anda disini.</a></p>
                             </div>
                         </form>
                     </div>
