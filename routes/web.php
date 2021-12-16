@@ -52,14 +52,15 @@ Route::name('website.')->namespace('Website')->group(function () {
 
 });
 
-Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('auth')->namespace('Admin')->group(function () {
 
     //Routing halaman dashboard
     
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
     //Routing halaman kategori produk
-    Route::prefix('produk/kategori')->name('produk.')->group(function () {
+    Route::prefix('produk/kategori')->middleware('tolakselainadmin')->name('produk.')->group(function () {
+
         Route::get('/', 'KategoriProdukController@index')->name('kategori.index');
         Route::get('tambah', 'KategoriProdukController@create')->name('kategori.create');
         Route::post('tambah', 'KategoriProdukController@store')->name('kategori.store');
@@ -69,7 +70,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
      });
 
      //Routing halaman foto produk
-     Route::prefix('produk/{produk_id}/foto-produk')->name('produk.')->group(function () {
+     Route::prefix('produk/{produk_id}/foto-produk')->middleware('tolakselainadmin')->name('produk.')->group(function () {
         Route::get('/', 'FotoProdukController@index')->name('foto.index');
         Route::get('tambah', 'FotoProdukController@create')->name('foto.create');
         Route::post('tambah', 'FotoProdukController@store')->name('foto.store');
@@ -79,7 +80,7 @@ Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
      });
 
     //Routing halaman produk
-    Route::resource('produk', 'ProdukController')->except(['show']);
+    Route::resource('produk', 'ProdukController')->middleware('tolakselaineditor')->except(['show']);
 
     //Routing halaman pelanggan
     Route::resource('pelanggan', 'PelangganController')->except(['show']);

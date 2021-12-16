@@ -85,7 +85,7 @@ function rute($namarute){
                                             
                                         @auth 
                                            
-                                        @if(Auth::user()->hak_akses === 'user' )   
+                                        @if(Auth::user()->hak_akses === 'user')   
                                             <li><a href="order.html">Order History</a></li>
                                             <li><a href="cart.html">Cart</a></li>
                                             <li><a href="wishlist.html">Wishlist</a></li>
@@ -95,10 +95,12 @@ function rute($namarute){
                                             Logout</a></li>
                                          @endif
 
+                                         @if(Auth::user()->hak_akses === 'admin' || Auth::user()->hak_akses === 'editor')
                                          <li><a href="{{route('admin.dashboard')}}">Halaman Admin</a></li>
                                          <li><a href="{{route('logout')}}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Logout</a></li>  
+                                         @endif   
                                         @else
                                         <li><a href="{{route('login')}}">Login</a></li>
 

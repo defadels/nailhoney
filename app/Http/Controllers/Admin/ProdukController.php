@@ -10,6 +10,7 @@ use App\KategoriProduk;
 use Validator;
 use Str;
 use Image;
+use Auth;
 
 class ProdukController extends Controller
 {
@@ -34,6 +35,8 @@ class ProdukController extends Controller
         $daftar_produk = $daftar_produk->paginate(10);
 
         $daftar_kategori = KategoriProduk::pluck('nama', 'id');
+
+        return Auth::user()->hak_akses;
 
         $description = 'Ini adalah halaman untuk mengelola produk';
         return view('admin.produk.index',compact('title','description',
