@@ -10,23 +10,23 @@
 	
 	<ul class="metismenu" id="menu">
             
-				<li class="{{ rute('admin.dashboard') }}">
-					<a href="{{ route('admin.dashboard') }}">
+				<li class="{{ rute('editor.dashboard') }}">
+					<a href="{{ route('editor.dashboard') }}">
 						<div class="parent-icon"><i class="bx bx-tachometer "></i>
 						</div>
 						<div class="menu-title">Dashboard</div>
 					</a>
 				</li>
 
-				<li class="{{ rute('admin.produk') }}">
+				<!-- <li class="{{ rute('admin.produk') }}">
 					<a href="{{ route('admin.produk.index') }}">
 						<div class="parent-icon"><i class="bx bx-grid-alt"></i>
 						</div>
 						<div class="menu-title">Produk</div>
 					</a>
-				</li>
+				</li> -->
 
-				<li>
+				<!-- <li>
 					<a href="javascript:void(0);" class="has-arrow">
 						<div class="parent-icon"><i class="bx bx-cart"></i>
 						</div>
@@ -44,60 +44,60 @@
 						<li class="{{ rute('admin.penjualan.batal') }}"> <a href="{{ route('admin.penjualan.batal.index') }}"><i class="bx bx-user-circle"></i>Batal</a>
 						</li>
 					</ul>
-				</li>
+				</li> -->
 
-				<li class="{{ rute('admin.pelanggan') }}">
+				<!-- <li class="{{ rute('admin.pelanggan') }}">
 					<a href="{{ route('admin.pelanggan.index') }}">
 						<div class="parent-icon"><i class="bx bx-user"></i>
 						</div>
 						<div class="menu-title">Pelanggan</div>
 					</a>
-				</li>
+				</li> -->
 
-				<li class="{{ rute('admin.komisi') }}">
+				<!-- <li class="{{ rute('admin.komisi') }}">
 					<a href="{{ route('admin.komisi.index') }}">
 						<div class="parent-icon"><i class="bx bx-money"></i>
 						</div>
 						<div class="menu-title">Pencairan Komisi</div>
 					</a>
-				</li>
+				</li> -->
 
-				<li class="{{ rute('admin.blog') }}">
-					<a href="{{ route('admin.blog.index') }}">
+				<li class="{{ rute('editor.blog') }}">
+					<a href="{{ route('editor.blog.index') }}">
 						<div class="parent-icon"><i class="bx bx-repeat"></i>
 						</div>
 						<div class="menu-title">Blog</div>
 					</a>
 				</li>
 
-				<li class="{{ rute('admin.halaman') }}">
-					<a href="{{ route('admin.halaman.index') }}">
+				<li class="{{ rute('editor.halaman') }}">
+					<a href="{{ route('editor.halaman.index') }}">
 						<div class="parent-icon"><i class="bx bx-file"></i>
 						</div>
 						<div class="menu-title">Halaman</div>
 					</a>
 				</li>
 
-				<li class="{{ rute('admin.spanduk') }}">
-					<a href="{{ route('admin.spanduk.index') }}">
+				<li class="{{ rute('editor.spanduk') }}">
+					<a href="{{ route('editor.spanduk.index') }}">
 						<div class="parent-icon"><i class="bx bx-map-alt"></i></div>
 						<div class="menu-title">Spanduk</div>
 					</a>
 				</li>
 
-				<li class="{{ rute('admin.testimoni') }}">
-					<a href="{{ route('admin.testimoni.index') }}">
+				<li class="{{ rute('editor.testimoni') }}">
+					<a href="{{ route('editor.testimoni.index') }}">
 						<div class="parent-icon"><i class="bx bx-conversation"></i></div>
 						<div class="menu-title">Testimoni</div>
 					</a>
 				</li>
 
-				<li class="{{ rute('admin.laporan') }}">
+				<!-- <li class="{{ rute('admin.laporan') }}">
 					<a href="{{ route('admin.laporan.index') }}">
 						<div class="parent-icon"><i class="bx bx-detail"></i></div>
 						<div class="menu-title">Laporan</div>
 					</a>
-				</li>
+				</li> -->
 
 				<li>
 					<a href="javascript:void(0);" class="has-arrow">
@@ -105,16 +105,16 @@
 						<div class="menu-title">Pengaturan</div>
 					</a>
 					<ul>
-						<li class="{{ rute('admin.pengaturan.pembayaran') }}"> <a href="{{ route('admin.pengaturan.pembayaran.index') }}"><i class="bx bx-menu"></i>Pembayaran</a>
-						</li>
-						<li class="{{ rute('admin.pengaturan.pengiriman') }}"> <a href="{{ route('admin.pengaturan.pengiriman.index') }}"><i class="bx bx-menu"></i>Pengiriman</a>
-						</li>
+						<!-- <li class="{{ rute('admin.pengaturan.pembayaran') }}"> <a href="{{ route('admin.pengaturan.pembayaran.index') }}"><i class="bx bx-menu"></i>Pembayaran</a>
+						</li> -->
+						<!-- <li class="{{ rute('admin.pengaturan.pengiriman') }}"> <a href="{{ route('admin.pengaturan.pengiriman.index') }}"><i class="bx bx-menu"></i>Pengiriman</a>
+						</li> -->
 						<li class="{{ rute('admin.pengaturan.menu') }}"> <a href="{{ route('admin.pengaturan.menu.index') }}"><i class="bx bx-menu"></i>Menu</a>
 						</li>
 						<li class="{{ rute('admin.pengaturan.footer') }}"> <a href="{{ route('admin.pengaturan.footer') }}"><i class="bx bx-menu"></i>Footer</a>
 						</li>
-						<li class="{{ rute('admin.pengaturan.user') }}"> <a href="{{ route('admin.pengaturan.user.index') }}"><i class="bx bx-menu"></i>User</a>
-						</li>
+						<!-- <li class="{{ rute('admin.pengaturan.user') }}"> <a href="{{ route('admin.pengaturan.user.index') }}"><i class="bx bx-menu"></i>User</a>
+						</li> -->
 					</ul>
 				</li>
 

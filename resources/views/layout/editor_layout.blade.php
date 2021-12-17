@@ -48,14 +48,14 @@
 			</div>
 
 			<!--navigation-->
-		@include('layout.admin.menu')
+		@include('layout.editor.menu')
 			<!--end navigation-->
 
 		</div>
 		<!--end sidebar-wrapper-->
 
 		<!--header-->
-		@include('layout.admin.header')
+		@include('layout.editor.header')
 		<!--end header-->
 
 		<!--page-wrapper-->
@@ -63,7 +63,7 @@
 			<!--page-content-wrapper-->
 			<div class="page-content-wrapper">
 				<div class="page-content">
-				@include('layout.admin.error')
+				@include('layout.editor.error')
 				@yield('content')
 
 				</div>
@@ -78,7 +78,7 @@
 		<!--End Back To Top Button-->
 
 		<!--footer -->
-		@include('layout.admin.footer')
+		@include('layout.editor.footer')
 		<!-- end footer -->
 
 	</div>

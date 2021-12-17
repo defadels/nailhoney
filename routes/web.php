@@ -52,14 +52,14 @@ Route::name('website.')->namespace('Website')->group(function () {
 
 });
 
-Route::prefix('admin')->name('admin.')->middleware('auth')->namespace('Admin')->group(function () {
+Route::prefix('admin')->name('admin.')->middleware('auth','tolakselainadmin')->namespace('Admin')->group(function () {
 
     //Routing halaman dashboard
     
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
     //Routing halaman kategori produk
-    Route::prefix('produk/kategori')->middleware('tolakselainadmin')->name('produk.')->group(function () {
+    Route::prefix('produk/kategori')->name('produk.')->group(function () {
 
         Route::get('/', 'KategoriProdukController@index')->name('kategori.index');
         Route::get('tambah', 'KategoriProdukController@create')->name('kategori.create');
@@ -70,7 +70,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->namespace('Admin')->
      });
 
      //Routing halaman foto produk
-     Route::prefix('produk/{produk_id}/foto-produk')->middleware('tolakselainadmin')->name('produk.')->group(function () {
+     Route::prefix('produk/{produk_id}/foto-produk')->name('produk.')->group(function () {
         Route::get('/', 'FotoProdukController@index')->name('foto.index');
         Route::get('tambah', 'FotoProdukController@create')->name('foto.create');
         Route::post('tambah', 'FotoProdukController@store')->name('foto.store');
@@ -80,7 +80,7 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->namespace('Admin')->
      });
 
     //Routing halaman produk
-    Route::resource('produk', 'ProdukController')->middleware('tolakselaineditor')->except(['show']);
+    Route::resource('produk', 'ProdukController')->except(['show']);
 
     //Routing halaman pelanggan
     Route::resource('pelanggan', 'PelangganController')->except(['show']);
@@ -203,6 +203,58 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->namespace('Admin')->
     
     });
 
+});
+
+Route::prefix('editor')->name('editor.')->middleware('auth','tolakselaineditor')->namespace('Editor')->group(function () {
+    Route::get('/', 'DashboardController@index')->name('dashboard');
+
+    // Route::prefix('produk')->name('produk.')->group(function() {
+    //     Route::get('/', 'ProdukController@index')->name('produk.index');
+    //     Route::get('produk/tambah', 'ProdukController@create')->name('produk.create');
+    //     Route::post('produk/tambah', 'ProdukController@store')->name('produk.store');
+    //     Route::get('produk/{id}/edit', 'ProdukController@edit')->name('produk.edit');
+    //     Route::post('produk/{id}/edit', 'ProdukController@update')->name('produk.update');
+    //     Route::delete('produk/{id}/destroy', 'ProdukController@destroy')->name('produk.destroy');
+    // });
+
+        Route::get('blog', 'BlogController@index')->name('blog.index');
+        Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
+        Route::post('blog/tambah', 'BlogController@store')->name('blog.store');
+        Route::get('blog/{id}/edit', 'BlogController@edit')->name('blog.edit');
+        Route::post('blog/{id}/edit', 'BlogController@update')->name('blog.update');
+        Route::delete('blog/{id}/destroy', 'BlogController@destroy')->name('blog.destroy');
+
+    Route::prefix('blog/kategori')->name('blog.')->group(function () {
+        Route::get('/', 'KategoriBlogController@index')->name('kategori.index');
+        Route::get('tambah', 'KategoriBlogController@create')->name('kategori.create');
+        Route::post('tambah', 'KategoriBlogController@store')->name('kategori.store');
+        Route::get('{id}/edit', 'KategoriBlogController@edit')->name('kategori.edit');
+        Route::post('{id}/edit', 'KategoriBlogController@update')->name('kategori.update');
+        Route::delete('{id}/edit', 'KategoriBlogController@destroy')->name('kategori.destroy');
+     });
+
+        Route::get('halaman', 'HalamanController@index')->name('halaman.index');
+        Route::get('halaman/tambah', 'HalamanController@create')->name('halaman.create');
+        Route::post('halaman/tambah', 'HalamanController@store')->name('halaman.store');
+        Route::get('halaman/{id}/edit', 'HalamanController@edit')->name('halaman.edit');
+        Route::post('halaman/{id}/edit', 'HalamanController@update')->name('halaman.update');
+        Route::delete('halaman/{id}/destroy', 'HalamanController@destroy')->name('halaman.destroy');
+     
+        Route::get('spanduk', 'SpandukController@index')->name('spanduk.index');
+        Route::get('spanduk/tambah', 'SpandukController@create')->name('spanduk.create');
+        Route::post('spanduk/tambah', 'SpandukController@store')->name('spanduk.store');
+        Route::get('spanduk/{id}/edit', 'SpandukController@edit')->name('spanduk.edit');
+        Route::post('spanduk/{id}/edit', 'SpandukController@update')->name('spanduk.update');
+        Route::delete('spanduk/{id}/destroy', 'SpandukController@destroy')->name('spanduk.destroy');
+
+        Route::get('testimoni', 'TestimoniController@index')->name('testimoni.index');
+        Route::get('testimoni/tambah', 'TestimoniController@create')->name('testimoni.create');
+        Route::post('testimoni/tambah', 'TestimoniController@store')->name('testimoni.store');
+        Route::get('testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');
+        Route::post('testimoni/{id}/edit', 'TestimoniController@update')->name('testimoni.update');
+        Route::delete('testimoni/{id}/destroy', 'TestimoniController@destroy')->name('testimoni.destroy');
+   
+        
 });
 
 Auth::routes();

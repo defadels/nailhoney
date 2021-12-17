@@ -95,13 +95,21 @@ function rute($namarute){
                                             Logout</a></li>
                                          @endif
 
-                                         @if(Auth::user()->hak_akses === 'admin' || Auth::user()->hak_akses === 'editor')
+                                         @if(Auth::user()->hak_akses === 'admin')
                                          <li><a href="{{route('admin.dashboard')}}">Halaman Admin</a></li>
                                          <li><a href="{{route('logout')}}"
                                             onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                             Logout</a></li>  
-                                         @endif   
-                                        @else
+                                         @endif 
+                                         
+                                         @if(Auth::user()->hak_akses === 'editor')
+                                         <li><a href="{{route('editor.dashboard')}}">Halaman Editor</a></li>
+                                         <li><a href="{{route('logout')}}"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                            Logout</a></li>    
+                                         @endif
+                                        
+                                         @else
                                         <li><a href="{{route('login')}}">Login</a></li>
 
                                         @if(Route::has('register'))
