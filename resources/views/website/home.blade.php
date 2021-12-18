@@ -152,7 +152,7 @@
                 <div class="row align-items-center">
                     <div class="col col-lg-5 col-12">
                         <div class="video-area">
-                            <img src="{{asset('img/about-2.jpg')}}" alt>
+                            <img src="{{asset('img/about-3.jpg')}}" alt>
                             <div class="video-holder">
                                 <a href="https://www.youtube.com/embed/gYYkVgV3YeY" class="video-btn" data-type="iframe"
                                     tabindex="0"><i class="fi flaticon-play-button"></i></a>
@@ -216,7 +216,7 @@
                     <div class="col-lg-6">
                         <div class="category-wrap">
                             <div class="category-title">
-                                <h2>Menjaga 3 Tagline</h2>
+                                <h2>Menjaga 3 <span>Tagline</span></h2>
                                 <p>Kami senantiasa menjaga 3 tagline sebagai nilai, garansi dan amanah kami
                                     sehingga madu yang sampai ditangan mitra dan konsumen berkualitas serta terjaga kemurniannya.</p>
                             </div>
@@ -261,10 +261,8 @@
             </div>
 
         </section>
-
-        <!-- category-area-end -->
-
-        <!-- category-area-start -->
+    <!-- category-area-end -->
+          <!-- category-area-start -->
         <!-- <section class="category-area-s2 section-padding">
             <div class="container">
                 <div class="category-wrap">
@@ -310,6 +308,68 @@
 
         </section> -->
         <!-- category-area-end -->
+
+        <!-- foto-produk-carousel-start -->
+        <section class="client-area">
+            <div class="container">
+                <h2 class="hidden">client</h2>
+                <div class="client-item">
+                    <div class="client-carousel owl-carousel">
+                        @foreach($foto_produk_premium as $foto)
+                        <img src="{{asset(Storage::url($foto->foto))}}" alt="clinet">
+                        
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- foto-produk-carousel-end -->
+
+          <!-- benefit-of-product-section-start -->
+
+          <section class="blog-area section-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3">
+                            <div class="section-title">
+                                <h2>Keunggulan Produk <span>Madu Akasia</span></h2>
+                            </div>
+
+                            <div class="p-3">
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Odit obcaecati reiciendis autem in nesciunt fugiat. Quis asperiores officia harum accusantium, eveniet, totam assumenda ab incidunt temporibus, id unde reiciendis provident?
+                            </p>
+
+                            </div>
+                            
+
+                            <div class="section-title">
+                                <h2>Keunggulan Produk <span>Madu Premium</span></h2>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- benefit-of-product-section-end -->
+
+
+     <!-- foto-produk-carousel-start -->
+        <section class="client-area">
+            <div class="container">
+                <h2 class="hidden">client</h2>
+                <div class="client-item">
+                    <div class="client-carousel owl-carousel">
+                        @foreach($foto_produk_akasia as $foto)
+                        <img src="{{asset(Storage::url($foto->foto))}}" alt="clinet">
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- foto-produk-carousel-end -->
 
         
         <!-- product-area-start -->

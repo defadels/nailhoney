@@ -9,6 +9,7 @@ use App\Produk;
 use App\KategoriProduk;
 use App\Blog;
 use App\KategoriBlog;
+use App\FotoProduk;
 use Storage;
 use Image;
 
@@ -25,11 +26,17 @@ class HomeController extends Controller
 
         $daftar_blog = Blog::get();
 
+        $foto_produk_premium = FotoProduk::orderBy('id', 'asc')->get();
+        
+        $foto_produk_akasia = FotoProduk::orderBy('id', 'desc')->get();
+
         return view('website.home',compact(
             'title',
             'description',
             'daftar_testimoni',
             'daftar_produk',
-            'daftar_blog'));
+            'daftar_blog',
+            'foto_produk_premium',
+            'foto_produk_akasia'));
     }
 }
