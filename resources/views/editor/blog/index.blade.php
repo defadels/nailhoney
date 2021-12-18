@@ -17,12 +17,12 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-						<a class="btn btn-light" href="{{ route('admin.blog.create') }}">Tambah</a>
-						<a class="btn btn-light" href="{{ route('admin.blog.kategori.index') }}">Kategori</a>
+						<a class="btn btn-light" href="{{ route('editor.blog.create') }}">Tambah</a>
+						<a class="btn btn-light" href="{{ route('editor.blog.kategori.index') }}">Kategori</a>
 						</div>
 					</div>
 
-					{!! Form::open(['route' => 'admin.blog.index' , 'method' => 'GET']) !!}
+					{!! Form::open(['route' => 'editor.blog.index' , 'method' => 'GET']) !!}
 
 						<div class="form-row">
 							<div class="col-md-6 mb-3">
@@ -77,7 +77,7 @@
 											</td>
 
 											<td>
-											<a class="btn btn-success" href="{{ route('admin.blog.edit',$blog->id) }}">
+											<a class="btn btn-success" href="{{ route('editor.blog.edit',$blog->id) }}">
 												Edit
 											</a>
 											</td>

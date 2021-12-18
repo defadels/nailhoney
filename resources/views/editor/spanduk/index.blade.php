@@ -17,7 +17,7 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-						<a href="{{ route('admin.spanduk.create') }}" class="btn btn-light">Tambah</a>
+						<a href="{{ route('editor.spanduk.create') }}" class="btn btn-light">Tambah</a>
 						</div>
 					</div>
 					<!--end breadcrumb-->

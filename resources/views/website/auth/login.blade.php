@@ -25,6 +25,7 @@
                                 </div>
                             </div>
                             <div class="tp-accountForm form-style">
+                            @include('layout.front.error')
                                 <div class="fromTitle">
                                     <h2>Login</h2>
                                     @error('email')
@@ -64,7 +65,7 @@
                                                 <label for="fruit4">Ingat Saya</label>
                                             </div>
                                             <div class="forget-btn">
-                                                <a href="forgot.html">Lupa Password?</a>
+                                                <a href="{{route('password.request')}}">Lupa Password?</a>
                                             </div>
                                         </div>
                                     </div>

@@ -95,12 +95,16 @@
                             <p>Saat membaca setiap kata dalam situs web ini, Anda akan mulai menemukan solusi 
                                 bagaimana menjaga kesehatan keluarga, dan ikut berkampanye dalam melestarikan alam semesta. 
                             </p>
+
+                            <br>
+                            <h2>Madu Al-Hafizh<span> Premium</span></h2>
+
                             <div class="p-4">
                                 <img src="{{asset('/img/product.jpg')}}" alt="">
                             </div>
                             
                             <p>
-                                Madu Hutan Al-Hafizh bersumber dari hutan Sumatera, dihasilkan oleh lebah Apis Dorsata
+                                Madu Hutan Al-Hafizh Premium bersumber dari hutan Sumatera, dihasilkan oleh lebah Apis Dorsata
                                 dan Apis Mellifera, yang membangun koloni-koloni di pohon Sialang dan pohon Akasia. 
                                 Memiliki rasa bervariasi dan berwarna lebih tua. Pohon Sialang adalah sebutan dari masyarakat
                                 untuk pohon Menggeris. Pohon yang memiliki tinggi hingga 88 meter.
@@ -111,7 +115,24 @@
                                 belum bisa diternakkan, sehingga dapat dikatakan bahwa madu hutan murni ini adalah madu yang di dapat
                                 dari alam liar bukan dari hasil peternakan lebah.
                             </p>
-                            <h2>Kandungan di Dalam <span>Madu</span></h2>
+
+                            <br>
+                            <h2>Madu Al-Hafizh<span> Akasia</span></h2>
+                            <div class="p-4">
+                                <img src="{{asset('img/product-2.jpg')}}" alt="Foto Madu Akasia">
+                            </div>
+                            <p>
+                            Madu Al-Hafizh Akasia secara luas dianggap sebagai salah satu jenis madu terbaik di dunia. Madu akasia, seperti kebanyakan
+                            jenis madu organik khusus lainnya, murni berasal dari nektar bunga pohon akasia
+                            </p>
+
+                            <p>
+                            Madu Al-Hafizh Akasia merupakan madu organik murni yang belum diproses, dipanaskan, atau dipasteurisasi dengan cara apa pun. Jenis madu ini sangat
+                            baik untuk ditambahkan pada beragam kuliner, dan juga dapat digunakan untuk beberapa tujuan pengobatan, karena kaya akan nutrisi dan antioksidan.
+                            </p>
+
+                            <br>
+                            <h2>Kandungan Dalam<span> Madu</span></h2>
                             <p>
                                 Madu memiliki kandungan vitamin A, B Complex, C, E, H, Kalium, Magnesium, Klorin, Mineral,
                                 Sufur, dan Fosfor. Antibiotik di dalam madu mampu membunuh kuman di dalam tubuh.
@@ -124,6 +145,69 @@
         </section>
 
         <!-- end-of-opening-section -->
+        
+        <!-- offer-area-end -->
+        <section class="about-section section-padding p-t-0">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col col-lg-5 col-12">
+                        <div class="video-area">
+                            <img src="{{asset('img/about-2.jpg')}}" alt>
+                            <div class="video-holder">
+                                <a href="https://www.youtube.com/embed/gYYkVgV3YeY" class="video-btn" data-type="iframe"
+                                    tabindex="0"><i class="fi flaticon-play-button"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-lg-7 col-12">
+                        <div class="about-area">
+                            <div class="about-wrap">
+                                <div class="about-title">
+                                    <!-- <small>Cara Mendapatkan</small> -->
+                                <h2>Madu Al-Hafizh <span>Sangat Cocok</span> Untuk</h2>
+                                </div>
+                                <ol class="list-group">
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 1. Penyembuhan Diabetes Melitus</li>
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 2. Penyembuhan Sakit Maag</li>
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 3. Obat Luka Lambung</li>
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 4. Penyubur Kandungan</li>
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 5. Perawatan Kulit</li>
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 6. Pengobatan Kanker</li>
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 7. Pengobatan Hipotensi</li>
+                                <li class="list-group-item fw-bold"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="green" class="bi bi-check2-circle" viewBox="0 0 16 16">
+                                <path d="M2.5 8a5.5 5.5 0 0 1 8.25-4.764.5.5 0 0 0 .5-.866A6.5 6.5 0 1 0 14.5 8a.5.5 0 0 0-1 0 5.5 5.5 0 1 1-11 0z"/>
+                                <path d="M15.354 3.354a.5.5 0 0 0-.708-.708L8 9.293 5.354 6.646a.5.5 0 1 0-.708.708l3 3a.5.5 0 0 0 .708 0l7-7z"/>
+                                </svg> 8. Pengobatan Asam Urat</li>
+                                <li class="list-group-item fw-bold">dan lain-lain</li>
+                            </ol>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- end container -->
+        </section>
+        <!-- offer-area-end -->
 
         <!-- category-area-start -->
         <section class="category-area section-padding">
@@ -332,7 +416,6 @@
                 </div>
             </div>
         </section>
-
         <!-- offer-area-end -->
 
         <!-- Flash-Sale-area-start -->

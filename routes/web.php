@@ -253,9 +253,7 @@ Route::prefix('editor')->name('editor.')->middleware('auth','tolakselaineditor')
         Route::get('testimoni/{id}/edit', 'TestimoniController@edit')->name('testimoni.edit');
         Route::post('testimoni/{id}/edit', 'TestimoniController@update')->name('testimoni.update');
         Route::delete('testimoni/{id}/destroy', 'TestimoniController@destroy')->name('testimoni.destroy');
-   
-        
 });
 
 Auth::routes();
-
+Route::get('kirim-email', 'MailController@index');

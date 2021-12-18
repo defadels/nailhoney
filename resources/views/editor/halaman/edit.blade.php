@@ -35,7 +35,7 @@
 							</div>
 							<hr/>
 							
-						{!! Form::model($halaman, ['route' => ['admin.halaman.update', $halaman->id], 'method' => 'PUT']) !!}
+						{!! Form::model($halaman, ['route' => ['editor.halaman.update', $halaman->id], 'method' => 'PUT']) !!}
 							
 						<div class="form-group">
 						{!! Form::label('judul', 'Judul') !!}

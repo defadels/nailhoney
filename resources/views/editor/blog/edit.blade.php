@@ -33,7 +33,7 @@
 							</div>
 							<hr/>
 							
-							{!! Form::model($blog, ['route' => ['admin.blog.update', $blog->id],'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
+							{!! Form::model($blog, ['route' => ['editor.blog.update', $blog->id],'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
 							
 							<div class="form-group">
 								<img src="{{ Storage::url($blog->foto) }}" alt="">

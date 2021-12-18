@@ -45,7 +45,7 @@
 							</div>
 							<hr/>
 							
-							{!! Form::open(['route' => 'admin.blog.store','enctype' => 'multipart/form-data']) !!}
+							{!! Form::open(['route' => 'editor.blog.store','enctype' => 'multipart/form-data']) !!}
 							
 							<div class="form-group">
 							{!! Form::label('foto"', 'Foto') !!}

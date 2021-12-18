@@ -17,11 +17,11 @@
 							</nav>
 						</div>
 						<div class="ml-auto">
-						<a class="btn btn-light" href="{{ route('admin.blog.kategori.create') }}">Tambah</a>
+						<a class="btn btn-light" href="{{ route('editor.blog.kategori.create') }}">Tambah</a>
 						</div>
 					</div>
 
-					{!! Form::open(['route' => 'admin.blog.kategori.index' , 'method' => 'GET']) !!}
+					{!! Form::open(['route' => 'editor.blog.kategori.index' , 'method' => 'GET']) !!}
 
 						<div class="form-row">
 							<div class="col-md-6 mb-3">
@@ -61,7 +61,7 @@
 											<td>{{ $kategori->nama }}</td>
 											<td>{{ $kategori->keterangan}}</td>
 											<td>
-											<a class="btn btn-success" href="{{ route('admin.blog.kategori.edit', $kategori->id) }}">
+											<a class="btn btn-success" href="{{ route('editor.blog.kategori.edit', $kategori->id) }}">
 												Edit
 											</a>
 											

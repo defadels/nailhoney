@@ -1,18 +1,18 @@
 @extends('layout.editor_layout')
 
-@section('title', 'Tambah Spanduk')
+@section('title', 'Tambah Testimoni')
 
 
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
-						<div class="breadcrumb-title pr-3">Spanduk</div>
+						<div class="breadcrumb-title pr-3">Testimoni</div>
 						<div class="pl-3">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">Tambah Spanduk</li>
+									<li class="breadcrumb-item active" aria-current="page">Tambah Testimoni</li>
 								</ol>
 							</nav>
 						</div>
@@ -33,61 +33,32 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Tambah Spanduk</h4>
+								<h4 class="mb-0">Tambah Testimoni</h4>
 							</div>
 							<hr/>
-							
-							{!! Form::open(['route' => 'editor.spanduk.store', 'enctype' => 'multipart/form-data']) !!}
-						
-							<div class="form-group">
+
+							{!! Form::open(['route' => 'editor.testimoni.store', 'enctype' => 'multipart/form-data']) !!}
+
+                            <div class="form-group">
 							{!! Form::label('foto', 'Foto') !!}
 
-
-							{!! Form::file('foto',['class' => 'form-control']) !!}
-							</div>
-
-							
-							<div class="form-group">
-							{!! Form::label('judul', 'Judul') !!}
-							
-							{!! Form::text('judul', old('judul'),['class' => 'form-control']) !!}
-							</div>
-							
-							<div class="form-group">
-							{!! Form::label('deskripsi', 'Deskripsi') !!}
-							
-							{!! Form::text('deskripsi', old('deskripsi'),['class' => 'form-control']) !!}
-							</div>
-							
-                            
-                            <div class="form-group">
-							{!! Form::label('link', 'Link') !!}
-
-							
-							{!! Form::text('link', old('link'),['class' => 'form-control']) !!}
-							</div>
-                            
-							<div class="form-group">
-							{!! Form::label('label_tombol', 'Label Tombol') !!}
-
-							
-							{!! Form::text('label_tombol', old('label_tombol'),['class' => 'form-control']) !!}
-							</div>
-							
-							<div class="form-group">
-							{!! Form::label('warna_tulisan', 'Warna Tulisan') !!}
-
-							
-							{!! Form::text('warna_tulisan', old('warna_tulisan'),['class' => 'form-control']) !!}
-							</div>
-
-                            <div class="form-group">
-                            {!! Form::label('status', 'Status') !!}
-                            
-							{!! Form::select('status', $daftar_status, old('status'), ['placeholder' => 'Pilih status','class' => 'form-control']) !!}
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
                             </div>
 
+							<div class="form-group">
+							{!! Form::label('nama_konsumen', 'Nama Konsumen') !!}
+
+
+							{!! Form::text('nama_konsumen', old('nama_konsumen'), ['class' => 'form-control']) !!}
+							</div>
+
+							<div class="form-group">
+							{!! Form::label('isi_testimoni', 'Isi Testimoni') !!}
+
+							{!! Form::textarea('isi_testimoni', old('isi_testimoni'), ['class' => 'form-control']) !!}
+							</div>
 							<hr>
+
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 
 						</div>
@@ -99,4 +70,9 @@
 	<script src='https://cdn.tiny.cloud/1/vdqx2klew412up5bcbpwivg1th6nrh3murc6maz8bukgos4v/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
 	<script src="{{asset('/assets-admin/plugins/input-tags/js/tagsinput.js') }}"></script>
 
+	<script>
+		tinymce.init({
+		  selector: '#mytextarea'
+		});
+	</script>
 	@endsection

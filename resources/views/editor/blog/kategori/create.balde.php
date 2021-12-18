@@ -38,7 +38,7 @@
 							<hr/>
 
 							
-							{!! Form::open(['route' => 'admin.blog.kategori.store']) !!}
+							{!! Form::open(['route' => 'editor.blog.kategori.store']) !!}
 
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama Kategori') !!}

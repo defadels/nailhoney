@@ -1,24 +1,24 @@
 @extends('layout.editor_layout')
 
-@section('title', 'Kategori')
+@section('title', 'Edit Testimoni')
 
 
 @section('content')
 	<!--breadcrumb-->
     <div class="page-breadcrumb d-none d-md-flex align-items-center mb-3">
-						<div class="breadcrumb-title pr-3">Kategori Blog</div>
+						<div class="breadcrumb-title pr-3">Testimoni</div>
 						<div class="pl-3">
 							<nav aria-label="breadcrumb">
 								<ol class="breadcrumb mb-0 p-0">
 									<li class="breadcrumb-item"><a href="javascript:;"><i class='bx bx-home-alt'></i></a>
 									</li>
-									<li class="breadcrumb-item active" aria-current="page">Edit Kategori Blog</li>
+									<li class="breadcrumb-item active" aria-current="page">Edit Testimoni</li>
 								</ol>
 							</nav>
 						</div>
 						<div class="ml-auto">
 							<div class="btn-group">
-							<button class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal5">Hapus</button>
+								<button class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal5">Hapus</button>
 							</div>
 						</div>
 					</div>
@@ -26,26 +26,35 @@
 					<div class="card radius-15">
 						<div class="card-body">
 							<div class="card-title">
-								<h4 class="mb-0">Edit Kategori Blog</h4>
+								<h4 class="mb-0">Edit Testimoni</h4>
 							</div>
 							<hr/>
-							{!! Form::model($kategori, ['route' => ['editor.blog.kategori.update', $kategori->id]]) !!}
+
+							{!! Form::model($testimoni, ['route' => ['editor.testimoni.update', $testimoni->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
 
 							<div class="form-group">
-							{!! Form::label('nama', 'Nama Kategori') !!}
-
-							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control-lg']) !!}
+								<img src="{{ Storage::url($testimoni->foto) }}" alt="">
 							</div>
+                            <div class="form-group">
+							{!! Form::label('foto', 'Foto') !!}
 
-							
+							{!! Form::file('foto', ['class' => 'form-control']) !!}
+                            </div>
+
 							<div class="form-group">
-							{!! Form::label('keterangan', 'Keterangan') !!}
+							{!! Form::label('nama_konsumen', 'Nama Konsumen') !!}
 
-							{!! Form::textarea('keterangan', old('keterangan'), ['class' => 'form-control', 'rows' => '3']) !!}
+
+							{!! Form::text('nama_konsumen', old('nama_konsumen'), ['class' => 'form-control']) !!}
 							</div>
 
+							<div class="form-group">
+							{!! Form::label('isi_testimoni', 'Isi Testimoni') !!}
 
+							{!! Form::textarea('isi_testimoni', old('isi_testimoni'), ['class' => 'form-control']) !!}
+							</div>
 							<hr>
+
 							<input type="submit" class="btn btn-md btn-primary" value="Simpan">
 
 						</div>
@@ -54,7 +63,7 @@
 
 					<!-- Modal -->
 				<div class="modal fade" id="exampleModal5" tabindex="-1" role="dialog" aria-hidden="true">
-					{!! Form::open(['url' => route('admin.blog.kategori.destroy',$kategori->id), 'method' => 'DELETE']) !!}	
+					{!! Form::open(['url' => route('admin.testimoni.destroy',$testimoni->id), 'method' => 'DELETE']) !!}	
 							<div class="modal-dialog modal-lg">
 									<div class="modal-content">
 										<div class="modal-header">

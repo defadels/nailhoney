@@ -41,7 +41,9 @@
         <!-- end preloader -->
 
         <!-- login-area start -->
+       
        @yield('content')
+       
         <!-- login-area end -->
     </div>
     <!-- end of page-wrapper -->

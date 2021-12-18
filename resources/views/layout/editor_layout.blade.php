@@ -8,7 +8,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	<meta name="description" content="@yield('description','Supplier Madu Sumatera Terbesar')">
 	<meta name="title" content="@yield('title','Madu Al-Hafizh')">
-	<title>@yield('title','Admin Madu Al-Hafizh')</title>
+	<title>@yield('title','Editor Madu Al-Hafizh')</title>
 	<!--favicon-->
 	<link rel="icon" href="{{asset('/assets-admin/images/favicon-32x32.png') }}" type="image/png" />
 	<!--plugins-->

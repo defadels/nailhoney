@@ -25,6 +25,7 @@
                                 </div>
                             </div>
                             <div class="tp-accountForm form-style">
+                            @include('layout.front.error')
                                 <div class="fromTitle">
                                     <h2>Daftar Akun</h2>
                                     <p>Daftar membuat akun untuk Anda</p>

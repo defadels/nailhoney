@@ -42,7 +42,7 @@
 							</div>
 							<hr/>
 							
-							{!! Form::open(['route' => 'admin.halaman.store']) !!}
+							{!! Form::open(['route' => 'editor.halaman.store']) !!}
 						
 							<div class="form-group">
 							{!! Form::label('judul', 'Judul') !!}
