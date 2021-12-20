@@ -36,8 +36,6 @@ class ProdukController extends Controller
 
         $daftar_kategori = KategoriProduk::pluck('nama', 'id');
 
-        return Auth::user()->hak_akses;
-
         $description = 'Ini adalah halaman untuk mengelola produk';
         return view('admin.produk.index',compact('title','description',
         'daftar_produk','daftar_kategori','keyword','kategori_id'));

@@ -333,21 +333,128 @@
                         <div class="col-lg-6 offset-lg-3">
                             <div class="section-title">
                                 <h2>Keunggulan Produk <span>Madu Akasia</span></h2>
+                                <img src="{{asset('img/product-4.jpg')}}" alt="Akasia">
                             </div>
-
+    
                             <div class="p-3">
+                                
+                            <h5>1. Kaya Akan Antioksidan</h5>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Odit obcaecati reiciendis autem in nesciunt fugiat. Quis asperiores officia harum accusantium, eveniet, totam assumenda ab incidunt temporibus, id unde reiciendis provident?
+                            Manfaat madu akasia yang pertama adalah kaya akan kandungan antioksidan.
+                            Madu akasia memasok banyak antioksidan penting yang dapat berkontribusi 
+                            pada kesehatan. Antioksidan melindungi sel-sel tubuh dari kerusakan yang
+                            disebabkan oleh radikal bebas. Seiring waktu, kerusakan akibat radikal
+                            bebas dapat menyebabkan penyakit. 
+                            </p>
+                            
+                            <br>
+                            <h5>2. Bantu Turunkan Berat Badan</h5>
+                            <p>
+                            Manfaat madu akasia yang kedua untuk membantu menurunkan berat badan.
+                            Banyak orang mengonsumsi madu akasia untuk membantu upaya penurunan berat badan.
+                            </p>
+                             
+                            <br>
+                            <h5>3. Miliki Sifat Antibakteri Alami</h5>
+                            <p>
+                            Manfaat madu akasia yang ketiga adalah memiliki sifat antibakteri alami.
+                            Banyaknya kemampuan penyembuhan madu akasia dikaitkan dengan aktivitas
+                            antibakterinya. Madu mengandung komponen yang dibutuhkan untuk memproduksi
+                            dan secara perlahan melepaskan sejumlah kecil hidrogen peroksida.
+                            </p>
+                            <br>
+                            <h5>4. Baik untuk Perawatan Kulit</h5>
+                            <p>
+                            Manfaat madu akasia yang keempat sebagai agen perawatan kulit.
+                            Pasokan mineral yang kaya yang ditemukan di setiap jenis madu,
+                            termasuk zat besi, seng, kalium, kalsium, dan tembaga, serta
+                            vitamin C dan antioksidan lainnya, dapat membantu mengurangi
+                            munculnya keriput, meredakan peradangan, dan mengurangi
+                            munculnya bekas luka, noda, dan luka bakar saat dioleskan.
+                            </p>
+                            <br>
+                            <h5>5. Cegah Penyakit Kronis</h5>
+                            <p>
+                            Manfaat madu akasia yang kelima untuk membantu mencegah
+                            penyakit kronis. Antioksidan yang ditemukan di semua jenis madu,
+                            termasuk madu akasia, sangat baik dalam mencari radikal bebas
+                            di seluruh tubuh dan mengurangi dampak negatif dari stres oksidatif.
+                            </p>
+                            <br>
+                            <h5>6. Tingkatkan Sistem Kekebalan Tubuh</h5>
+                            <p>
+                            Manfaat madu akasia yang keenam dapat membantu meningkatkan sistem
+                            kekebalan tubuh. Madu akasia memiliki hidrogen peroksida secara alami,
+                            seperti halnya banyak bentuk madu lainnya, dan ini adalah komponen
+                            antibakteri yang kuat.
+                            </p>
+                        </div>
+                            
+
+                        <div class="section-title">
+                            <h2>Keunggulan Produk <span>Madu Premium</span></h2>
+                            <img src="{{asset('img/product-3.jpg')}}" alt="Akasia">
+                        </div>
+                        
+                        <div class="p-3">
+
+                            <h5>1. Membantu Meningkatkan Stamina dan Kekebalan Tubuh </h5>
+                            <p>
+                            Manfaat madu hutan ini disebabkan oleh sifatnya sebagai antibakteri dan
+                            antimikroba, terutama pada bakteri Gram positif.  
+                            </p>
+                            
+                            <br>
+                            <h5>2. Meningkatkan Nafsu Makan</h5>
+                            <p>
+                            Hal ini disebabkan oleh kandungan fruktosa dan glukosa yang tinggi
+                            pada madu hutan sehingga dapat bertindak sebagai stimulan bagi pencernaan. 
                             </p>
 
-                            </div>
-                            
+                             <br>   
+                            <h5>3. Menyehatkan Kulit</h5>
+                            <p>
+                            Madu hutan juga dipercaya dapat mengobati luka bakar, menyehatkan kulit, wajah, dan bibir
+                            </p>
 
-                            <div class="section-title">
-                                <h2>Keunggulan Produk <span>Madu Premium</span></h2>
-                            </div>
+                            <br>
+                            <h5>4. Menurunkan Tekanan Darah</h5>
+                            <p>
+                            Madu dikenal sebagai makanan yang memiliki kekuatan antioksidan. Menurut penelitian,
+                            antioksidan yang tinggi terbukti mampu menurunkan tekanan darah. Kondisi ini juga akan
+                            menurunkan risiko seangan jantung, stroke, hingga beberapa jenis kanker. 
+                            </p>
+
+                            <br>
+                            <h5>5. Memperbaiki Kolesterol</h5>
+                            <p>
+                            Madu dikenal dapat memperbaiki kualitas kolesterol dalam tubuh. 
+                            Beberapa penelitian dalam National Institute of Health, madu diketahui
+                            mampu mengurangi total kadar kolesterol jahat LDL sekaligus meningkatkan
+                            kolesterol baik HDL dalam tubuh. Penelitian yang ada juga menunjukan bahwa
+                            konsumsi madu dapat menyebabkan penurunan berat badan sederhana. 
+                            </p>
+
+                            <br>
+                            <h5>6. Menyembuhkan Luka</h5>
+                            <p>
+                            Sejak zaman Mesir kuno, madu topikal telah dikenal sebagai obat untuk menyembuhkan
+                            luka dan luka bakar. Madu juga diketahui menjadi obat paling efektif untuk menyembuhkan
+                            luka bakar parsial dan luka pasca operasi. Para peneliti pecaya bahwa kekuatan
+                            penyembuhan madu berasal dari efek antibakteri dan anti-inflamasi yang terkandung
+                            di dalamnya.
+                            </p>
                             
+                            <br>
+                            <h5>7. Bantu Meredakan Batuk Pilek</h5>
+                            <p>
+                            Dikutip dari WebMD, sejumlah penelitian menunjukan bahwa madu dapat menenangkan selaput
+                            yang meradang dan meredakan batuk. Dalam sebuah penelitian lainnya yang melibatkan 139 anak,
+                            madu khususnya madu soba diketahui mengalahkan dekstrometorfan (penekan batuk) dan meredakan
+                            batuk malam hari pada anak-anak serta meningkatkan kualitas tidur mereka.
+                            </p>
+                        </div>
+
                         </div>
                     </div>
                 </div>
@@ -370,7 +477,45 @@
             </div>
         </section>
         <!-- foto-produk-carousel-end -->
-
+        
+        <!-- blog-area-start -->
+        <section class="blog-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-3">
+                        <div class="section-title">
+                            <h2><span>Artikel</span> Seputar Madu</h2>
+                            <p>Ingin mencari tau informasi seputar madu? Artikel berikut
+                                sangat membantu Anda untuk mengetahui tentang madu, manfaat madu,
+                                dan berbisnis madu. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="blog-wrap">
+                    <div class="row align-items-center">
+                        @foreach($daftar_blog as $blog)
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                            <div class="blog-item">
+                                <div class="blog-img">
+                                    <img src="{{ Storage::url($blog->thumbnail) }}" alt="">
+                                </div>
+                                <div class="blog-content">
+                                    <ul>
+                                        <li><i class="ti-calendar"></i> {!!$blog->created_at->format('M, d-Y')!!} </li>
+                                        <!-- <li><i class="ti-heart"></i> 58 Million</li> -->
+                                    </ul>
+                                    <h3><a href="{{route('website.blog.detail',$blog->id)}}">{{$blog->judul}}</a></h3>
+                                    <a href="{{route('website.blog.detail',$blog->id)}}" class="btn theme-btn-s2">Lihat selengkapnya <i
+                                            class="fa fa-angle-double-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach()
+                    
+                    </div>
+                </div>
+            </div>
+        </section>
         
         <!-- product-area-start -->
         <section class="product-area section-padding">
@@ -981,42 +1126,7 @@
         </section>
         <!-- client-area end -->
 
-        <!-- blog-area-start -->
-        <section class="blog-area section-padding">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 offset-lg-3">
-                        <div class="section-title">
-                            <h2><span>Blog</span> Terbaru</h2>
-                            <p>Artikel-artikel seputar tentang madu, manfaat madu, dan berbisnis madu. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-wrap">
-                    <div class="row align-items-center">
-                        @foreach($daftar_blog as $blog)
-                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
-                            <div class="blog-item">
-                                <div class="blog-img">
-                                    <img src="{{ Storage::url($blog->thumbnail) }}" alt="">
-                                </div>
-                                <div class="blog-content">
-                                    <ul>
-                                        <li><i class="ti-calendar"></i> {!!$blog->created_at->format('M, d-Y')!!} </li>
-                                        <!-- <li><i class="ti-heart"></i> 58 Million</li> -->
-                                    </ul>
-                                    <h3><a href="{{route('website.blog.detail',$blog->id)}}">{{$blog->judul}}</a></h3>
-                                    <a href="{{route('website.blog.detail',$blog->id)}}" class="btn theme-btn-s2">Lihat selengkapnya <i
-                                            class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        @endforeach()
-                    
-                    </div>
-                </div>
-            </div>
-        </section>
+        
         <!-- Flash-Sale-area-end -->
 
         <!-- call-to-action-start -->
