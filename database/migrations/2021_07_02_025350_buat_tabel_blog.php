@@ -24,7 +24,7 @@ class BuatTabelBlog extends Migration
         Schema::create('blog', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('judul')->nullable();
-            $table->string('abstrak')->nullable();
+            $table->text('abstrak')->nullable();
             $table->text('konten')->nullable();
             $table->string('penulis')->nullable();
             $table->unsignedInteger('kategori_id')->nullable();
