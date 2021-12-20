@@ -65,9 +65,9 @@ function rute($namarute){
                                     <li class="menu-item-has-children">
                                         <a href="#">Blog</a>
                                         <ul class="sub-menu">
-                                            <li><a href="blog.html">Manfaat Madu</a></li>
-                                            <li><a href="blog-left-sidebar.html">Tentang Madu</a></li>
-                                            <li><a href="blog-fullwidth.html">Bisnis Madu</a></li>
+                                            <li><a href="{{route('website.blog.manfaat-madu')}}" class="{{rute('website.blog.manfaat-madu')}}">Manfaat Madu</a></li>
+                                            <li><a href="{{route('website.blog.tentang-madu')}}" class="{{rute('website.blog.tentang-madu')}}">Tentang Madu</a></li>
+                                            <li><a href="{{route('website.blog.bisnis-madu')}}" class="{{rute('website.blog.bisnis-madu')}}">Bisnis Madu</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="{{route('website.kontak')}}" class="{{rute('website.kontak')}}">Kontak</a></li>
