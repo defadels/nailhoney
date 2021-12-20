@@ -60,8 +60,6 @@ class BlogController extends Controller
 
             'judul' => 'required|max:255',
 
-            'abstrak' => 'max:255',
-
             'penulis' => 'max:255'
         ];
 
@@ -141,8 +139,6 @@ class BlogController extends Controller
             'foto' => 'file|mimes:jpeg,jpg,png|max:10240',
 
             'judul' => 'required|max:255',
-
-            'abstrak' => 'max:255',
 
             'penulis' => 'max:255'
         ];
