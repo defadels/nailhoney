@@ -258,5 +258,5 @@ Route::prefix('editor')->name('editor.')->middleware('auth','tolakselaineditor')
         Route::delete('testimoni/{id}/destroy', 'TestimoniController@destroy')->name('testimoni.destroy');
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 Route::get('kirim-email', 'MailController@index');

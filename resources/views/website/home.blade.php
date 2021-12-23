@@ -17,7 +17,7 @@
  <section class="hero hero-style-2">
             <div class="hero-slider">
                 <div class="slide">
-                    <img src="{{asset('/img/carousel/carousel-1.jpg')}}" alt class="slider-bg">
+                    <img src="{{asset('/img/carousel/carousel-1.webp')}}" alt class="slider-bg">
                     <div class="container">
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
@@ -33,7 +33,10 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="{{asset('/img/carousel/carousel-2.jpg')}}" alt class="slider-bg">
+                    <picture>
+                        <img src="{{asset('/img/carousel/carousel-2.webp')}}" alt class="slider-bg">
+                    </picture>
+                    
                     <div class="container">
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
@@ -49,7 +52,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="{{asset('/img/carousel/carousel-3.jpg')}}" alt class="slider-bg">
+                    <img src="{{asset('/img/carousel/carousel-3.webp')}}" alt class="slider-bg">
                     <div class="container">
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
@@ -65,7 +68,7 @@
                     </div>
                 </div>
                 <div class="slide">
-                    <img src="{{asset('/img/carousel/carousel-4.jpg')}}" alt class="slider-bg">
+                    <img src="{{asset('/img/carousel/carousel-4.webp')}}" alt class="slider-bg">
                     <div class="container">
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
@@ -100,7 +103,7 @@
                             <h2>Madu Al-Hafizh<span> Premium</span></h2>
 
                             <div class="p-4">
-                                <img src="{{asset('/img/product.jpg')}}" alt="">
+                                <img src="{{asset('/img/product.webp')}}" alt="">
                             </div>
                             
                             <p>
@@ -119,7 +122,7 @@
                             <br>
                             <h2>Madu Al-Hafizh<span> Akasia</span></h2>
                             <div class="p-4">
-                                <img src="{{asset('img/product-2.jpg')}}" alt="Foto Madu Akasia">
+                                <img src="{{asset('img/product-2.webp')}}" alt="Foto Madu Akasia">
                             </div>
                             <p>
                             Madu Al-Hafizh Akasia secara luas dianggap sebagai salah satu jenis madu terbaik di dunia. Madu akasia, seperti kebanyakan
@@ -152,7 +155,7 @@
                 <div class="row align-items-center">
                     <div class="col col-lg-5 col-12">
                         <div class="video-area">
-                            <img src="{{asset('img/about-3.jpg')}}" alt>
+                            <img src="{{asset('img/about-3.webp')}}" alt>
                             <div class="video-holder">
                                 <a href="https://www.youtube.com/embed/gYYkVgV3YeY" class="video-btn" data-type="iframe"
                                     tabindex="0"><i class="fi flaticon-play-button"></i></a>
@@ -253,7 +256,7 @@
                     </div>
                     <div class="col-lg-6">
                         <div class="category-img">
-                            <img src="{{asset('/img/tagline image.jpg')}}" alt="">
+                            <img src="{{asset('/img/tagline image.webp')}}" alt="">
                             <div class="ct-img"><img src="{{asset('assets-front/images/category/icon-4.png')}}" alt=""></div>
                         </div>
                     </div>
@@ -393,7 +396,7 @@
 
                         <div class="section-title">
                             <h2>Keunggulan Produk <span>Madu Premium</span></h2>
-                            <img src="{{asset('img/product-3.jpg')}}" alt="Akasia">
+                            <img src="{{asset('img/product-3.webp')}}" alt="Akasia">
                         </div>
                         
                         <div class="p-3">
@@ -998,7 +1001,7 @@
                 <div class="row align-items-center">
                     <div class="col col-lg-5 col-12">
                         <div class="video-area">
-                            <img src="{{asset('img/about.jpg')}}" alt>
+                            <img src="{{asset('img/about.webp')}}" alt>
                             <div class="video-holder">
                                 <a href="https://www.youtube.com/embed/bLJ8n5YGLv8" class="video-btn" data-type="iframe"
                                     tabindex="0"><i class="fi flaticon-play-button"></i></a>
