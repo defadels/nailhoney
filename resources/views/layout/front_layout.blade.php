@@ -80,7 +80,7 @@
                                     <div class="product-single-img">
                                         <div class="modal-product">
                                             <div class="item">
-                                                <img src="{{asset('assets/images/modal2.jpg')}}" alt="">
+                                                <img src="{{asset('assets-front/images/modal2.jpg')}}" alt="">
                                             </div>
                                         </div>
                                     </div>
@@ -165,7 +165,7 @@
                                             </ul>
                                         </div>
                                         <div class="m-shape">
-                                            <img src="{{asset('assets/images/bee2.png')}}" alt="">
+                                            <img src="{{asset('assets-front/images/bee2.png')}}" alt="">
                                         </div>
                                     </div>
                                 </div>
@@ -186,7 +186,7 @@
                     <div class="modal-body">
                         <div class="d-flex align-items-center">
                             <div class="modal-img d-none d-md-block">
-                                <img src="{{asset('assets/images/modal.jpg')}}" alt="">
+                                <img src="{{asset('assets-front/images/modal.jpg')}}" alt="">
                             </div>
                             <div class="modal-subscribe flex-style">
                                 <div class="subscribe-box">
