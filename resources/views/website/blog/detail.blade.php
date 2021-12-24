@@ -71,7 +71,7 @@
                                             alt></a>
                                 </div>
                                 <div class="author-content">
-                                    <a href="#" class="author-name">Henry Joyes</a>
+                                    <a href="#" class="author-name">{{$blog->penulis}}</a>
                                     <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by
                                         injected humour, or randomised</p>
                                     <div class="socials">
@@ -87,17 +87,18 @@
                             <div class="more-posts clearfix">
                                 <div class="previous-post">
                                     <a href="#">
-                                        <span class="post-control-link">Previous</span>
+                                        <span class="post-control-link">Kembali</span>
                                     </a>
                                 </div>
                                 <div class="next-post">
                                     <a href="0">
-                                        <span class="post-control-link">Next post</span>
+                                        <span class="post-control-link">Lanjut</span>
                                     </a>
                                 </div>
                             </div> <!-- end more-posts -->
 
-                            <div class="comments-area">
+                            <!-- start-comment-section  -->
+                            <!-- <div class="comments-area">
                                 <div class="comments-section">
                                     <h3 class="comments-title">Comments</h3>
                                     <ol class="comments">
@@ -212,7 +213,7 @@
                                             </div>
                                         </li>
                                     </ol>
-                                </div>
+                                </div> -->
                                 
                                 <!-- end comments-section -->
 
