@@ -98,36 +98,34 @@
                             </div> <!-- end more-posts -->
 
                             <!-- start-comment-section  -->
-                            <!-- <div class="comments-area">
+                            <div class="comments-area">
                                 <div class="comments-section">
-                                    <h3 class="comments-title">Comments</h3>
+                                    <h3 class="comments-title">Komentar</h3>
                                     <ol class="comments">
                                         <li class="comment even thread-even depth-1" id="comment-1">
                                             <div id="div-comment-1">
                                                 <div class="comment-theme">
                                                     <div class="comment-image"><img
-                                                            src="assets/images/blog-details/comments-author/img-1.jpg"
+                                                            src="{{asset('assets-front/images/blog-details/comments-author/img-1.jpg')}}"
                                                             alt></div>
                                                 </div>
                                                 <div class="comment-main-area">
                                                     <div class="comment-wrapper">
                                                         <div class="comments-meta">
-                                                            <h4>John Abraham <span class="comments-date">January 12,2021
-                                                                    At 9.00am</span></h4>
+                                                            <h4>Belum Ada Komentar <span class="comments-date">Tanggal</span></h4>
                                                         </div>
                                                         <div class="comment-area">
-                                                            <p>I will give you a complete account of the system, and
-                                                                expound the actual teachings of the great explorer of
-                                                                the truth, </p>
+                                                            <p>-- Kosong -- </p>
                                                             <div class="comments-reply">
                                                                 <a class="comment-reply-link"
-                                                                    href="#"><span>Reply</span></a>
+                                                                    href="#"><span>Balas</span></a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <ul class="children">
+                                            
+                                            <!-- <ul class="children">
                                                 <li class="comment">
                                                     <div>
                                                         <div class="comment-theme">
@@ -183,42 +181,18 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-                                            </ul>
+                                            </ul> -->
+                                        
                                         </li>
 
-                                        <li class="comment">
-                                            <div>
-                                                <div class="comment-theme">
-                                                    <div class="comment-image"><img
-                                                            src="assets/images/blog-details/comments-author/img-1.jpg"
-                                                            alt></div>
-                                                </div>
-                                                <div class="comment-main-area">
-                                                    <div class="comment-wrapper">
-                                                        <div class="comments-meta">
-                                                            <h4>John Abraham <span class="comments-date">January 12,2021
-                                                                    At 9.00am</span></h4>
-                                                        </div>
-                                                        <div class="comment-area">
-                                                            <p>I will give you a complete account of the system, and
-                                                                expound the actual teachings of the great explorer of
-                                                                the truth, </p>
-                                                            <div class="comments-reply">
-                                                                <a class="comment-reply-link"
-                                                                    href="#"><span>Reply</span></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
+                                        
                                     </ol>
-                                </div> -->
+                                </div>
                                 
                                 <!-- end comments-section -->
 
                                 <div class="comment-respond">
-                                    <h3 class="comment-reply-title">Post Comments</h3>
+                                    <h3 class="comment-reply-title">Post Komentar</h3>
                                     <form id="commentform" class="comment-form">
                                         <div class="form-textarea">
                                             <textarea id="comment" placeholder="Write Your Comments..."></textarea>
@@ -300,9 +274,5 @@
 @endsection
 
 @section('page_style')
-    <style>
-        h1 {
-            color: blue;
-        }  
-    </style>
+ 
 @endsection

@@ -118,21 +118,26 @@
 						<div class="card-body">
 							<div class="card-title">
 								<h4 class="mb-0">Barang yang Dipesan</h4>
+								
 							</div>
+							<a onclick="tambah_baris(produk)" class="text-right btn btn-icon btn-outline-warning btn-sm" href="javascript:void(0)"><i class="fadeIn animated bx bx-plus"></i></a>
 							<hr>
 							<div class="table-respnsive">
-								<table class="table">
+								<table class="table" id="tabel_pesanan">
 									<thead class="thead-dark">
 										<tr>
-											<th scope="col">Produk</th>
-											<th scope="col">Jumlah</th>
-											<th scope="col">Harga Satuan</th>
-											<th scope="col">Subtotal</th>
+											<th scope="col" width="30%">Produk</th>
+											<th scope="col" width="10%" class="text-center">Jumlah</th>
+											<th scope="col" class="text-right">Harga Satuan</th>
+											<th scope="col" class="text-right">Subtotal</th>
+											<th width="1%"></th>
 										</tr>
 									</thead>
 									<tbody>
+										<tr>
 										<th scope="row" colspan="3">Total</th>
-										<td>0</td>
+										<td id="total_belanja" class="text-right">0</td>
+										</tr>
 									</tbody>
 								</table>
 							</div>
@@ -163,11 +168,11 @@
 
 												<label for="" class="col-sm-2 col-form-label">Kepada</label>
 												<div class="col-sm-5">
-													<input type="text" name="nama_penerima" value="" id="tujuan_nama" class="form-control">
+													<input type="text" name="nama_penerima" value="" id="tujuan_nama" class="form-control" placeholder="Nama penerima ...">
 
 												</div>
 												<div class="col-sm-5">
-													<input type="text" name="nomor_hp_penerima" value="" id="tujuan_nomor_hp" class="form-control">
+													<input type="text" name="nomor_hp_penerima" value="" id="tujuan_nomor_hp" class="form-control" placeholder="Nomor handphone penerima ...">
 
 												</div>
 											</div>
@@ -364,13 +369,13 @@
 		 if(isNaN(id_alamat)){
 			 return 0;
 		 }
-		//  $.ajax({
-		// 	url: '{{route("admin.penjualan.masuk.daftar_alamat")}}?id='+id_alamat,
-		// 	success : function (data) {
-		// 		hasil = data;
-		// 	},
-		// 	async : false
-		//  });
+		 $.ajax({
+			url: '{{route("admin.penjualan.masuk.daftar_alamat")}}?id='+id_alamat,
+			success : function (msg) {
+				hasil = msg;
+			},
+			async : false
+		 });
 		 return hasil;
 	 }
 
@@ -391,7 +396,7 @@
 
 		 console.log(alamat);
 
-		 if (alamat.is_default == 1) {
+		 if (alamat.is_default === "ya") {
 			$('#tujuan_nama').val(alamat.result.nama_penerima);
 			$('#tujuan_nomor_hp').val(alamat.result.nomor_hp_penerima);
 			$('#alamat_tujuan').html(alamat.result.alamat_penerima);
@@ -402,46 +407,69 @@
 		 }
 	 });
 
-	//  $("#daftar_alamat").change(function(){
-    //    		var id_alamat = $(this).val();    		
-	// 		var $kepada = $('#tujuan_nama');
-	// 		var $el = $("#daftar_alamat");
-	// 		var $alamat_tujuan = $('#tujuan_alamat');
-	// 		var $tujuan_nomor_hp = $('#tujuan_nomor_hp');
 
-	// 		// $el.empty(); // remove old options
-	// 		$kepada.val('');
-	// 		$alamat_tujuan.empty();
-	// 		$tujuan_nomor_hp.val('');
+// function tabel pesanan
 
-    //    $.ajax({
-    //       type: "GET",
-    //       dataType: "json",
-    //       url: '{{ route("admin.penjualan.masuk.daftar_alamat")}}?id='+id_alamat,
-    //       success: function(msg){	
-			
-	// 		var $id = $('daftar_alamat').val();
+	function hitung(){
+		// var x = $(".cariproduk")
+		//            .map(function(){return $(this).val();}).get().join(',');
+		//  console.log(x);
+			var total_belanja = 0;
 
-	// 		$alamat = msg.result;
-	// 		console.log(msg.result);
-			
-	// 		if(msg.result){
-	// 			$kepada.val($alamat.nama_penerima);
-	// 			$alamat_tujuan.html($alamat.alamat_penerima);
-	// 			$tujuan_nomor_hp.val($alamat.nomor_hp_penerima);
-				
-	// 		}
-	// 			$.each(msg.result, function(key, value) {
-	// 				$el.append($("<option></option>")
-    //  				.attr("value", value.id).text(value.label));
-				
-	// 			});
-                                                                   
-    //       }
-    //    });
-	   
-	   
-    //  });  
+		$('#tabel_pesanan > tbody  > tr').each(function(index) {
+		var produk_id = $('.cariproduk').eq(index).val();
+		var pelanggan_id = 1;
+		var qty = $('.kuantitas').eq(index).val();
+		var harga = get_harga(produk_id,pelanggan_id);
+		$('.harga_satuan').eq(index).html(numeral(harga).format('0,0'));
+		var sub_total = qty*harga;
+		$('.sub_total').eq(index).html(numeral(sub_total).format('0,0'));
+
+		if(!isNaN(sub_total)){
+			total_belanja += sub_total;
+		}
+
+		});
+
+		$('#total_belanja').html(numeral(total_belanja).format('0,0'));
+
+		var ongkir = $('#ongkos_kirim').cleanVal();
+		var biaya_tambahan = $('#biaya_tambahan').cleanVal();
+		var biaya_packing = $('#biaya_packing').cleanVal();
+		var diskon = $('#diskon').cleanVal();
+		var grand_total =  parseInt(ongkir) + parseInt(biaya_tambahan)+ parseInt(biaya_packing) - parseInt(diskon) + parseInt(total_belanja);
+
+		$('#grand_total').val(numeral(grand_total).format('0,0'));
+
+	}
+
+	var produk = {
+      nama : "Minyak goreng",
+      kuantitas : 1,
+      harga_satuan : 0,
+      sub_total : 0,
+  };
+
+
+  function hapus_baris(e){
+		$(e).closest('tr').remove();
+		hitung();
+	}
+
+	 function tambah_baris(produk){
+
+		var baris = "<tr>"
+				+"<td><select class='form-control cariproduk' name='produk_id[]'></select></td>"
+				+"<td><div class='input-group input-group-md'><input type='number' name='kuantitas[]' class='form-control kuantitas touchspin' value='"+produk.kuantitas+"'/></div></td>"
+				+"<td class='harga_satuan text-right'>"+produk.harga_satuan+"</td>"
+				+"<td class='sub_total text-right'>"+produk.sub_total+"</td>"
+				+"<td><a onclick='hapus_baris(this)' class='btn btn-icon btn-outline-warning btn-sm waves-effect waves-light' href='javascript:void(0)'><i class='fadeIn animated bx bx-trash-alt'></i></a></td>"
+
+				+"</tr>";
+		$('#tabel_pesanan > tbody > tr').eq(-1).before(baris);
+		cari();
+		hitung();
+	}
 	
 	</script>
 	@endsection

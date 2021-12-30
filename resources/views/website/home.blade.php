@@ -543,8 +543,8 @@
                                         <?php
                                         $links = "https://api.whatsapp.com/send?phone=6281370721854<&text=Assalamu'alaikum, saya mengirim pesan melalui website nailhoney.id.%0A"."%0ASaya ingin memesan produk berikut %0A"."%0ANama produk : ".$produk->nama."%0AHarga : Rp.".number_format($produk->harga)."%0AApakah bisa diproses?";
                                         ?>
-                                        <li><a data-bs-toggle="tooltip" data-bs-html="true" title="Pesan"
-                                                href="{{$links}}" target="_blank"><i class="fi flaticon-shopping-cart"></i></a></li>
+                                        <li><a target="_blank" data-bs-toggle="tooltip" data-bs-html="true" title="Pesan"
+                                                href="{{$links}}"><i class="fi flaticon-shopping-cart"></i></a></li>
                                         <!-- <li data-bs-toggle="modal" data-bs-target="#popup-quickview"><button
                                                 data-bs-toggle="tooltip" data-bs-html="true" title="Quick View"><i
                                                     class="fi ti-eye"></i></button></li>
@@ -809,7 +809,7 @@
         <!-- Flash-Sale-area-end -->
 
         <!-- start tp-projects -->
-        <section class="tp-projects section-padding">
+        <!-- <section class="tp-projects section-padding">
             <div class="container">
                 <div class="row">
                     <div class="section-title mb-0">
@@ -950,7 +950,7 @@
                     <a class="theme-btn" href="project.html">View All <i class="fa fa-angle-double-right"></i></a>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- end tp-projects -->
 
         <!-- service-area-end -->
