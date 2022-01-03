@@ -25,7 +25,7 @@
                                     <h2><span>Satu Madu</span> Menjaga <span>Alam</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="shop.html" class="btn theme-btn">Pesan Sekarang <i
+                                    <a href="{{ route('website.produk') }}" class="btn theme-btn">Pesan Sekarang <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -44,7 +44,7 @@
                                     <h2><span>Family</span> Sehat <span>Dengan Madu</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="shop.html" class="btn theme-btn">Pesan Sekarang <i
+                                    <a href="{{ route('website.produk') }}" class="btn theme-btn">Pesan Sekarang <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -60,7 +60,7 @@
                                     <h2><span>Ragam</span> Manfaat <span>Madu</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="shop.html" class="btn theme-btn">Lihat Selengkapnya <i
+                                    <a href="{{route('website.blog.manfaat-madu')}}" class="btn theme-btn">Lihat Selengkapnya <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -76,7 +76,7 @@
                                     <h2><span>Ganti Gula</span> Dengan <span>Madu</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="shop.html" class="btn theme-btn">Lihat Selengkapnya <i
+                                    <a href="" class="btn theme-btn">Lihat Selengkapnya <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -87,6 +87,31 @@
         </section>
         <!-- end of hero slider -->
 
+        <!-- offer-area-end -->
+        <section class="offer-area section-padding">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7">
+                        <div class="offer-img">
+                            <img src="{{asset('/img/welcome.webp')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="offer-wrap">
+                            <div class="offer-title">
+                                <small>Cara Mendapatkan</small>
+                                <h2>Selamat Datang di Website <span>Nailhoney</span></h2>
+                            </div>
+                            <p class="fs-4">Solusi untuk Diabetes Melitus, Sakit Maag, Kanker, dan Menyehatkan Keluarga</p>
+                            <a href="{{route('website.produk')}}" class="btn theme-btn" tabindex="0">Dapatkan Sekarang <i
+                                    class="fa fa-angle-double-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- offer-area-end -->
+
         <!-- opening-section -->
 
         <section class="product-area section-padding">
@@ -94,12 +119,7 @@
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
                         <div class="section-title">
-                            <h2>Selamat Datang di Website <span>Nailhoney</span></h2>
-                            <p>Saat membaca setiap kata dalam situs web ini, Anda akan mulai menemukan solusi 
-                                bagaimana menjaga kesehatan keluarga, dan ikut berkampanye dalam melestarikan alam semesta. 
-                            </p>
 
-                            <br>
                             <h2>Madu Al-Hafizh<span> Premium</span></h2>
 
                             <div class="p-4">
@@ -589,9 +609,9 @@
                         
                     </div>
                 </div>
-                <div class="view-btn">
+                <!-- <div class="view-btn">
                     <a class="theme-btn" href="{{ route('website.produk') }}">Lihat Semua <i class="fa fa-angle-double-right"></i></a>
-                </div>
+                </div> -->
             </div>
            
         </section>

@@ -34,7 +34,7 @@
                 <div class="row align-items-center">
                     <div class="col col-lg-5 col-12">
                         <div class="video-area">
-                            <img src="{{asset('img/about.jpg')}}" alt>
+                            <img src="{{asset('img/about.webp')}}" alt>
                             <div class="video-holder">
                                 <a href="https://www.youtube.com/embed/Z54bL6kjyOI" class="video-btn" data-type="iframe"
                                     tabindex="0"><i class="fi flaticon-play-button"></i></a>
@@ -48,7 +48,32 @@
                                     <small>Tentang Perusahaan Kami</small>
                                     <h2>Membangun yayasan <span>yang peduli </span> dengan hutan.</h2>
                                 </div>
-                                <p>Sebagai penjaga sehat, penjaga keluarga dan penjaga alam.</p>
+                                <p>RefillMadu berdiri pada tahun 2014. Bermula ketika owner Refillmadu
+                                    <b>Bag Kinantan</b> berdiskusi dengan salah satu temannya seorang Trainer
+                                    yang juga pebisnis madu (Habibie Suhab). Setelah berdiskusi panjang akhirnya
+                                    beliau memutuskan untuk menjual madu. Dengan modal hanya Rp.100.000 yang dibelikan
+                                    2 botol madu. Pada saat itu produk yang kita jual adalah Madu Gemuk, Madu Langsing,
+                                    Madu Hitam dan Madu Hutan. Setelah beberapa bulan berjalan, kita akhirnya mulai
+                                    memfokuskan untuk menjual Madu Hutan.
+                                </p>
+                                <p>
+                                    Setelah bisnis berjalan selama 1 tahun, kita memiliki satu orang dsitributor dan 
+                                    usaha madu mengalami perkembangan. Pada 18 April 2015 didaftarkan dengan nama
+                                    refillmadu.com dan mendapat suntikan dana dari berbagai investor. Setelah itu 
+                                    kita juga membuat website dengan alamat <a href="https://refillmadu.com">refillmadu.com</a>
+                                    dan pada bulan Mei 2018 kita menyewa sebuah toko di Jl. Karya No.199 dengan luas
+                                    2 meter x 4 meter. Kita juga merekrut 1 orang karyawan dan menambah stok.
+                                </p>
+                                <p>
+                                    Pada Maret 2019 kita menyewa toko yang lebih besar dengan 2 orang karyawan. Alhamdulillah
+                                    jumlah Reseller, Agen, dan Distributor terus bertambah, yang awalnya berjumlah puluhan, bertambah
+                                    menjadi ratusan orang.
+                                </p>
+                                <p>
+                                    Di tahun 2021 kita fokus memperbaiki sistem keagenan dengan memberikan fasilitas pembinaan,
+                                    sistem reward, dan harga yang kompetitif. Pada akhirnya, kami dari manajemen RefillMadu berharap
+                                    sistem baru ini dapat memberi manfaat Stakeholder Madu Al-Hafizh.
+                                </p>
                                 <!-- <a href="about.html" class="btn theme-btn" tabindex="0">More About<i
                                         class="fa fa-angle-double-right"></i></a> -->
                             </div>
@@ -312,7 +337,7 @@
         <!-- testimonial-area-end -->
 
         <!-- client-area start -->
-        <section class="client-area s2">
+        <!-- <section class="client-area s2">
             <div class="container">
                 <h2 class="hidden">client</h2>
                 <div class="client-item">
@@ -325,6 +350,6 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- client-area end -->
 @endsection

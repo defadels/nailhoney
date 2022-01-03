@@ -268,7 +268,7 @@
                                                     <div class="product-btm">
                                                         <div>
                                                             <ul>
-                                                                <li>Rp.{{ number_format($produk->harga)}}</li>
+                                                                <li><span class="bagde bg-warning text-dark fs-5">Rp.{{ number_format($produk->harga)}}</span></li>
                                                                 <!-- <li></li> -->
                                                                 
                                                                 <li>
@@ -341,7 +341,7 @@
                                                     <div class="product-btm">
                                                         <div>
                                                             <ul>
-                                                                <li id="harga">Rp.{{ number_format($produk->harga)}}</li>
+                                                                <li id="harga"><span class="badge bg-warning text-dark fs-4">Rp.{{ number_format($produk->harga)}}</span></li>
                                                             </ul>
                                                         </div>
                                                         <div class="product-ratting">
