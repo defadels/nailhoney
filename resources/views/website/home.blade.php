@@ -1113,7 +1113,7 @@
         <!-- testimonial-area-end -->
 
         <!-- client-area start -->
-        <section class="client-area">
+        <!-- <section class="client-area">
             <div class="container">
                 <h2 class="hidden">client</h2>
                 <div class="client-item">
@@ -1126,7 +1126,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- client-area end -->
 
         

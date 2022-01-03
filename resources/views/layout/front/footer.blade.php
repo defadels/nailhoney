@@ -67,9 +67,10 @@
                                     <h3>Subscribe Email</h3>
                                 </div>
                                 <p>Kamu akan mendapatkan informasi terbaru melalui email.</p>
-                                <form>
+                                <form method="POST" action="">
+                                    @csrf
                                     <div class="input-1">
-                                        <input type="email" class="form-control" placeholder="Email Address *" required>
+                                        <input type="email" class="form-control" placeholder="Alamat Email *" required>
                                     </div>
                                     <div class="submit clearfix">
                                         <button type="submit"><i class="ti-email"></i></button>
