@@ -290,16 +290,12 @@
 
     templateSelection: formatRepoSelection
 
-	
-
 		});
 
 		function formatRepoSelection (repo) {
 
-
 		return repo.text;
 		}
-
 
 		$("#cari-pelanggan").change(function(){
        		var id_pelanggan = $(this).val(); 
@@ -407,6 +403,61 @@
 		 }
 	 });
 
+// funciton cari produk
+function cari(){
+
+
+$("form").submit(function (event) {
+		  $('.nominal').unmask();
+  });
+
+
+$('.nominal').mask("000.000.000.000.000", {reverse: true});
+
+
+$(".touchspin").TouchSpin({
+  buttondown_class: "btn btn-primary",
+  buttonup_class: "btn btn-primary",
+});
+
+$('.cariproduk').select2({
+  placeholder: 'Cari dan Pilih Produk...',
+  ajax: {
+	url: '',
+	dataType: 'json',
+	delay: 250,
+	data: function (params) {
+	  var selainx = $(".cariproduk").map(function(){return $(this).val();}).get().join(',');
+		return {
+		  selain: selainx,
+		  cari: params.term,
+		  page: params.page || 1
+		};
+	  },
+	processResults: function (data) {
+	  return {
+		results:  $.map(data.results, function (item) {
+
+		  return {
+			text: item.nama,
+			id: item.id
+		  }
+		}),
+		pagination: data.pagination
+	  };
+	},
+	cache: true
+  }
+});
+
+	$( ".kuantitas,.cariproduk,.harga_konsumen,#ongkos_kirim,#biaya_tambahan,#biaya_packing,#diskon" ).change(function() {
+	hitung();
+	});
+	$( ".kuantitas,.cariproduk,.harga_konsumen,#ongkos_kirim,#biaya_tambahan,#biaya_packing,#diskon" ).keyup(function() {
+	hitung();
+	});
+
+}
 
 // function tabel pesanan
 
@@ -460,7 +511,7 @@
 
 		var baris = "<tr>"
 				+"<td><select class='form-control cariproduk' name='produk_id[]'></select></td>"
-				+"<td><div class='input-group input-group-md'><input type='number' name='kuantitas[]' class='form-control kuantitas touchspin' value='"+produk.kuantitas+"'/></div></td>"
+				+"<td><div class='input-group input-group-md'><input type='number' name='kuantitas[]' min='1' class='form-control kuantitas touchspin' value='"+produk.kuantitas+"'/></div></td>"
 				+"<td class='harga_satuan text-right'>"+produk.harga_satuan+"</td>"
 				+"<td class='sub_total text-right'>"+produk.sub_total+"</td>"
 				+"<td><a onclick='hapus_baris(this)' class='btn btn-icon btn-outline-warning btn-sm waves-effect waves-light' href='javascript:void(0)'><i class='fadeIn animated bx bx-trash-alt'></i></a></td>"

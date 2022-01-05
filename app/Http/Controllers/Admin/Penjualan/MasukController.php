@@ -8,6 +8,7 @@ use App\Penjualan;
 use App\User;
 use App\Pengiriman;
 use App\Pembayaran;
+use App\Produk;
 use Validator;
 use Carbon\Carbon;
 use Str;
@@ -33,6 +34,7 @@ class MasukController extends Controller
         $daftar_pengiriman = Pengiriman::pluck('nama', 'id');
         $daftar_pelanggan = User::pluck('nama','id');
         $alamat = AlamatUser::pluck('label', 'id');
+        $daftar_produk = Produk::pluck('nama','id');
 
         $daftar_status = [
             'masuk' => 'Masuk',
@@ -46,7 +48,7 @@ class MasukController extends Controller
 
         return view('admin.penjualan.masuk.create', compact('title', 
         'description', 'daftar_pembayaran','daftar_pengiriman',
-        'daftar_pelanggan','daftar_status','alamat'));
+        'daftar_pelanggan','daftar_status','alamat','daftar_produk'));
     }
 
     public function store(Request $req) {
@@ -253,6 +255,28 @@ class MasukController extends Controller
             'result' => $alamat
         );
       
+       return response()->json($hasil);
+    }
+
+    public function json_daftar_produk(Request $req) {
+        $kata_kunci = $req->cari;
+
+        if ($req->has('cari') && $req->cari != "") {
+            $daftar_produk = Produk::where('nama', 'like', '%'.$kata_kunci.'%')
+            ->orWhere('satuan', '=', $kata_kunci)
+            ->paginate(5);
+
+        } else {
+            $daftar_produk = Produk::paginate(5);
+        }
+            
+        $hasil = array(
+            'results' => $daftar_produk->toArray()['data'],
+            'pagination' => array(
+                'more' => $daftar_produk->hasMorePages()
+            )
+        );
+
        return response()->json($hasil);
     }
 }

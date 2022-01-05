@@ -25,7 +25,7 @@
                                     <h2><span>Satu Madu</span> Menjaga <span>Alam</span></h2>
                                 </div>
                                 <div class="btns">
-                                    <a href="{{ route('website.produk') }}" class="btn theme-btn">Pesan Sekarang <i
+                                    <a href="#daftar-produk" class="btn theme-btn">Pesan Sekarang <i
                                             class="fa fa-angle-double-right"></i></a>
                                 </div>
                             </div>
@@ -139,6 +139,10 @@
                                 dari alam liar bukan dari hasil peternakan lebah.
                             </p>
 
+                            <!-- <a href="#daftar-produk" class="btn btn-lg btn-primary">Lihat Produk</a> -->
+                            <a href="#daftar-produk" class="theme-btn">&rarr; Lihat Produk &larr;</a>
+
+                            <br>
                             <br>
                             <h2>Madu Al-Hafizh<span> Akasia</span></h2>
                             <div class="p-4">
@@ -160,6 +164,8 @@
                                 Madu memiliki kandungan vitamin A, B Complex, C, E, H, Kalium, Magnesium, Klorin, Mineral,
                                 Sufur, dan Fosfor. Antibiotik di dalam madu mampu membunuh kuman di dalam tubuh.
                             </p>
+                            <br>
+                            <a href="#daftar-produk" class="theme-btn">&rarr; Dapatkan Sekarang &larr;</a>
                         </div>
                     </div>
                 </div>
@@ -224,6 +230,8 @@
                                 </svg> 8. Pengobatan Asam Urat</li>
                                 <li class="list-group-item fw-bold">dan lain-lain</li>
                             </ol>
+                            <br>
+                            <a href="#daftar-produk" class="theme-btn">&rarr; Lihat Produk &larr;</a>
                             </div>
                         </div>
                     </div>
@@ -239,8 +247,8 @@
                     <div class="col-lg-6">
                         <div class="category-wrap">
                             <div class="category-title">
-                                <h2>Menjaga 3 <span>Tagline</span></h2>
-                                <p>Kami senantiasa menjaga 3 tagline sebagai nilai, garansi dan amanah kami
+                                <h2>Menjaga 3 <span>Values</span></h2>
+                                <p>Kami senantiasa menjaga 3 values (nilai) sebagai nilai, garansi dan amanah kami
                                     sehingga madu yang sampai ditangan mitra dan konsumen berkualitas serta terjaga kemurniannya.</p>
                             </div>
                             <div class="category-item">
@@ -411,8 +419,12 @@
                             seperti halnya banyak bentuk madu lainnya, dan ini adalah komponen
                             antibakteri yang kuat.
                             </p>
+                            <br>
+                            <a href="#daftar-produk" class="theme-btn">&rarr; Lihat Produk &larr;</a>
+                           
                         </div>
-                            
+                        
+                        <br>    
 
                         <div class="section-title">
                             <h2>Keunggulan Produk <span>Madu Premium</span></h2>
@@ -476,6 +488,8 @@
                             madu khususnya madu soba diketahui mengalahkan dekstrometorfan (penekan batuk) dan meredakan
                             batuk malam hari pada anak-anak serta meningkatkan kualitas tidur mereka.
                             </p>
+                            <br>
+                            <a href="#daftar-produk" class="theme-btn">&rarr; Lihat Produk &larr;</a>
                         </div>
 
                         </div>
@@ -541,7 +555,7 @@
         </section>
         
         <!-- product-area-start -->
-        <section class="product-area section-padding">
+        <section class="product-area section-padding" id="daftar-produk">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
