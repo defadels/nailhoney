@@ -2,6 +2,13 @@
 
 @section('title','Nailhoney.id | Beranda')
 
+@section('page-style')
+  <style>
+      .span-white{
+          color: yellow;
+      }
+  </style>
+@endsection
 
 @section('content')
 <!-- start preloader -->
@@ -18,11 +25,11 @@
             <div class="hero-slider">
                 <div class="slide">
                     <img src="{{asset('/img/carousel/carousel-1.webp')}}" alt class="slider-bg">
-                    <div class="container">
+                    <div class="container"> 
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
                                 <div class="slide-title">
-                                    <h2><span>Satu Madu</span> Menjaga <span>Alam</span></h2>
+                                    <h2 style="color: white;"><span class="span-white">Satu Madu</span> Menjaga <span class="span-white">Alam</span></h2>
                                 </div>
                                 <div class="btns">
                                     <a href="#daftar-produk" class="btn theme-btn">Pesan Sekarang <i
@@ -99,7 +106,7 @@
                     <div class="col-lg-5">
                         <div class="offer-wrap">
                             <div class="offer-title">
-                                <small>Cara Mendapatkan</small>
+                                
                                 <h2>Selamat Datang di Website <span>Nailhoney</span></h2>
                             </div>
                             <p class="fs-4">Solusi untuk Diabetes Melitus, Sakit Maag, Kanker, dan Menyehatkan Keluarga</p>
