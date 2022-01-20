@@ -181,8 +181,8 @@ class BlogController extends Controller
                 $cons->aspectRatio();
             })->save($destinationPath.$blog->thumbnail);
 
-           Storage::disk('public')->delete($foto_lama);
-           Storage::disk('public')->delete($thumbnail_lama);
+           Storage::disk('storage')->delete($foto_lama);
+           Storage::disk('storage')->delete($thumbnail_lama);
         }
 
 
