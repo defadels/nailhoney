@@ -43,7 +43,7 @@ class BlogController extends Controller
         $description = "Ini halaman untuk kelola blog";
 
         $daftar_status = [
-            'aktif' => 'Aktif',
+            'aktif' => 'Aktif', 
             'nonaktif' => 'Nonaktif'
         ];
         $daftar_kategori = KategoriBlog::pluck('nama', 'id');

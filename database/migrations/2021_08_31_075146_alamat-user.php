@@ -12,7 +12,7 @@ class AlamatUser extends Migration
      * @return void
      */
     public function up()
-    {
+    { 
        Schema::create('alamat_user', function(Blueprint $table){
         $table->bigIncrements('id');
         $table->unsignedBigInteger('pelanggan_id')->nullable();

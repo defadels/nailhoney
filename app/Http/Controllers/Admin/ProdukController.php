@@ -77,7 +77,7 @@ class ProdukController extends Controller
             'harga.min' => 'Jumlah harga tidak boleh minus',
             'harga.numeric' => 'Harga harus di input dengan angka',
             'komisi.min' => 'Komisi tidak boleh  minus',
-            'komisi.numeric' => 'Komisi harus di input dengan angka'
+            'komisi.numeric' => 'Komisi harus di input dengan angka' 
         ];
 
         $validate = Validator::make($input, $rules, $messages)->validate();
