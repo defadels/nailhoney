@@ -39,7 +39,7 @@ class FotoProdukController extends Controller
     public function store(Request $req, $id) {
         $input = $req->all();
 
-        $rules = [
+        $rules = [ 
             'foto' => 'file|mimes:jpeg,jpg,png|nullable', 
             'keterangan' => 'max:100'
         ];

@@ -24,7 +24,7 @@ class Pelanggan extends Migration
             $table->enum('jenis',['seller','distributor'])->default('distributor');
             $table->timestamps();
         });
-    }
+    } 
 
     /** 
      * Reverse the migrations.
