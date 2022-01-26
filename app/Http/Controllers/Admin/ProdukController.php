@@ -108,7 +108,7 @@ class ProdukController extends Controller
             $produk->foto = $path.$nama_file.".".$file_extension;
 
             $gambar = $req->file('foto');
-            $destinationPath = storage_path('/app/public/');
+            $destinationPath = storage_path('app/public/');
 
             $img = Image::make($gambar->path());
             $img->fit(250, 250, function ($cons) {
@@ -186,7 +186,7 @@ class ProdukController extends Controller
             $produk->foto = $path.$nama_file.".".$file_extension;
 
             $gambar = $req->file('foto');
-            $destinationPath = storage_path('/app/public/');
+            $destinationPath = storage_path('app/public/');
 
             $img = Image::make($gambar->path());
             $img->fit(250, 250, function ($cons) {
@@ -216,7 +216,7 @@ class ProdukController extends Controller
         } catch(Exception $e) {
 
             return redirect()->route('admin.produk.index')
-        ->with('gagal', $produk->nama.' gagal dihapus');
+             ->with('gagal', $produk->nama.' gagal dihapus');
 
         }
 

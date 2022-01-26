@@ -5,7 +5,7 @@
 		$rute = Route::currentRouteName();
 		return (strpos($rute , $namarute) === 0) ? 'mm-active' : '';
 	}
-
+	
 	@endphp
 	
 	<ul class="metismenu" id="menu">

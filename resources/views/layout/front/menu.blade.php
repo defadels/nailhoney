@@ -4,7 +4,7 @@ function rute($namarute){
   $rute = Route::currentRouteName();
   return (strpos($rute , $namarute) === 0) ? 'active' : '';
 }
-
+    
 @endphp
 
 <header id="header" class="site-header header-style-2">
