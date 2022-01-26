@@ -1068,7 +1068,8 @@
         <!-- end about-section -->
 
         <!-- testimonial-area-start -->
-        <section class="testimonial-area section-padding">
+
+        <!-- <section class="testimonial-area section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6 offset-lg-3">
@@ -1149,7 +1150,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- testimonial-area-end -->
 
