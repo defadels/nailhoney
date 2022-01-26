@@ -48,7 +48,7 @@
                         <div class="row">
                             <div class="col col-lg-5 slide-caption">
                                 <div class="slide-title">
-                                    <h2><span>Family</span> Sehat <span>Dengan Madu</span></h2>
+                                    <h2><span>Semua</span> Sehat <span>Dengan Madu</span></h2>
                                 </div>
                                 <div class="btns">
                                     <a href="{{ route('website.produk') }}" class="btn theme-btn">Pesan Sekarang <i
