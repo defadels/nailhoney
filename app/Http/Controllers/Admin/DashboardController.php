@@ -16,6 +16,6 @@ class DashboardController extends Controller
         $description = 'Ini adalah halaman dashboard';
         $daftar_produk = Produk::get();
 
-        return view('admin.table',compact('title','description','daftar_produk'));
+        return view('admin.table',compact('title','description','daftar_produk')); 
     }
 }

@@ -53,7 +53,7 @@ Route::name('website.')->namespace('Website')->group(function () {
     // Route::get('login', 'AuthController@login')->name('login');
     // Route::get('register', 'AuthController@register')->name('register');
 
-});
+}); 
 
 Route::prefix('admin')->name('admin.')->middleware('auth','tolakselainadmin')->namespace('Admin')->group(function () {
 

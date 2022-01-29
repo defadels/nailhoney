@@ -6,7 +6,7 @@
 		return (strpos($rute , $namarute) === 0) ? 'mm-active' : '';
 	}
 	
-	@endphp
+	@endphp 
 	
 	<ul class="metismenu" id="menu">
             
