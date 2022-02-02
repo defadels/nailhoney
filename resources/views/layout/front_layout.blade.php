@@ -12,7 +12,7 @@
     <meta name="author" content="Bag Kinantan">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:url"         content="https://nailhoney.id" />
-    <meta property="og:type"        content="website" />
+    <meta property="og:type"        content="website" /> 
     
     <meta property="og:title"       content="@yield('title','Website Resmi Nailhoney')" />
     <meta property="og:description" content="@yield('description','Supplier Madu Sumatera Terbesar')" />
