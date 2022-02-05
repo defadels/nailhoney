@@ -35,7 +35,7 @@ Route::get('/laravel', function () {
 
 Route::name('website.')->namespace('Website')->group(function () {
 
-    Route::get('/','HomeController@index')->name('home');
+    Route::get('/','HomeController@index')->name('home'); 
     
     Route::get('blog','BlogController@index')->name('blog');
     Route::get('blog/manfaat-madu','BlogController@manfaat_madu')->name('blog.manfaat-madu');
