@@ -43,7 +43,7 @@
                                         <i class="ti-location-pin"></i>
                                     </div>
                                     <h5>Alamat</h5>
-                                    <p>Jalan Karya Dame Komplek Orlando Karya No. 21 H</p>
+                                    <p>Jalan Karya Dame No. 21 H</p>
                                 </li>
                                 <li>
                                     <div class="icon">

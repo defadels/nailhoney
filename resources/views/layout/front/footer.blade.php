@@ -40,7 +40,7 @@
                                 </div>
                                 <div class="contact-ft">
                                     <ul>
-                                        <li><i class="fi flaticon-pin"></i>Jalan Karya Dame Komplek Orlando Karya No. 21 H
+                                        <li><i class="fi flaticon-pin"></i>Jalan Karya Dame No. 21 H
                                         </li>
                                         <li><i class="fi flaticon-call"></i>+62 813-7072-1854</li>
                                         <li><i class="fi flaticon-envelope"></i>refill.madu@gmail.com</li>
