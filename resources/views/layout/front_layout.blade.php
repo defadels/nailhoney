@@ -84,7 +84,7 @@
                                                 <img src="{{asset('assets-front/images/modal2.jpg')}}" alt="">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="col-lg-7">
                                     <div class="product-single-content">

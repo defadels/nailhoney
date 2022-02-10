@@ -45,7 +45,7 @@
                                         <li><i class="fi flaticon-call"></i>+62 813-7072-1854</li>
                                         <li><i class="fi flaticon-envelope"></i>refill.madu@gmail.com</li>
                                     </ul>
-                                </div>
+                                </div> 
                             </div>
                         </div>
                         <div class="col col-lg-3 col-md-6 col-sm-12 col-12">
