@@ -62,6 +62,8 @@
 
        @yield('content')
 
+       @include('layout.front.chat')
+       
         <!-- start of tp-site-footer-section -->
 
         @include('layout.front.footer')
