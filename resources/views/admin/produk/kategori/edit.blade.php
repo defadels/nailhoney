@@ -34,7 +34,7 @@
 							<div class="form-group">
 							{!! Form::label('nama', 'Nama Kategori') !!}
 
-							{!! Form::text('nama', old('nama'),['class' => 'form-control form-control']) !!}
+							{!! Form::text('nama', old('nama'),['class' => 'form-control']) !!}
 							</div>
 
 							

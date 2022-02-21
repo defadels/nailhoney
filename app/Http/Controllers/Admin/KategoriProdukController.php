@@ -68,26 +68,26 @@ class KategoriProdukController extends Controller
     }
 
     public function update(Request $req, $id) {
-        $input = $req->all();
+            $input = $req->all();
 
-        $rules = [
-            'nama' => 'required',
-            'keterangan' => 'required'
-        ];
+            $rules = [
+                'nama' => 'required',
+                'keterangan' => 'required'
+            ];
 
-        $messages = [
-            'required' => ' :attribute wajib diisi.',
-        ];
+            $messages = [
+                'required' => ' :attribute wajib diisi.',
+            ];
 
-        $validate = Validator::make($input, $rules, $messages)->validate();
-        $kategori = KategoriProduk::findOrFail($id);
-        $kategori->nama = $req->nama;
-        $kategori->keterangan = $req->keterangan;
+            $validate = Validator::make($input, $rules, $messages)->validate();
+            $kategori = KategoriProduk::findOrFail($id);
+            $kategori->nama = $req->nama;
+            $kategori->keterangan = $req->keterangan;
 
-        $kategori->save();
+            $kategori->save();
 
-        return redirect()->route('admin.produk.kategori.index')
-        ->with('sukses',$kategori->nama.' berhasil di update');
+            return redirect()->route('admin.produk.kategori.index')
+            ->with('sukses',$kategori->nama.' berhasil di update');
     }
 
     public function destroy($id) {
