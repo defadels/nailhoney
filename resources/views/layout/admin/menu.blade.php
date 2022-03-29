@@ -4,7 +4,7 @@
 	function rute($namarute){
 		$rute = Route::currentRouteName();
 		return (strpos($rute , $namarute) === 0) ? 'mm-active' : '';
-	}
+	} 
 	
 	@endphp 
 	

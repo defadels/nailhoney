@@ -13,7 +13,7 @@
     <div class="alert alert-success" role="alert">
                         <h4 class="alert-heading">Sukses</h4>
                         <p class="mb-0">
-                        {{ session('sukses') }}
+                        {{ session('sukses') }} 
                         </p>
     </div>
 @endif
