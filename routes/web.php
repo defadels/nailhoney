@@ -218,7 +218,7 @@ Route::prefix('editor')->name('editor.')->middleware('auth','tolakselaineditor')
     //     Route::get('produk/{id}/edit', 'ProdukController@edit')->name('produk.edit');
     //     Route::post('produk/{id}/edit', 'ProdukController@update')->name('produk.update');
     //     Route::delete('produk/{id}/destroy', 'ProdukController@destroy')->name('produk.destroy');
-    // }); 
+    // }); x`
 
         Route::get('blog', 'BlogController@index')->name('blog.index');
         Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
