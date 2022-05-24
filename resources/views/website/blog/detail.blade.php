@@ -1,6 +1,22 @@
 @extends('layout.front_layout')
 
-@section('title','Blog')
+
+@section('meta')
+    <meta name="title" content="{{$blog->judul}}">
+    <meta name="description" content="{{$blog->abstrak}}">
+    <meta name="keywords" content="Madu Murni, Madu Asli, Madu Bersanad, Ganti Gula ke Madu">
+    <meta name="author" content="{{$blog->penulis}}">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:url"         content="https://nailhoney.id" />
+    <meta property="og:type"        content="website" />  
+
+    <meta property="og:title"       content="{{$blog->judul}}" />
+    <meta property="og:description" content="{{$blog->abstrak}}" />
+@endsection
+
+@section('title')
+    <title>{{$blog->judul}}</title>
+@endsection
 
 
 @section('content')
@@ -43,7 +59,7 @@
                                     </li>
                                     <li>{!!$blog->created_at->format('M, d-Y')!!}</li>
                                 </ul>
-                                <h2>{{$blog->judul}}</h2>
+                                <h1>{{$blog->judul}}</h1>
                                 {!!$blog->konten!!}
                             </div>
 

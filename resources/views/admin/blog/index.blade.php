@@ -80,6 +80,7 @@
 											<a class="btn btn-success" href="{{ route('admin.blog.edit',$blog->id) }}">
 												Edit
 											</a>
+											<a href="{{route('admin.blog.content',$blog->id)}}" class="btn btn-secondary">Konten</a>
 											</td>
 										</tr>
 									@endforeach

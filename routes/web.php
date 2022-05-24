@@ -41,7 +41,7 @@ Route::name('website.')->namespace('Website')->group(function () {
     Route::get('blog/manfaat-madu','BlogController@manfaat_madu')->name('blog.manfaat-madu');
     Route::get('blog/tentang-madu', 'BlogController@tentang_madu')->name('blog.tentang-madu');
     Route::get('blog/bisnis-madu', 'BlogController@bisnis_madu')->name('blog.bisnis-madu');
-    Route::get('blog/{id}/detail','BlogController@detail')->name('blog.detail');
+    Route::get('blog/{slug}','BlogController@detail')->name('blog.detail');
     
     Route::get('produk','ProdukController@index')->name('produk');
     Route::get('produk/{id}/detail','ProdukController@detail')->name('produk.detail');
@@ -107,7 +107,8 @@ Route::prefix('admin')->name('admin.')->middleware('auth','tolakselainadmin')->n
     //Routing halaman blog
     
     Route::resource('blog', 'BlogController')->except(['show']);
-
+    Route::get('{id}/konten','BlogController@content')->name('blog.content');
+    Route::put('{id}/konten', 'BlogController@post_content')->name('blog.content.update');
         // Route::get('blog', 'BlogController@index')->name('blog.index');
         // Route::get('blog/tambah', 'BlogController@create')->name('blog.create');
         // Route::post('blog/tambah', 'BlogController@add')->name('blog.add');

@@ -56,16 +56,21 @@
 							
 							</div>
 
-							<div class="form-group">
+							{{-- <div class="form-group">
 							{!! Form::label('konten', 'Isi Blog') !!}
-							{!! Form::textarea('konten', old('konten'), ['id' => 'summernote', 'rows' => '10']) !!}
-							</div>
+							{!! Form::textarea('konten', old('konten'), ['id' => 'summernote', 'rows' => '200']) !!}
+							</div> --}}
 
+							<div class="form-group">
+								{!! Form::label('penulis', 'Penulis') !!}
+								{!! Form::text('penulis', old('penulis'),['class' => 'form-control form-control']) !!}
+								
+								</div>
 
 							
 							<div class="form-group">
-							{!! Form::label('penulis', 'Penulis') !!}
-							{!! Form::text('penulis', old('penulis'),['class' => 'form-control form-control']) !!}
+							{!! Form::label('slug', 'Slug') !!}
+							{!! Form::text('slug', old('slug'),['class' => 'form-control form-control']) !!}
 							
 							</div>
 
@@ -120,7 +125,7 @@
       $('#summernote').summernote({
         placeholder: 'Isi blog',
         tabsize: 2,
-        height: 100
+        height: 1500
       });
     </script>
 	@endsection

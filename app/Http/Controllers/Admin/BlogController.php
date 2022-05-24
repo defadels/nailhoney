@@ -75,8 +75,8 @@ class BlogController extends Controller
         [
         'judul' => $req->judul,
         'abstrak' => $req->abstrak,
-        'konten' => $req->konten,
         'penulis' => $req->penulis,
+        'slug' => Str::slug($req->judul,"-"),
         'kategori_id' => $req->kategori_id,
         'status' => $req->status
         ]
@@ -152,7 +152,6 @@ class BlogController extends Controller
         $blog->judul = $req->judul;
         $blog->abstrak = $req->abstrak;
         $blog->penulis = $req->penulis;
-        $blog->konten = $req->konten;
         $blog->kategori_id = $req->kategori_id;
         $blog->status = $req->status;
 
@@ -185,6 +184,48 @@ class BlogController extends Controller
            Storage::disk('storage')->delete($thumbnail_lama);
         }
 
+
+        $blog->save();
+
+        return redirect()->route('admin.blog.index')
+            ->with('sukses',$blog->judul.' berhasil di ubah');
+    }
+
+    public function content($id) {
+        $title = "Kelola Konten Blog";
+
+        $blog = Blog::findorFail($id);
+        $daftar_status = [
+            'aktif' => 'Aktif',
+            'nonaktif' => 'Nonaktif'
+        ];
+
+        $daftar_kategori = KategoriBlog::pluck('nama','id');
+        
+
+        $description = "Ini halaman untuk kelola konten blog";
+        
+        return view('admin.blog.content',compact('title',
+        'description',
+        'blog',
+        'daftar_kategori',
+        'daftar_status'));
+    }
+
+    public function post_content(Request $req, $id){
+        $input = $req->all();
+        
+        $rules = [
+
+        ];
+
+        $messages = [
+            'required' => ' :attribute wajib diisi.',
+        ];
+        
+        $validator = Validator::make($input, $rules, $messages)->validate();
+        $blog = Blog::findOrFail($id);
+        $blog->konten = $req->konten;
 
         $blog->save();
 

@@ -64,8 +64,8 @@ class BlogController extends Controller
         'daftar_blog','daftar_kategori'));
     }
 
-    public function detail($id) {
-        $blog = Blog::where('status','aktif')->where('id',$id)
+    public function detail($slug) {
+        $blog = Blog::where('status','aktif')
         ->firstOrFail();
         
         $title = $blog->judul;

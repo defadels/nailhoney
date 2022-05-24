@@ -44,9 +44,9 @@
                                         </li>
                                         <li>{{$blog->created_at->format('M d, Y')}}</li>
                                     </ul>
-                                    <h3><a href="{{route('website.blog.detail', $blog->id)}}">{{$blog->judul}}</a></h3>
+                                    <h3><a href="{{route('website.blog.detail', $blog->slug)}}">{{$blog->judul}}</a></h3>
                                     <p>{{$blog->abstrak}} </p>
-                                    <a href="{{route('website.blog.detail', $blog->id)}}" class="read-more">Lihat selengkapnya..</a>
+                                    <a href="{{route('website.blog.detail', $blog->slug)}}" class="read-more">Lihat selengkapnya..</a>
                                 </div>
                             </div>
                             @endforeach()

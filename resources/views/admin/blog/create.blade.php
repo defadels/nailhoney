@@ -64,10 +64,10 @@
 							
 							</div>
 
-							<div class="form-group">
+							{{-- <div class="form-group">
 							{!! Form::label('konten', 'Isi Blog') !!}
 							{!! Form::textarea('konten', old('konten'), ['id' => 'summernote', 'rows' => '10']) !!}
-							</div>
+							</div> --}}
 							
 							<div class="form-group">
 							{!! Form::label('penulis', 'Penulis') !!}
