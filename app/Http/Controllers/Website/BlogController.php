@@ -65,23 +65,12 @@ class BlogController extends Controller
     }
 
     public function detail($slug) {
-        $blog = Blog::where('status','aktif')
-        ->firstOrFail();
+        $blog = Blog::where('slug', $slug)->get();
         
-        $title = $blog->judul;
-        
-        $keyword = $blog->keyword;
-        
-        $description = $blog->abstrak;
-
         $daftar_kategori = KategoriBlog::get();
 
         $daftar_blog = Blog::get();
         
-        return view('website.blog.detail',compact('title',
-        'keyword',
-        'description',
-        'blog',
-        'daftar_kategori','daftar_blog'));
+        return view('website.blog.detail',compact('daftar_kategori','daftar_blog','blog'));
     }
 }

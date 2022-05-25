@@ -47,7 +47,8 @@
         </div>
 
         <div class="form-group">
-        <textarea id="summernote" name="konten" value="{{old('konten') ?? $blog->konten ?? ''}}"></textarea>
+        {{-- <textarea id="summernote" name="konten" value="{{old('konten') ?? $blog->konten ?? ''}}"></textarea> --}}
+        {!! Form::textarea('konten', old('konten'), ['class' => 'form-control', 'rows' => '3', 'id' => 'summernote']) !!}
         </div>
 
         <hr>

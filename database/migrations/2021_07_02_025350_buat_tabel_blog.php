@@ -25,7 +25,7 @@ class BuatTabelBlog extends Migration
             $table->bigIncrements('id');
             $table->string('judul')->nullable();
             $table->text('abstrak')->nullable();
-            $table->text('konten')->nullable();
+            $table->longtext('konten')->nullable();
             $table->string('penulis')->nullable();
             $table->unsignedInteger('kategori_id')->nullable();
             $table->foreign('kategori_id')->references('id')->on('kategori_blog');

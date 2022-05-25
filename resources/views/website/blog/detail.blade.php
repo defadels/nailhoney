@@ -2,21 +2,25 @@
 
 
 @section('meta')
-    <meta name="title" content="{{$blog->judul}}">
-    <meta name="description" content="{{$blog->abstrak}}">
+@foreach($blog as $object)
+    <meta name="title" content="{{$object->judul}}">
+    <meta name="description" content="{{$object->abstrak}}">
     <meta name="keywords" content="Madu Murni, Madu Asli, Madu Bersanad, Ganti Gula ke Madu">
-    <meta name="author" content="{{$blog->penulis}}">
+    <meta name="author" content="{{$object->penulis}}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:url"         content="https://nailhoney.id" />
     <meta property="og:type"        content="website" />  
 
-    <meta property="og:title"       content="{{$blog->judul}}" />
-    <meta property="og:description" content="{{$blog->abstrak}}" />
+    <meta property="og:title"       content="{{$object->judul}}" />
+    <meta property="og:description" content="{{$object->abstrak}}" />
+@endforeach    
 @endsection
 
 @section('title')
-    <title>{{$blog->judul}}</title>
-@endsection
+    @foreach($blog as $object)
+        <title>{{$object->judul}}</title>
+    @endforeach
+ @endsection
 
 
 @section('content')
@@ -43,6 +47,7 @@
 
 
         <!-- start blog-single-section -->
+    @foreach($blog as $object)   
         <section class="blog-single-section section-padding">
             <div class="container">
                 <div class="row">
@@ -50,17 +55,17 @@
                         <div class="blog-content clearfix">
                             <div class="post">
                                 <div class="entry-media">
-                                    <img src="{{Storage::url($blog->foto)}}" alt>
+                                    <img src="{{Storage::url($object->foto)}}" alt>
                                 </div>
                                 <ul class="entry-meta">
                                     <li>
                                         <img src="assets/images/blog/author.jpg" alt>
-                                        &nbsp; Oleh <a href="#">{!!$blog->penulis!!}</a>
+                                        &nbsp; Oleh <a href="#">{!!$object->penulis!!}</a>
                                     </li>
-                                    <li>{!!$blog->created_at->format('M, d-Y')!!}</li>
+                                    <li>{!!$object->created_at->format('M, d-Y')!!}</li>
                                 </ul>
-                                <h1>{{$blog->judul}}</h1>
-                                {!!$blog->konten!!}
+                                <h1>{{$object->judul}}</h1>
+                                {!!$object->konten!!}
                             </div>
 
                             <div class="tag-share clearfix">
@@ -87,7 +92,7 @@
                                             alt></a>
                                 </div>
                                 <div class="author-content">
-                                    <a href="#" class="author-name">{{$blog->penulis}}</a>
+                                    <a href="#" class="author-name">{{$object->penulis}}</a>
                                     <p>Lorem Ipsum available, but the majority have suffered alteration in some form, by
                                         injected humour, or randomised</p>
                                     <div class="socials">
@@ -100,7 +105,8 @@
                                     </div>
                                 </div>
                             </div> <!-- end author-box -->
-                            <div class="more-posts clearfix">
+
+                            {{-- <div class="more-posts clearfix">
                                 <div class="previous-post">
                                     <a href="#">
                                         <span class="post-control-link">Kembali</span>
@@ -111,10 +117,13 @@
                                         <span class="post-control-link">Lanjut</span>
                                     </a>
                                 </div>
-                            </div> <!-- end more-posts -->
-
+                            </div>  --}}
+                            
+                            <!-- end more-posts -->
+                            @endforeach
+                            
                             <!-- start-comment-section  -->
-                            <div class="comments-area">
+                            {{-- <div class="comments-area">
                                 <div class="comments-section">
                                     <h3 class="comments-title">Komentar</h3>
                                     <ol class="comments">
@@ -141,7 +150,7 @@
                                                 </div>
                                             </div>
                                             
-                                            <!-- <ul class="children">
+                                           <ul class="children">
                                                 <li class="comment">
                                                     <div>
                                                         <div class="comment-theme">
@@ -197,7 +206,7 @@
                                                         </li>
                                                     </ul>
                                                 </li>
-                                            </ul> -->
+                                            </ul>
                                         
                                         </li>
 
@@ -223,7 +232,7 @@
                                         </div>
                                     </form>
                                 </div>
-                            </div> 
+                            </div>  --}}
                             <!-- end comments-area -->
                         </div>
                     </div>
