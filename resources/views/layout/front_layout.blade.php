@@ -10,7 +10,7 @@
     @yield('meta')
 
     
-    <meta property="og:image"       content="@yield('logo','img/logo.png')" />
+    <meta property="og:image" content="@yield('logo','img/logo.png')" />
     <link rel="shortcut icon" type="image/png" href="{{asset('img/logo.png')}}">
 
     <link rel="icon" href="{{ asset('img/logo.png') }}" type="image/gif" sizes="16x16">    
