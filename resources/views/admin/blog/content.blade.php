@@ -2,7 +2,7 @@
 
 
 @section('title', 'Isi Konten Blog')
-
+ 
 @section('page_style')
 
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
